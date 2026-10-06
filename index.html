@@ -154,50 +154,630 @@
     </header>
 
     <main>
-      <section class="index_section1">
-        <div class="contenu-banniere">
-          <h2 data-i18n="hero.title">Le Canada un choix de vie gagnant!</h2>
-          <h3 data-i18n="hero.subtitle">
-            MADIC est une entreprise spécialisée dans l’immigration et la
-            citoyenneté canadienne, qui se démarque pour son service de qualité
-            avec un prix concurrentiel unique sur le marché!
-          </h3>
-          <a href="services.html" data-i18n="hero.button">Voir nos services</a>
+      <!-- ===================================================== -->
+      <!-- SECTION 1 : HERO -->
+      <!-- ===================================================== -->
+      <section class="madic-hero">
+        <div class="madic-hero-overlay"></div>
+
+        <div class="container madic-hero-content">
+          <span class="section-eyebrow" data-i18n="home.hero.eyebrow">
+            VOTRE PROJET AU CANADA
+          </span>
+
+          <h1 data-i18n="home.hero.title">
+            Votre projet d’immigration au Canada commence ici
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="home.hero.subtitle">
+            MAD Immigration Canadienne vous accompagne dans vos démarches
+            d’immigration et de citoyenneté canadiennes avec une approche
+            professionnelle, personnalisée et confidentielle.
+          </p>
+
+          <div class="madic-hero-buttons">
+            <a
+              href="formulaire.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="home.hero.evaluation"
+            >
+              <i class="fa-solid fa-file-circle-check"></i>
+              Faire évaluer mon profil
+            </a>
+
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-dark"
+              data-i18n="home.hero.appointment"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+              Prendre rendez-vous
+            </a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="hero-trust-item">
+              <i class="fa-solid fa-user-tie"></i>
+              <span data-i18n="home.hero.trust1">
+                Accompagnement professionnel
+              </span>
+            </div>
+
+            <div class="hero-trust-item">
+              <i class="fa-solid fa-lock"></i>
+              <span data-i18n="home.hero.trust2"> Confidentialité </span>
+            </div>
+
+            <div class="hero-trust-item">
+              <i class="fa-solid fa-language"></i>
+              <span data-i18n="home.hero.trust3"> Service bilingue </span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="section2">
+      <!-- ===================================================== -->
+      <!-- SECTION 2 : MADIC EN ACTION -->
+      <!-- ===================================================== -->
+      <section class="madic-gallery-preview">
         <div class="container">
-          <div class="deuxcolvideotext__item">
-            <div class="deuxcolvideotext__item__contenu">
-              <h2 data-i18n="about.title">Qui sommes nous? :</h2>
-              <div class="">
-                <p
-                  class="deuxcolvideotext__item__contenu__text"
-                  data-i18n="about.description"
-                >
-                  Nous sommes une jeune entreprise dynamique œuvrant dans le
-                  domaine de l'immigration canadienne. Notre équipe est
-                  certifiée par le collège de l'immigration et de la
-                  citoyenneté. Nous offrons de service de consultation, coaching
-                  spécialisé et un accompagnement personnalisé dans
-                  l'immigration économique, le regroupement familial, la
-                  résidence temporaire et dans l'humanitaire. Notre approche est
-                  la simplification de l’ensemble des démarches en immigration
-                  et en citoyenneté en utilisant des outils technologie 4.0.
-                  Nous sommes connus également pour notre confidentialité des
-                  dossiers de nos clients, une accessibilité à vos conseillés
-                  durant toute la procédure de votre dossier. Nos conseillés
-                  prennent à cœur les dossiers de nos clients.
-                </p>
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="home.gallery.eyebrow">
+              MADIC EN ACTION
+            </span>
+
+            <h2 data-i18n="home.gallery.title">
+              Découvrez notre engagement dans la communauté
+            </h2>
+
+            <p data-i18n="home.gallery.text">
+              Découvrez quelques activités sportives, culturelles et
+              communautaires auxquelles nous avons contribué.
+            </p>
+          </div>
+
+          <div class="madic-gallery-grid">
+            <div class="gallery-image gallery-image-large">
+              <img
+                src="img/Journee_culturelle.png"
+                alt="Activité culturelle MADIC"
+              />
+            </div>
+
+            <div class="gallery-image">
+              <img src="img/Tournoi_soccer.jpg" alt="Tournoi de soccer" />
+            </div>
+
+            <div class="gallery-image">
+              <img src="img/Tournoi_PingPong.png" alt="Tournoi de ping-pong" />
+            </div>
+
+            <div class="gallery-image">
+              <img src="img/Tournoi_BabyFoot.jpg" alt="Tournoi de baby-foot" />
+            </div>
+          </div>
+
+          <div class="gallery-action">
+            <a
+              href="propos.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="home.gallery.button"
+            >
+              <i class="fa-solid fa-images"></i>
+              Découvrir nos activités
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 3 : VOTRE DÉMARCHE -->
+      <!-- ===================================================== -->
+      <section class="madic-process">
+        <div class="container">
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="home.process.eyebrow">
+              VOTRE DÉMARCHE
+            </span>
+
+            <h2 data-i18n="home.process.title">Comment ça fonctionne ?</h2>
+
+            <p data-i18n="home.process.subtitle">
+              Une démarche simple en quatre étapes pour avancer dans votre
+              projet d’immigration.
+            </p>
+          </div>
+
+          <div class="madic-process-grid">
+            <div class="madic-process-item">
+              <div class="madic-process-icon dark">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+
+              <span class="process-step" data-i18n="home.process.step1.label">
+                ÉTAPE 1
+              </span>
+
+              <h3 data-i18n="home.process.step1.title">
+                Réservez une consultation
+              </h3>
+
+              <p data-i18n="home.process.step1.text">
+                Choisissez votre type de consultation, la date et l’heure qui
+                vous conviennent.
+              </p>
+            </div>
+
+            <div class="madic-process-item">
+              <div class="madic-process-icon red">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+
+              <span class="process-step" data-i18n="home.process.step2.label">
+                ÉTAPE 2
+              </span>
+
+              <h3 data-i18n="home.process.step2.title">
+                Discutez avec nous de votre situation
+              </h3>
+
+              <p data-i18n="home.process.step2.text">
+                Présentez votre parcours, vos préoccupations et vos objectifs.
+              </p>
+            </div>
+
+            <div class="madic-process-item">
+              <div class="madic-process-icon dark">
+                <i class="fa-solid fa-lightbulb"></i>
+              </div>
+
+              <span class="process-step" data-i18n="home.process.step3.label">
+                ÉTAPE 3
+              </span>
+
+              <h3 data-i18n="home.process.step3.title">
+                Obtenez une stratégie adaptée
+              </h3>
+
+              <p data-i18n="home.process.step3.text">
+                Nous analysons les options disponibles et vous expliquons les
+                prochaines étapes.
+              </p>
+            </div>
+
+            <div class="madic-process-item">
+              <div class="madic-process-icon red">
+                <i class="fa-solid fa-plane-departure"></i>
+              </div>
+
+              <span class="process-step" data-i18n="home.process.step4.label">
+                ÉTAPE 4
+              </span>
+
+              <h3 data-i18n="home.process.step4.title">
+                Avancez dans votre projet
+              </h3>
+
+              <p data-i18n="home.process.step4.text">
+                Lorsque vous décidez de poursuivre, nous vous accompagnons dans
+                les différentes étapes de votre dossier.
+              </p>
+            </div>
+          </div>
+
+          <div class="process-action">
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="home.process.button"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+              Réserver une consultation
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 4 : SERVICES -->
+      <!-- ===================================================== -->
+      <section class="madic-services">
+        <div class="container">
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="home.services.eyebrow">
+              NOS SERVICES
+            </span>
+
+            <h2 data-i18n="home.services.title">
+              Des solutions adaptées à votre projet d’immigration
+            </h2>
+
+            <p data-i18n="home.services.subtitle">
+              Découvrez nos principaux domaines d’intervention en immigration
+              canadienne.
+            </p>
+          </div>
+
+          <div class="madic-services-grid">
+            <a href="servicesDetailsEco.html" class="madic-service-item">
+              <div class="madic-service-icon red">
+                <i class="fa-solid fa-briefcase"></i>
+              </div>
+
+              <h3 data-i18n="home.services.economic">Immigration économique</h3>
+
+              <p data-i18n="home.services.economicText">
+                Travailleurs qualifiés, programmes fédéraux et provinciaux et
+                autres possibilités d’immigration économique.
+              </p>
+
+              <span class="service-link">
+                <span data-i18n="home.services.learnMore">
+                  En savoir plus
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <a href="servicesDetailsPar.html" class="madic-service-item">
+              <div class="madic-service-icon dark">
+                <i class="fa-solid fa-people-roof"></i>
+              </div>
+
+              <h3 data-i18n="home.services.sponsorship">Parrainage familial</h3>
+
+              <p data-i18n="home.services.sponsorshipText">
+                Accompagnement dans les démarches visant à réunir les familles
+                au Canada.
+              </p>
+
+              <span class="service-link">
+                <span data-i18n="home.services.learnMore">
+                  En savoir plus
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <a href="servicesDetailsRT.html" class="madic-service-item">
+              <div class="madic-service-icon red">
+                <i class="fa-solid fa-plane-arrival"></i>
+              </div>
+
+              <h3 data-i18n="home.services.temporary">Résidence temporaire</h3>
+
+              <p data-i18n="home.services.temporaryText">
+                Visiteur, étudiant, travailleur temporaire et autres statuts de
+                résidence temporaire.
+              </p>
+
+              <span class="service-link">
+                <span data-i18n="home.services.learnMore">
+                  En savoir plus
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <a href="services.html" class="madic-service-item">
+              <div class="madic-service-icon dark">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+
+              <h3 data-i18n="home.services.study">Études au Canada</h3>
+
+              <p data-i18n="home.services.studyText">
+                Accompagnement dans les démarches liées aux permis d’études et
+                au parcours des étudiants internationaux.
+              </p>
+
+              <span class="service-link">
+                <span data-i18n="home.services.learnMore">
+                  En savoir plus
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <a href="services.html" class="madic-service-item">
+              <div class="madic-service-icon red">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+
+              <h3 data-i18n="home.services.humanitarian">Humanitaire</h3>
+
+              <p data-i18n="home.services.humanitarianText">
+                Analyse et accompagnement pour les dossiers comportant des
+                considérations d’ordre humanitaire.
+              </p>
+
+              <span class="service-link">
+                <span data-i18n="home.services.learnMore">
+                  En savoir plus
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <a href="services.html" class="madic-service-item">
+              <div class="madic-service-icon dark">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+
+              <h3 data-i18n="home.services.refugee">
+                Réfugié et demande d’asile
+              </h3>
+
+              <p data-i18n="home.services.refugeeText">
+                Accompagnement dans les démarches de protection et les
+                procédures applicables aux demandes d’asile.
+              </p>
+
+              <span class="service-link">
+                <span data-i18n="home.services.learnMore">
+                  En savoir plus
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+          </div>
+
+          <div class="services-action">
+            <a
+              href="services.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="home.services.all"
+            >
+              Voir tous nos services
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 5 : POURQUOI MADIC -->
+      <!-- ===================================================== -->
+      <section class="why-madic">
+        <div class="container">
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="home.why.eyebrow">
+              NOTRE ENGAGEMENT
+            </span>
+
+            <h2 data-i18n="home.why.title">
+              Pourquoi choisir MAD Immigration Canadienne ?
+            </h2>
+
+            <p data-i18n="home.why.subtitle">
+              Une approche professionnelle, personnalisée et centrée sur vos
+              besoins.
+            </p>
+          </div>
+
+          <div class="why-grid">
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+
+              <h3 data-i18n="home.why.personalized.title">
+                Approche personnalisée
+              </h3>
+
+              <p data-i18n="home.why.personalized.text">
+                Chaque situation est examinée individuellement selon votre
+                profil, vos objectifs et vos besoins.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+
+              <h3 data-i18n="home.why.professional.title">
+                Rigueur professionnelle
+              </h3>
+
+              <p data-i18n="home.why.professional.text">
+                Nous accordons une grande importance à l’analyse, à la
+                préparation et à la qualité du travail effectué sur chaque
+                dossier.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-lock"></i>
+              </div>
+
+              <h3 data-i18n="home.why.confidentiality.title">
+                Confidentialité
+              </h3>
+
+              <p data-i18n="home.why.confidentiality.text">
+                Vos renseignements et documents sont traités avec discrétion et
+                professionnalisme.
+              </p>
+            </div>
+
+            <div class="why-card">
+              <div class="why-icon">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+
+              <h3 data-i18n="home.why.communication.title">
+                Communication et suivi
+              </h3>
+
+              <p data-i18n="home.why.communication.text">
+                Nous privilégions une communication claire et un suivi tout au
+                long de votre démarche.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 6 : À PROPOS DE MADIC -->
+      <!-- ===================================================== -->
+      <section class="madic-about-home">
+        <div class="container madic-about-grid">
+          <div class="madic-about-image">
+            <img
+              src="img/Img_Moussa.jpg"
+              alt="Moussa Abdi Diraneh - MAD Immigration Canadienne"
+            />
+
+            <div class="founder-badge">
+              <i class="fa-solid fa-user-tie"></i>
+
+              <div>
+                <strong>Moussa Abdi Diraneh</strong>
+
+                <span data-i18n="home.about.role"> Fondateur de MADIC </span>
               </div>
             </div>
-            <div class="deuxcolvideotext__item__video">
-              <video class="positionVideo" controls playsinline>
-                <source src="video/3145082083.mp4" type="video/mp4" />
-                Votre navigateur ne prend pas en charge la lecture vidéo.
-              </video>
+          </div>
+
+          <div class="madic-about-content">
+            <div class="section-title section-title-left">
+              <span class="section-eyebrow" data-i18n="home.about.eyebrow">
+                À PROPOS DE MADIC
+              </span>
+
+              <h2 data-i18n="home.about.title">
+                Une expertise au service de votre projet
+              </h2>
+
+              <p data-i18n="home.about.subtitle">
+                Découvrez notre approche, notre mission et notre engagement
+                envers nos clients.
+              </p>
             </div>
+
+            <p data-i18n="home.about.text1">
+              MAD Immigration Canadienne accompagne ses clients dans différents
+              projets d’immigration et de citoyenneté canadiennes.
+            </p>
+
+            <p data-i18n="home.about.text2">
+              Notre mission est de rendre les démarches plus compréhensibles,
+              structurées et accessibles tout en offrant un suivi personnalisé.
+            </p>
+
+            <ul class="founder-features">
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span data-i18n="home.about.feature1">
+                  Analyse personnalisée
+                </span>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span data-i18n="home.about.feature2">
+                  Accompagnement structuré
+                </span>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span data-i18n="home.about.feature3">
+                  Communication claire
+                </span>
+              </li>
+
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <span data-i18n="home.about.feature4">
+                  Confidentialité des dossiers
+                </span>
+              </li>
+            </ul>
+
+            <a
+              href="propos.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="home.about.button"
+            >
+              Découvrir notre histoire
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 7 : VIDEO -->
+      <!-- ===================================================== -->
+      <section class="home-video-section">
+        <div class="container">
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="home.video.eyebrow">
+              DÉCOUVREZ-NOUS
+            </span>
+
+            <h2 data-i18n="home.video.title">
+              MAD Immigration Canadienne en quelques images
+            </h2>
+
+            <p data-i18n="home.video.subtitle">
+              Découvrez notre approche et notre engagement dans l’accompagnement
+              de nos clients.
+            </p>
+          </div>
+
+          <div class="home-video-wrapper">
+            <video class="positionVideo" controls playsinline>
+              <source src="video/3145082083.mp4" type="video/mp4" />
+
+              Votre navigateur ne prend pas en charge la lecture vidéo.
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 8 : CTA FINAL -->
+      <!-- ===================================================== -->
+      <section class="madic-final-cta">
+        <div class="madic-final-overlay"></div>
+
+        <div class="container madic-final-content">
+          <div class="section-title section-title-light">
+            <span class="section-eyebrow" data-i18n="home.cta.eyebrow">
+              PASSEZ À L’ACTION
+            </span>
+
+            <h2 data-i18n="home.cta.title">
+              Entamez la première étape vers votre projet au Canada
+            </h2>
+
+            <p data-i18n="home.cta.text">
+              Réservez une consultation ou commencez par une évaluation
+              préliminaire de votre situation.
+            </p>
+          </div>
+
+          <div class="madic-hero-buttons">
+            <a
+              href="formulaire.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="home.cta.evaluation"
+            >
+              <i class="fa-solid fa-file-circle-check"></i>
+              Faire mon évaluation
+            </a>
+
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-light"
+              data-i18n="home.cta.appointment"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+              Prendre rendez-vous
+            </a>
           </div>
         </div>
       </section>

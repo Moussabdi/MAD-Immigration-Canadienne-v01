@@ -1554,3 +1554,385 @@ if (consultationForm) {
     }
   });
 }
+
+/* =========================================================
+   RENDEZ-VOUS MADIC
+   7 JOURS / 7 - 08:00 À 23:00
+   RÉSERVATION MAXIMUM 14 JOURS
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dateInput = document.getElementById("consultation_date");
+  const timeSlotsContainer = document.getElementById("booking-time-slots");
+  const consultationForm = document.getElementById("consultation-form");
+
+  if (!dateInput || !timeSlotsContainer || !consultationForm) {
+    return;
+  }
+
+  /* =======================================================
+     DATE MINIMUM / MAXIMUM
+     ======================================================= */
+
+  const today = new Date();
+
+  const maxDate = new Date();
+  maxDate.setDate(maxDate.getDate() + 14);
+
+  function formatDateForInput(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return `${year}-${month}-${day}`;
+  }
+
+  dateInput.min = formatDateForInput(today);
+  dateInput.max = formatDateForInput(maxDate);
+
+  /* =======================================================
+     CRÉATION DES HEURES
+     ======================================================= */
+
+  function generateTimeSlots(bookedSlots = []) {
+    timeSlotsContainer.innerHTML = "";
+
+    for (let hour = 8; hour <= 23; hour++) {
+      const time = `${String(hour).padStart(2, "0")}:00`;
+
+      const label = document.createElement("label");
+      label.className = "time-slot";
+
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = "consultation_time";
+      input.value = time;
+
+      const span = document.createElement("span");
+      span.textContent = time;
+
+      if (bookedSlots.includes(time)) {
+        input.disabled = true;
+        label.classList.add("time-slot--unavailable");
+
+        span.textContent = `${time} — Indisponible`;
+      }
+
+      label.appendChild(input);
+      label.appendChild(span);
+
+      timeSlotsContainer.appendChild(label);
+    }
+  }
+
+  /* =======================================================
+     VÉRIFIER LES HEURES DÉJÀ RÉSERVÉES
+     ======================================================= */
+
+  async function loadAvailability(date) {
+    if (!date) {
+      generateTimeSlots();
+      return;
+    }
+
+    timeSlotsContainer.innerHTML =
+      '<p class="booking-loading">Chargement des disponibilités...</p>';
+
+    try {
+      const response = await fetch(
+        `/.netlify/functions/booking?date=${encodeURIComponent(date)}`,
+      );
+
+      if (!response.ok) {
+        throw new Error("Impossible de vérifier les disponibilités.");
+      }
+
+      const data = await response.json();
+
+      generateTimeSlots(data.booked || []);
+    } catch (error) {
+      console.error(error);
+
+      timeSlotsContainer.innerHTML =
+        '<p class="booking-error">Impossible de charger les disponibilités.</p>';
+    }
+  }
+
+  dateInput.addEventListener("change", function () {
+    loadAvailability(this.value);
+  });
+
+  /* =======================================================
+     SOUMISSION
+     ======================================================= */
+
+  consultationForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const selectedDate = dateInput.value;
+
+    const selectedTime = document.querySelector(
+      'input[name="consultation_time"]:checked',
+    );
+
+    if (!selectedDate) {
+      alert("Veuillez choisir une date.");
+      return;
+    }
+
+    if (!selectedTime) {
+      alert("Veuillez choisir une heure.");
+      return;
+    }
+
+    /* -------------------------------------------------------
+       VALIDATION DATE
+       ------------------------------------------------------- */
+
+    const chosenDate = new Date(`${selectedDate}T12:00:00`);
+
+    const minimum = new Date();
+    minimum.setHours(0, 0, 0, 0);
+
+    const maximum = new Date();
+    maximum.setHours(23, 59, 59, 999);
+    maximum.setDate(maximum.getDate() + 14);
+
+    if (chosenDate < minimum || chosenDate > maximum) {
+      alert("Vous pouvez réserver uniquement dans les 14 prochains jours.");
+      return;
+    }
+
+    /* -------------------------------------------------------
+       RÉSERVATION DU CRÉNEAU
+       ------------------------------------------------------- */
+
+    const reservationData = {
+      date: selectedDate,
+      time: selectedTime.value,
+      prenom: document.getElementById("booking_firstname")?.value || "",
+      nom: document.getElementById("booking_lastname")?.value || "",
+      courriel: document.getElementById("booking_email")?.value || "",
+    };
+
+    try {
+      const reservationResponse = await fetch("/.netlify/functions/booking", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reservationData),
+      });
+
+      if (reservationResponse.status === 409) {
+        alert(
+          "Désolé, cette heure vient d'être réservée par une autre personne. Veuillez choisir une autre heure.",
+        );
+
+        await loadAvailability(selectedDate);
+
+        return;
+      }
+
+      if (!reservationResponse.ok) {
+        throw new Error("Erreur lors de la réservation.");
+      }
+
+      /* -----------------------------------------------------
+         ENREGISTREMENT DANS NETLIFY FORMS
+         ----------------------------------------------------- */
+
+      const formData = new FormData(consultationForm);
+
+      const netlifyResponse = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (!netlifyResponse.ok) {
+        throw new Error("Erreur lors de l'enregistrement du formulaire.");
+      }
+
+      window.location.href = "/confirmation.html";
+    } catch (error) {
+      console.error(error);
+
+      alert("Une erreur est survenue. Veuillez réessayer.");
+    }
+  });
+
+  generateTimeSlots();
+});
+
+import { getStore } from "@netlify/blobs";
+
+const store = getStore({
+  name: "madic-booking-slots",
+  consistency: "strong",
+});
+
+function validDate(dateString) {
+  const selected = new Date(`${dateString}T12:00:00`);
+
+  if (Number.isNaN(selected.getTime())) {
+    return false;
+  }
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const maximum = new Date();
+  maximum.setHours(23, 59, 59, 999);
+  maximum.setDate(maximum.getDate() + 14);
+
+  return selected >= today && selected <= maximum;
+}
+
+function validTime(time) {
+  const allowedTimes = [];
+
+  for (let hour = 8; hour <= 23; hour++) {
+    allowedTimes.push(`${String(hour).padStart(2, "0")}:00`);
+  }
+
+  return allowedTimes.includes(time);
+}
+
+export default async function handler(request) {
+  /* =======================================================
+     GET
+     Retourner les heures déjà réservées
+     ======================================================= */
+
+  if (request.method === "GET") {
+    const url = new URL(request.url);
+
+    const date = url.searchParams.get("date");
+
+    if (!date || !validDate(date)) {
+      return Response.json(
+        {
+          error: "Date invalide.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    const booked = [];
+
+    for (let hour = 8; hour <= 23; hour++) {
+      const time = `${String(hour).padStart(2, "0")}:00`;
+
+      const key = `${date}_${time.replace(":", "-")}`;
+
+      const reservation = await store.get(key);
+
+      if (reservation !== null) {
+        booked.push(time);
+      }
+    }
+
+    return Response.json({
+      date,
+      booked,
+    });
+  }
+
+  /* =======================================================
+     POST
+     Réserver un créneau
+     ======================================================= */
+
+  if (request.method === "POST") {
+    let body;
+
+    try {
+      body = await request.json();
+    } catch {
+      return Response.json(
+        {
+          error: "Données invalides.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    const { date, time, prenom, nom, courriel } = body;
+
+    if (!validDate(date)) {
+      return Response.json(
+        {
+          error: "La date doit être comprise dans les 14 prochains jours.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    if (!validTime(time)) {
+      return Response.json(
+        {
+          error: "Les rendez-vous sont disponibles entre 08:00 et 23:00.",
+        },
+        {
+          status: 400,
+        },
+      );
+    }
+
+    const key = `${date}_${time.replace(":", "-")}`;
+
+    const reservation = {
+      date,
+      time,
+      prenom,
+      nom,
+      courriel,
+      createdAt: new Date().toISOString(),
+    };
+
+    /*
+      IMPORTANT :
+      onlyIfNew empêche qu'une deuxième réservation
+      écrase le même créneau.
+    */
+
+    const { modified } = await store.setJSON(key, reservation, {
+      onlyIfNew: true,
+    });
+
+    if (!modified) {
+      return Response.json(
+        {
+          error: "Ce créneau est déjà réservé.",
+        },
+        {
+          status: 409,
+        },
+      );
+    }
+
+    return Response.json(
+      {
+        success: true,
+        date,
+        time,
+      },
+      {
+        status: 201,
+      },
+    );
+  }
+
+  return new Response("Method Not Allowed", {
+    status: 405,
+  });
+}

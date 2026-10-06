@@ -152,193 +152,596 @@
       </nav>
     </header>
 
-    <main>
-      <section class="services_section1">
-        <div class="container">
-          <h1 data-i18n="services.title">Nos services</h1>
+    <main id="page-services" class="services-page-new">
+      <!-- ===================================================== -->
+      <!-- SECTION 1 : HERO -->
+      <!-- ===================================================== -->
+      <section class="services-hero">
+        <div class="services-hero-overlay"></div>
 
-          <div class="grid__3__cols">
-            <div class="troiscolimgtext__item__contenu">
-              <a href="servicesDetailsEco.html">
+        <div class="container services-hero-content">
+          <span class="section-eyebrow" data-i18n="services.hero.eyebrow">
+            NOS SERVICES
+          </span>
+
+          <h1 data-i18n="services.hero.title">
+            Des solutions adaptées à votre projet d’immigration au Canada
+          </h1>
+
+          <p class="services-hero-subtitle" data-i18n="services.hero.subtitle">
+            MAD Immigration Canadienne vous accompagne dans différents domaines
+            de l’immigration canadienne avec une approche personnalisée,
+            structurée et professionnelle.
+          </p>
+
+          <div class="services-hero-buttons">
+            <a
+              href="formulaire.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="services.hero.evaluation"
+            >
+              <i class="fa-solid fa-file-circle-check"></i>
+              Évaluation préliminaire
+            </a>
+
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-light"
+              data-i18n="services.hero.appointment"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+              Prendre rendez-vous
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 2 : INTRODUCTION -->
+      <!-- ===================================================== -->
+      <section class="services-intro">
+        <div class="container">
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="services.intro.eyebrow">
+              NOTRE EXPERTISE
+            </span>
+
+            <h2 data-i18n="services.title">Nos services d’immigration</h2>
+
+            <p data-i18n="services.intro.text">
+              Chaque situation est différente. Notre rôle est de comprendre
+              votre profil, vos objectifs et votre situation afin de vous
+              orienter vers les démarches qui pourraient correspondre à votre
+              projet.
+            </p>
+          </div>
+
+          <div class="services-intro-grid">
+            <div class="services-intro-item">
+              <div class="services-intro-icon red">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </div>
+
+              <h3 data-i18n="services.intro.analysis.title">Analyse</h3>
+
+              <p data-i18n="services.intro.analysis.text">
+                Analyse de votre situation et de vos objectifs.
+              </p>
+            </div>
+
+            <div class="services-intro-item">
+              <div class="services-intro-icon dark">
+                <i class="fa-solid fa-route"></i>
+              </div>
+
+              <h3 data-i18n="services.intro.strategy.title">Stratégie</h3>
+
+              <p data-i18n="services.intro.strategy.text">
+                Identification des options et des prochaines étapes possibles.
+              </p>
+            </div>
+
+            <div class="services-intro-item">
+              <div class="services-intro-icon red">
+                <i class="fa-solid fa-file-circle-check"></i>
+              </div>
+
+              <h3 data-i18n="services.intro.preparation.title">Préparation</h3>
+
+              <p data-i18n="services.intro.preparation.text">
+                Accompagnement dans la préparation et l’organisation du dossier.
+              </p>
+            </div>
+
+            <div class="services-intro-item">
+              <div class="services-intro-icon dark">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+
+              <h3 data-i18n="services.intro.followup.title">Suivi</h3>
+
+              <p data-i18n="services.intro.followup.text">
+                Communication et suivi tout au long de votre démarche.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 3 : SERVICES PRINCIPAUX -->
+      <!-- ===================================================== -->
+      <section class="services-main-list">
+        <div class="container">
+          <div class="section-title">
+            <span
+              class="section-eyebrow"
+              data-i18n="services.categories.eyebrow"
+            >
+              NOS DOMAINES D’INTERVENTION
+            </span>
+
+            <h2 data-i18n="services.categories.title">
+              Trouvez le service correspondant à votre projet
+            </h2>
+
+            <p data-i18n="services.categories.subtitle">
+              Découvrez nos principales catégories de services en immigration
+              canadienne.
+            </p>
+          </div>
+
+          <div class="services-modern-grid">
+            <!-- IMMIGRATION ÉCONOMIQUE -->
+            <article class="services-modern-card">
+              <a href="servicesDetailsEco.html" class="services-card-image">
                 <img
                   src="img/immigrationEconomique_2.png"
-                  alt="photo immigration économique"
+                  alt="Immigration économique"
                 />
+
+                <div class="services-card-overlay"></div>
+
+                <div class="services-card-icon red">
+                  <i class="fa-solid fa-briefcase"></i>
+                </div>
               </a>
 
-              <h2 data-i18n="services.economic.title">
-                Immigration économique
-              </h2>
+              <div class="services-card-content">
+                <span
+                  class="services-card-category"
+                  data-i18n="services.category.permanent"
+                >
+                  RÉSIDENCE PERMANENTE
+                </span>
 
-              <div class="troiscolimgtext__item__text">
+                <h3 data-i18n="services.economic.title">
+                  Immigration économique
+                </h3>
+
                 <p data-i18n="services.economic.text">
                   Les Programmes d’immigration économique sont environ une
                   centaine répartit au niveau fédéral et provinciale. Être en
                   mesure de devenir un résident permanent,être travailleur
                   qualifié.
                 </p>
+
+                <a
+                  href="servicesDetailsEco.html"
+                  class="services-card-link"
+                  data-i18n="services.learnMore"
+                >
+                  En savoir plus
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
+            </article>
 
-              <a
-                class="troiscolimgtext__item__lien"
-                href="servicesDetailsEco.html"
-                data-i18n="services.learnMore"
-              >
-                En savoir plus
-              </a>
-            </div>
+            <!-- PARRAINAGE -->
+            <article class="services-modern-card">
+              <a href="servicesDetailsPar.html" class="services-card-image">
+                <img src="img/parrainage.png" alt="Parrainage familial" />
 
-            <div class="troiscolimgtext__item__contenu">
-              <a href="servicesDetailsPar.html">
-                <img
-                  src="img/parrainage.png"
-                  alt="photo regroupement familiale"
-                />
+                <div class="services-card-overlay"></div>
+
+                <div class="services-card-icon dark">
+                  <i class="fa-solid fa-people-roof"></i>
+                </div>
               </a>
 
-              <h2 data-i18n="services.sponsorship.title">Parrainage</h2>
+              <div class="services-card-content">
+                <span
+                  class="services-card-category"
+                  data-i18n="services.category.family"
+                >
+                  FAMILLE
+                </span>
 
-              <div class="troiscolimgtext__item__text">
+                <h3 data-i18n="services.sponsorship.title">Parrainage</h3>
+
                 <p data-i18n="services.sponsorship.text">
                   Le programme d’immigration au titre de la catégorie du
                   regroupement familial vise à réunir des citoyens et des
                   résidents permanents du Canada et les membres de leur famille
                   proche.
                 </p>
+
+                <a
+                  href="servicesDetailsPar.html"
+                  class="services-card-link"
+                  data-i18n="services.learnMore"
+                >
+                  En savoir plus
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
+            </article>
 
-              <a
-                class="troiscolimgtext__item__lien"
-                href="servicesDetailsPar.html"
-                data-i18n="services.learnMore"
-              >
-                En savoir plus
-              </a>
-            </div>
-
-            <div class="troiscolimgtext__item__contenu">
-              <a href="servicesDetailsRT.html">
+            <!-- RÉSIDENCE TEMPORAIRE -->
+            <article class="services-modern-card">
+              <a href="servicesDetailsRT.html" class="services-card-image">
                 <img
                   src="img/ImmigrationTemporaire_3.png"
-                  alt="photo immigration temporaire"
+                  alt="Résidence temporaire"
                 />
+
+                <div class="services-card-overlay"></div>
+
+                <div class="services-card-icon red">
+                  <i class="fa-solid fa-plane-arrival"></i>
+                </div>
               </a>
 
-              <h2 data-i18n="services.temporary.title">Résidence temporaire</h2>
+              <div class="services-card-content">
+                <span
+                  class="services-card-category"
+                  data-i18n="services.category.temporary"
+                >
+                  SÉJOUR TEMPORAIRE
+                </span>
 
-              <div class="troiscolimgtext__item__text">
+                <h3 data-i18n="services.temporary.title">
+                  Résidence temporaire
+                </h3>
+
                 <p data-i18n="services.temporary.text">
                   Chaque année, plus de 35 millions de personnes visitent le
                   Canada en vue de profiter de ses nombreuses possibilités,
                   notamment pour rendre visite à leur famille ou à des amis.
                 </p>
+
+                <a
+                  href="servicesDetailsRT.html"
+                  class="services-card-link"
+                  data-i18n="services.learnMore"
+                >
+                  En savoir plus
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- HUMANITAIRE -->
+            <article class="services-modern-card services-icon-card">
+              <div class="services-icon-header">
+                <div class="services-large-icon dark">
+                  <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
               </div>
 
-              <a
-                class="troiscolimgtext__item__lien"
-                href="servicesDetailsRT.html"
-                data-i18n="services.learnMore"
-              >
-                En savoir plus
-              </a>
-            </div>
+              <div class="services-card-content">
+                <span
+                  class="services-card-category"
+                  data-i18n="services.category.protection"
+                >
+                  PROTECTION ET HUMANITAIRE
+                </span>
 
-            <div class="troiscolimgtext__item__contenu">
-              <a href="servicesDetailsEco.html">
-                <img
-                  src="img/immigrationEconomique_2.png"
-                  alt="photo immigration économique"
-                />
-              </a>
+                <h3 data-i18n="services.humanitarian.title">Humanitaire</h3>
 
-              <h2 data-i18n="services.humanitarian.title">Humanitaire</h2>
-
-              <div class="troiscolimgtext__item__text">
                 <p data-i18n="services.humanitarian.text">
                   Une demande de résidence permanente depuis le Canada pour
-                  considérations d’ordre humanitaires (CH) :
+                  considérations d’ordre humanitaires (CH).
                 </p>
 
-                <ul>
+                <ul class="services-feature-list">
                   <li data-i18n="services.humanitarian.item1">
-                    vous êtes au Canada;
+                    <i class="fa-solid fa-circle-check"></i>
+                    Vous êtes au Canada
                   </li>
                 </ul>
+
+                <a
+                  href="services.html"
+                  class="services-card-link"
+                  data-i18n="services.learnMore"
+                >
+                  En savoir plus
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- RÉFUGIÉ -->
+            <article class="services-modern-card services-icon-card">
+              <div class="services-icon-header">
+                <div class="services-large-icon red">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
               </div>
 
-              <a
-                class="troiscolimgtext__item__lien"
-                href="servicesDetailsEco.html"
-                data-i18n="services.learnMore"
-              >
-                En savoir plus
-              </a>
-            </div>
+              <div class="services-card-content">
+                <span
+                  class="services-card-category"
+                  data-i18n="services.category.protection"
+                >
+                  PROTECTION ET HUMANITAIRE
+                </span>
 
-            <div class="troiscolimgtext__item__contenu">
-              <a href="servicesDetailsPar.html">
-                <img
-                  src="img/parrainage.png"
-                  alt="photo regroupement familiale"
-                />
-              </a>
+                <h3 data-i18n="services.refugee.title">
+                  Réfugié et demande d’asile
+                </h3>
 
-              <h2 data-i18n="services.refugee.title">Réfugié</h2>
-
-              <div class="troiscolimgtext__item__text">
                 <p data-i18n="services.refugee.text">
                   Le Canada offre l’asile à certaines personnes se trouvant sur
                   son territoire qui craignent la persécution ou qui seraient en
-                  danger si elles devaient partir
+                  danger si elles devaient partir.
                 </p>
 
-                <li data-i18n="services.refugee.item1">la torture;</li>
+                <ul class="services-feature-list">
+                  <li data-i18n="services.refugee.item1">
+                    <i class="fa-solid fa-circle-check"></i>
+                    La torture
+                  </li>
 
-                <li data-i18n="services.refugee.item2">
-                  une menace à leur vie;
-                </li>
+                  <li data-i18n="services.refugee.item2">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Une menace à leur vie
+                  </li>
 
-                <li data-i18n="services.refugee.item3">
-                  le risque de traitements ou de peines cruels et inusités.
-                </li>
+                  <li data-i18n="services.refugee.item3">
+                    <i class="fa-solid fa-circle-check"></i>
+                    Le risque de traitements ou de peines cruels et inusités
+                  </li>
+                </ul>
+
+                <a
+                  href="services.html"
+                  class="services-card-link"
+                  data-i18n="services.learnMore"
+                >
+                  En savoir plus
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- GENS D'AFFAIRES -->
+            <article class="services-modern-card services-icon-card">
+              <div class="services-icon-header">
+                <div class="services-large-icon dark">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
               </div>
 
-              <a
-                class="troiscolimgtext__item__lien"
-                href="servicesDetailsPar.html"
-                data-i18n="services.learnMore"
-              >
-                En savoir plus
-              </a>
-            </div>
+              <div class="services-card-content">
+                <span
+                  class="services-card-category"
+                  data-i18n="services.category.business"
+                >
+                  ENTREPRENEURIAT
+                </span>
 
-            <div class="troiscolimgtext__item__contenu">
-              <a href="servicesDetailsRT.html">
-                <img
-                  src="img/ImmigrationTemporaire_3.png"
-                  alt="photo immigration temporaire"
-                />
-              </a>
+                <h3 data-i18n="services.business.title">Gens d'affaires</h3>
 
-              <h2 data-i18n="services.business.title">Gens d'affaires</h2>
-
-              <div class="troiscolimgtext__item__text">
                 <p data-i18n="services.business.text">
                   Le Canada accueille les gens d’affaires qui réussissent et
                   cherchent des débouchés et des défis nouveaux. Le programme
                   d’immigration des gens d’affaires est conçu pour favoriser
                   l’admission de ces personnes.
                 </p>
+
+                <a
+                  href="services.html"
+                  class="services-card-link"
+                  data-i18n="services.learnMore"
+                >
+                  En savoir plus
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 4 : ACCOMPAGNEMENT -->
+      <!-- ===================================================== -->
+      <section class="services-support">
+        <div class="container">
+          <div class="section-title section-title-light">
+            <span class="section-eyebrow" data-i18n="services.support.eyebrow">
+              NOTRE APPROCHE
+            </span>
+
+            <h2 data-i18n="services.support.title">
+              Un accompagnement structuré à chaque étape
+            </h2>
+
+            <p data-i18n="services.support.subtitle">
+              Nous vous accompagnons de l’analyse initiale jusqu’au suivi de
+              votre dossier selon la nature du mandat retenu.
+            </p>
+          </div>
+
+          <div class="services-support-grid">
+            <div class="services-support-item">
+              <span class="services-support-number">01</span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-user-check"></i>
               </div>
 
+              <h3 data-i18n="services.support.step1.title">
+                Comprendre votre situation
+              </h3>
+
+              <p data-i18n="services.support.step1.text">
+                Nous prenons connaissance de votre profil, de votre parcours et
+                de vos objectifs.
+              </p>
+            </div>
+
+            <div class="services-support-item">
+              <span class="services-support-number">02</span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+
+              <h3 data-i18n="services.support.step2.title">
+                Analyser les options
+              </h3>
+
+              <p data-i18n="services.support.step2.text">
+                Nous analysons les démarches qui pourraient correspondre à votre
+                situation.
+              </p>
+            </div>
+
+            <div class="services-support-item">
+              <span class="services-support-number">03</span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-folder-open"></i>
+              </div>
+
+              <h3 data-i18n="services.support.step3.title">
+                Préparer votre dossier
+              </h3>
+
+              <p data-i18n="services.support.step3.text">
+                Nous vous accompagnons dans l’organisation et la préparation des
+                éléments nécessaires au dossier.
+              </p>
+            </div>
+
+            <div class="services-support-item">
+              <span class="services-support-number">04</span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+
+              <h3 data-i18n="services.support.step4.title">Assurer le suivi</h3>
+
+              <p data-i18n="services.support.step4.text">
+                Nous assurons le suivi applicable et vous informons des
+                prochaines étapes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 5 : BESOIN D'AIDE -->
+      <!-- ===================================================== -->
+      <section class="services-help">
+        <div class="container services-help-grid">
+          <div class="services-help-content">
+            <span class="section-eyebrow" data-i18n="services.help.eyebrow">
+              VOUS NE SAVEZ PAS PAR OÙ COMMENCER ?
+            </span>
+
+            <h2 data-i18n="services.help.title">
+              Commencez par nous présenter votre situation
+            </h2>
+
+            <p data-i18n="services.help.text">
+              Si vous ne savez pas quel programme ou quel service correspond à
+              votre situation, commencez par remplir notre évaluation
+              préliminaire ou réservez une consultation.
+            </p>
+
+            <div class="services-help-buttons">
               <a
-                class="troiscolimgtext__item__lien"
-                href="servicesDetailsRT.html"
-                data-i18n="services.learnMore"
+                href="formulaire.html"
+                class="madic-btn madic-btn-red"
+                data-i18n="services.help.evaluation"
               >
-                En savoir plus
+                <i class="fa-solid fa-file-circle-check"></i>
+                Évaluation préliminaire
+              </a>
+
+              <a
+                href="rendezvous.html"
+                class="madic-btn madic-btn-dark"
+                data-i18n="services.help.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
+                Prendre rendez-vous
               </a>
             </div>
+          </div>
+
+          <div class="services-help-visual">
+            <div class="services-help-icon-main">
+              <i class="fa-solid fa-passport"></i>
+            </div>
+
+            <div class="services-help-badge services-help-badge-one">
+              <i class="fa-solid fa-maple-leaf"></i>
+              <span data-i18n="services.help.canada"> Projet Canada </span>
+            </div>
+
+            <div class="services-help-badge services-help-badge-two">
+              <i class="fa-solid fa-comments"></i>
+              <span data-i18n="services.help.consultation"> Consultation </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 6 : CTA FINAL -->
+      <!-- ===================================================== -->
+      <section class="services-final-cta">
+        <div class="services-final-overlay"></div>
+
+        <div class="container services-final-content">
+          <span class="section-eyebrow" data-i18n="services.cta.eyebrow">
+            VOTRE PROJET COMMENCE ICI
+          </span>
+
+          <h2 data-i18n="services.cta.title">
+            Parlons de votre projet d’immigration au Canada
+          </h2>
+
+          <p data-i18n="services.cta.text">
+            Réservez une consultation afin de discuter de votre situation et de
+            vos prochaines étapes avec MAD Immigration Canadienne.
+          </p>
+
+          <div class="services-final-buttons">
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="services.cta.appointment"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+              Prendre rendez-vous
+            </a>
+
+            <a
+              href="formulaire.html"
+              class="madic-btn madic-btn-light"
+              data-i18n="services.cta.evaluation"
+            >
+              <i class="fa-solid fa-file-circle-check"></i>
+              Faire mon évaluation
+            </a>
           </div>
         </div>
       </section>

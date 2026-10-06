@@ -152,65 +152,309 @@
       </nav>
     </header>
 
-    <main>
-      <section>
-        <div class="container marginh1">
+    <main id="page-contact" class="contact-page-new">
+      <!-- ===================================================== -->
+      <!-- SECTION 1 : HERO -->
+      <!-- ===================================================== -->
+      <section class="contact-hero">
+        <div class="contact-hero-overlay"></div>
+
+        <div class="container contact-hero-content">
+          <span class="section-eyebrow" data-i18n="contact.hero.eyebrow">
+            NOUS JOINDRE
+          </span>
+
           <h1 data-i18n="contact.title">Nous joindre</h1>
 
-          <address>
-            <div class="textnumero__item">
-              <div class="textnumero__item1">
-                <div class="textnumero__item1__text">
-                  <p data-i18n="contact.phone">Par téléphone :</p>
-                </div>
+          <p class="contact-hero-subtitle" data-i18n="contact.hero.subtitle">
+            Une question sur votre situation ou votre projet d’immigration ?
+            Communiquez avec MAD Immigration Canadienne ou planifiez directement
+            une consultation.
+          </p>
 
-                <div class="textnumero__item1__numero">
-                  <p>
-                    <a href="tel:514-442-3076">514-442-3076</a>
-                  </p>
-                </div>
-              </div>
+          <div class="contact-hero-buttons">
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="contact.hero.appointment"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+              Prendre rendez-vous
+            </a>
 
-              <div class="textnumero__item2">
-                <div class="textnumero__item2__text">
-                  <p data-i18n="contact.email">Par courriel :</p>
-                </div>
-
-                <div class="textnumero__item2__email">
-                  <p>
-                    <a href="mailto:madimmigrationcanadienne@gmail.com">
-                      madimmigrationcanadienne@gmail.com
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </address>
+            <a
+              href="formulaire.html"
+              class="madic-btn madic-btn-light"
+              data-i18n="contact.hero.evaluation"
+            >
+              <i class="fa-solid fa-file-circle-check"></i>
+              Évaluation préliminaire
+            </a>
+          </div>
         </div>
       </section>
 
-      <section>
+      <!-- ===================================================== -->
+      <!-- SECTION 2 : COORDONNÉES -->
+      <!-- ===================================================== -->
+      <section class="contact-info-section">
         <div class="container">
-          <div class="map">
-            <!-- <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2753.5090729172935!2d-72.57010568416104!3d46.35928697912159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc7c8c0519481ed%3A0x927eff5cdafb554!2sC%C3%A9gep%20de%20Trois-Rivi%C3%A8res!5e0!3m2!1sfr!2sca!4v1671919483953!5m2!1sfr!2sca"
-          width="1200"
-          height="700"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe> -->
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="contact.info.eyebrow">
+              RESTONS EN CONTACT
+            </span>
 
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.4766866878763!2d-73.70073528444064!3d45.52061217910156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc918769b1b576b%3A0xc1c8d3829d0db404!2s1940%20Rue%20Patricia%2C%20Saint-Laurent%2C%20QC%20H4L%202X7!5e0!3m2!1sen!2sca!4v1684541297697!5m2!1sen!2sca"
-              width="1200"
-              height="700"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
+            <h2 data-i18n="contact.info.title">Comment nous joindre</h2>
+
+            <p data-i18n="contact.info.subtitle">
+              Choisissez le moyen de communication qui vous convient le mieux.
+            </p>
+          </div>
+
+          <div class="contact-info-grid">
+            <!-- TÉLÉPHONE -->
+            <article class="contact-info-card">
+              <div class="contact-info-icon red">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+
+              <h3 data-i18n="contact.phone">Par téléphone</h3>
+
+              <p data-i18n="contact.phoneText">
+                Communiquez directement avec notre bureau.
+              </p>
+
+              <a href="tel:514-442-3076" class="contact-info-link">
+                514-442-3076
+              </a>
+            </article>
+
+            <!-- COURRIEL -->
+            <article class="contact-info-card">
+              <div class="contact-info-icon dark">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+
+              <h3 data-i18n="contact.email">Par courriel</h3>
+
+              <p data-i18n="contact.emailText">
+                Envoyez-nous votre demande par courriel.
+              </p>
+
+              <a
+                href="mailto:madimmigrationcanadienne@gmail.com"
+                class="contact-info-link contact-email-link"
+              >
+                madimmigrationcanadienne@gmail.com
+              </a>
+            </article>
+
+            <!-- RENDEZ-VOUS -->
+            <article class="contact-info-card">
+              <div class="contact-info-icon red">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+
+              <h3 data-i18n="contact.appointment.title">Consultation</h3>
+
+              <p data-i18n="contact.appointment.text">
+                Planifiez une consultation selon vos disponibilités.
+              </p>
+
+              <a
+                href="rendezvous.html"
+                class="contact-info-link"
+                data-i18n="contact.appointment.link"
+              >
+                Réserver maintenant
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 3 : BESOIN D'AIDE -->
+      <!-- ===================================================== -->
+      <section class="contact-choice-section">
+        <div class="container contact-choice-grid">
+          <!-- ÉVALUATION -->
+          <div class="contact-choice-card">
+            <div class="contact-choice-icon">
+              <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+
+            <span
+              class="section-eyebrow"
+              data-i18n="contact.choice.evaluation.eyebrow"
+            >
+              PREMIÈRE ÉTAPE
+            </span>
+
+            <h2 data-i18n="contact.choice.evaluation.title">
+              Vous souhaitez nous présenter votre situation ?
+            </h2>
+
+            <p data-i18n="contact.choice.evaluation.text">
+              Remplissez notre évaluation préliminaire afin de nous transmettre
+              les principales informations concernant votre profil et votre
+              projet.
+            </p>
+
+            <a
+              href="formulaire.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="contact.choice.evaluation.button"
+            >
+              Commencer mon évaluation
+            </a>
+          </div>
+
+          <!-- CONSULTATION -->
+          <div class="contact-choice-card contact-choice-card-dark">
+            <div class="contact-choice-icon">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <span
+              class="section-eyebrow"
+              data-i18n="contact.choice.consultation.eyebrow"
+            >
+              PARLONS DE VOTRE PROJET
+            </span>
+
+            <h2 data-i18n="contact.choice.consultation.title">
+              Vous préférez discuter directement avec nous ?
+            </h2>
+
+            <p data-i18n="contact.choice.consultation.text">
+              Réservez une consultation pour présenter votre situation, poser
+              vos questions et discuter des prochaines étapes.
+            </p>
+
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-light"
+              data-i18n="contact.choice.consultation.button"
+            >
+              Prendre rendez-vous
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 4 : ADRESSE ET CARTE -->
+      <!-- ===================================================== -->
+      <section class="contact-location">
+        <div class="container">
+          <div class="section-title">
+            <span class="section-eyebrow" data-i18n="contact.location.eyebrow">
+              NOTRE BUREAU
+            </span>
+
+            <h2 data-i18n="contact.location.title">
+              Localisez MAD Immigration Canadienne
+            </h2>
+
+            <p data-i18n="contact.location.subtitle">
+              Consultez notre emplacement et nos coordonnées.
+            </p>
+          </div>
+
+          <div class="contact-location-grid">
+            <!-- INFOS ADRESSE -->
+            <div class="contact-address-card">
+              <div class="contact-address-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <h3 data-i18n="contact.location.addressTitle">Adresse</h3>
+
+              <address>
+                <p>
+                  1622 Rue Barré, Bureau 202<br />
+                  Saint-Laurent, QC, Canada
+                </p>
+              </address>
+
+              <div class="contact-address-divider"></div>
+
+              <div class="contact-address-row">
+                <i class="fa-solid fa-phone"></i>
+
+                <div>
+                  <strong data-i18n="contact.phone"> Téléphone </strong>
+
+                  <a href="tel:514-442-3076"> 514-442-3076 </a>
+                </div>
+              </div>
+
+              <div class="contact-address-row">
+                <i class="fa-solid fa-envelope"></i>
+
+                <div>
+                  <strong data-i18n="contact.email"> Courriel </strong>
+
+                  <a href="mailto:madimmigrationcanadienne@gmail.com">
+                    madimmigrationcanadienne@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- GOOGLE MAP -->
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.4766866878763!2d-73.70073528444064!3d45.52061217910156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc918769b1b576b%3A0xc1c8d3829d0db404!2s1940%20Rue%20Patricia%2C%20Saint-Laurent%2C%20QC%20H4L%202X7!5e0!3m2!1sen!2sca!4v1684541297697!5m2!1sen!2sca"
+                loading="lazy"
+                allowfullscreen=""
+                referrerpolicy="no-referrer-when-downgrade"
+                title="MAD Immigration Canadienne - Localisation"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- SECTION 5 : CTA FINAL -->
+      <!-- ===================================================== -->
+      <section class="contact-final-cta">
+        <div class="contact-final-overlay"></div>
+
+        <div class="container contact-final-content">
+          <span class="section-eyebrow" data-i18n="contact.cta.eyebrow">
+            VOTRE PROJET COMMENCE ICI
+          </span>
+
+          <h2 data-i18n="contact.cta.title">
+            Prêt à discuter de votre projet d’immigration ?
+          </h2>
+
+          <p data-i18n="contact.cta.text">
+            Choisissez entre une évaluation préliminaire ou une consultation
+            avec MAD Immigration Canadienne.
+          </p>
+
+          <div class="contact-final-buttons">
+            <a
+              href="rendezvous.html"
+              class="madic-btn madic-btn-red"
+              data-i18n="contact.cta.appointment"
+            >
+              <i class="fa-solid fa-calendar-check"></i>
+              Prendre rendez-vous
+            </a>
+
+            <a
+              href="formulaire.html"
+              class="madic-btn madic-btn-light"
+              data-i18n="contact.cta.evaluation"
+            >
+              <i class="fa-solid fa-file-circle-check"></i>
+              Faire mon évaluation
+            </a>
           </div>
         </div>
       </section>

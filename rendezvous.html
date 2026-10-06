@@ -152,20 +152,81 @@
       </nav>
     </header>
 
-    <main id="page-rendezvous">
-      <section class="booking-section">
-        <div class="container marginh1">
-          <div class="booking-header">
-            <h1 data-i18n="booking.title">Prendre rendez-vous</h1>
+    <main id="page-rendezvous" class="booking-page">
+      <!-- ===================================================== -->
+      <!-- HERO -->
+      <!-- ===================================================== -->
+      <section class="booking-hero">
+        <div class="booking-hero__overlay"></div>
 
-            <p data-i18n="booking.subtitle">
-              Réservez une consultation avec MAD Immigration Canadienne afin
-              d'obtenir une analyse personnalisée de votre situation.
-            </p>
+        <div class="container booking-hero__content">
+          <span class="booking-eyebrow" data-i18n="booking.heroEyebrow">
+            CONSULTATION IMMIGRATION
+          </span>
+
+          <h1 data-i18n="booking.title">Prendre rendez-vous</h1>
+
+          <p data-i18n="booking.subtitle">
+            Réservez une consultation avec MAD Immigration Canadienne afin
+            d'obtenir une analyse personnalisée de votre situation.
+          </p>
+
+          <div class="booking-hero__features">
+            <div>
+              <i class="fa-solid fa-calendar-check"></i>
+              <span data-i18n="booking.heroFeature1">Réservation simple</span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-user-tie"></i>
+              <span data-i18n="booking.heroFeature2"
+                >Consultation personnalisée</span
+              >
+            </div>
+
+            <div>
+              <i class="fa-solid fa-shield-halved"></i>
+              <span data-i18n="booking.heroFeature3"
+                >Informations confidentielles</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- INTRO -->
+      <!-- ===================================================== -->
+      <section class="booking-intro">
+        <div class="container booking-intro__grid">
+          <div>
+            <span
+              class="booking-eyebrow booking-eyebrow--red"
+              data-i18n="booking.introEyebrow"
+            >
+              VOTRE CONSULTATION
+            </span>
+
+            <h2 data-i18n="booking.introTitle">
+              Choisissez le service qui correspond à votre besoin
+            </h2>
           </div>
 
+          <p data-i18n="booking.introText">
+            Sélectionnez votre type de consultation, une date et une heure, puis
+            transmettez vos coordonnées. Votre rendez-vous sera confirmé après
+            validation de la disponibilité.
+          </p>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- FORMULAIRE -->
+      <!-- ===================================================== -->
+      <section class="booking-section booking-section--modern">
+        <div class="container">
           <form
-            class="booking-form"
+            class="booking-form booking-form--modern"
             id="consultation-form"
             name="consultation"
             method="POST"
@@ -180,17 +241,34 @@
                 <input name="bot-field" />
               </label>
             </p>
+
             <!-- ÉTAPE 1 -->
-            <div class="booking-card">
+            <div class="booking-card booking-card--modern">
               <div class="booking-step">1</div>
 
               <div class="booking-content">
-                <h2 data-i18n="booking.serviceTitle">
-                  Choisissez votre consultation
-                </h2>
+                <div class="booking-section-title">
+                  <span
+                    class="booking-section-title__kicker"
+                    data-i18n="booking.step1"
+                  >
+                    ÉTAPE 1
+                  </span>
 
-                <div class="consultation-options">
-                  <label class="consultation-option">
+                  <h2 data-i18n="booking.serviceTitle">
+                    Choisissez votre consultation
+                  </h2>
+
+                  <p data-i18n="booking.serviceSubtitle">
+                    Sélectionnez le type de service qui correspond le mieux à
+                    votre situation.
+                  </p>
+                </div>
+
+                <div class="consultation-options consultation-options--modern">
+                  <label
+                    class="consultation-option consultation-option--modern"
+                  >
                     <input
                       type="radio"
                       name="type_consultation"
@@ -198,42 +276,70 @@
                       required
                     />
 
-                    <div>
-                      <h3 data-i18n="booking.consultation60">
-                        Consultation – 60 minutes
-                      </h3>
+                    <div class="consultation-option__icon">
+                      <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div class="consultation-option__content">
+                      <div class="consultation-option__top">
+                        <h3 data-i18n="booking.consultation60">
+                          Consultation – 60 minutes
+                        </h3>
+
+                        <strong data-i18n="booking.consultation60Price">
+                          225 $CAD ou 159 $US
+                        </strong>
+                      </div>
 
                       <p data-i18n="booking.consultation60Description">
                         Consultation personnalisée pour analyser votre situation
                         et répondre à vos questions en immigration canadienne.
                       </p>
 
-                      <strong data-i18n="booking.consultation60Price">
-                        225 $CAD ou 159$ us
-                      </strong>
+                      <span class="consultation-option__check">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span data-i18n="booking.selectThisOption"
+                          >Choisir cette option</span
+                        >
+                      </span>
                     </div>
                   </label>
 
-                  <label class="consultation-option">
+                  <label
+                    class="consultation-option consultation-option--modern"
+                  >
                     <input
                       type="radio"
                       name="type_consultation"
                       value="evaluation_preliminaire"
                     />
 
-                    <div>
-                      <h3 data-i18n="booking.preliminary">
-                        Évaluation préliminaire
-                      </h3>
+                    <div class="consultation-option__icon">
+                      <i class="fa-solid fa-file-circle-check"></i>
+                    </div>
+
+                    <div class="consultation-option__content">
+                      <div class="consultation-option__top">
+                        <h3 data-i18n="booking.preliminary">
+                          Évaluation préliminaire
+                        </h3>
+
+                        <strong data-i18n="booking.preliminaryPrice">
+                          749 $CAD ou 599 $US
+                        </strong>
+                      </div>
 
                       <p data-i18n="booking.preliminaryDescription">
                         Analyse plus approfondie de votre profil et de vos
                         possibilités d'immigration au Canada.
                       </p>
 
-                      <strong data-i18n="booking.preliminaryPrice">
-                        749 $CAD ou 599$ us
-                      </strong>
+                      <span class="consultation-option__check">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span data-i18n="booking.selectThisOption"
+                          >Choisir cette option</span
+                        >
+                      </span>
                     </div>
                   </label>
                 </div>
@@ -241,116 +347,220 @@
             </div>
 
             <!-- ÉTAPE 2 -->
-            <div class="booking-card">
+            <div class="booking-card booking-card--modern">
               <div class="booking-step">2</div>
 
               <div class="booking-content">
-                <h2 data-i18n="booking.dateTitle">Choisissez une date</h2>
+                <div class="booking-section-title">
+                  <span
+                    class="booking-section-title__kicker"
+                    data-i18n="booking.step2"
+                  >
+                    ÉTAPE 2
+                  </span>
 
-                <label for="consultation_date" data-i18n="booking.dateLabel">
-                  Date de la consultation
-                </label>
+                  <h2 data-i18n="booking.dateTitle">Choisissez une date</h2>
 
-                <input
-                  type="date"
-                  id="consultation_date"
-                  name="consultation_date"
-                  class="booking-input"
-                  required
-                />
+                  <p data-i18n="booking.dateSubtitle">
+                    Sélectionnez la date souhaitée pour votre consultation.
+                  </p>
+                </div>
+
+                <div class="booking-date-wrap">
+                  <label for="consultation_date" data-i18n="booking.dateLabel">
+                    Date de la consultation
+                  </label>
+
+                  <div class="booking-input-icon">
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    <input
+                      type="date"
+                      id="consultation_date"
+                      name="consultation_date"
+                      class="booking-input"
+                      required
+                    />
+                  </div>
+                </div>
               </div>
             </div>
 
             <!-- ÉTAPE 3 -->
-            <div class="booking-card">
+            <div class="booking-card booking-card--modern">
               <div class="booking-step">3</div>
 
               <div class="booking-content">
-                <h2 data-i18n="booking.timeTitle">Choisissez une heure</h2>
+                <div class="booking-section-title">
+                  <span
+                    class="booking-section-title__kicker"
+                    data-i18n="booking.step3"
+                  >
+                    ÉTAPE 3
+                  </span>
 
-                <div class="time-slots">
-                  <label class="time-slot">
-                    <input
+                  <h2 data-i18n="booking.timeTitle">Choisissez une heure</h2>
+
+                  <p data-i18n="booking.timeSubtitle">
+                    Choisissez l'heure qui vous convient parmi les plages
+                    disponibles.
+                  </p>
+                </div>
+
+                <div
+                  class="time-slots time-slots--modern"
+                  id="booking-time-slots"
+                >
+                  <label class="time-slot"
+                    ><input
                       type="radio"
                       name="consultation_time"
                       value="09:00"
                       required
-                    />
-                    <span>09:00</span>
-                  </label>
-
-                  <label class="time-slot">
-                    <input
+                    /><span>08:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="09:00"
+                      required
+                    /><span>09:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
                       type="radio"
                       name="consultation_time"
                       value="10:00"
-                    />
-                    <span>10:00</span>
-                  </label>
-
-                  <label class="time-slot">
-                    <input
+                    /><span>10:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
                       type="radio"
                       name="consultation_time"
                       value="11:00"
-                    />
-                    <span>11:00</span>
-                  </label>
-
-                  <label class="time-slot">
-                    <input
+                    /><span>11:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="11:00"
+                    /><span>12:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
                       type="radio"
                       name="consultation_time"
                       value="13:00"
-                    />
-                    <span>13:00</span>
-                  </label>
-
-                  <label class="time-slot">
-                    <input
+                    /><span>13:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
                       type="radio"
                       name="consultation_time"
                       value="14:00"
-                    />
-                    <span>14:00</span>
-                  </label>
-
-                  <label class="time-slot">
-                    <input
+                    /><span>14:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
                       type="radio"
                       name="consultation_time"
                       value="15:00"
-                    />
-                    <span>15:00</span>
-                  </label>
-
-                  <label class="time-slot">
-                    <input
+                    /><span>15:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
                       type="radio"
                       name="consultation_time"
                       value="16:00"
-                    />
-                    <span>16:00</span>
-                  </label>
+                    /><span>16:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    /><span>17:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    /><span>18:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    /><span>19:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    /><span>20:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    /><span>21:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    /><span>22:00</span></label
+                  >
+                  <label class="time-slot"
+                    ><input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    /><span>23:00</span></label
+                  >
                 </div>
 
                 <p class="timezone-info" data-i18n="booking.timezone">
+                  <i class="fa-solid fa-clock"></i>
                   Les heures sont affichées selon l'heure de Montréal, Québec.
                 </p>
               </div>
             </div>
 
             <!-- ÉTAPE 4 -->
-            <div class="booking-card">
+            <div class="booking-card booking-card--modern">
               <div class="booking-step">4</div>
 
               <div class="booking-content">
-                <h2 data-i18n="booking.informationTitle">Vos renseignements</h2>
+                <div class="booking-section-title">
+                  <span
+                    class="booking-section-title__kicker"
+                    data-i18n="booking.step4"
+                  >
+                    ÉTAPE 4
+                  </span>
 
-                <div class="booking-grid">
-                  <div>
+                  <h2 data-i18n="booking.informationTitle">
+                    Vos renseignements
+                  </h2>
+
+                  <p data-i18n="booking.informationSubtitle">
+                    Indiquez vos coordonnées afin que nous puissions vous
+                    contacter.
+                  </p>
+                </div>
+
+                <div class="booking-grid booking-grid--modern">
+                  <div class="booking-field">
                     <label for="booking_firstname">
-                      <span data-i18n="booking.firstName"> Prénom </span>
+                      <span data-i18n="booking.firstName">Prénom</span>
                       <span class="req">*</span>
                     </label>
 
@@ -363,9 +573,9 @@
                     />
                   </div>
 
-                  <div>
+                  <div class="booking-field">
                     <label for="booking_lastname">
-                      <span data-i18n="booking.lastName"> Nom </span>
+                      <span data-i18n="booking.lastName">Nom</span>
                       <span class="req">*</span>
                     </label>
 
@@ -378,9 +588,9 @@
                     />
                   </div>
 
-                  <div>
+                  <div class="booking-field">
                     <label for="booking_email">
-                      <span data-i18n="booking.email"> Courriel </span>
+                      <span data-i18n="booking.email">Courriel</span>
                       <span class="req">*</span>
                     </label>
 
@@ -393,9 +603,9 @@
                     />
                   </div>
 
-                  <div>
+                  <div class="booking-field">
                     <label for="booking_phone">
-                      <span data-i18n="booking.phone"> Téléphone </span>
+                      <span data-i18n="booking.phone">Téléphone</span>
                       <span class="req">*</span>
                     </label>
 
@@ -409,9 +619,9 @@
                   </div>
                 </div>
 
-                <div>
+                <div class="booking-field booking-field--full">
                   <label for="booking_country">
-                    <span data-i18n="booking.country"> Pays de résidence </span>
+                    <span data-i18n="booking.country">Pays de résidence</span>
                   </label>
 
                   <input
@@ -422,7 +632,7 @@
                   />
                 </div>
 
-                <div>
+                <div class="booking-field booking-field--full">
                   <label for="booking_subject">
                     <span data-i18n="booking.subject">
                       Sujet de votre consultation
@@ -473,7 +683,7 @@
                   </select>
                 </div>
 
-                <div>
+                <div class="booking-field booking-field--full">
                   <label for="booking_message">
                     <span data-i18n="booking.message">
                       Décrivez brièvement votre situation
@@ -492,27 +702,41 @@
             </div>
 
             <!-- ÉTAPE 5 -->
-            <div class="booking-card">
+            <div class="booking-card booking-card--modern booking-card--final">
               <div class="booking-step">5</div>
 
               <div class="booking-content">
-                <h2 data-i18n="booking.confirmationTitle">Confirmation</h2>
+                <div class="booking-section-title">
+                  <span
+                    class="booking-section-title__kicker"
+                    data-i18n="booking.step5"
+                  >
+                    ÉTAPE 5
+                  </span>
 
-                <label class="booking-consent">
+                  <h2 data-i18n="booking.confirmationTitle">Confirmation</h2>
+                </div>
+
+                <label class="booking-consent booking-consent--modern">
                   <input type="checkbox" name="confirmation" required />
 
-                  <span data-i18n="booking.consent">
-                    Je confirme que les renseignements fournis sont exacts et
-                    j'accepte d'être contacté par MAD Immigration Canadienne
-                    concernant cette consultation.
+                  <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span data-i18n="booking.consent">
+                      Je confirme que les renseignements fournis sont exacts et
+                      j'accepte d'être contacté par MAD Immigration Canadienne
+                      concernant cette consultation.
+                    </span>
                   </span>
                 </label>
 
                 <button
                   type="submit"
-                  class="booking-submit"
+                  class="booking-submit booking-submit--modern"
                   data-i18n="booking.submit"
                 >
+                  <i class="fa-solid fa-calendar-check"></i>
                   Réserver ma consultation
                 </button>
 
@@ -523,6 +747,45 @@
               </div>
             </div>
           </form>
+        </div>
+      </section>
+
+      <!-- ===================================================== -->
+      <!-- RASSURANCE -->
+      <!-- ===================================================== -->
+      <section class="booking-trust">
+        <div class="container booking-trust__grid">
+          <div class="booking-trust__item">
+            <i class="fa-solid fa-lock"></i>
+            <div>
+              <strong data-i18n="booking.trust1Title">Confidentialité</strong>
+              <span data-i18n="booking.trust1Text"
+                >Vos renseignements sont traités de façon confidentielle.</span
+              >
+            </div>
+          </div>
+
+          <div class="booking-trust__item">
+            <i class="fa-solid fa-user-tie"></i>
+            <div>
+              <strong data-i18n="booking.trust2Title"
+                >Consultation professionnelle</strong
+              >
+              <span data-i18n="booking.trust2Text"
+                >Une analyse adaptée à votre situation.</span
+              >
+            </div>
+          </div>
+
+          <div class="booking-trust__item">
+            <i class="fa-solid fa-envelope-circle-check"></i>
+            <div>
+              <strong data-i18n="booking.trust3Title">Confirmation</strong>
+              <span data-i18n="booking.trust3Text"
+                >Vous recevrez une confirmation après validation.</span
+              >
+            </div>
+          </div>
         </div>
       </section>
     </main>

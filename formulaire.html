@@ -152,20 +152,59 @@
       </nav>
     </header>
 
-    <main>
-      <section class="container">
-        <div class="declaration_importante">
-          <p data-i18n="form.declaration">
-            Je reconnais que toute fausse déclaration de ma part ou
-            dissimilation d’un fait important dans les éléments suivant de ce
-            formulaire pourra entraîner une erreur sur l’analyse de mon dossier
-            et pourra entraîner s’il mon dossier sera soumis avec ces
-            informations auprès du gouvernement du Canada, mon exclusion du
-            Canada et constituer de poursuites contre moi ou de renvoi.
+    <main id="page-formulaire" class="form-page">
+      <!-- HERO -->
+      <section class="form-hero">
+        <div class="form-hero__overlay"></div>
+        <div class="container form-hero__content">
+          <span class="form-eyebrow">ÉVALUATION PRÉLIMINAIRE</span>
+          <h1>Parlez-nous de votre projet d’immigration</h1>
+          <p>
+            Remplissez ce formulaire afin de nous permettre d’effectuer une
+            première analyse de votre profil et de mieux comprendre votre projet
+            au Canada.
           </p>
+          <div class="form-hero__features">
+            <div>
+              <i class="fa-solid fa-shield-halved"></i
+              ><span>Informations confidentielles</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-file-circle-check"></i
+              ><span>Évaluation structurée</span>
+            </div>
+            <div>
+              <i class="fa-solid fa-user-tie"></i
+              ><span>Analyse professionnelle</span>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="formulaire_section1">
+
+      <!-- DÉCLARATION IMPORTANTE -->
+      <section class="form-notice-section">
+        <div class="container">
+          <div class="declaration_importante form-notice">
+            <div class="form-notice__icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <div class="form-notice__content">
+              <strong>Déclaration importante</strong>
+              <p data-i18n="form.declaration">
+                Je reconnais que toute fausse déclaration de ma part ou
+                dissimulation d’un fait important dans les éléments suivants de
+                ce formulaire peut entraîner une erreur dans l’analyse de mon
+                dossier. Si mon dossier est soumis avec des informations fausses
+                ou incomplètes auprès du gouvernement du Canada, cela peut avoir
+                des conséquences sur ma demande et mon admissibilité au Canada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FORMULAIRE -->
+      <section class="formulaire_section1 form-main-section">
         <div class="container">
           <form
             action="confirmation.html"
@@ -175,6 +214,7 @@
             data-netlify="true"
             onsubmit="return validateForm();"
           >
+            <input type="hidden" name="form-name" value="sign-up" />
             <fieldset class="form_info_client">
               <legend data-i18n="form.clientInformation">
                 Renseignement du client
@@ -929,10 +969,15 @@
                 </select>
               </div>
               <div class="marg-bot">
-                <label data-i18n="form.maritalStatus" for="sex"
+                <label data-i18n="form.maritalStatus" for="etat_matrimonial"
                   >État matrimonial actuel : <span class="req">*</span></label
                 >
-                <select class="champs-large" id="sex" name="sex" required="">
+                <select
+                  class="champs-large"
+                  id="etat_matrimonial"
+                  name="etat_matrimonial"
+                  required=""
+                >
                   <option data-i18n="form.selectMaritalStatus" value="">
                     Choix de votre statut marital!
                   </option>
@@ -1118,7 +1163,7 @@
                   id="telephone"
                   name="telephone"
                   placeholder=""
-                  type="phone"
+                  type="tel"
                 />
                 <div class="errorMessage"></div>
               </div>
@@ -1172,7 +1217,7 @@
               </div>
               <div class="marg-bot">
                 <label data-i18n="form.city" for="ville"
-                  >Numéro de rue : <span class="req">*</span></label
+                  >Ville : <span class="req">*</span></label
                 >
                 <input
                   class="champs-large"
@@ -1470,7 +1515,7 @@
               </div>
               <div class="marg-bot">
                 <label data-i18n="form.englishLevel" for="niveau_anglais"
-                  >Niveau de Français : <span class="req">*</span></label
+                  >Niveau d’anglais : <span class="req">*</span></label
                 >
                 <select
                   class="champs-large"
@@ -1687,13 +1732,13 @@
                 </select>
               </div>
               <div class="marg-bot">
-                <label data-i18n="form.listening" for="speaking"
-                  >Speaking: <span class="req">*</span></label
+                <label data-i18n="form.listening" for="listening"
+                  >Listening: <span class="req">*</span></label
                 >
                 <select
                   class="champs-large"
-                  id="speaking"
-                  name="speaking"
+                  id="listening"
+                  name="listening"
                   required=""
                 >
                   <option data-i18n="form.selectLanguageTest" value="">
@@ -1710,13 +1755,13 @@
                 </select>
               </div>
               <div class="marg-bot">
-                <label data-i18n="form.reading" for="speaking"
-                  >Speaking: <span class="req">*</span></label
+                <label data-i18n="form.reading" for="reading"
+                  >Reading: <span class="req">*</span></label
                 >
                 <select
                   class="champs-large"
-                  id="speaking"
-                  name="speaking"
+                  id="reading"
+                  name="reading"
                   required=""
                 >
                   <option data-i18n="form.selectLanguageTest" value="">
@@ -1733,13 +1778,13 @@
                 </select>
               </div>
               <div class="marg-bot">
-                <label data-i18n="form.writing" for="speaking"
-                  >Speaking: <span class="req">*</span></label
+                <label data-i18n="form.writing" for="writing"
+                  >Writing: <span class="req">*</span></label
                 >
                 <select
                   class="champs-large"
-                  id="speaking"
-                  name="speaking"
+                  id="writing"
+                  name="writing"
                   required=""
                 >
                   <option data-i18n="form.selectLanguageTest" value="">
@@ -2096,14 +2141,14 @@
               <div class="marg-bot">
                 <label
                   data-i18n="form.destinationProvinceQuestion"
-                  for="province"
+                  for="province_destination"
                   >Quelle province désirez-vous s’installer ?
                   <span class="req">*</span></label
                 >
                 <select
                   class="champs-large"
-                  id="famille_canada"
-                  name="famille_canada"
+                  id="province_destination"
+                  name="province_destination"
                   required=""
                 >
                   <option data-i18n="form.selectProvince" value="">
@@ -2408,30 +2453,6 @@
           </form>
         </div>
       </section>
-      <!-- <section>
-        <form
-          action="https://www.sandbox.paypal.com/cgi-bin/webscr"
-          method="post"
-          target="_top"
-        >
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="X4TFTLTVW57VW" />
-          <input
-            type="image"
-            src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif"
-            border="0"
-            name="submit"
-            alt="PayPal - la solution de paiement en ligne la plus simple et la plus sécurisée !"
-          />
-          <img
-            alt=""
-            border="0"
-            src="https://www.sandbox.paypal.com/fr_CA/i/scr/pixel.gif"
-            width="1"
-            height="1"
-          />
-        </form>
-      </section> -->
     </main>
 
     <footer class="footer">
