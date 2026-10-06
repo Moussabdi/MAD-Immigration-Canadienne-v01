@@ -9837,3 +9837,78 @@ section.history-section h2,
     width: 100%;
   }
 }
+
+/* =========================================================
+   RENDEZ-VOUS - HEURE RÉSERVÉE
+   ========================================================= */
+
+.time-slot--booked {
+  cursor: not-allowed;
+}
+
+.time-slot--booked span {
+  background: #f0f0f0;
+
+  border: 1px solid #dddddd;
+
+  color: #999999;
+
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+.time-slot--booked span s {
+  text-decoration-thickness: 2px;
+  text-decoration-color: #d71920;
+}
+
+/* =========================================================
+   JOURNÉE COMPLÈTE
+   ========================================================= */
+
+.booking-day-full {
+  grid-column: 1 / -1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 170px;
+
+  padding: 28px;
+
+  border: 1px solid #f0cccc;
+
+  border-radius: 12px;
+
+  background: #fff5f5;
+
+  text-align: center;
+}
+
+.booking-day-full i {
+  color: #d71920;
+
+  font-size: 32px;
+}
+
+.booking-day-full strong {
+  color: #202020;
+
+  font-size: 18px;
+}
+
+.booking-day-full span {
+  max-width: 420px;
+
+  color: #777;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
