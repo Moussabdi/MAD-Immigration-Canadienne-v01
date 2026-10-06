@@ -1557,13 +1557,16 @@ if (consultationForm) {
 
 /* =========================================================
    RENDEZ-VOUS MADIC
-   7 JOURS / 7 - 08:00 À 23:00
+   7 JOURS / 7
+   08:00 À 23:00
    RÉSERVATION MAXIMUM 14 JOURS
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
   const dateInput = document.getElementById("consultation_date");
+
   const timeSlotsContainer = document.getElementById("booking-time-slots");
+
   const consultationForm = document.getElementById("consultation-form");
 
   if (!dateInput || !timeSlotsContainer || !consultationForm) {
@@ -1571,92 +1574,238 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* =======================================================
-     DATE MINIMUM / MAXIMUM
+     DATE / HEURE MONTRÉAL
      ======================================================= */
 
-  const today = new Date();
+  function getMontrealNow() {
+    const parts = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "America/Toronto",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+      hourCycle: "h23",
+    }).formatToParts(new Date());
 
-  const maxDate = new Date();
-  maxDate.setDate(maxDate.getDate() + 14);
+    const values = {};
 
-  function formatDateForInput(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0");
-    const day = String(date.getDate()).padStart(2, "0");
+    parts.forEach((part) => {
+      values[part.type] = part.value;
+    });
 
-    return `${year}-${month}-${day}`;
+    return {
+      date: `${values.year}-${values.month}-${values.day}`,
+
+      hour: Number(values.hour),
+
+      minute: Number(values.minute),
+    };
   }
 
-  dateInput.min = formatDateForInput(today);
-  dateInput.max = formatDateForInput(maxDate);
-
   /* =======================================================
-     CRÉATION DES HEURES
+     AJOUTER DES JOURS
      ======================================================= */
 
-  function generateTimeSlots(bookedSlots = []) {
+  function addDays(dateString, numberOfDays) {
+    const [year, month, day] = dateString.split("-").map(Number);
+
+    const date = new Date(Date.UTC(year, month - 1, day));
+
+    date.setUTCDate(date.getUTCDate() + numberOfDays);
+
+    return date.toISOString().slice(0, 10);
+  }
+
+  /* =======================================================
+     LIMITES DU CALENDRIER
+     ======================================================= */
+
+  const now = getMontrealNow();
+
+  const minDate = now.date;
+
+  const maxDate = addDays(minDate, 14);
+
+  dateInput.min = minDate;
+
+  dateInput.max = maxDate;
+
+  /* =======================================================
+     CRÉER LES HEURES
+     ======================================================= */
+
+  function generateTimeSlots(selectedDate, bookedSlots = []) {
     timeSlotsContainer.innerHTML = "";
+
+    const current = getMontrealNow();
+
+    const isToday = selectedDate === current.date;
+
+    let displayedCount = 0;
+    let availableCount = 0;
 
     for (let hour = 8; hour <= 23; hour++) {
       const time = `${String(hour).padStart(2, "0")}:00`;
 
+      /* ===============================================
+         AUJOURD'HUI :
+         HEURES PASSÉES = CACHÉES
+         =============================================== */
+
+      if (isToday && hour <= current.hour) {
+        continue;
+      }
+
+      displayedCount++;
+
+      const isBooked = bookedSlots.includes(time);
+
       const label = document.createElement("label");
+
       label.className = "time-slot";
 
       const input = document.createElement("input");
+
       input.type = "radio";
+
       input.name = "consultation_time";
+
       input.value = time;
 
       const span = document.createElement("span");
-      span.textContent = time;
 
-      if (bookedSlots.includes(time)) {
+      /* ===============================================
+         HEURE RÉSERVÉE
+         =============================================== */
+
+      if (isBooked) {
         input.disabled = true;
-        label.classList.add("time-slot--unavailable");
 
-        span.textContent = `${time} — Indisponible`;
+        label.classList.add("time-slot--booked");
+
+        span.innerHTML = `
+          <s>${time}</s>
+          <small>Réservé</small>
+        `;
+      } else {
+        span.textContent = time;
+
+        availableCount++;
       }
 
       label.appendChild(input);
+
       label.appendChild(span);
 
       timeSlotsContainer.appendChild(label);
     }
-  }
 
-  /* =======================================================
-     VÉRIFIER LES HEURES DÉJÀ RÉSERVÉES
-     ======================================================= */
+    /* ===============================================
+       PLUS AUCUNE HEURE AUJOURD'HUI
+       =============================================== */
 
-  async function loadAvailability(date) {
-    if (!date) {
-      generateTimeSlots();
+    if (displayedCount === 0) {
+      timeSlotsContainer.innerHTML = `
+        <div class="booking-day-full">
+          <i class="fa-solid fa-calendar-xmark"></i>
+
+          <strong>
+            Plus de disponibilité aujourd'hui
+          </strong>
+
+          <span>
+            Veuillez choisir une autre date.
+          </span>
+        </div>
+      `;
+
       return;
     }
 
-    timeSlotsContainer.innerHTML =
-      '<p class="booking-loading">Chargement des disponibilités...</p>';
+    /* ===============================================
+       JOURNÉE COMPLÈTE
+       =============================================== */
+
+    if (availableCount === 0) {
+      const message = document.createElement("div");
+
+      message.className = "booking-day-full";
+
+      message.innerHTML = `
+        <i class="fa-solid fa-calendar-xmark"></i>
+
+        <strong>
+          Journée complète
+        </strong>
+
+        <span>
+          Tous les créneaux sont déjà réservés.
+        </span>
+      `;
+
+      timeSlotsContainer.appendChild(message);
+    }
+  }
+
+  /* =======================================================
+     CHARGER LES DISPONIBILITÉS
+     ======================================================= */
+
+  async function loadAvailability(selectedDate) {
+    if (!selectedDate) {
+      timeSlotsContainer.innerHTML = "";
+
+      return;
+    }
+
+    if (selectedDate < minDate || selectedDate > maxDate) {
+      dateInput.value = "";
+
+      timeSlotsContainer.innerHTML = "";
+
+      alert("Veuillez choisir une date comprise dans les 14 prochains jours.");
+
+      return;
+    }
+
+    timeSlotsContainer.innerHTML = `
+      <p class="booking-loading">
+        Vérification des disponibilités...
+      </p>
+    `;
 
     try {
       const response = await fetch(
-        `/.netlify/functions/booking?date=${encodeURIComponent(date)}`,
+        `/.netlify/functions/booking?date=${encodeURIComponent(selectedDate)}`,
       );
 
       if (!response.ok) {
-        throw new Error("Impossible de vérifier les disponibilités.");
+        throw new Error(`HTTP ${response.status}`);
       }
 
       const data = await response.json();
 
-      generateTimeSlots(data.booked || []);
+      generateTimeSlots(
+        selectedDate,
+        Array.isArray(data.booked) ? data.booked : [],
+      );
     } catch (error) {
-      console.error(error);
+      console.error("Erreur disponibilité :", error);
 
-      timeSlotsContainer.innerHTML =
-        '<p class="booking-error">Impossible de charger les disponibilités.</p>';
+      /*
+        Temporairement :
+        afficher les heures même si
+        la Function Netlify échoue.
+      */
+
+      generateTimeSlots(selectedDate, []);
     }
   }
+
+  /* =======================================================
+     CHANGEMENT DE DATE
+     ======================================================= */
 
   dateInput.addEventListener("change", function () {
     loadAvailability(this.value);
@@ -1671,62 +1820,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const selectedDate = dateInput.value;
 
-    const selectedTime = document.querySelector(
+    const selectedTime = consultationForm.querySelector(
       'input[name="consultation_time"]:checked',
     );
 
     if (!selectedDate) {
       alert("Veuillez choisir une date.");
+
       return;
     }
 
     if (!selectedTime) {
       alert("Veuillez choisir une heure.");
+
       return;
     }
-
-    /* -------------------------------------------------------
-       VALIDATION DATE
-       ------------------------------------------------------- */
-
-    const chosenDate = new Date(`${selectedDate}T12:00:00`);
-
-    const minimum = new Date();
-    minimum.setHours(0, 0, 0, 0);
-
-    const maximum = new Date();
-    maximum.setHours(23, 59, 59, 999);
-    maximum.setDate(maximum.getDate() + 14);
-
-    if (chosenDate < minimum || chosenDate > maximum) {
-      alert("Vous pouvez réserver uniquement dans les 14 prochains jours.");
-      return;
-    }
-
-    /* -------------------------------------------------------
-       RÉSERVATION DU CRÉNEAU
-       ------------------------------------------------------- */
 
     const reservationData = {
       date: selectedDate,
+
       time: selectedTime.value,
+
       prenom: document.getElementById("booking_firstname")?.value || "",
+
       nom: document.getElementById("booking_lastname")?.value || "",
+
       courriel: document.getElementById("booking_email")?.value || "",
     };
 
     try {
+      /* =============================================
+           1. BLOQUER LE CRÉNEAU
+           ============================================= */
+
       const reservationResponse = await fetch("/.netlify/functions/booking", {
         method: "POST",
+
         headers: {
           "Content-Type": "application/json",
         },
+
         body: JSON.stringify(reservationData),
       });
 
+      /* =============================================
+           DÉJÀ RÉSERVÉ
+           ============================================= */
+
       if (reservationResponse.status === 409) {
         alert(
-          "Désolé, cette heure vient d'être réservée par une autre personne. Veuillez choisir une autre heure.",
+          "Ce créneau vient d'être réservé. Veuillez choisir une autre heure.",
         );
 
         await loadAvailability(selectedDate);
@@ -1735,20 +1878,24 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (!reservationResponse.ok) {
-        throw new Error("Erreur lors de la réservation.");
+        const data = await reservationResponse.json().catch(() => ({}));
+
+        throw new Error(data.error || "Erreur lors de la réservation.");
       }
 
-      /* -----------------------------------------------------
-         ENREGISTREMENT DANS NETLIFY FORMS
-         ----------------------------------------------------- */
+      /* =============================================
+           2. NETLIFY FORMS
+           ============================================= */
 
       const formData = new FormData(consultationForm);
 
       const netlifyResponse = await fetch("/", {
         method: "POST",
+
         headers: {
           "Content-Type": "application/x-www-form-urlencoded",
         },
+
         body: new URLSearchParams(formData).toString(),
       });
 
@@ -1756,183 +1903,66 @@ document.addEventListener("DOMContentLoaded", function () {
         throw new Error("Erreur lors de l'enregistrement du formulaire.");
       }
 
+      /* =============================================
+           3. CONFIRMATION
+           ============================================= */
+
       window.location.href = "/confirmation.html";
     } catch (error) {
       console.error(error);
 
-      alert("Une erreur est survenue. Veuillez réessayer.");
+      alert(error.message || "Une erreur est survenue. Veuillez réessayer.");
     }
   });
-
-  generateTimeSlots();
 });
 
-import { getStore } from "@netlify/blobs";
+localStorage.setItem("madic-theme", "dark");
 
-const store = getStore({
-  name: "madic-booking-slots",
-  consistency: "strong",
-});
+document.addEventListener("DOMContentLoaded", function () {
+  const themeToggle = document.getElementById("theme-toggle");
 
-function validDate(dateString) {
-  const selected = new Date(`${dateString}T12:00:00`);
-
-  if (Number.isNaN(selected.getTime())) {
-    return false;
+  if (!themeToggle) {
+    console.error("Bouton #theme-toggle introuvable.");
+    return;
   }
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const icon = themeToggle.querySelector("i");
 
-  const maximum = new Date();
-  maximum.setHours(23, 59, 59, 999);
-  maximum.setDate(maximum.getDate() + 14);
+  function applyTheme(theme) {
+    if (theme === "dark") {
+      document.body.classList.add("dark-mode");
 
-  return selected >= today && selected <= maximum;
-}
-
-function validTime(time) {
-  const allowedTimes = [];
-
-  for (let hour = 8; hour <= 23; hour++) {
-    allowedTimes.push(`${String(hour).padStart(2, "0")}:00`);
-  }
-
-  return allowedTimes.includes(time);
-}
-
-export default async function handler(request) {
-  /* =======================================================
-     GET
-     Retourner les heures déjà réservées
-     ======================================================= */
-
-  if (request.method === "GET") {
-    const url = new URL(request.url);
-
-    const date = url.searchParams.get("date");
-
-    if (!date || !validDate(date)) {
-      return Response.json(
-        {
-          error: "Date invalide.",
-        },
-        {
-          status: 400,
-        },
-      );
-    }
-
-    const booked = [];
-
-    for (let hour = 8; hour <= 23; hour++) {
-      const time = `${String(hour).padStart(2, "0")}:00`;
-
-      const key = `${date}_${time.replace(":", "-")}`;
-
-      const reservation = await store.get(key);
-
-      if (reservation !== null) {
-        booked.push(time);
+      if (icon) {
+        icon.className = "fa-solid fa-sun";
       }
-    }
 
-    return Response.json({
-      date,
-      booked,
-    });
+      themeToggle.setAttribute("aria-label", "Activer le mode clair");
+
+      themeToggle.title = "Mode clair";
+    } else {
+      document.body.classList.remove("dark-mode");
+
+      if (icon) {
+        icon.className = "fa-solid fa-moon";
+      }
+
+      themeToggle.setAttribute("aria-label", "Activer le mode nuit");
+
+      themeToggle.title = "Mode nuit";
+    }
   }
 
-  /* =======================================================
-     POST
-     Réserver un créneau
-     ======================================================= */
+  const savedTheme = localStorage.getItem("madic-theme") || "light";
 
-  if (request.method === "POST") {
-    let body;
+  applyTheme(savedTheme);
 
-    try {
-      body = await request.json();
-    } catch {
-      return Response.json(
-        {
-          error: "Données invalides.",
-        },
-        {
-          status: 400,
-        },
-      );
-    }
+  themeToggle.addEventListener("click", function () {
+    const isDark = document.body.classList.contains("dark-mode");
 
-    const { date, time, prenom, nom, courriel } = body;
+    const newTheme = isDark ? "light" : "dark";
 
-    if (!validDate(date)) {
-      return Response.json(
-        {
-          error: "La date doit être comprise dans les 14 prochains jours.",
-        },
-        {
-          status: 400,
-        },
-      );
-    }
+    localStorage.setItem("madic-theme", newTheme);
 
-    if (!validTime(time)) {
-      return Response.json(
-        {
-          error: "Les rendez-vous sont disponibles entre 08:00 et 23:00.",
-        },
-        {
-          status: 400,
-        },
-      );
-    }
-
-    const key = `${date}_${time.replace(":", "-")}`;
-
-    const reservation = {
-      date,
-      time,
-      prenom,
-      nom,
-      courriel,
-      createdAt: new Date().toISOString(),
-    };
-
-    /*
-      IMPORTANT :
-      onlyIfNew empêche qu'une deuxième réservation
-      écrase le même créneau.
-    */
-
-    const { modified } = await store.setJSON(key, reservation, {
-      onlyIfNew: true,
-    });
-
-    if (!modified) {
-      return Response.json(
-        {
-          error: "Ce créneau est déjà réservé.",
-        },
-        {
-          status: 409,
-        },
-      );
-    }
-
-    return Response.json(
-      {
-        success: true,
-        date,
-        time,
-      },
-      {
-        status: 201,
-      },
-    );
-  }
-
-  return new Response("Method Not Allowed", {
-    status: 405,
+    applyTheme(newTheme);
   });
-}
+});

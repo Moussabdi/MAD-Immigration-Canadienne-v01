@@ -9912,3 +9912,22 @@ section.history-section h2,
 
   line-height: 1.6;
 }
+
+/* =========================================================
+   MODE NUIT GLOBAL - MADIC
+   ========================================================= */
+
+:root {
+  --bg-main: #ffffff;
+  --bg-soft: #f6f7f8;
+  --bg-card: #ffffff;
+  --bg-dark: #202020;
+
+  --text-main: #202020;
+  --text-soft: #666666;
+  --text-light: #ffffff;
+
+  --border-main: #e5e5e5;
+
+  --accent: #d71920;
+}
