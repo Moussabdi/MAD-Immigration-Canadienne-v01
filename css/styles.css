@@ -9931,3 +9931,10 @@ section.history-section h2,
 
   --accent: #d71920;
 }
+
+#nl-badge,
+.nl-badge,
+#nl-card,
+.nl-card {
+  display: none !important;
+}
