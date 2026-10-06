@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>MAD Immigration Canada</title>
+    <meta
+      name="description"
+      content="MAD Immigration Canadienne inc. est une entreprise Canadienne spécialisée dans l’immigration canadienne, Forte de l’ingéniosité de son équipe d’expérience."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link rel="icon" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <script defer src="js/script.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar__container">
+          <a href="index.html" class="navbar__logo">
+            <img
+              src="img/logo_fr_transparent.png"
+              alt="MadImmigrationCanadienne-logo"
+              class="logo"
+            />
+          </a>
+
+          <div>
+            <div class="navbar__toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+              <li class="navbar__item">
+                <a
+                  href="index.html"
+                  class="navbar__links"
+                  id="index"
+                  data-i18n="nav.home"
+                >
+                  Accueil
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="propos.html"
+                  class="navbar__links"
+                  id="about-page"
+                  data-i18n="nav.about"
+                >
+                  À propos
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="services.html"
+                  class="navbar__links"
+                  id="services-page"
+                  data-i18n="nav.services"
+                >
+                  Nos services
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="forfaits.html"
+                  class="navbar__links"
+                  data-i18n="nav.packages"
+                >
+                  Nos forfaits
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="joindre.html"
+                  class="navbar__links"
+                  data-i18n="nav.contact"
+                >
+                  Nous joindre
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="carriere.html"
+                  class="navbar__links"
+                  id="career-page"
+                  data-i18n="nav.career"
+                >
+                  Carrière
+                </a>
+              </li>
+
+              <li class="navbar__btn">
+                <a
+                  href="formulaire.html"
+                  class="button"
+                  id="signup"
+                  data-i18n="nav.evaluation"
+                >
+                  Évaluation préliminaire
+                </a>
+              </li>
+
+              <li class="navbar__btn">
+                <a
+                  href="rendezvous.html"
+                  class="button button-rendezvous"
+                  id="appointment"
+                  data-i18n="nav.appointment"
+                >
+                  Prendre rendez-vous
+                </a>
+              </li>
+
+              <li class="navbar__item language-switcher">
+                <button type="button" class="lang-btn active" data-lang="fr">
+                  FR
+                </button>
+
+                <span>|</span>
+
+                <button type="button" class="lang-btn" data-lang="en">
+                  EN
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="page-rendezvous">
+      <section class="booking-section">
+        <div class="container marginh1">
+          <div class="booking-header">
+            <h1 data-i18n="booking.title">Prendre rendez-vous</h1>
+
+            <p data-i18n="booking.subtitle">
+              Réservez une consultation avec MAD Immigration Canadienne afin
+              d'obtenir une analyse personnalisée de votre situation.
+            </p>
+          </div>
+
+          <form
+            class="booking-form"
+            id="consultation-form"
+            name="consultation"
+            method="POST"
+            action="/confirmation.html"
+            data-netlify="true"
+          >
+            <input type="hidden" name="form-name" value="consultation" />
+
+            <p style="display: none">
+              <label>
+                Ne pas remplir :
+                <input name="bot-field" />
+              </label>
+            </p>
+            <!-- ÉTAPE 1 -->
+            <div class="booking-card">
+              <div class="booking-step">1</div>
+
+              <div class="booking-content">
+                <h2 data-i18n="booking.serviceTitle">
+                  Choisissez votre consultation
+                </h2>
+
+                <div class="consultation-options">
+                  <label class="consultation-option">
+                    <input
+                      type="radio"
+                      name="type_consultation"
+                      value="consultation_60"
+                      required
+                    />
+
+                    <div>
+                      <h3 data-i18n="booking.consultation60">
+                        Consultation – 60 minutes
+                      </h3>
+
+                      <p data-i18n="booking.consultation60Description">
+                        Consultation personnalisée pour analyser votre situation
+                        et répondre à vos questions en immigration canadienne.
+                      </p>
+
+                      <strong data-i18n="booking.consultation60Price">
+                        225 $CAD ou 159$ us
+                      </strong>
+                    </div>
+                  </label>
+
+                  <label class="consultation-option">
+                    <input
+                      type="radio"
+                      name="type_consultation"
+                      value="evaluation_preliminaire"
+                    />
+
+                    <div>
+                      <h3 data-i18n="booking.preliminary">
+                        Évaluation préliminaire
+                      </h3>
+
+                      <p data-i18n="booking.preliminaryDescription">
+                        Analyse plus approfondie de votre profil et de vos
+                        possibilités d'immigration au Canada.
+                      </p>
+
+                      <strong data-i18n="booking.preliminaryPrice">
+                        749 $CAD ou 599$ us
+                      </strong>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- ÉTAPE 2 -->
+            <div class="booking-card">
+              <div class="booking-step">2</div>
+
+              <div class="booking-content">
+                <h2 data-i18n="booking.dateTitle">Choisissez une date</h2>
+
+                <label for="consultation_date" data-i18n="booking.dateLabel">
+                  Date de la consultation
+                </label>
+
+                <input
+                  type="date"
+                  id="consultation_date"
+                  name="consultation_date"
+                  class="booking-input"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- ÉTAPE 3 -->
+            <div class="booking-card">
+              <div class="booking-step">3</div>
+
+              <div class="booking-content">
+                <h2 data-i18n="booking.timeTitle">Choisissez une heure</h2>
+
+                <div class="time-slots">
+                  <label class="time-slot">
+                    <input
+                      type="radio"
+                      name="consultation_time"
+                      value="09:00"
+                      required
+                    />
+                    <span>09:00</span>
+                  </label>
+
+                  <label class="time-slot">
+                    <input
+                      type="radio"
+                      name="consultation_time"
+                      value="10:00"
+                    />
+                    <span>10:00</span>
+                  </label>
+
+                  <label class="time-slot">
+                    <input
+                      type="radio"
+                      name="consultation_time"
+                      value="11:00"
+                    />
+                    <span>11:00</span>
+                  </label>
+
+                  <label class="time-slot">
+                    <input
+                      type="radio"
+                      name="consultation_time"
+                      value="13:00"
+                    />
+                    <span>13:00</span>
+                  </label>
+
+                  <label class="time-slot">
+                    <input
+                      type="radio"
+                      name="consultation_time"
+                      value="14:00"
+                    />
+                    <span>14:00</span>
+                  </label>
+
+                  <label class="time-slot">
+                    <input
+                      type="radio"
+                      name="consultation_time"
+                      value="15:00"
+                    />
+                    <span>15:00</span>
+                  </label>
+
+                  <label class="time-slot">
+                    <input
+                      type="radio"
+                      name="consultation_time"
+                      value="16:00"
+                    />
+                    <span>16:00</span>
+                  </label>
+                </div>
+
+                <p class="timezone-info" data-i18n="booking.timezone">
+                  Les heures sont affichées selon l'heure de Montréal, Québec.
+                </p>
+              </div>
+            </div>
+
+            <!-- ÉTAPE 4 -->
+            <div class="booking-card">
+              <div class="booking-step">4</div>
+
+              <div class="booking-content">
+                <h2 data-i18n="booking.informationTitle">Vos renseignements</h2>
+
+                <div class="booking-grid">
+                  <div>
+                    <label for="booking_firstname">
+                      <span data-i18n="booking.firstName"> Prénom </span>
+                      <span class="req">*</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      id="booking_firstname"
+                      name="prenom"
+                      class="booking-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label for="booking_lastname">
+                      <span data-i18n="booking.lastName"> Nom </span>
+                      <span class="req">*</span>
+                    </label>
+
+                    <input
+                      type="text"
+                      id="booking_lastname"
+                      name="nom"
+                      class="booking-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label for="booking_email">
+                      <span data-i18n="booking.email"> Courriel </span>
+                      <span class="req">*</span>
+                    </label>
+
+                    <input
+                      type="email"
+                      id="booking_email"
+                      name="courriel"
+                      class="booking-input"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label for="booking_phone">
+                      <span data-i18n="booking.phone"> Téléphone </span>
+                      <span class="req">*</span>
+                    </label>
+
+                    <input
+                      type="tel"
+                      id="booking_phone"
+                      name="telephone"
+                      class="booking-input"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label for="booking_country">
+                    <span data-i18n="booking.country"> Pays de résidence </span>
+                  </label>
+
+                  <input
+                    type="text"
+                    id="booking_country"
+                    name="pays"
+                    class="booking-input"
+                  />
+                </div>
+
+                <div>
+                  <label for="booking_subject">
+                    <span data-i18n="booking.subject">
+                      Sujet de votre consultation
+                    </span>
+                  </label>
+
+                  <select
+                    id="booking_subject"
+                    name="sujet"
+                    class="booking-input"
+                  >
+                    <option value="" data-i18n="booking.selectSubject">
+                      Choisissez un sujet
+                    </option>
+
+                    <option
+                      value="immigration_economique"
+                      data-i18n="booking.economic"
+                    >
+                      Immigration économique
+                    </option>
+
+                    <option value="parrainage" data-i18n="booking.sponsorship">
+                      Parrainage
+                    </option>
+
+                    <option
+                      value="residence_temporaire"
+                      data-i18n="booking.temporary"
+                    >
+                      Résidence temporaire
+                    </option>
+
+                    <option value="asile" data-i18n="booking.refugee">
+                      Réfugié / Demande d'asile
+                    </option>
+
+                    <option
+                      value="humanitaire"
+                      data-i18n="booking.humanitarian"
+                    >
+                      Humanitaire
+                    </option>
+
+                    <option value="autre" data-i18n="booking.other">
+                      Autre
+                    </option>
+                  </select>
+                </div>
+
+                <div>
+                  <label for="booking_message">
+                    <span data-i18n="booking.message">
+                      Décrivez brièvement votre situation
+                    </span>
+                  </label>
+
+                  <textarea
+                    id="booking_message"
+                    name="message"
+                    class="booking-input booking-textarea"
+                    placeholder="Veuillez décrire brièvement votre situation..."
+                    data-i18n-placeholder="booking.messagePlaceholder"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- ÉTAPE 5 -->
+            <div class="booking-card">
+              <div class="booking-step">5</div>
+
+              <div class="booking-content">
+                <h2 data-i18n="booking.confirmationTitle">Confirmation</h2>
+
+                <label class="booking-consent">
+                  <input type="checkbox" name="confirmation" required />
+
+                  <span data-i18n="booking.consent">
+                    Je confirme que les renseignements fournis sont exacts et
+                    j'accepte d'être contacté par MAD Immigration Canadienne
+                    concernant cette consultation.
+                  </span>
+                </label>
+
+                <button
+                  type="submit"
+                  class="booking-submit"
+                  data-i18n="booking.submit"
+                >
+                  Réserver ma consultation
+                </button>
+
+                <p class="booking-note" data-i18n="booking.note">
+                  Votre rendez-vous sera confirmé après validation de la
+                  disponibilité.
+                </p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <img
+              src="img/logo_fr_transparent.png"
+              alt="omnifood-logo"
+              class="logo"
+            />
+          </a>
+
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy;
+            <span class="year"></span>
+            Design MADMECA Inc.
+            <span data-i18n="footer.copyright">
+              Tous les droits réservés.
+            </span>
+          </p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading" data-i18n="footer.contact">
+            Contactez-nous
+          </p>
+          <address class="contacts">
+            <p class="address">
+              1622 Rue Barré, Bureau 202, Saint-Laurent, QC, CA
+            </p>
+            <p>
+              <a class="footer-link" href="tel:415-201-6370">514-442-3076</a
+              ><br />
+              <a class="footer-link" href="mailto:hello@omnifood.com"
+                >madimmigrationcanadienne@gmail.com</a
+              >
+            </p>
+          </address>
+        </div>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.account">Compte</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.createAccount">
+                Créer un compte
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.register">
+                S'inscrire
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#">iOS</a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.android">
+                Android
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.company">Compagnie</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.about">
+                À propos de MADIC
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.business">
+                Affaires
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.partners">
+                Partenaires
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.career">
+                Carrière
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.resources">Ressources</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.directory">
+                Répertoire Immigration
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.help">
+                Centre d'aide
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.privacy">
+                Confidentialité et conditions
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

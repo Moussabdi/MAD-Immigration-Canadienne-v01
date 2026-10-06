@@ -1,0 +1,773 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>MAD Immigration Canada</title>
+    <meta
+      name="description"
+      content="MAD Immigration Canadienne inc. est une entreprise Canadienne spécialisée dans l’immigration canadienne, Forte de l’ingéniosité de son équipe d’expérience."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link rel="icon" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+    <script defer src="js/script.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar__container">
+          <a href="index.html" class="navbar__logo">
+            <img
+              src="img/logo_fr_transparent.png"
+              alt="MadImmigrationCanadienne-logo"
+              class="logo"
+            />
+          </a>
+
+          <div>
+            <div class="navbar__toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+              <li class="navbar__item">
+                <a
+                  href="index.html"
+                  class="navbar__links"
+                  id="index"
+                  data-i18n="nav.home"
+                >
+                  Accueil
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="propos.html"
+                  class="navbar__links"
+                  id="about-page"
+                  data-i18n="nav.about"
+                >
+                  À propos
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="services.html"
+                  class="navbar__links"
+                  id="services-page"
+                  data-i18n="nav.services"
+                >
+                  Nos services
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="forfaits.html"
+                  class="navbar__links"
+                  data-i18n="nav.packages"
+                >
+                  Nos forfaits
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="joindre.html"
+                  class="navbar__links"
+                  data-i18n="nav.contact"
+                >
+                  Nous joindre
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="carriere.html"
+                  class="navbar__links"
+                  id="career-page"
+                  data-i18n="nav.career"
+                >
+                  Carrière
+                </a>
+              </li>
+
+              <li class="navbar__btn">
+                <a
+                  href="formulaire.html"
+                  class="button"
+                  id="signup"
+                  data-i18n="nav.evaluation"
+                >
+                  Évaluation préliminaire
+                </a>
+              </li>
+
+              <li class="navbar__btn">
+                <a
+                  href="rendezvous.html"
+                  class="button button-rendezvous"
+                  id="appointment"
+                  data-i18n="nav.appointment"
+                >
+                  Prendre rendez-vous
+                </a>
+              </li>
+
+              <li class="navbar__item language-switcher">
+                <button type="button" class="lang-btn active" data-lang="fr">
+                  FR
+                </button>
+
+                <span>|</span>
+
+                <button type="button" class="lang-btn" data-lang="en">
+                  EN
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container marginh1">
+        <h1 data-i18n="packages.title">Nos forfaits</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th class="th-vide1"></th>
+
+              <th class="th-forfait" data-i18n="packages.hourly">
+                Consultation à Taux horaire
+              </th>
+
+              <th class="th-forfait" data-i18n="packages.preliminary">
+                Évaluation préliminaire
+              </th>
+
+              <th class="th-forfait" data-i18n="packages.skilledWorker">
+                Travailleur qualifié
+              </th>
+
+              <th class="th-forfait" data-i18n="packages.sponsorship">
+                Parrainage
+              </th>
+
+              <th class="th-forfait" data-i18n="packages.visitorStudent">
+                Visiteur et Étudiant
+              </th>
+
+              <th class="th-forfait" data-i18n="packages.temporaryWorker">
+                Travailleur temporaire
+              </th>
+
+              <th class="th-forfait" data-i18n="packages.humanitarian">
+                Humanitaire
+              </th>
+
+              <th class="th-forfait" data-i18n="packages.refugee">Réfugié</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="th-prix" data-i18n="packages.price">Prix</td>
+
+              <td class="td-prix__contenu" data-i18n="packages.priceHourly">
+                À partir de 149$ US/dossier
+              </td>
+
+              <td
+                class="td-prix__contenu"
+                data-i18n="packages.pricePreliminary"
+              >
+                À partir de 599$ US/dossier
+              </td>
+
+              <td
+                class="td-prix__contenu"
+                data-i18n="packages.priceSkilledWorker"
+              >
+                À partir de 2999$ US/dossier
+              </td>
+
+              <td
+                class="td-prix__contenu"
+                data-i18n="packages.priceSponsorship"
+              >
+                À partir de 2599$ US/dossier
+              </td>
+
+              <td
+                class="td-prix__contenu"
+                data-i18n="packages.priceVisitorStudent"
+              >
+                À partir de 1999$ US/dossier
+              </td>
+
+              <td
+                class="td-prix__contenu"
+                data-i18n="packages.priceTemporaryWorker"
+              >
+                À partir de 2999$ US/dossier
+              </td>
+
+              <td
+                class="td-prix__contenu"
+                data-i18n="packages.priceHumanitarian"
+              >
+                À partir de 1599$ US/dossier
+              </td>
+
+              <td class="td-prix__contenu" data-i18n="packages.priceRefugee">
+                À partir de 2599$ US/dossier
+              </td>
+            </tr>
+
+            <tr>
+              <td class="th-inclus" rowspan="7" data-i18n="packages.included">
+                Inclus
+              </td>
+
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.fileOpening">
+                Ouverture du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileOpening">
+                Ouverture du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileOpening">
+                Ouverture du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileOpening">
+                Ouverture du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileOpening">
+                Ouverture du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileOpening">
+                Ouverture du dossier
+              </td>
+            </tr>
+
+            <tr>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.fileAnalysis">
+                Analyse du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileAnalysis">
+                Analyse du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileAnalysis">
+                Analyse du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileAnalysis">
+                Analyse du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileAnalysis">
+                Analyse du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileAnalysis">
+                Analyse du dossier
+              </td>
+            </tr>
+
+            <tr>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.fileSubmission">
+                Soumission du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileSubmission">
+                Soumission du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileSubmission">
+                Soumission du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileSubmission">
+                Soumission du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileSubmission">
+                Soumission du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.fileSubmission">
+                Soumission du dossier
+              </td>
+            </tr>
+
+            <tr>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.representation">
+                Représentation
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.representation">
+                Représentation
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.representation">
+                Représentation
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.representation">
+                Représentation
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.representation">
+                Représentation
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.representation">
+                Représentation
+              </td>
+            </tr>
+
+            <tr>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.followUp">
+                Suivi du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.followUp">
+                Suivi du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.followUp">
+                Suivi du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.followUp">
+                Suivi du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.followUp">
+                Suivi du dossier
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.followUp">
+                Suivi du dossier
+              </td>
+            </tr>
+
+            <tr>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.decisionInformation">
+                Information sur la décision
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.decisionInformation">
+                Information sur la décision
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.decisionInformation">
+                Information sur la décision
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.decisionInformation">
+                Information sur la décision
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.decisionInformation">
+                Information sur la décision
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.decisionInformation">
+                Information sur la décision
+              </td>
+            </tr>
+
+            <tr>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td
+                class="td-des__item"
+                data-i18n="packages.interviewPreparation"
+              >
+                Préparation à l'entrevue s'il y a lieu
+              </td>
+
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td
+                class="td-des__item"
+                data-i18n="packages.interviewPreparation"
+              >
+                Préparation à l'entrevue s'il y a lieu
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.irbInterviewSupport">
+                Accompagnement à l'entrevue à la CISR
+              </td>
+            </tr>
+
+            <tr>
+              <td
+                class="th-inclus"
+                rowspan="2"
+                data-i18n="packages.notIncluded"
+              >
+                Pas Inclus
+              </td>
+
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td
+                class="td-des__item"
+                data-i18n="packages.administrativeReview"
+              >
+                Révision administrative s'il y a lieu
+              </td>
+
+              <td
+                class="td-des__item"
+                data-i18n="packages.administrativeReview"
+              >
+                Révision administrative s'il y a lieu
+              </td>
+
+              <td
+                class="td-des__item"
+                data-i18n="packages.administrativeReview"
+              >
+                Révision administrative s'il y a lieu
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.employmentContract">
+                Contrat de travail
+              </td>
+
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.appeal">Appel</td>
+            </tr>
+
+            <tr>
+              <td class="td-des__item"></td>
+              <td class="td-des__item"></td>
+
+              <td class="td-des__item" data-i18n="packages.addFamilyMember">
+                Ajout d'un nouveau membre de la famille
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.addFamilyMember">
+                Ajout d'un nouveau membre de la famille
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.addFamilyMember">
+                Ajout d'un nouveau membre de la famille
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.addFamilyMember">
+                Ajout d'un nouveau membre de la famille
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.addFamilyMember">
+                Ajout d'un nouveau membre de la famille
+              </td>
+
+              <td class="td-des__item" data-i18n="packages.addFamilyMember">
+                Ajout d'un nouveau membre de la famille
+              </td>
+            </tr>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td class="th-vide2"></td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+
+              <td>
+                <div>
+                  <a
+                    class="reserverForfait"
+                    href="joindre.html"
+                    data-i18n="packages.book"
+                  >
+                    Réserver ce forfait
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <img
+              src="img/logo_fr_transparent.png"
+              alt="omnifood-logo"
+              class="logo"
+            />
+          </a>
+
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy;
+            <span class="year"></span>
+            Design MADMECA Inc.
+            <span data-i18n="footer.copyright">
+              Tous les droits réservés.
+            </span>
+          </p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading" data-i18n="footer.contact">
+            Contactez-nous
+          </p>
+          <address class="contacts">
+            <p class="address">
+              1622 Rue Barré, Bureau 202, Saint-Laurent, QC, CA
+            </p>
+            <p>
+              <a class="footer-link" href="tel:415-201-6370">514-442-3076</a
+              ><br />
+              <a class="footer-link" href="mailto:hello@omnifood.com"
+                >madimmigrationcanadienne@gmail.com</a
+              >
+            </p>
+          </address>
+        </div>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.account">Compte</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.createAccount">
+                Créer un compte
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.register">
+                S'inscrire
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#">iOS</a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.android">
+                Android
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.company">Compagnie</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.about">
+                À propos de MADIC
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.business">
+                Affaires
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.partners">
+                Partenaires
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.career">
+                Carrière
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.resources">Ressources</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.directory">
+                Répertoire Immigration
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.help">
+                Centre d'aide
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.privacy">
+                Confidentialité et conditions
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>MAD Immigration Canada</title>
+
+    <meta
+      name="description"
+      content="Confirmation de soumission - MAD Immigration Canadienne"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+
+    <script defer src="js/script.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar__container">
+          <a href="index.html" class="navbar__logo">
+            <img
+              src="img/logo_fr_transparent.png"
+              alt="MadImmigrationCanadienne-logo"
+              class="logo"
+            />
+          </a>
+
+          <div>
+            <div class="navbar__toggle" id="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </div>
+
+            <ul class="navbar__menu">
+              <li class="navbar__item">
+                <a href="index.html" class="navbar__links" data-i18n="nav.home">
+                  Accueil
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="services.html"
+                  class="navbar__links"
+                  data-i18n="nav.services"
+                >
+                  Nos services
+                </a>
+              </li>
+
+              <li class="navbar__item">
+                <a
+                  href="joindre.html"
+                  class="navbar__links"
+                  data-i18n="nav.contact"
+                >
+                  Nous joindre
+                </a>
+              </li>
+
+              <li class="navbar__item language-switcher">
+                <button type="button" class="lang-btn active" data-lang="fr">
+                  FR
+                </button>
+
+                <span>|</span>
+
+                <button type="button" class="lang-btn" data-lang="en">
+                  EN
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="confirmation-section">
+        <div class="container">
+          <div class="confirmation-content">
+            <h1 data-i18n="confirmation.title">
+              Merci, votre formulaire a été envoyé
+            </h1>
+
+            <p data-i18n="confirmation.message">
+              Nous avons bien reçu vos renseignements. Un membre de MAD
+              Immigration Canadienne communiquera avec vous après l’analyse de
+              votre demande.
+            </p>
+
+            <p data-i18n="confirmation.notice">
+              Veuillez vérifier votre courriel et vous assurer que nos messages
+              ne sont pas dirigés vers votre dossier de courrier indésirable.
+            </p>
+
+            <a href="index.html" class="button" data-i18n="confirmation.home">
+              Retour à l’accueil
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
