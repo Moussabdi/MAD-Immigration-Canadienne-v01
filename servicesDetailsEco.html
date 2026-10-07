@@ -34,661 +34,1113 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
-    <main id="page-service-eco" class="service-detail-page">
-      <!-- ===================================================== -->
-      <!-- SECTION 1 : HERO -->
-      <!-- ===================================================== -->
-      <section class="service-detail-hero">
-        <div class="service-detail-overlay"></div>
+    <main id="page-services" class="services-page-new">
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
 
-        <div class="container service-detail-hero-content">
-          <span class="section-eyebrow" data-i18n="serviceEco.hero.eyebrow">
-            IMMIGRATION ÉCONOMIQUE
+      <style>
+        .services-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .services-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .services-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .services-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .services-lang-en {
+          display: inline;
+        }
+      </style>
+
+      <!-- =====================================================
+       SECTION 1 : HERO
+       ===================================================== -->
+
+      <section class="services-hero">
+        <div class="services-hero-overlay"></div>
+
+        <div class="container services-hero-content">
+          <span class="section-eyebrow">
+            <span class="services-lang-fr"> NOS SERVICES </span>
+
+            <span class="services-lang-en"> OUR SERVICES </span>
           </span>
 
-          <h1 data-i18n="serviceEco.title">Immigration économique</h1>
+          <h1>
+            <span class="services-lang-fr">
+              Des solutions adaptées à votre projet d’immigration au Canada
+            </span>
 
-          <p
-            class="service-detail-hero-subtitle"
-            data-i18n="serviceEco.hero.subtitle"
-          >
-            Découvrez les principales voies d’immigration économique permettant
-            aux travailleurs, professionnels et entrepreneurs de réaliser leur
-            projet d’établissement au Canada.
+            <span class="services-lang-en">
+              Solutions tailored to your Canadian immigration project
+            </span>
+          </h1>
+
+          <p class="services-hero-subtitle">
+            <span class="services-lang-fr">
+              MAD Immigration Canadienne vous accompagne dans différents
+              domaines de l’immigration canadienne avec une approche
+              personnalisée, structurée et professionnelle.
+            </span>
+
+            <span class="services-lang-en">
+              MAD Immigration Canadienne assists you in various areas of
+              Canadian immigration through a personalized, structured and
+              professional approach.
+            </span>
           </p>
 
-          <div class="service-detail-hero-buttons">
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="serviceEco.hero.evaluation"
-            >
+          <div class="services-hero-buttons">
+            <a href="formulaire.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-file-circle-check"></i>
-              Évaluation préliminaire
+
+              <span class="services-lang-fr"> Évaluation préliminaire </span>
+
+              <span class="services-lang-en"> Preliminary assessment </span>
             </a>
 
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="serviceEco.hero.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span class="services-lang-fr"> Prendre rendez-vous </span>
+
+              <span class="services-lang-en"> Book an appointment </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 2 : INTRODUCTION -->
-      <!-- ===================================================== -->
-      <section class="service-detail-intro">
-        <div class="container service-detail-intro-grid">
-          <div class="service-detail-image">
-            <img
-              src="img/immigrationEconomique_BF_1.png"
-              alt="Immigration économique au Canada"
-            />
+      <!-- =====================================================
+       SECTION 2 : INTRODUCTION
+       ===================================================== -->
 
-            <div class="service-detail-image-badge">
-              <i class="fa-solid fa-briefcase"></i>
-
-              <span data-i18n="serviceEco.imageBadge">
-                Immigration économique
-              </span>
-            </div>
-          </div>
-
-          <div class="service-detail-intro-content">
-            <span class="section-eyebrow" data-i18n="serviceEco.intro.eyebrow">
-              VOTRE PROJET PROFESSIONNEL AU CANADA
-            </span>
-
-            <h2 data-i18n="serviceEco.intro.title">
-              Plusieurs programmes peuvent mener à la résidence permanente
-            </h2>
-
-            <p data-i18n="serviceEco.intro.text">
-              L’immigration économique regroupe différents programmes destinés
-              aux personnes qui souhaitent s’établir au Canada en fonction de
-              leur expérience professionnelle, de leurs compétences, de leur
-              formation ou de leur capacité à contribuer à l’économie
-              canadienne.
-            </p>
-
-            <div class="service-detail-highlights">
-              <div class="service-highlight">
-                <i class="fa-solid fa-user-tie"></i>
-
-                <div>
-                  <strong data-i18n="serviceEco.highlight1.title">
-                    Travailleurs qualifiés
-                  </strong>
-
-                  <span data-i18n="serviceEco.highlight1.text">
-                    Programmes destinés aux professionnels et travailleurs.
-                  </span>
-                </div>
-              </div>
-
-              <div class="service-highlight">
-                <i class="fa-solid fa-map-location-dot"></i>
-
-                <div>
-                  <strong data-i18n="serviceEco.highlight2.title">
-                    Programmes provinciaux
-                  </strong>
-
-                  <span data-i18n="serviceEco.highlight2.text">
-                    Possibilités offertes par les provinces et territoires.
-                  </span>
-                </div>
-              </div>
-
-              <div class="service-highlight">
-                <i class="fa-solid fa-chart-line"></i>
-
-                <div>
-                  <strong data-i18n="serviceEco.highlight3.title">
-                    Établissement économique
-                  </strong>
-
-                  <span data-i18n="serviceEco.highlight3.text">
-                    Analyse de votre capacité à réussir votre établissement au
-                    Canada.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================================================== -->
-      <!-- SECTION 3 : PROGRAMMES -->
-      <!-- ===================================================== -->
-      <section class="service-programs">
+      <section class="services-intro">
         <div class="container">
           <div class="section-title">
-            <span
-              class="section-eyebrow"
-              data-i18n="serviceEco.programs.eyebrow"
-            >
-              PRINCIPALES CATÉGORIES
+            <span class="section-eyebrow">
+              <span class="services-lang-fr"> NOTRE EXPERTISE </span>
+
+              <span class="services-lang-en"> OUR EXPERTISE </span>
             </span>
 
-            <h2 data-i18n="serviceEco.programs.title">
-              Quelques voies d’immigration économique
+            <h2>
+              <span class="services-lang-fr"> Nos services d’immigration </span>
+
+              <span class="services-lang-en"> Our immigration services </span>
             </h2>
 
-            <p data-i18n="serviceEco.programs.subtitle">
-              Les critères varient selon le programme, la province, l’expérience
-              professionnelle et le profil du demandeur.
+            <p>
+              <span class="services-lang-fr">
+                Chaque situation est différente. Notre rôle est de comprendre
+                votre profil, vos objectifs et votre situation afin de vous
+                orienter vers les démarches qui pourraient correspondre à votre
+                projet.
+              </span>
+
+              <span class="services-lang-en">
+                Every situation is different. Our role is to understand your
+                profile, objectives and circumstances in order to guide you
+                toward the options that may be suitable for your project.
+              </span>
             </p>
           </div>
 
-          <div class="service-programs-grid">
-            <!-- TRAVAILLEURS QUALIFIÉS -->
-            <article class="program-card">
-              <div class="program-icon red">
-                <i class="fa-solid fa-user-tie"></i>
+          <div class="services-intro-grid">
+            <!-- ANALYSE -->
+
+            <div class="services-intro-item">
+              <div class="services-intro-icon red">
+                <i class="fa-solid fa-magnifying-glass"></i>
               </div>
 
-              <h3 data-i18n="serviceEco.program1.title">
-                Travailleurs qualifiés
+              <h3>
+                <span class="services-lang-fr"> Analyse </span>
+
+                <span class="services-lang-en"> Analysis </span>
               </h3>
 
-              <p data-i18n="serviceEco.program1.text">
-                Certaines voies s’adressent aux travailleurs qualifiés capables
-                de contribuer à l’économie canadienne et de réussir leur
-                établissement au Canada.
-              </p>
-            </article>
+              <p>
+                <span class="services-lang-fr">
+                  Analyse de votre situation et de vos objectifs.
+                </span>
 
-            <!-- EXPERIENCE CANADIENNE -->
-            <article class="program-card">
-              <div class="program-icon dark">
-                <i class="fa-solid fa-building-circle-check"></i>
-              </div>
-
-              <h3 data-i18n="serviceEco.program2.title">
-                Expérience canadienne
-              </h3>
-
-              <p data-i18n="serviceEco.program2.text">
-                Certaines catégories s’adressent aux personnes ayant acquis une
-                expérience de travail qualifié au Canada.
-              </p>
-            </article>
-
-            <!-- METIERS SPECIALISES -->
-            <article class="program-card">
-              <div class="program-icon red">
-                <i class="fa-solid fa-screwdriver-wrench"></i>
-              </div>
-
-              <h3 data-i18n="serviceEco.program3.title">Métiers spécialisés</h3>
-
-              <p data-i18n="serviceEco.program3.text">
-                Des programmes peuvent viser les travailleurs exerçant certains
-                métiers spécialisés et répondant aux critères applicables.
-              </p>
-            </article>
-
-            <!-- TRAVAILLEURS AUTONOMES -->
-            <article class="program-card">
-              <div class="program-icon dark">
-                <i class="fa-solid fa-person-running"></i>
-              </div>
-
-              <h3 data-i18n="serviceEco.program4.title">
-                Travailleurs autonomes
-              </h3>
-
-              <p data-i18n="serviceEco.program4.text">
-                Certaines voies peuvent concerner les personnes possédant une
-                expérience pertinente dans des secteurs admissibles.
-              </p>
-            </article>
-
-            <!-- CANDIDATS PROVINCES -->
-            <article class="program-card">
-              <div class="program-icon red">
-                <i class="fa-solid fa-map-canada"></i>
-              </div>
-
-              <h3 data-i18n="serviceEco.program5.title">
-                Candidats des provinces
-              </h3>
-
-              <p data-i18n="serviceEco.program5.text">
-                Les provinces et territoires peuvent sélectionner des candidats
-                qui souhaitent s’y établir et contribuer à leur développement.
-              </p>
-            </article>
-
-            <!-- ENTREPRENEURS -->
-            <article class="program-card">
-              <div class="program-icon dark">
-                <i class="fa-solid fa-chart-column"></i>
-              </div>
-
-              <h3 data-i18n="serviceEco.program6.title">
-                Entrepreneurs et gens d’affaires
-              </h3>
-
-              <p data-i18n="serviceEco.program6.text">
-                Certaines possibilités d’immigration sont destinées aux
-                entrepreneurs et gens d’affaires souhaitant développer leurs
-                activités au Canada.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ===================================================== -->
-      <!-- SECTION 4 : CONTENU DÉTAILLÉ -->
-      <!-- ===================================================== -->
-      <section class="service-detail-explanation">
-        <div class="container service-detail-explanation-grid">
-          <div class="service-detail-text">
-            <span class="section-eyebrow" data-i18n="serviceEco.detail.eyebrow">
-              COMPRENDRE LES POSSIBILITÉS
-            </span>
-
-            <h2 data-i18n="serviceEco.detail.title">
-              Immigration économique : une diversité de programmes
-            </h2>
-
-            <p data-i18n="serviceEco.description">
-              Cette section porte sur le traitement des demandes de résidence
-              permanente présentées par des demandeurs de la catégorie des
-              travailleurs qualifiés (fédéral). être travailleur qualifié; être
-              en mesure de devenir un résident permanent en raison de sa
-              capacité de réussir son établissement économique au Canada; avoir
-              l’intention de s’établir dans une province autre que le Québec. La
-              CEC est une catégorie de résidence permanente qui s’applique aux
-              personnes ayant acquis une expérience de travail qualifié au
-              Canada. Elle a été conçue à l’intention des travailleurs étrangers
-              temporaires et des diplômés étrangers ayant acquis une expérience
-              de travail admissible au Canada. La CTMSF vise les personnes qui
-              répondent à tous les critères suivants : être travailleur d’un
-              métier spécialisé; être en mesure de devenir un résident permanent
-              en raison de sa capacité de réussir son établissement économique
-              au Canada; avoir l’intention de s’établir dans une province autre
-              que le Québec. Un travailleur autonome est un étranger qui a
-              l’expérience pertinente pour travailler à son compte au Canada,
-              qui a également l’intention et la capacité de le faire, et qui
-              peut contribuer de manière importante à des activités culturelles
-              ou sportives. Le Programme des candidats des provinces vise à
-              permettre aux provinces et aux territoires de soutenir
-              l’immigration de personnes qui souhaitent s’établir sur leur
-              territoire et contribuer à leur développement économique.
-            </p>
-          </div>
-
-          <aside class="service-detail-info">
-            <div class="service-detail-info-card">
-              <div class="service-info-icon">
-                <i class="fa-solid fa-lightbulb"></i>
-              </div>
-
-              <h3 data-i18n="serviceEco.info.title">
-                Quelle option correspond à votre profil ?
-              </h3>
-
-              <p data-i18n="serviceEco.info.text">
-                Les programmes d’immigration économique comportent des critères
-                différents. Une analyse de votre profil permet de mieux
-                identifier les options à considérer.
-              </p>
-
-              <a
-                href="formulaire.html"
-                class="madic-btn madic-btn-red"
-                data-i18n="serviceEco.info.button"
-              >
-                Faire mon évaluation
-              </a>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <!-- ===================================================== -->
-      <!-- SECTION 5 : NOTRE APPROCHE -->
-      <!-- ===================================================== -->
-      <section class="service-detail-process">
-        <div class="container">
-          <div class="section-title section-title-light">
-            <span
-              class="section-eyebrow"
-              data-i18n="serviceEco.process.eyebrow"
-            >
-              NOTRE ACCOMPAGNEMENT
-            </span>
-
-            <h2 data-i18n="serviceEco.process.title">
-              Une démarche structurée pour votre projet
-            </h2>
-
-            <p data-i18n="serviceEco.process.subtitle">
-              Nous vous accompagnons dans l’analyse et la préparation de votre
-              projet selon la nature du mandat.
-            </p>
-          </div>
-
-          <div class="service-detail-process-grid">
-            <div class="detail-process-item">
-              <span class="detail-process-number">01</span>
-
-              <div class="detail-process-icon">
-                <i class="fa-solid fa-user-check"></i>
-              </div>
-
-              <h3 data-i18n="serviceEco.process.step1.title">
-                Analyse du profil
-              </h3>
-
-              <p data-i18n="serviceEco.process.step1.text">
-                Nous examinons votre parcours, votre expérience, votre formation
-                et vos objectifs.
+                <span class="services-lang-en">
+                  Analysis of your situation and objectives.
+                </span>
               </p>
             </div>
 
-            <div class="detail-process-item">
-              <span class="detail-process-number">02</span>
+            <!-- STRATÉGIE -->
 
-              <div class="detail-process-icon">
+            <div class="services-intro-item">
+              <div class="services-intro-icon dark">
                 <i class="fa-solid fa-route"></i>
               </div>
 
-              <h3 data-i18n="serviceEco.process.step2.title">
-                Identification des options
+              <h3>
+                <span class="services-lang-fr"> Stratégie </span>
+
+                <span class="services-lang-en"> Strategy </span>
               </h3>
 
-              <p data-i18n="serviceEco.process.step2.text">
-                Nous identifions les programmes et démarches qui peuvent être
-                pertinents selon votre situation.
+              <p>
+                <span class="services-lang-fr">
+                  Identification des options et des prochaines étapes possibles.
+                </span>
+
+                <span class="services-lang-en">
+                  Identification of possible options and next steps.
+                </span>
               </p>
             </div>
 
-            <div class="detail-process-item">
-              <span class="detail-process-number">03</span>
+            <!-- PRÉPARATION -->
 
-              <div class="detail-process-icon">
-                <i class="fa-solid fa-folder-open"></i>
+            <div class="services-intro-item">
+              <div class="services-intro-icon red">
+                <i class="fa-solid fa-file-circle-check"></i>
               </div>
 
-              <h3 data-i18n="serviceEco.process.step3.title">Préparation</h3>
+              <h3>
+                <span class="services-lang-fr"> Préparation </span>
 
-              <p data-i18n="serviceEco.process.step3.text">
-                Nous vous accompagnons dans la préparation des éléments
-                nécessaires à votre démarche.
+                <span class="services-lang-en"> Preparation </span>
+              </h3>
+
+              <p>
+                <span class="services-lang-fr">
+                  Accompagnement dans la préparation et l’organisation du
+                  dossier.
+                </span>
+
+                <span class="services-lang-en">
+                  Assistance with the preparation and organization of your file.
+                </span>
               </p>
             </div>
 
-            <div class="detail-process-item">
-              <span class="detail-process-number">04</span>
+            <!-- SUIVI -->
 
-              <div class="detail-process-icon">
+            <div class="services-intro-item">
+              <div class="services-intro-icon dark">
                 <i class="fa-solid fa-comments"></i>
               </div>
 
-              <h3 data-i18n="serviceEco.process.step4.title">Suivi</h3>
+              <h3>
+                <span class="services-lang-fr"> Suivi </span>
 
-              <p data-i18n="serviceEco.process.step4.text">
-                Nous assurons le suivi applicable et vous informons des
-                prochaines étapes.
+                <span class="services-lang-en"> Follow-up </span>
+              </h3>
+
+              <p>
+                <span class="services-lang-fr">
+                  Communication et suivi tout au long de votre démarche.
+                </span>
+
+                <span class="services-lang-en">
+                  Communication and follow-up throughout your process.
+                </span>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 6 : AUTRES SERVICES -->
-      <!-- ===================================================== -->
-      <section class="service-related">
+      <!-- =====================================================
+       SECTION 3 : SERVICES PRINCIPAUX
+       ===================================================== -->
+
+      <section class="services-main-list">
         <div class="container">
           <div class="section-title">
-            <span
-              class="section-eyebrow"
-              data-i18n="serviceEco.related.eyebrow"
-            >
-              DÉCOUVREZ AUSSI
+            <span class="section-eyebrow">
+              <span class="services-lang-fr">
+                NOS DOMAINES D’INTERVENTION
+              </span>
+
+              <span class="services-lang-en"> OUR AREAS OF PRACTICE </span>
             </span>
 
-            <h2 data-i18n="serviceEco.otherServices">Nos autres services</h2>
+            <h2>
+              <span class="services-lang-fr">
+                Trouvez le service correspondant à votre projet
+              </span>
 
-            <p data-i18n="serviceEco.related.subtitle">
-              Découvrez d’autres services pouvant correspondre à votre projet ou
-              à celui de votre famille.
+              <span class="services-lang-en">
+                Find the service that matches your project
+              </span>
+            </h2>
+
+            <p>
+              <span class="services-lang-fr">
+                Découvrez nos principales catégories de services en immigration
+                canadienne.
+              </span>
+
+              <span class="services-lang-en">
+                Discover our main areas of Canadian immigration services.
+              </span>
             </p>
           </div>
 
-          <div class="service-related-grid">
-            <!-- PARRAINAGE -->
-            <a href="servicesDetailsPar.html" class="related-service-card">
-              <div class="related-service-image">
-                <img src="img/parrainage_4.png" alt="Parrainage familial" />
+          <div class="services-modern-grid">
+            <!-- =================================================
+             IMMIGRATION ÉCONOMIQUE
+             ================================================= -->
 
-                <div class="related-service-overlay"></div>
+            <article class="services-modern-card">
+              <a href="servicesDetailsEco.html" class="services-card-image">
+                <img
+                  src="img/immigrationEconomique_2.png"
+                  alt="Immigration économique"
+                />
 
-                <div class="related-service-icon red">
-                  <i class="fa-solid fa-people-roof"></i>
+                <div class="services-card-overlay"></div>
+
+                <div class="services-card-icon red">
+                  <i class="fa-solid fa-briefcase"></i>
                 </div>
-              </div>
+              </a>
 
-              <div class="related-service-content">
-                <h3 data-i18n="serviceEco.sponsorship">Parrainage</h3>
+              <div class="services-card-content">
+                <span class="services-card-category">
+                  <span class="services-lang-fr"> RÉSIDENCE PERMANENTE </span>
 
-                <p data-i18n="serviceEco.related.sponsorshipText">
-                  Découvrez les démarches liées au regroupement familial et au
-                  parrainage de membres de la famille.
+                  <span class="services-lang-en"> PERMANENT RESIDENCE </span>
+                </span>
+
+                <h3>
+                  <span class="services-lang-fr"> Immigration économique </span>
+
+                  <span class="services-lang-en"> Economic immigration </span>
+                </h3>
+
+                <p>
+                  <span class="services-lang-fr">
+                    Les Programmes d’immigration économique sont environ une
+                    centaine répartit au niveau fédéral et provinciale. Être en
+                    mesure de devenir un résident permanent,être travailleur
+                    qualifié.
+                  </span>
+
+                  <span class="services-lang-en">
+                    There are approximately one hundred economic immigration
+                    programs available at the federal and provincial levels.
+                    They may provide pathways to permanent residence for
+                    qualified workers.
+                  </span>
                 </p>
 
-                <span>
-                  <span data-i18n="serviceEco.learnMore"> En savoir plus </span>
+                <a href="servicesDetailsEco.html" class="services-card-link">
+                  <span class="services-lang-fr"> En savoir plus </span>
+
+                  <span class="services-lang-en"> Learn more </span>
 
                   <i class="fa-solid fa-arrow-right"></i>
-                </span>
+                </a>
               </div>
-            </a>
+            </article>
 
-            <!-- RESIDENCE TEMPORAIRE -->
-            <a href="servicesDetailsRT.html" class="related-service-card">
-              <div class="related-service-image">
+            <!-- =================================================
+             PARRAINAGE
+             ================================================= -->
+
+            <article class="services-modern-card">
+              <a href="servicesDetailsPar.html" class="services-card-image">
+                <img src="img/parrainage.png" alt="Parrainage familial" />
+
+                <div class="services-card-overlay"></div>
+
+                <div class="services-card-icon dark">
+                  <i class="fa-solid fa-people-roof"></i>
+                </div>
+              </a>
+
+              <div class="services-card-content">
+                <span class="services-card-category">
+                  <span class="services-lang-fr"> FAMILLE </span>
+
+                  <span class="services-lang-en"> FAMILY </span>
+                </span>
+
+                <h3>
+                  <span class="services-lang-fr"> Parrainage </span>
+
+                  <span class="services-lang-en"> Sponsorship </span>
+                </h3>
+
+                <p>
+                  <span class="services-lang-fr">
+                    Le programme d’immigration au titre de la catégorie du
+                    regroupement familial vise à réunir des citoyens et des
+                    résidents permanents du Canada et les membres de leur
+                    famille proche.
+                  </span>
+
+                  <span class="services-lang-en">
+                    The family reunification immigration program is intended to
+                    reunite Canadian citizens and permanent residents with their
+                    close family members.
+                  </span>
+                </p>
+
+                <a href="servicesDetailsPar.html" class="services-card-link">
+                  <span class="services-lang-fr"> En savoir plus </span>
+
+                  <span class="services-lang-en"> Learn more </span>
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- =================================================
+             RÉSIDENCE TEMPORAIRE
+             ================================================= -->
+
+            <article class="services-modern-card">
+              <a href="servicesDetailsRT.html" class="services-card-image">
                 <img
                   src="img/ImmigrationTemporaire_3.png"
                   alt="Résidence temporaire"
                 />
 
-                <div class="related-service-overlay"></div>
+                <div class="services-card-overlay"></div>
 
-                <div class="related-service-icon dark">
+                <div class="services-card-icon red">
                   <i class="fa-solid fa-plane-arrival"></i>
+                </div>
+              </a>
+
+              <div class="services-card-content">
+                <span class="services-card-category">
+                  <span class="services-lang-fr"> SÉJOUR TEMPORAIRE </span>
+
+                  <span class="services-lang-en"> TEMPORARY STAY </span>
+                </span>
+
+                <h3>
+                  <span class="services-lang-fr"> Résidence temporaire </span>
+
+                  <span class="services-lang-en"> Temporary residence </span>
+                </h3>
+
+                <p>
+                  <span class="services-lang-fr">
+                    Chaque année, plus de 35 millions de personnes visitent le
+                    Canada en vue de profiter de ses nombreuses possibilités,
+                    notamment pour rendre visite à leur famille ou à des amis.
+                  </span>
+
+                  <span class="services-lang-en">
+                    Every year, more than 35 million people visit Canada to take
+                    advantage of its many opportunities, including visiting
+                    family members or friends.
+                  </span>
+                </p>
+
+                <a href="servicesDetailsRT.html" class="services-card-link">
+                  <span class="services-lang-fr"> En savoir plus </span>
+
+                  <span class="services-lang-en"> Learn more </span>
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- =================================================
+             HUMANITAIRE
+             ================================================= -->
+
+            <article class="services-modern-card services-icon-card">
+              <div class="services-icon-header">
+                <div class="services-large-icon dark">
+                  <i class="fa-solid fa-hand-holding-heart"></i>
                 </div>
               </div>
 
-              <div class="related-service-content">
-                <h3 data-i18n="serviceEco.temporaryResidence">
-                  Résidence temporaire
+              <div class="services-card-content">
+                <span class="services-card-category">
+                  <span class="services-lang-fr">
+                    PROTECTION ET HUMANITAIRE
+                  </span>
+
+                  <span class="services-lang-en">
+                    PROTECTION AND HUMANITARIAN
+                  </span>
+                </span>
+
+                <h3>
+                  <span class="services-lang-fr"> Humanitaire </span>
+
+                  <span class="services-lang-en"> Humanitarian </span>
                 </h3>
 
-                <p data-i18n="serviceEco.related.temporaryText">
-                  Découvrez les démarches pour les visiteurs, étudiants et
-                  travailleurs temporaires.
+                <p>
+                  <span class="services-lang-fr">
+                    Une demande de résidence permanente depuis le Canada pour
+                    considérations d’ordre humanitaires (CH).
+                  </span>
+
+                  <span class="services-lang-en">
+                    An application for permanent residence from within Canada
+                    based on humanitarian and compassionate considerations.
+                  </span>
                 </p>
 
-                <span>
-                  <span data-i18n="serviceEco.learnMore"> En savoir plus </span>
+                <ul class="services-feature-list">
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                      <span class="services-lang-fr">
+                        Vous êtes au Canada
+                      </span>
+
+                      <span class="services-lang-en"> You are in Canada </span>
+                    </span>
+                  </li>
+                </ul>
+
+                <a href="services.html" class="services-card-link">
+                  <span class="services-lang-fr"> En savoir plus </span>
+
+                  <span class="services-lang-en"> Learn more </span>
 
                   <i class="fa-solid fa-arrow-right"></i>
-                </span>
+                </a>
               </div>
-            </a>
+            </article>
+
+            <!-- =================================================
+             RÉFUGIÉ
+             ================================================= -->
+
+            <article class="services-modern-card services-icon-card">
+              <div class="services-icon-header">
+                <div class="services-large-icon red">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+              </div>
+
+              <div class="services-card-content">
+                <span class="services-card-category">
+                  <span class="services-lang-fr">
+                    PROTECTION ET HUMANITAIRE
+                  </span>
+
+                  <span class="services-lang-en">
+                    PROTECTION AND HUMANITARIAN
+                  </span>
+                </span>
+
+                <h3>
+                  <span class="services-lang-fr">
+                    Réfugié et demande d’asile
+                  </span>
+
+                  <span class="services-lang-en">
+                    Refugees and asylum claims
+                  </span>
+                </h3>
+
+                <p>
+                  <span class="services-lang-fr">
+                    Le Canada offre l’asile à certaines personnes se trouvant
+                    sur son territoire qui craignent la persécution ou qui
+                    seraient en danger si elles devaient partir.
+                  </span>
+
+                  <span class="services-lang-en">
+                    Canada offers asylum to certain people who are in the
+                    country and fear persecution or would face danger if they
+                    had to leave.
+                  </span>
+                </p>
+
+                <ul class="services-feature-list">
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                      <span class="services-lang-fr"> La torture </span>
+
+                      <span class="services-lang-en"> Torture </span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                      <span class="services-lang-fr">
+                        Une menace à leur vie
+                      </span>
+
+                      <span class="services-lang-en">
+                        A threat to their life
+                      </span>
+                    </span>
+                  </li>
+
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>
+                      <span class="services-lang-fr">
+                        Le risque de traitements ou de peines cruels et inusités
+                      </span>
+
+                      <span class="services-lang-en">
+                        Risk of cruel and unusual treatment or punishment
+                      </span>
+                    </span>
+                  </li>
+                </ul>
+
+                <a href="services.html" class="services-card-link">
+                  <span class="services-lang-fr"> En savoir plus </span>
+
+                  <span class="services-lang-en"> Learn more </span>
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+
+            <!-- =================================================
+             GENS D'AFFAIRES
+             ================================================= -->
+
+            <article class="services-modern-card services-icon-card">
+              <div class="services-icon-header">
+                <div class="services-large-icon dark">
+                  <i class="fa-solid fa-chart-line"></i>
+                </div>
+              </div>
+
+              <div class="services-card-content">
+                <span class="services-card-category">
+                  <span class="services-lang-fr"> ENTREPRENEURIAT </span>
+
+                  <span class="services-lang-en"> ENTREPRENEURSHIP </span>
+                </span>
+
+                <h3>
+                  <span class="services-lang-fr"> Gens d'affaires </span>
+
+                  <span class="services-lang-en"> Business people </span>
+                </h3>
+
+                <p>
+                  <span class="services-lang-fr">
+                    Le Canada accueille les gens d’affaires qui réussissent et
+                    cherchent des débouchés et des défis nouveaux. Le programme
+                    d’immigration des gens d’affaires est conçu pour favoriser
+                    l’admission de ces personnes.
+                  </span>
+
+                  <span class="services-lang-en">
+                    Canada welcomes successful business people seeking new
+                    opportunities and challenges. Business immigration programs
+                    are designed to facilitate the admission of these
+                    individuals.
+                  </span>
+                </p>
+
+                <a href="services.html" class="services-card-link">
+                  <span class="services-lang-fr"> En savoir plus </span>
+
+                  <span class="services-lang-en"> Learn more </span>
+
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 7 : CTA FINAL -->
-      <!-- ===================================================== -->
-      <section class="service-detail-final-cta">
-        <div class="service-detail-final-overlay"></div>
+      <!-- =====================================================
+       SECTION 4 : ACCOMPAGNEMENT
+       ===================================================== -->
 
-        <div class="container service-detail-final-content">
-          <span class="section-eyebrow" data-i18n="serviceEco.cta.eyebrow">
-            VOTRE PROJET COMMENCE ICI
+      <section class="services-support">
+        <div class="container">
+          <div class="section-title section-title-light">
+            <span class="section-eyebrow">
+              <span class="services-lang-fr"> NOTRE APPROCHE </span>
+
+              <span class="services-lang-en"> OUR APPROACH </span>
+            </span>
+
+            <h2>
+              <span class="services-lang-fr">
+                Un accompagnement structuré à chaque étape
+              </span>
+
+              <span class="services-lang-en">
+                Structured support at every stage
+              </span>
+            </h2>
+
+            <p>
+              <span class="services-lang-fr">
+                Nous vous accompagnons de l’analyse initiale jusqu’au suivi de
+                votre dossier selon la nature du mandat retenu.
+              </span>
+
+              <span class="services-lang-en">
+                We assist you from the initial assessment through the follow-up
+                of your file, according to the nature of the mandate selected.
+              </span>
+            </p>
+          </div>
+
+          <div class="services-support-grid">
+            <!-- 01 -->
+
+            <div class="services-support-item">
+              <span class="services-support-number"> 01 </span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-user-check"></i>
+              </div>
+
+              <h3>
+                <span class="services-lang-fr">
+                  Comprendre votre situation
+                </span>
+
+                <span class="services-lang-en">
+                  Understand your situation
+                </span>
+              </h3>
+
+              <p>
+                <span class="services-lang-fr">
+                  Nous prenons connaissance de votre profil, de votre parcours
+                  et de vos objectifs.
+                </span>
+
+                <span class="services-lang-en">
+                  We review your profile, background and objectives.
+                </span>
+              </p>
+            </div>
+
+            <!-- 02 -->
+
+            <div class="services-support-item">
+              <span class="services-support-number"> 02 </span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+              </div>
+
+              <h3>
+                <span class="services-lang-fr"> Analyser les options </span>
+
+                <span class="services-lang-en"> Analyze the options </span>
+              </h3>
+
+              <p>
+                <span class="services-lang-fr">
+                  Nous analysons les démarches qui pourraient correspondre à
+                  votre situation.
+                </span>
+
+                <span class="services-lang-en">
+                  We analyze the options that may correspond to your situation.
+                </span>
+              </p>
+            </div>
+
+            <!-- 03 -->
+
+            <div class="services-support-item">
+              <span class="services-support-number"> 03 </span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-folder-open"></i>
+              </div>
+
+              <h3>
+                <span class="services-lang-fr"> Préparer votre dossier </span>
+
+                <span class="services-lang-en"> Prepare your file </span>
+              </h3>
+
+              <p>
+                <span class="services-lang-fr">
+                  Nous vous accompagnons dans l’organisation et la préparation
+                  des éléments nécessaires au dossier.
+                </span>
+
+                <span class="services-lang-en">
+                  We assist you with organizing and preparing the elements
+                  required for your file.
+                </span>
+              </p>
+            </div>
+
+            <!-- 04 -->
+
+            <div class="services-support-item">
+              <span class="services-support-number"> 04 </span>
+
+              <div class="services-support-icon">
+                <i class="fa-solid fa-comments"></i>
+              </div>
+
+              <h3>
+                <span class="services-lang-fr"> Assurer le suivi </span>
+
+                <span class="services-lang-en"> Provide follow-up </span>
+              </h3>
+
+              <p>
+                <span class="services-lang-fr">
+                  Nous assurons le suivi applicable et vous informons des
+                  prochaines étapes.
+                </span>
+
+                <span class="services-lang-en">
+                  We provide the appropriate follow-up and keep you informed of
+                  the next steps.
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 5 : BESOIN D'AIDE
+       ===================================================== -->
+
+      <section class="services-help">
+        <div class="container services-help-grid">
+          <div class="services-help-content">
+            <span class="section-eyebrow">
+              <span class="services-lang-fr">
+                VOUS NE SAVEZ PAS PAR OÙ COMMENCER ?
+              </span>
+
+              <span class="services-lang-en"> NOT SURE WHERE TO START? </span>
+            </span>
+
+            <h2>
+              <span class="services-lang-fr">
+                Commencez par nous présenter votre situation
+              </span>
+
+              <span class="services-lang-en">
+                Start by telling us about your situation
+              </span>
+            </h2>
+
+            <p>
+              <span class="services-lang-fr">
+                Si vous ne savez pas quel programme ou quel service correspond à
+                votre situation, commencez par remplir notre évaluation
+                préliminaire ou réservez une consultation.
+              </span>
+
+              <span class="services-lang-en">
+                If you are unsure which program or service is suitable for your
+                situation, start by completing our preliminary assessment or
+                booking a consultation.
+              </span>
+            </p>
+
+            <div class="services-help-buttons">
+              <a href="formulaire.html" class="madic-btn madic-btn-red">
+                <i class="fa-solid fa-file-circle-check"></i>
+
+                <span class="services-lang-fr"> Évaluation préliminaire </span>
+
+                <span class="services-lang-en"> Preliminary assessment </span>
+              </a>
+
+              <a href="rendezvous.html" class="madic-btn madic-btn-dark">
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <span class="services-lang-fr"> Prendre rendez-vous </span>
+
+                <span class="services-lang-en"> Book an appointment </span>
+              </a>
+            </div>
+          </div>
+
+          <div class="services-help-visual">
+            <div class="services-help-icon-main">
+              <i class="fa-solid fa-passport"></i>
+            </div>
+
+            <div class="services-help-badge services-help-badge-one">
+              <i class="fa-solid fa-maple-leaf"></i>
+
+              <span>
+                <span class="services-lang-fr"> Projet Canada </span>
+
+                <span class="services-lang-en"> Canada project </span>
+              </span>
+            </div>
+
+            <div class="services-help-badge services-help-badge-two">
+              <i class="fa-solid fa-comments"></i>
+
+              <span>
+                <span class="services-lang-fr"> Consultation </span>
+
+                <span class="services-lang-en"> Consultation </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 6 : CTA FINAL
+       ===================================================== -->
+
+      <section class="services-final-cta">
+        <div class="services-final-overlay"></div>
+
+        <div class="container services-final-content">
+          <span class="section-eyebrow">
+            <span class="services-lang-fr"> VOTRE PROJET COMMENCE ICI </span>
+
+            <span class="services-lang-en"> YOUR PROJECT STARTS HERE </span>
           </span>
 
-          <h2 data-i18n="serviceEco.cta.title">
-            Vous souhaitez explorer vos possibilités d’immigration économique ?
+          <h2>
+            <span class="services-lang-fr">
+              Parlons de votre projet d’immigration au Canada
+            </span>
+
+            <span class="services-lang-en">
+              Let's discuss your Canadian immigration project
+            </span>
           </h2>
 
-          <p data-i18n="serviceEco.cta.text">
-            Présentez-nous votre situation grâce à l’évaluation préliminaire ou
-            réservez une consultation avec MAD Immigration Canadienne.
+          <p>
+            <span class="services-lang-fr">
+              Réservez une consultation afin de discuter de votre situation et
+              de vos prochaines étapes avec MAD Immigration Canadienne.
+            </span>
+
+            <span class="services-lang-en">
+              Book a consultation to discuss your situation and next steps with
+              MAD Immigration Canadienne.
+            </span>
           </p>
 
-          <div class="service-detail-final-buttons">
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="serviceEco.cta.evaluation"
-            >
-              <i class="fa-solid fa-file-circle-check"></i>
-              Faire mon évaluation
+          <div class="services-final-buttons">
+            <a href="rendezvous.html" class="madic-btn madic-btn-red">
+              <i class="fa-solid fa-calendar-check"></i>
+
+              <span class="services-lang-fr"> Prendre rendez-vous </span>
+
+              <span class="services-lang-en"> Book an appointment </span>
             </a>
 
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="serviceEco.cta.appointment"
-            >
-              <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+            <a href="formulaire.html" class="madic-btn madic-btn-light">
+              <i class="fa-solid fa-file-circle-check"></i>
+
+              <span class="services-lang-fr"> Faire mon évaluation </span>
+
+              <span class="services-lang-en"> Start my assessment </span>
             </a>
           </div>
         </div>

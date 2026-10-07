@@ -33,174 +33,271 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="page-service-rt" class="service-detail-page">
-      <!-- ===================================================== -->
-      <!-- SECTION 1 : HERO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
+
+      <style>
+        .rt-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .rt-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .rt-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .rt-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .rt-lang-en {
+          display: inline;
+        }
+      </style>
+
+      <!-- =====================================================
+       SECTION 1 : HERO
+       ===================================================== -->
+
       <section class="service-detail-hero service-detail-hero-rt">
         <div class="service-detail-overlay"></div>
 
         <div class="container service-detail-hero-content">
-          <span class="section-eyebrow" data-i18n="serviceRT.hero.eyebrow">
-            RÉSIDENCE TEMPORAIRE
+          <span class="section-eyebrow">
+            <span class="rt-lang-fr"> RÉSIDENCE TEMPORAIRE </span>
+
+            <span class="rt-lang-en"> TEMPORARY RESIDENCE </span>
           </span>
 
-          <h1 data-i18n="serviceRT.title">Résidence temporaire</h1>
+          <h1>
+            <span class="rt-lang-fr"> Résidence temporaire </span>
 
-          <p
-            class="service-detail-hero-subtitle"
-            data-i18n="serviceRT.hero.subtitle"
-          >
-            Visiter, étudier ou travailler temporairement au Canada implique de
-            respecter des exigences précises. MAD Immigration Canadienne vous
-            accompagne dans la compréhension des options applicables à votre
-            situation.
+            <span class="rt-lang-en"> Temporary residence </span>
+          </h1>
+
+          <p class="service-detail-hero-subtitle">
+            <span class="rt-lang-fr">
+              Visiter, étudier ou travailler temporairement au Canada implique
+              de respecter des exigences précises. MAD Immigration Canadienne
+              vous accompagne dans la compréhension des options applicables à
+              votre situation.
+            </span>
+
+            <span class="rt-lang-en">
+              Visiting, studying or working temporarily in Canada involves
+              meeting specific requirements. MAD Immigration Canadienne assists
+              you in understanding the options that may apply to your situation.
+            </span>
           </p>
 
           <div class="service-detail-hero-buttons">
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="serviceRT.hero.evaluation"
-            >
+            <a href="formulaire.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-file-circle-check"></i>
-              Évaluation préliminaire
+
+              <span class="rt-lang-fr"> Évaluation préliminaire </span>
+
+              <span class="rt-lang-en"> Preliminary assessment </span>
             </a>
 
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="serviceRT.hero.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span class="rt-lang-fr"> Prendre rendez-vous </span>
+
+              <span class="rt-lang-en"> Book an appointment </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 2 : INTRODUCTION -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 2 : INTRODUCTION
+       ===================================================== -->
+
       <section class="service-detail-intro">
         <div class="container service-detail-intro-grid">
           <div class="service-detail-image">
@@ -212,69 +309,120 @@
             <div class="service-detail-image-badge">
               <i class="fa-solid fa-plane-arrival"></i>
 
-              <span data-i18n="serviceRT.imageBadge">
-                Séjour temporaire au Canada
+              <span>
+                <span class="rt-lang-fr"> Séjour temporaire au Canada </span>
+
+                <span class="rt-lang-en"> Temporary stay in Canada </span>
               </span>
             </div>
           </div>
 
           <div class="service-detail-intro-content">
-            <span class="section-eyebrow" data-i18n="serviceRT.intro.eyebrow">
-              VENIR AU CANADA TEMPORAIREMENT
+            <span class="section-eyebrow">
+              <span class="rt-lang-fr"> VENIR AU CANADA TEMPORAIREMENT </span>
+
+              <span class="rt-lang-en"> COMING TO CANADA TEMPORARILY </span>
             </span>
 
-            <h2 data-i18n="serviceRT.intro.title">
-              Plusieurs statuts peuvent permettre un séjour temporaire au Canada
+            <h2>
+              <span class="rt-lang-fr">
+                Plusieurs statuts peuvent permettre un séjour temporaire au
+                Canada
+              </span>
+
+              <span class="rt-lang-en">
+                Several statuses may allow a temporary stay in Canada
+              </span>
             </h2>
 
-            <p data-i18n="serviceRT.intro.text">
-              Selon votre situation, vous pourriez venir au Canada à titre de
-              visiteur, d’étudiant, de travailleur temporaire ou dans le cadre
-              d’une autre autorisation de séjour temporaire.
+            <p>
+              <span class="rt-lang-fr">
+                Selon votre situation, vous pourriez venir au Canada à titre de
+                visiteur, d’étudiant, de travailleur temporaire ou dans le cadre
+                d’une autre autorisation de séjour temporaire.
+              </span>
+
+              <span class="rt-lang-en">
+                Depending on your situation, you may be able to come to Canada
+                as a visitor, student, temporary worker or under another type of
+                temporary residence authorization.
+              </span>
             </p>
 
             <div class="service-detail-highlights">
+              <!-- VISITEUR -->
+
               <div class="service-highlight">
                 <i class="fa-solid fa-passport"></i>
 
                 <div>
-                  <strong data-i18n="serviceRT.highlight1.title">
-                    Visiteur
+                  <strong>
+                    <span class="rt-lang-fr"> Visiteur </span>
+
+                    <span class="rt-lang-en"> Visitor </span>
                   </strong>
 
-                  <span data-i18n="serviceRT.highlight1.text">
-                    Visa de résident temporaire ou autorisation de voyage
-                    électronique selon la situation.
+                  <span>
+                    <span class="rt-lang-fr">
+                      Visa de résident temporaire ou autorisation de voyage
+                      électronique selon la situation.
+                    </span>
+
+                    <span class="rt-lang-en">
+                      Temporary resident visa or electronic travel
+                      authorization, depending on the situation.
+                    </span>
                   </span>
                 </div>
               </div>
+
+              <!-- ÉTUDIANT -->
 
               <div class="service-highlight">
                 <i class="fa-solid fa-graduation-cap"></i>
 
                 <div>
-                  <strong data-i18n="serviceRT.highlight2.title">
-                    Étudiant
+                  <strong>
+                    <span class="rt-lang-fr"> Étudiant </span>
+
+                    <span class="rt-lang-en"> Student </span>
                   </strong>
 
-                  <span data-i18n="serviceRT.highlight2.text">
-                    Démarches liées aux études et au séjour temporaire au
-                    Canada.
+                  <span>
+                    <span class="rt-lang-fr">
+                      Démarches liées aux études et au séjour temporaire au
+                      Canada.
+                    </span>
+
+                    <span class="rt-lang-en">
+                      Processes related to studies and temporary residence in
+                      Canada.
+                    </span>
                   </span>
                 </div>
               </div>
+
+              <!-- TRAVAILLEUR TEMPORAIRE -->
 
               <div class="service-highlight">
                 <i class="fa-solid fa-briefcase"></i>
 
                 <div>
-                  <strong data-i18n="serviceRT.highlight3.title">
-                    Travailleur temporaire
+                  <strong>
+                    <span class="rt-lang-fr"> Travailleur temporaire </span>
+
+                    <span class="rt-lang-en"> Temporary worker </span>
                   </strong>
 
-                  <span data-i18n="serviceRT.highlight3.text">
-                    Séjour temporaire lié à une autorisation de travailler au
-                    Canada.
+                  <span>
+                    <span class="rt-lang-fr">
+                      Séjour temporaire lié à une autorisation de travailler au
+                      Canada.
+                    </span>
+
+                    <span class="rt-lang-en">
+                      Temporary stay related to authorization to work in Canada.
+                    </span>
                   </span>
                 </div>
               </div>
@@ -283,161 +431,272 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 3 : PRINCIPALES CATÉGORIES -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 3 : PRINCIPALES CATÉGORIES
+       ===================================================== -->
+
       <section class="service-programs">
         <div class="container">
           <div class="section-title">
-            <span
-              class="section-eyebrow"
-              data-i18n="serviceRT.categories.eyebrow"
-            >
-              PRINCIPALES CATÉGORIES
+            <span class="section-eyebrow">
+              <span class="rt-lang-fr"> PRINCIPALES CATÉGORIES </span>
+
+              <span class="rt-lang-en"> MAIN CATEGORIES </span>
             </span>
 
-            <h2 data-i18n="serviceRT.categories.title">
-              Les principales formes de résidence temporaire
+            <h2>
+              <span class="rt-lang-fr">
+                Les principales formes de résidence temporaire
+              </span>
+
+              <span class="rt-lang-en">
+                The main forms of temporary residence
+              </span>
             </h2>
 
-            <p data-i18n="serviceRT.categories.subtitle">
-              Les exigences varient selon le motif du séjour, la nationalité, la
-              durée prévue et la situation du demandeur.
+            <p>
+              <span class="rt-lang-fr">
+                Les exigences varient selon le motif du séjour, la nationalité,
+                la durée prévue et la situation du demandeur.
+              </span>
+
+              <span class="rt-lang-en">
+                Requirements vary depending on the purpose of the stay,
+                nationality, intended duration and the applicant's situation.
+              </span>
             </p>
           </div>
 
           <div class="service-programs-grid">
-            <!-- VISITEUR -->
+            <!-- VISA DE RÉSIDENT TEMPORAIRE -->
+
             <article class="program-card">
               <div class="program-icon red">
                 <i class="fa-solid fa-passport"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.category1.title">
-                Visa de résident temporaire
+              <h3>
+                <span class="rt-lang-fr"> Visa de résident temporaire </span>
+
+                <span class="rt-lang-en"> Temporary resident visa </span>
               </h3>
 
-              <p data-i18n="serviceRT.category1.text">
-                Certaines personnes doivent obtenir un visa de résident
-                temporaire avant de voyager au Canada.
+              <p>
+                <span class="rt-lang-fr">
+                  Certaines personnes doivent obtenir un visa de résident
+                  temporaire avant de voyager au Canada.
+                </span>
+
+                <span class="rt-lang-en">
+                  Some people must obtain a temporary resident visa before
+                  travelling to Canada.
+                </span>
               </p>
             </article>
 
             <!-- AVE -->
+
             <article class="program-card">
               <div class="program-icon dark">
                 <i class="fa-solid fa-plane-circle-check"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.category2.title">
-                Autorisation de voyage électronique
+              <h3>
+                <span class="rt-lang-fr">
+                  Autorisation de voyage électronique
+                </span>
+
+                <span class="rt-lang-en">
+                  Electronic travel authorization
+                </span>
               </h3>
 
-              <p data-i18n="serviceRT.category2.text">
-                Certaines personnes dispensées de visa doivent obtenir une AVE
-                avant de voyager au Canada par voie aérienne.
+              <p>
+                <span class="rt-lang-fr">
+                  Certaines personnes dispensées de visa doivent obtenir une AVE
+                  avant de voyager au Canada par voie aérienne.
+                </span>
+
+                <span class="rt-lang-en">
+                  Certain visa-exempt travellers must obtain an eTA before
+                  travelling to Canada by air.
+                </span>
               </p>
             </article>
 
-            <!-- ETUDIANT -->
+            <!-- ÉTUDIANTS ÉTRANGERS -->
+
             <article class="program-card">
               <div class="program-icon red">
                 <i class="fa-solid fa-graduation-cap"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.category3.title">Étudiants étrangers</h3>
+              <h3>
+                <span class="rt-lang-fr"> Étudiants étrangers </span>
 
-              <p data-i18n="serviceRT.category3.text">
-                Certaines personnes doivent obtenir une autorisation appropriée
-                pour étudier temporairement au Canada.
+                <span class="rt-lang-en"> International students </span>
+              </h3>
+
+              <p>
+                <span class="rt-lang-fr">
+                  Certaines personnes doivent obtenir une autorisation
+                  appropriée pour étudier temporairement au Canada.
+                </span>
+
+                <span class="rt-lang-en">
+                  Some people must obtain the appropriate authorization to study
+                  temporarily in Canada.
+                </span>
               </p>
             </article>
 
-            <!-- TRAVAILLEUR -->
+            <!-- TRAVAILLEURS TEMPORAIRES -->
+
             <article class="program-card">
               <div class="program-icon dark">
                 <i class="fa-solid fa-briefcase"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.category4.title">
-                Travailleurs temporaires
+              <h3>
+                <span class="rt-lang-fr"> Travailleurs temporaires </span>
+
+                <span class="rt-lang-en"> Temporary workers </span>
               </h3>
 
-              <p data-i18n="serviceRT.category4.text">
-                Certaines personnes peuvent travailler au Canada temporairement
-                selon le type d’autorisation applicable.
+              <p>
+                <span class="rt-lang-fr">
+                  Certaines personnes peuvent travailler au Canada
+                  temporairement selon le type d’autorisation applicable.
+                </span>
+
+                <span class="rt-lang-en">
+                  Some people may work temporarily in Canada depending on the
+                  applicable type of authorization.
+                </span>
               </p>
             </article>
 
-            <!-- PERMIS DE SEJOUR TEMPORAIRE -->
+            <!-- PERMIS DE SÉJOUR TEMPORAIRE -->
+
             <article class="program-card">
               <div class="program-icon red">
                 <i class="fa-solid fa-id-card"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.category5.title">
-                Permis de séjour temporaire
+              <h3>
+                <span class="rt-lang-fr"> Permis de séjour temporaire </span>
+
+                <span class="rt-lang-en"> Temporary resident permit </span>
               </h3>
 
-              <p data-i18n="serviceRT.category5.text">
-                Certaines situations particulières peuvent nécessiter un permis
-                de séjour temporaire.
+              <p>
+                <span class="rt-lang-fr">
+                  Certaines situations particulières peuvent nécessiter un
+                  permis de séjour temporaire.
+                </span>
+
+                <span class="rt-lang-en">
+                  Certain special circumstances may require a temporary resident
+                  permit.
+                </span>
               </p>
             </article>
 
-            <!-- CONDITIONS DE SEJOUR -->
+            <!-- CONDITIONS DE SÉJOUR -->
+
             <article class="program-card">
               <div class="program-icon dark">
                 <i class="fa-solid fa-clock"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.category6.title">
-                Conditions de séjour
+              <h3>
+                <span class="rt-lang-fr"> Conditions de séjour </span>
+
+                <span class="rt-lang-en"> Conditions of stay </span>
               </h3>
 
-              <p data-i18n="serviceRT.category6.text">
-                Les résidents temporaires sont soumis à des conditions,
-                notamment concernant la durée de leur séjour.
+              <p>
+                <span class="rt-lang-fr">
+                  Les résidents temporaires sont soumis à des conditions,
+                  notamment concernant la durée de leur séjour.
+                </span>
+
+                <span class="rt-lang-en">
+                  Temporary residents are subject to conditions, including the
+                  duration of their stay.
+                </span>
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 4 : EXPLICATION DÉTAILLÉE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 4 : EXPLICATION DÉTAILLÉE
+       ===================================================== -->
+
       <section class="service-detail-explanation">
         <div class="container service-detail-explanation-grid">
           <div class="service-detail-text">
-            <span class="section-eyebrow" data-i18n="serviceRT.detail.eyebrow">
-              COMPRENDRE LE STATUT TEMPORAIRE
+            <span class="section-eyebrow">
+              <span class="rt-lang-fr"> COMPRENDRE LE STATUT TEMPORAIRE </span>
+
+              <span class="rt-lang-en"> UNDERSTANDING TEMPORARY STATUS </span>
             </span>
 
-            <h2 data-i18n="serviceRT.detail.title">
-              Qu’est-ce qu’un résident temporaire ?
+            <h2>
+              <span class="rt-lang-fr">
+                Qu’est-ce qu’un résident temporaire ?
+              </span>
+
+              <span class="rt-lang-en"> What is a temporary resident? </span>
             </h2>
 
-            <p data-i18n="serviceRT.description">
-              Qu’est-ce qu’un résident temporaire? Un résident temporaire est un
-              étranger qui est légalement autorisé à entrer au Canada à des fins
-              temporaires. Un étranger a le statut de résident temporaire
-              lorsqu’on estime qu’il remplit les exigences de la loi pour entrer
-              et/ou demeurer au Canada à titre de visiteur, d’étudiant, de
-              travailleur ou de titulaire d'un permis de séjour temporaire.
-              Seuls les étrangers se trouvant effectivement au Canada détiennent
-              le statut de résident temporaire. Immigration, Réfugiés et
-              Citoyenneté Canada traite les demandes au titre de plusieurs
-              catégories : visa de résident temporaire, autorisation de voyage
-              électronique, étudiants étrangers, travailleurs temporaires et
-              permis de résident temporaire. Les résidents temporaires sont
-              assujettis à diverses conditions, telles que la durée de leur
-              séjour au Canada. Le visa de résident temporaire est un document
-              officiel délivré afin de démontrer qu’une personne satisfait aux
-              exigences applicables à titre de résident temporaire. Le visa ne
-              garantit toutefois pas automatiquement l’entrée au Canada.
-              L’autorisation de voyage électronique s’applique également à
-              certaines catégories de voyageurs selon leur situation.
+            <p>
+              <span class="rt-lang-fr">
+                Qu’est-ce qu’un résident temporaire? Un résident temporaire est
+                un étranger qui est légalement autorisé à entrer au Canada à des
+                fins temporaires. Un étranger a le statut de résident temporaire
+                lorsqu’on estime qu’il remplit les exigences de la loi pour
+                entrer et/ou demeurer au Canada à titre de visiteur, d’étudiant,
+                de travailleur ou de titulaire d'un permis de séjour temporaire.
+                Seuls les étrangers se trouvant effectivement au Canada
+                détiennent le statut de résident temporaire. Immigration,
+                Réfugiés et Citoyenneté Canada traite les demandes au titre de
+                plusieurs catégories : visa de résident temporaire, autorisation
+                de voyage électronique, étudiants étrangers, travailleurs
+                temporaires et permis de résident temporaire. Les résidents
+                temporaires sont assujettis à diverses conditions, telles que la
+                durée de leur séjour au Canada. Le visa de résident temporaire
+                est un document officiel délivré afin de démontrer qu’une
+                personne satisfait aux exigences applicables à titre de résident
+                temporaire. Le visa ne garantit toutefois pas automatiquement
+                l’entrée au Canada. L’autorisation de voyage électronique
+                s’applique également à certaines catégories de voyageurs selon
+                leur situation.
+              </span>
+
+              <span class="rt-lang-en">
+                What is a temporary resident? A temporary resident is a foreign
+                national who is legally authorized to enter Canada for temporary
+                purposes. A foreign national has temporary resident status when
+                they are considered to meet the legal requirements to enter
+                and/or remain in Canada as a visitor, student, worker or holder
+                of a temporary resident permit. Only foreign nationals who are
+                physically present in Canada hold temporary resident status.
+                Immigration, Refugees and Citizenship Canada processes
+                applications under several categories, including temporary
+                resident visas, electronic travel authorizations, international
+                students, temporary workers and temporary resident permits.
+                Temporary residents are subject to various conditions, including
+                the duration of their stay in Canada. A temporary resident visa
+                is an official document issued to demonstrate that a person
+                meets the applicable requirements as a temporary resident.
+                However, the visa does not automatically guarantee entry into
+                Canada. The electronic travel authorization also applies to
+                certain categories of travellers depending on their
+                circumstances.
+              </span>
             </p>
           </div>
 
@@ -447,48 +706,77 @@
                 <i class="fa-solid fa-plane-departure"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.info.title">
-                Vous souhaitez venir temporairement au Canada ?
+              <h3>
+                <span class="rt-lang-fr">
+                  Vous souhaitez venir temporairement au Canada ?
+                </span>
+
+                <span class="rt-lang-en">
+                  Would you like to come to Canada temporarily?
+                </span>
               </h3>
 
-              <p data-i18n="serviceRT.info.text">
-                Votre situation peut déterminer si vous avez besoin d’un visa,
-                d’une AVE, d’un permis d’études ou d’une autre autorisation.
+              <p>
+                <span class="rt-lang-fr">
+                  Votre situation peut déterminer si vous avez besoin d’un visa,
+                  d’une AVE, d’un permis d’études ou d’une autre autorisation.
+                </span>
+
+                <span class="rt-lang-en">
+                  Your situation may determine whether you need a visa, an eTA,
+                  a study permit or another type of authorization.
+                </span>
               </p>
 
-              <a
-                href="formulaire.html"
-                class="madic-btn madic-btn-red"
-                data-i18n="serviceRT.info.button"
-              >
-                Faire mon évaluation
+              <a href="formulaire.html" class="madic-btn madic-btn-red">
+                <span class="rt-lang-fr"> Faire mon évaluation </span>
+
+                <span class="rt-lang-en"> Start my assessment </span>
               </a>
             </div>
           </aside>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 5 : NOTRE ACCOMPAGNEMENT -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 5 : NOTRE ACCOMPAGNEMENT
+       ===================================================== -->
+
       <section class="service-detail-process">
         <div class="container">
           <div class="section-title section-title-light">
-            <span class="section-eyebrow" data-i18n="serviceRT.process.eyebrow">
-              NOTRE ACCOMPAGNEMENT
+            <span class="section-eyebrow">
+              <span class="rt-lang-fr"> NOTRE ACCOMPAGNEMENT </span>
+
+              <span class="rt-lang-en"> OUR SUPPORT </span>
             </span>
 
-            <h2 data-i18n="serviceRT.process.title">
-              Une démarche structurée pour votre séjour temporaire
+            <h2>
+              <span class="rt-lang-fr">
+                Une démarche structurée pour votre séjour temporaire
+              </span>
+
+              <span class="rt-lang-en">
+                A structured process for your temporary stay
+              </span>
             </h2>
 
-            <p data-i18n="serviceRT.process.subtitle">
-              Nous vous accompagnons dans l’analyse de votre situation et dans
-              la préparation de votre démarche selon la nature du mandat.
+            <p>
+              <span class="rt-lang-fr">
+                Nous vous accompagnons dans l’analyse de votre situation et dans
+                la préparation de votre démarche selon la nature du mandat.
+              </span>
+
+              <span class="rt-lang-en">
+                We assist you in analyzing your situation and preparing your
+                process according to the nature of the mandate.
+              </span>
             </p>
           </div>
 
           <div class="service-detail-process-grid">
+            <!-- 01 -->
+
             <div class="detail-process-item">
               <span class="detail-process-number">01</span>
 
@@ -496,15 +784,26 @@
                 <i class="fa-solid fa-user-check"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.process.step1.title">
-                Analyse du profil
+              <h3>
+                <span class="rt-lang-fr"> Analyse du profil </span>
+
+                <span class="rt-lang-en"> Profile assessment </span>
               </h3>
 
-              <p data-i18n="serviceRT.process.step1.text">
-                Nous examinons votre situation, la raison de votre séjour et vos
-                objectifs.
+              <p>
+                <span class="rt-lang-fr">
+                  Nous examinons votre situation, la raison de votre séjour et
+                  vos objectifs.
+                </span>
+
+                <span class="rt-lang-en">
+                  We review your situation, the purpose of your stay and your
+                  objectives.
+                </span>
               </p>
             </div>
+
+            <!-- 02 -->
 
             <div class="detail-process-item">
               <span class="detail-process-number">02</span>
@@ -513,15 +812,30 @@
                 <i class="fa-solid fa-route"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.process.step2.title">
-                Identification de l’autorisation
+              <h3>
+                <span class="rt-lang-fr">
+                  Identification de l’autorisation
+                </span>
+
+                <span class="rt-lang-en">
+                  Identification of the authorization
+                </span>
               </h3>
 
-              <p data-i18n="serviceRT.process.step2.text">
-                Nous identifions le type de démarche ou d’autorisation qui
-                pourrait être pertinent.
+              <p>
+                <span class="rt-lang-fr">
+                  Nous identifions le type de démarche ou d’autorisation qui
+                  pourrait être pertinent.
+                </span>
+
+                <span class="rt-lang-en">
+                  We identify the type of process or authorization that may be
+                  relevant.
+                </span>
               </p>
             </div>
+
+            <!-- 03 -->
 
             <div class="detail-process-item">
               <span class="detail-process-number">03</span>
@@ -530,15 +844,26 @@
                 <i class="fa-solid fa-folder-open"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.process.step3.title">
-                Préparation du dossier
+              <h3>
+                <span class="rt-lang-fr"> Préparation du dossier </span>
+
+                <span class="rt-lang-en"> File preparation </span>
               </h3>
 
-              <p data-i18n="serviceRT.process.step3.text">
-                Nous vous accompagnons dans la préparation et l’organisation des
-                documents requis.
+              <p>
+                <span class="rt-lang-fr">
+                  Nous vous accompagnons dans la préparation et l’organisation
+                  des documents requis.
+                </span>
+
+                <span class="rt-lang-en">
+                  We assist you with preparing and organizing the required
+                  documents.
+                </span>
               </p>
             </div>
+
+            <!-- 04 -->
 
             <div class="detail-process-item">
               <span class="detail-process-number">04</span>
@@ -547,37 +872,63 @@
                 <i class="fa-solid fa-comments"></i>
               </div>
 
-              <h3 data-i18n="serviceRT.process.step4.title">Suivi</h3>
+              <h3>
+                <span class="rt-lang-fr"> Suivi </span>
 
-              <p data-i18n="serviceRT.process.step4.text">
-                Nous assurons le suivi applicable et vous informons des
-                prochaines étapes.
+                <span class="rt-lang-en"> Follow-up </span>
+              </h3>
+
+              <p>
+                <span class="rt-lang-fr">
+                  Nous assurons le suivi applicable et vous informons des
+                  prochaines étapes.
+                </span>
+
+                <span class="rt-lang-en">
+                  We provide the applicable follow-up and keep you informed of
+                  the next steps.
+                </span>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 6 : AUTRES SERVICES -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 6 : AUTRES SERVICES
+       ===================================================== -->
+
       <section class="service-related">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="serviceRT.related.eyebrow">
-              DÉCOUVREZ AUSSI
+            <span class="section-eyebrow">
+              <span class="rt-lang-fr"> DÉCOUVREZ AUSSI </span>
+
+              <span class="rt-lang-en"> DISCOVER ALSO </span>
             </span>
 
-            <h2 data-i18n="serviceRT.otherServices">Nos autres services</h2>
+            <h2>
+              <span class="rt-lang-fr"> Nos autres services </span>
 
-            <p data-i18n="serviceRT.related.subtitle">
-              D’autres services peuvent également correspondre à votre situation
-              ou à vos objectifs.
+              <span class="rt-lang-en"> Our other services </span>
+            </h2>
+
+            <p>
+              <span class="rt-lang-fr">
+                D’autres services peuvent également correspondre à votre
+                situation ou à vos objectifs.
+              </span>
+
+              <span class="rt-lang-en">
+                Other services may also correspond to your situation or
+                objectives.
+              </span>
             </p>
           </div>
 
           <div class="service-related-grid">
             <!-- IMMIGRATION ÉCONOMIQUE -->
+
             <a href="servicesDetailsEco.html" class="related-service-card">
               <div class="related-service-image">
                 <img
@@ -593,16 +944,31 @@
               </div>
 
               <div class="related-service-content">
-                <h3 data-i18n="serviceRT.economic">Immigration économique</h3>
+                <h3>
+                  <span class="rt-lang-fr"> Immigration économique </span>
 
-                <p data-i18n="serviceRT.related.economicText">
-                  Découvrez les principales possibilités d’immigration
-                  économique pour les travailleurs, professionnels et
-                  entrepreneurs.
+                  <span class="rt-lang-en"> Economic immigration </span>
+                </h3>
+
+                <p>
+                  <span class="rt-lang-fr">
+                    Découvrez les principales possibilités d’immigration
+                    économique pour les travailleurs, professionnels et
+                    entrepreneurs.
+                  </span>
+
+                  <span class="rt-lang-en">
+                    Discover the main economic immigration options available to
+                    workers, professionals and entrepreneurs.
+                  </span>
                 </p>
 
                 <span>
-                  <span data-i18n="serviceRT.learnMore"> En savoir plus </span>
+                  <span>
+                    <span class="rt-lang-fr"> En savoir plus </span>
+
+                    <span class="rt-lang-en"> Learn more </span>
+                  </span>
 
                   <i class="fa-solid fa-arrow-right"></i>
                 </span>
@@ -610,6 +976,7 @@
             </a>
 
             <!-- PARRAINAGE -->
+
             <a href="servicesDetailsPar.html" class="related-service-card">
               <div class="related-service-image">
                 <img src="img/parrainage_3.png" alt="Parrainage familial" />
@@ -622,15 +989,30 @@
               </div>
 
               <div class="related-service-content">
-                <h3 data-i18n="serviceRT.sponsorship">Parrainage</h3>
+                <h3>
+                  <span class="rt-lang-fr"> Parrainage </span>
 
-                <p data-i18n="serviceRT.related.sponsorshipText">
-                  Découvrez les démarches liées au regroupement familial et au
-                  parrainage de membres de la famille.
+                  <span class="rt-lang-en"> Sponsorship </span>
+                </h3>
+
+                <p>
+                  <span class="rt-lang-fr">
+                    Découvrez les démarches liées au regroupement familial et au
+                    parrainage de membres de la famille.
+                  </span>
+
+                  <span class="rt-lang-en">
+                    Discover the processes related to family reunification and
+                    sponsorship of family members.
+                  </span>
                 </p>
 
                 <span>
-                  <span data-i18n="serviceRT.learnMore"> En savoir plus </span>
+                  <span>
+                    <span class="rt-lang-fr"> En savoir plus </span>
+
+                    <span class="rt-lang-en"> Learn more </span>
+                  </span>
 
                   <i class="fa-solid fa-arrow-right"></i>
                 </span>
@@ -640,44 +1022,58 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 7 : CTA FINAL -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 7 : CTA FINAL
+       ===================================================== -->
+
       <section class="service-detail-final-cta service-detail-final-cta-rt">
         <div class="service-detail-final-overlay"></div>
 
         <div class="container service-detail-final-content">
-          <span class="section-eyebrow" data-i18n="serviceRT.cta.eyebrow">
-            VOTRE SÉJOUR AU CANADA
+          <span class="section-eyebrow">
+            <span class="rt-lang-fr"> VOTRE SÉJOUR AU CANADA </span>
+
+            <span class="rt-lang-en"> YOUR STAY IN CANADA </span>
           </span>
 
-          <h2 data-i18n="serviceRT.cta.title">
-            Vous souhaitez visiter, étudier ou travailler temporairement au
-            Canada ?
+          <h2>
+            <span class="rt-lang-fr">
+              Vous souhaitez visiter, étudier ou travailler temporairement au
+              Canada ?
+            </span>
+
+            <span class="rt-lang-en">
+              Would you like to visit, study or work temporarily in Canada?
+            </span>
           </h2>
 
-          <p data-i18n="serviceRT.cta.text">
-            Présentez-nous votre situation grâce à l’évaluation préliminaire ou
-            réservez une consultation avec MAD Immigration Canadienne.
+          <p>
+            <span class="rt-lang-fr">
+              Présentez-nous votre situation grâce à l’évaluation préliminaire
+              ou réservez une consultation avec MAD Immigration Canadienne.
+            </span>
+
+            <span class="rt-lang-en">
+              Tell us about your situation through the preliminary assessment or
+              book a consultation with MAD Immigration Canadienne.
+            </span>
           </p>
 
           <div class="service-detail-final-buttons">
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="serviceRT.cta.evaluation"
-            >
+            <a href="formulaire.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-file-circle-check"></i>
-              Faire mon évaluation
+
+              <span class="rt-lang-fr"> Faire mon évaluation </span>
+
+              <span class="rt-lang-en"> Start my assessment </span>
             </a>
 
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="serviceRT.cta.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span class="rt-lang-fr"> Prendre rendez-vous </span>
+
+              <span class="rt-lang-en"> Book an appointment </span>
             </a>
           </div>
         </div>

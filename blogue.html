@@ -33,120 +33,179 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
@@ -154,14 +213,21 @@
 
     <main>
       <div class="container marginh1">
+        <!-- =====================================================
+         TITRE
+         ===================================================== -->
+
         <h1 data-i18n="blog.title">Blogue</h1>
+
+        <!-- =====================================================
+         ARTICLE 1 : REGROUPEMENT FAMILIAL
+         ===================================================== -->
 
         <div class="deuxcolimgtext__item1">
           <div class="deuxcolimgtext__item1_img">
             <img
               src="img/parrainage_5.png"
               alt="Regroupement familial au Canada"
-              data-i18n-alt="blog.article1.imageAlt"
             />
           </div>
 
@@ -170,7 +236,8 @@
 
             <h3>
               <strong>
-                <span data-i18n="blog.published">Publié le</span>
+                <span data-i18n="blog.published"> Publié le </span>
+
                 <time datetime="2020-07-07" data-i18n="blog.article1.date">
                   07 juillet 2020
                 </time>
@@ -202,7 +269,7 @@
               courant d’immigration familiale. Ceci s’explique par le fait que,
               depuis 2003, le nombre d’étrangers non communautaires admis au
               séjour dans le cadre du regroupement familial a considérablement
-              chuté. Un de ressort de dissuasion du respect de la procédure de
+              chuté. Un des ressorts de dissuasion du respect de la procédure de
               regroupement familial est la durée d’instruction des demandes qui
               atteint généralement une ou plusieurs années. Pourtant la
               procédure de regroupement familial est encadrée par la loi et le
@@ -213,12 +280,15 @@
           </article>
         </div>
 
+        <!-- =====================================================
+         ARTICLE 2 : RÉSIDENCE TEMPORAIRE
+         ===================================================== -->
+
         <div class="deuxcolimgtext__item2">
           <div class="deuxcolimgtext__item2_img">
             <img
               src="img/ImmigrationTemporaire_2.png"
               alt="Résidence temporaire au Canada"
-              data-i18n-alt="blog.article2.imageAlt"
             />
           </div>
 
@@ -227,7 +297,8 @@
 
             <h3>
               <strong>
-                <span data-i18n="blog.published">Publié le</span>
+                <span data-i18n="blog.published"> Publié le </span>
+
                 <time datetime="2020-09-12" data-i18n="blog.article2.date">
                   12 septembre 2020
                 </time>

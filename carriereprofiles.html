@@ -33,240 +33,396 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="page-career-profiles" class="career-profiles-page">
-      <!-- ===================================================== -->
-      <!-- SECTION 1 : HERO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
+
+      <style>
+        .career-profiles-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .career-profiles-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .career-profiles-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .career-profiles-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .career-profiles-lang-en {
+          display: inline;
+        }
+      </style>
+
+      <!-- =====================================================
+       SECTION 1 : HERO
+       ===================================================== -->
+
       <section class="career-profiles-hero">
         <div class="career-profiles-hero-overlay"></div>
 
         <div class="container career-profiles-hero-content">
-          <span class="section-eyebrow" data-i18n="careerProfiles.hero.eyebrow">
-            PROFILS RECHERCHÉS
+          <span class="section-eyebrow">
+            <span class="career-profiles-lang-fr"> PROFILS RECHERCHÉS </span>
+
+            <span class="career-profiles-lang-en"> OPEN PROFILES </span>
           </span>
 
-          <h1 data-i18n="careerProfiles.hero.title">
-            Découvrez les profils de stagiaires recherchés chez MADIC
+          <h1>
+            <span class="career-profiles-lang-fr">
+              Découvrez les profils de stagiaires recherchés chez MADIC
+            </span>
+
+            <span class="career-profiles-lang-en">
+              Discover the internship profiles we are looking for at MADIC
+            </span>
           </h1>
 
-          <p
-            class="career-profiles-hero-subtitle"
-            data-i18n="careerProfiles.hero.subtitle"
-          >
-            Nous recherchons des stagiaires motivés qui souhaitent développer
-            leurs compétences, contribuer à des projets concrets et évoluer dans
-            un environnement entrepreneurial et collaboratif.
+          <p class="career-profiles-hero-subtitle">
+            <span class="career-profiles-lang-fr">
+              Nous recherchons des stagiaires motivés qui souhaitent développer
+              leurs compétences, contribuer à des projets concrets et évoluer
+              dans un environnement entrepreneurial et collaboratif.
+            </span>
+
+            <span class="career-profiles-lang-en">
+              We are looking for motivated interns who want to develop their
+              skills, contribute to real projects and grow in an entrepreneurial
+              and collaborative environment.
+            </span>
           </p>
 
           <div class="career-profiles-hero-buttons">
-            <a
-              href="#profile-fullstack"
-              class="madic-btn madic-btn-red"
-              data-i18n="careerProfiles.hero.fullstack"
-            >
+            <a href="#profile-fullstack" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-code"></i>
-              Stagiaire Full Stack
+
+              <span class="career-profiles-lang-fr">
+                Stagiaire Full Stack
+              </span>
+
+              <span class="career-profiles-lang-en"> Full Stack Intern </span>
             </a>
 
-            <a
-              href="#profile-consultant"
-              class="madic-btn madic-btn-light"
-              data-i18n="careerProfiles.hero.consultant"
-            >
+            <a href="#profile-consultant" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-user-tie"></i>
-              Stagiaire Consultant
+
+              <span class="career-profiles-lang-fr">
+                Stagiaire Consultant
+              </span>
+
+              <span class="career-profiles-lang-en"> Consultant Intern </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 2 : INTRO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 2 : INTRO
+       ===================================================== -->
+
       <section class="career-profiles-intro">
         <div class="container">
           <div class="section-title">
-            <span
-              class="section-eyebrow"
-              data-i18n="careerProfiles.intro.eyebrow"
-            >
-              NOS OPPORTUNITÉS
+            <span class="section-eyebrow">
+              <span class="career-profiles-lang-fr"> NOS OPPORTUNITÉS </span>
+
+              <span class="career-profiles-lang-en"> OUR OPPORTUNITIES </span>
             </span>
 
-            <h2 data-i18n="careerProfiles.intro.title">
-              Deux profils, deux parcours de développement
+            <h2>
+              <span class="career-profiles-lang-fr">
+                Deux profils, deux parcours de développement
+              </span>
+
+              <span class="career-profiles-lang-en">
+                Two profiles, two development paths
+              </span>
             </h2>
 
-            <p data-i18n="careerProfiles.intro.text">
-              Nos stages sont conçus pour offrir une expérience pratique,
-              responsabilisante et adaptée aux compétences du candidat.
+            <p>
+              <span class="career-profiles-lang-fr">
+                Nos stages sont conçus pour offrir une expérience pratique,
+                responsabilisante et adaptée aux compétences du candidat.
+              </span>
+
+              <span class="career-profiles-lang-en">
+                Our internships are designed to provide practical,
+                responsibility-driven experience tailored to each candidate’s
+                skills.
+              </span>
             </p>
           </div>
 
           <div class="career-profiles-summary-grid">
+            <!-- FULL STACK -->
+
             <a href="#profile-fullstack" class="career-profile-summary-card">
               <div class="career-profile-summary-icon red">
                 <i class="fa-solid fa-code"></i>
               </div>
 
-              <span class="career-profile-type">STAGE</span>
+              <span class="career-profile-type">
+                <span class="career-profiles-lang-fr">STAGE</span>
+                <span class="career-profiles-lang-en">INTERNSHIP</span>
+              </span>
 
-              <h3 data-i18n="careerProfiles.fullstack.title">
-                Stagiaire Développeur Full Stack
+              <h3>
+                <span class="career-profiles-lang-fr">
+                  Stagiaire Développeur Full Stack
+                </span>
+
+                <span class="career-profiles-lang-en">
+                  Full Stack Developer Intern
+                </span>
               </h3>
 
-              <p data-i18n="careerProfiles.fullstack.summaryShort">
-                Développement d’applications web, technologies front-end,
-                back-end et bases de données.
+              <p>
+                <span class="career-profiles-lang-fr">
+                  Développement d’applications web, technologies front-end,
+                  back-end et bases de données.
+                </span>
+
+                <span class="career-profiles-lang-en">
+                  Web application development, front-end and back-end
+                  technologies, and databases.
+                </span>
               </p>
 
               <span class="career-profile-summary-link">
-                <span data-i18n="careerProfiles.viewProfile">
-                  Voir le profil
+                <span>
+                  <span class="career-profiles-lang-fr"> Voir le profil </span>
+
+                  <span class="career-profiles-lang-en"> View profile </span>
                 </span>
+
                 <i class="fa-solid fa-arrow-down"></i>
               </span>
             </a>
+
+            <!-- CONSULTANT -->
 
             <a href="#profile-consultant" class="career-profile-summary-card">
               <div class="career-profile-summary-icon dark">
                 <i class="fa-solid fa-user-tie"></i>
               </div>
 
-              <span class="career-profile-type">STAGE</span>
+              <span class="career-profile-type">
+                <span class="career-profiles-lang-fr">STAGE</span>
+                <span class="career-profiles-lang-en">INTERNSHIP</span>
+              </span>
 
-              <h3 data-i18n="careerProfiles.consultant.title">
-                Stagiaire Consultant
+              <h3>
+                <span class="career-profiles-lang-fr">
+                  Stagiaire Consultant
+                </span>
+
+                <span class="career-profiles-lang-en"> Consultant Intern </span>
               </h3>
 
-              <p data-i18n="careerProfiles.consultant.summaryShort">
-                Analyse, recherche, soutien aux dossiers, communication et
-                accompagnement des activités de consultation.
+              <p>
+                <span class="career-profiles-lang-fr">
+                  Analyse, recherche, soutien aux dossiers, communication et
+                  accompagnement des activités de consultation.
+                </span>
+
+                <span class="career-profiles-lang-en">
+                  Analysis, research, file support, communication and assistance
+                  with consulting activities.
+                </span>
               </p>
 
               <span class="career-profile-summary-link">
-                <span data-i18n="careerProfiles.viewProfile">
-                  Voir le profil
+                <span>
+                  <span class="career-profiles-lang-fr"> Voir le profil </span>
+
+                  <span class="career-profiles-lang-en"> View profile </span>
                 </span>
+
                 <i class="fa-solid fa-arrow-down"></i>
               </span>
             </a>
@@ -274,9 +430,10 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 3 : FULL STACK -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 3 : FULL STACK
+       ===================================================== -->
+
       <section
         id="profile-fullstack"
         class="career-profile-detail career-profile-detail-light"
@@ -288,82 +445,164 @@
             </div>
 
             <div>
-              <span
-                class="career-profile-type"
-                data-i18n="careerProfiles.internship"
-              >
-                STAGE / COOP
+              <span class="career-profile-type">
+                <span class="career-profiles-lang-fr"> STAGE / COOP </span>
+
+                <span class="career-profiles-lang-en">
+                  INTERNSHIP / CO-OP
+                </span>
               </span>
 
-              <h2 data-i18n="careerProfiles.fullstack.title">
-                Stagiaire Développeur Full Stack
+              <h2>
+                <span class="career-profiles-lang-fr">
+                  Stagiaire Développeur Full Stack
+                </span>
+
+                <span class="career-profiles-lang-en">
+                  Full Stack Developer Intern
+                </span>
               </h2>
 
-              <p data-i18n="careerProfiles.fullstack.subtitle">
-                Participez au développement et à l’amélioration de nos solutions
-                numériques.
+              <p>
+                <span class="career-profiles-lang-fr">
+                  Participez au développement et à l’amélioration de nos
+                  solutions numériques.
+                </span>
+
+                <span class="career-profiles-lang-en">
+                  Contribute to the development and improvement of our digital
+                  solutions.
+                </span>
               </p>
             </div>
           </div>
 
           <div class="career-profile-detail-layout">
             <!-- CONTENU -->
+
             <div class="career-profile-detail-main">
+              <!-- RÉSUMÉ -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.fullstack.summaryTitle">
-                  Résumé du profil
+                <h3>
+                  <span class="career-profiles-lang-fr">
+                    Résumé du profil
+                  </span>
+
+                  <span class="career-profiles-lang-en"> Profile summary </span>
                 </h3>
 
-                <p data-i18n="careerProfiles.fullstack.summary">
-                  Nous recherchons un(e) stagiaire Développeur(se) Full Stack
-                  motivé(e) pour rejoindre notre équipe et acquérir une
-                  expérience pratique en développement front-end et back-end. Le
-                  ou la stagiaire participera à la création, à l’amélioration et
-                  à la maintenance d’applications web utilisées dans nos
-                  activités.
+                <p>
+                  <span class="career-profiles-lang-fr">
+                    Nous recherchons un(e) stagiaire Développeur(se) Full Stack
+                    motivé(e) pour rejoindre notre équipe et acquérir une
+                    expérience pratique en développement front-end et back-end.
+                    Le ou la stagiaire participera à la création, à
+                    l’amélioration et à la maintenance d’applications web
+                    utilisées dans nos activités.
+                  </span>
+
+                  <span class="career-profiles-lang-en">
+                    We are looking for a motivated Full Stack Developer Intern
+                    to join our team and gain practical experience in front-end
+                    and back-end development. The intern will participate in the
+                    creation, improvement and maintenance of web applications
+                    used in our operations.
+                  </span>
                 </p>
               </section>
 
+              <!-- RESPONSABILITÉS -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.fullstack.responsibilitiesTitle">
-                  Responsabilités
+                <h3>
+                  <span class="career-profiles-lang-fr"> Responsabilités </span>
+
+                  <span class="career-profiles-lang-en">
+                    Responsibilities
+                  </span>
                 </h3>
 
                 <ul class="career-profile-check-list">
-                  <li data-i18n="career.responsibility1">
-                    Concevoir, développer et maintenir des applications web
-                    évolutives.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Concevoir, développer et maintenir des applications web
+                      évolutives.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Design, develop and maintain scalable web applications.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.responsibility2">
-                    Collaborer avec l’équipe pour définir et mettre en œuvre de
-                    nouvelles fonctionnalités.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Collaborer avec l’équipe pour définir et mettre en œuvre
+                      de nouvelles fonctionnalités.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Collaborate with the team to define and implement new
+                      features.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.responsibility3">
-                    Écrire un code propre, structuré et maintenable.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Écrire un code propre, structuré et maintenable.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Write clean, structured and maintainable code.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.responsibility4">
-                    Identifier et résoudre les problèmes afin d’améliorer les
-                    performances.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Identifier et résoudre les problèmes afin d’améliorer les
+                      performances.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Identify and resolve issues to improve performance.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.responsibility5">
-                    Participer aux revues de code et au partage des
-                    connaissances.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Participer aux revues de code et au partage des
+                      connaissances.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Participate in code reviews and knowledge sharing.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.responsibility6">
-                    Rester à jour sur les technologies et pratiques de
-                    développement.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Rester à jour sur les technologies et pratiques de
+                      développement.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Stay current with development technologies and practices.
+                    </span>
                   </li>
                 </ul>
               </section>
 
+              <!-- COMPÉTENCES -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.fullstack.skillsTitle">
-                  Compétences recherchées
+                <h3>
+                  <span class="career-profiles-lang-fr">
+                    Compétences recherchées
+                  </span>
+
+                  <span class="career-profiles-lang-en">
+                    Skills we are looking for
+                  </span>
                 </h3>
 
                 <div class="career-profile-skill-grid">
@@ -399,80 +638,167 @@
                 </div>
               </section>
 
+              <!-- QUALIFICATIONS -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.fullstack.qualificationsTitle">
-                  Qualifications
+                <h3>
+                  <span class="career-profiles-lang-fr"> Qualifications </span>
+
+                  <span class="career-profiles-lang-en"> Qualifications </span>
                 </h3>
 
                 <ul class="career-profile-check-list">
-                  <li data-i18n="career.qualification1">
-                    Connaissance de C# et du framework .NET.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Connaissance de C# et du framework .NET.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Knowledge of C# and the .NET framework.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.qualification2">
-                    Expérience ou connaissances en bases de données SQL.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Expérience ou connaissances en bases de données SQL.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Experience or knowledge of SQL databases.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.qualification3">
-                    Bonne maîtrise de HTML, CSS et JavaScript.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Bonne maîtrise de HTML, CSS et JavaScript.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Good knowledge of HTML, CSS and JavaScript.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.qualification4">
-                    Familiarité avec Azure ou AWS, un atout.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Familiarité avec Azure ou AWS, un atout.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Familiarity with Azure or AWS is an asset.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.qualification6">
-                    Java, Python ou C++ constituent des atouts supplémentaires.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Java, Python ou C++ constituent des atouts
+                      supplémentaires.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Java, Python or C++ are additional assets.
+                    </span>
                   </li>
 
-                  <li data-i18n="career.qualification7">
-                    Capacité à travailler de manière autonome et collaborative.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Capacité à travailler de manière autonome et
+                      collaborative.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Ability to work independently and collaboratively.
+                    </span>
                   </li>
                 </ul>
               </section>
             </div>
 
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR FULL STACK -->
+
             <aside class="career-profile-sidebar">
               <div class="career-profile-info-card">
-                <h3 data-i18n="careerProfiles.detailsTitle">
-                  Détails du stage
+                <h3>
+                  <span class="career-profiles-lang-fr">
+                    Détails du stage
+                  </span>
+
+                  <span class="career-profiles-lang-en">
+                    Internship details
+                  </span>
                 </h3>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-briefcase"></i>
+
                   <div>
-                    <strong data-i18n="career.positionLabel">Poste</strong>
-                    <span data-i18n="career.positionValue">
-                      Développeur Full Stack Stagiaire
+                    <strong>
+                      <span class="career-profiles-lang-fr">Poste</span>
+                      <span class="career-profiles-lang-en">Position</span>
+                    </strong>
+
+                    <span>
+                      <span class="career-profiles-lang-fr">
+                        Développeur Full Stack Stagiaire
+                      </span>
+
+                      <span class="career-profiles-lang-en">
+                        Full Stack Developer Intern
+                      </span>
                     </span>
                   </div>
                 </div>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-clock"></i>
+
                   <div>
-                    <strong data-i18n="career.durationLabel">Durée</strong>
-                    <span data-i18n="career.durationValue">6 mois</span>
+                    <strong>
+                      <span class="career-profiles-lang-fr">Durée</span>
+                      <span class="career-profiles-lang-en">Duration</span>
+                    </strong>
+
+                    <span>
+                      <span class="career-profiles-lang-fr">6 mois</span>
+                      <span class="career-profiles-lang-en">6 months</span>
+                    </span>
                   </div>
                 </div>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-house-laptop"></i>
+
                   <div>
-                    <strong data-i18n="career.locationLabel">Lieu</strong>
-                    <span data-i18n="career.locationValue">Télétravail</span>
+                    <strong>
+                      <span class="career-profiles-lang-fr">Lieu</span>
+                      <span class="career-profiles-lang-en">Location</span>
+                    </strong>
+
+                    <span>
+                      <span class="career-profiles-lang-fr"> Télétravail </span>
+
+                      <span class="career-profiles-lang-en"> Remote work </span>
+                    </span>
                   </div>
                 </div>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-language"></i>
+
                   <div>
-                    <strong data-i18n="career.languageRequirementsLabel">
-                      Langues
+                    <strong>
+                      <span class="career-profiles-lang-fr"> Langues </span>
+
+                      <span class="career-profiles-lang-en"> Languages </span>
                     </strong>
-                    <span data-i18n="career.languageRequirementsValue">
-                      Français obligatoire et anglais fonctionnel
+
+                    <span>
+                      <span class="career-profiles-lang-fr">
+                        Français obligatoire et anglais fonctionnel
+                      </span>
+
+                      <span class="career-profiles-lang-en">
+                        French required and functional English
+                      </span>
                     </span>
                   </div>
                 </div>
@@ -480,10 +806,12 @@
                 <a
                   href="joindre.html"
                   class="madic-btn madic-btn-red career-profile-apply"
-                  data-i18n="career.apply"
                 >
                   <i class="fa-solid fa-paper-plane"></i>
-                  Postuler
+
+                  <span class="career-profiles-lang-fr"> Postuler </span>
+
+                  <span class="career-profiles-lang-en"> Apply </span>
                 </a>
               </div>
             </aside>
@@ -491,9 +819,10 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 4 : CONSULTANT -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 4 : CONSULTANT
+       ===================================================== -->
+
       <section
         id="profile-consultant"
         class="career-profile-detail career-profile-detail-dark"
@@ -505,206 +834,399 @@
             </div>
 
             <div>
-              <span
-                class="career-profile-type"
-                data-i18n="careerProfiles.internship"
-              >
-                STAGE
+              <span class="career-profile-type">
+                <span class="career-profiles-lang-fr"> STAGE </span>
+
+                <span class="career-profiles-lang-en"> INTERNSHIP </span>
               </span>
 
-              <h2 data-i18n="careerProfiles.consultant.title">
-                Stagiaire Consultant
+              <h2>
+                <span class="career-profiles-lang-fr">
+                  Stagiaire Consultant
+                </span>
+
+                <span class="career-profiles-lang-en"> Consultant Intern </span>
               </h2>
 
-              <p data-i18n="careerProfiles.consultant.subtitle">
-                Développez votre expérience en analyse, recherche, communication
-                et soutien aux activités de consultation.
+              <p>
+                <span class="career-profiles-lang-fr">
+                  Développez votre expérience en analyse, recherche,
+                  communication et soutien aux activités de consultation.
+                </span>
+
+                <span class="career-profiles-lang-en">
+                  Develop your experience in analysis, research, communication
+                  and support for consulting activities.
+                </span>
               </p>
             </div>
           </div>
 
           <div class="career-profile-detail-layout">
-            <!-- CONTENU -->
             <div class="career-profile-detail-main">
+              <!-- RÉSUMÉ -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.consultant.summaryTitle">
-                  Résumé du profil
+                <h3>
+                  <span class="career-profiles-lang-fr">
+                    Résumé du profil
+                  </span>
+
+                  <span class="career-profiles-lang-en"> Profile summary </span>
                 </h3>
 
-                <p data-i18n="careerProfiles.consultant.summary">
-                  Nous recherchons un(e) stagiaire Consultant(e) motivé(e) afin
-                  de soutenir nos activités de consultation, de recherche et de
-                  préparation des dossiers. Le stage permet de développer des
-                  compétences pratiques dans un environnement professionnel,
-                  structuré et orienté vers le service à la clientèle.
+                <p>
+                  <span class="career-profiles-lang-fr">
+                    Nous recherchons un(e) stagiaire Consultant(e) motivé(e)
+                    afin de soutenir nos activités de consultation, de recherche
+                    et de préparation des dossiers. Le stage permet de
+                    développer des compétences pratiques dans un environnement
+                    professionnel, structuré et orienté vers le service à la
+                    clientèle.
+                  </span>
+
+                  <span class="career-profiles-lang-en">
+                    We are looking for a motivated Consultant Intern to support
+                    our consulting, research and file preparation activities.
+                    The internship provides an opportunity to develop practical
+                    skills in a professional, structured and client-focused
+                    environment.
+                  </span>
                 </p>
               </section>
 
+              <!-- RESPONSABILITÉS -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.consultant.responsibilitiesTitle">
-                  Responsabilités
+                <h3>
+                  <span class="career-profiles-lang-fr"> Responsabilités </span>
+
+                  <span class="career-profiles-lang-en">
+                    Responsibilities
+                  </span>
                 </h3>
 
                 <ul class="career-profile-check-list">
-                  <li data-i18n="careerProfiles.consultant.responsibility1">
-                    Participer à l’analyse préliminaire des dossiers clients.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Participer à l’analyse préliminaire des dossiers clients.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Participate in the preliminary analysis of client files.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.responsibility2">
-                    Effectuer des recherches documentaires et réglementaires.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Effectuer des recherches documentaires et réglementaires.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Conduct documentary and regulatory research.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.responsibility3">
-                    Participer à l’organisation et à la vérification des
-                    documents.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Participer à l’organisation et à la vérification des
+                      documents.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Assist with organizing and reviewing documents.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.responsibility4">
-                    Soutenir la préparation des communications et suivis
-                    clients.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Soutenir la préparation des communications et suivis
+                      clients.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Support the preparation of client communications and
+                      follow-ups.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.responsibility5">
-                    Participer à l’amélioration des procédures internes et
-                    outils de travail.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Participer à l’amélioration des procédures internes et
+                      outils de travail.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Contribute to improving internal procedures and work
+                      tools.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.responsibility6">
-                    Collaborer avec l’équipe dans le respect de la
-                    confidentialité des dossiers.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Collaborer avec l’équipe dans le respect de la
+                      confidentialité des dossiers.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Collaborate with the team while respecting file
+                      confidentiality.
+                    </span>
                   </li>
                 </ul>
               </section>
 
+              <!-- COMPÉTENCES -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.consultant.skillsTitle">
-                  Compétences recherchées
+                <h3>
+                  <span class="career-profiles-lang-fr">
+                    Compétences recherchées
+                  </span>
+
+                  <span class="career-profiles-lang-en">
+                    Skills we are looking for
+                  </span>
                 </h3>
 
                 <div class="career-profile-skill-grid">
                   <div class="career-profile-skill">
                     <i class="fa-solid fa-magnifying-glass"></i>
-                    <span data-i18n="careerProfiles.consultant.skill1">
-                      Recherche
+
+                    <span>
+                      <span class="career-profiles-lang-fr">Recherche</span>
+                      <span class="career-profiles-lang-en">Research</span>
                     </span>
                   </div>
 
                   <div class="career-profile-skill">
                     <i class="fa-solid fa-chart-simple"></i>
-                    <span data-i18n="careerProfiles.consultant.skill2">
-                      Analyse
+
+                    <span>
+                      <span class="career-profiles-lang-fr">Analyse</span>
+                      <span class="career-profiles-lang-en">Analysis</span>
                     </span>
                   </div>
 
                   <div class="career-profile-skill">
                     <i class="fa-solid fa-comments"></i>
-                    <span data-i18n="careerProfiles.consultant.skill3">
-                      Communication
+
+                    <span>
+                      <span class="career-profiles-lang-fr">Communication</span>
+                      <span class="career-profiles-lang-en">Communication</span>
                     </span>
                   </div>
 
                   <div class="career-profile-skill">
                     <i class="fa-solid fa-folder-open"></i>
-                    <span data-i18n="careerProfiles.consultant.skill4">
-                      Organisation
+
+                    <span>
+                      <span class="career-profiles-lang-fr">Organisation</span>
+                      <span class="career-profiles-lang-en">Organization</span>
                     </span>
                   </div>
 
                   <div class="career-profile-skill">
                     <i class="fa-solid fa-user-check"></i>
-                    <span data-i18n="careerProfiles.consultant.skill5">
-                      Service client
+
+                    <span>
+                      <span class="career-profiles-lang-fr"
+                        >Service client</span
+                      >
+                      <span class="career-profiles-lang-en"
+                        >Client service</span
+                      >
                     </span>
                   </div>
 
                   <div class="career-profile-skill">
                     <i class="fa-solid fa-lock"></i>
-                    <span data-i18n="careerProfiles.consultant.skill6">
-                      Confidentialité
+
+                    <span>
+                      <span class="career-profiles-lang-fr"
+                        >Confidentialité</span
+                      >
+                      <span class="career-profiles-lang-en"
+                        >Confidentiality</span
+                      >
                     </span>
                   </div>
                 </div>
               </section>
 
+              <!-- QUALIFICATIONS -->
+
               <section class="career-profile-block">
-                <h3 data-i18n="careerProfiles.consultant.qualificationsTitle">
-                  Qualifications recherchées
+                <h3>
+                  <span class="career-profiles-lang-fr">
+                    Qualifications recherchées
+                  </span>
+
+                  <span class="career-profiles-lang-en">
+                    Qualifications we are looking for
+                  </span>
                 </h3>
 
                 <ul class="career-profile-check-list">
-                  <li data-i18n="careerProfiles.consultant.qualification1">
-                    Formation collégiale ou universitaire pertinente.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Formation collégiale ou universitaire pertinente.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Relevant college or university education.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.qualification2">
-                    Excellentes capacités de recherche et d’analyse.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Excellentes capacités de recherche et d’analyse.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Excellent research and analytical skills.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.qualification3">
-                    Bonne capacité de rédaction et de communication.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Bonne capacité de rédaction et de communication.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Strong writing and communication skills.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.qualification4">
-                    Grande rigueur dans l’organisation et la gestion
-                    documentaire.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Grande rigueur dans l’organisation et la gestion
+                      documentaire.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Strong attention to detail in organization and document
+                      management.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.qualification5">
-                    Capacité à travailler de manière autonome et en équipe.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Capacité à travailler de manière autonome et en équipe.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Ability to work independently and as part of a team.
+                    </span>
                   </li>
 
-                  <li data-i18n="careerProfiles.consultant.qualification6">
-                    Maîtrise du français; anglais fonctionnel souhaité.
+                  <li>
+                    <span class="career-profiles-lang-fr">
+                      Maîtrise du français; anglais fonctionnel souhaité.
+                    </span>
+
+                    <span class="career-profiles-lang-en">
+                      Proficiency in French; functional English preferred.
+                    </span>
                   </li>
                 </ul>
               </section>
             </div>
 
-            <!-- SIDEBAR -->
+            <!-- SIDEBAR CONSULTANT -->
+
             <aside class="career-profile-sidebar">
               <div class="career-profile-info-card">
-                <h3 data-i18n="careerProfiles.detailsTitle">
-                  Détails du stage
+                <h3>
+                  <span class="career-profiles-lang-fr">
+                    Détails du stage
+                  </span>
+
+                  <span class="career-profiles-lang-en">
+                    Internship details
+                  </span>
                 </h3>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-user-tie"></i>
+
                   <div>
-                    <strong data-i18n="career.positionLabel">Poste</strong>
-                    <span data-i18n="careerProfiles.consultant.position">
-                      Stagiaire Consultant
+                    <strong>
+                      <span class="career-profiles-lang-fr">Poste</span>
+                      <span class="career-profiles-lang-en">Position</span>
+                    </strong>
+
+                    <span>
+                      <span class="career-profiles-lang-fr">
+                        Stagiaire Consultant
+                      </span>
+
+                      <span class="career-profiles-lang-en">
+                        Consultant Intern
+                      </span>
                     </span>
                   </div>
                 </div>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-clock"></i>
+
                   <div>
-                    <strong data-i18n="career.durationLabel">Durée</strong>
-                    <span data-i18n="careerProfiles.consultant.duration">
-                      À déterminer selon le stage
+                    <strong>
+                      <span class="career-profiles-lang-fr">Durée</span>
+                      <span class="career-profiles-lang-en">Duration</span>
+                    </strong>
+
+                    <span>
+                      <span class="career-profiles-lang-fr">
+                        À déterminer selon le stage
+                      </span>
+
+                      <span class="career-profiles-lang-en">
+                        To be determined based on the internship
+                      </span>
                     </span>
                   </div>
                 </div>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-location-dot"></i>
+
                   <div>
-                    <strong data-i18n="career.locationLabel">Lieu</strong>
-                    <span data-i18n="careerProfiles.consultant.location">
-                      Hybride / télétravail selon les besoins
+                    <strong>
+                      <span class="career-profiles-lang-fr">Lieu</span>
+                      <span class="career-profiles-lang-en">Location</span>
+                    </strong>
+
+                    <span>
+                      <span class="career-profiles-lang-fr">
+                        Hybride / télétravail selon les besoins
+                      </span>
+
+                      <span class="career-profiles-lang-en">
+                        Hybrid / remote work depending on needs
+                      </span>
                     </span>
                   </div>
                 </div>
 
                 <div class="career-profile-info-row">
                   <i class="fa-solid fa-language"></i>
+
                   <div>
-                    <strong data-i18n="career.languageRequirementsLabel">
-                      Langues
+                    <strong>
+                      <span class="career-profiles-lang-fr">Langues</span>
+                      <span class="career-profiles-lang-en">Languages</span>
                     </strong>
-                    <span data-i18n="careerProfiles.consultant.languages">
-                      Français requis, anglais fonctionnel souhaité
+
+                    <span>
+                      <span class="career-profiles-lang-fr">
+                        Français requis, anglais fonctionnel souhaité
+                      </span>
+
+                      <span class="career-profiles-lang-en">
+                        French required, functional English preferred
+                      </span>
                     </span>
                   </div>
                 </div>
@@ -712,10 +1234,12 @@
                 <a
                   href="joindre.html"
                   class="madic-btn madic-btn-red career-profile-apply"
-                  data-i18n="career.apply"
                 >
                   <i class="fa-solid fa-paper-plane"></i>
-                  Postuler
+
+                  <span class="career-profiles-lang-fr"> Postuler </span>
+
+                  <span class="career-profiles-lang-en"> Apply </span>
                 </a>
               </div>
             </aside>
@@ -723,43 +1247,65 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 5 : CTA -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 5 : CTA
+       ===================================================== -->
+
       <section class="career-profiles-final-cta">
         <div class="career-profiles-final-overlay"></div>
 
         <div class="container career-profiles-final-content">
-          <span class="section-eyebrow" data-i18n="careerProfiles.cta.eyebrow">
-            ENVIE DE NOUS REJOINDRE ?
+          <span class="section-eyebrow">
+            <span class="career-profiles-lang-fr">
+              ENVIE DE NOUS REJOINDRE ?
+            </span>
+
+            <span class="career-profiles-lang-en"> WANT TO JOIN US? </span>
           </span>
 
-          <h2 data-i18n="careerProfiles.cta.title">
-            Trouvez le profil qui correspond à vos compétences
+          <h2>
+            <span class="career-profiles-lang-fr">
+              Trouvez le profil qui correspond à vos compétences
+            </span>
+
+            <span class="career-profiles-lang-en">
+              Find the profile that matches your skills
+            </span>
           </h2>
 
-          <p data-i18n="careerProfiles.cta.text">
-            Consultez les exigences de chaque profil et communiquez avec MADIC
-            pour nous présenter votre candidature.
+          <p>
+            <span class="career-profiles-lang-fr">
+              Consultez les exigences de chaque profil et communiquez avec MADIC
+              pour nous présenter votre candidature.
+            </span>
+
+            <span class="career-profiles-lang-en">
+              Review the requirements for each profile and contact MADIC to
+              submit your application.
+            </span>
           </p>
 
           <div class="career-profiles-final-buttons">
-            <a
-              href="joindre.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="careerProfiles.cta.apply"
-            >
+            <a href="joindre.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-paper-plane"></i>
-              Soumettre ma candidature
+
+              <span class="career-profiles-lang-fr">
+                Soumettre ma candidature
+              </span>
+
+              <span class="career-profiles-lang-en">
+                Submit my application
+              </span>
             </a>
 
-            <a
-              href="carriere.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="careerProfiles.cta.back"
-            >
+            <a href="carriere.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-arrow-left"></i>
-              Retour à la page Carrière
+
+              <span class="career-profiles-lang-fr">
+                Retour à la page Carrière
+              </span>
+
+              <span class="career-profiles-lang-en"> Back to Careers </span>
             </a>
           </div>
         </div>

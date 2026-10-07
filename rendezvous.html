@@ -33,135 +33,224 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="page-rendezvous" class="booking-page">
-      <!-- ===================================================== -->
-      <!-- HERO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
+
+      <style>
+        .booking-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .booking-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .booking-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .booking-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .booking-lang-en {
+          display: inline;
+        }
+      </style>
+
+      <!-- =====================================================
+       HERO
+       ===================================================== -->
+
       <section class="booking-hero">
         <div class="booking-hero__overlay"></div>
 
         <div class="container booking-hero__content">
-          <span class="booking-eyebrow" data-i18n="booking.heroEyebrow">
-            CONSULTATION IMMIGRATION
+          <span class="booking-eyebrow">
+            <span class="booking-lang-fr"> CONSULTATION IMMIGRATION </span>
+
+            <span class="booking-lang-en"> IMMIGRATION CONSULTATION </span>
           </span>
 
           <h1 data-i18n="booking.title">Prendre rendez-vous</h1>
@@ -174,55 +263,85 @@
           <div class="booking-hero__features">
             <div>
               <i class="fa-solid fa-calendar-check"></i>
-              <span data-i18n="booking.heroFeature1">Réservation simple</span>
+
+              <span>
+                <span class="booking-lang-fr"> Réservation simple </span>
+
+                <span class="booking-lang-en"> Easy booking </span>
+              </span>
             </div>
 
             <div>
               <i class="fa-solid fa-user-tie"></i>
-              <span data-i18n="booking.heroFeature2"
-                >Consultation personnalisée</span
-              >
+
+              <span>
+                <span class="booking-lang-fr">
+                  Consultation personnalisée
+                </span>
+
+                <span class="booking-lang-en"> Personalized consultation </span>
+              </span>
             </div>
 
             <div>
               <i class="fa-solid fa-shield-halved"></i>
-              <span data-i18n="booking.heroFeature3"
-                >Informations confidentielles</span
-              >
+
+              <span>
+                <span class="booking-lang-fr">
+                  Informations confidentielles
+                </span>
+
+                <span class="booking-lang-en"> Confidential information </span>
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- INTRO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       INTRO
+       ===================================================== -->
+
       <section class="booking-intro">
         <div class="container booking-intro__grid">
           <div>
-            <span
-              class="booking-eyebrow booking-eyebrow--red"
-              data-i18n="booking.introEyebrow"
-            >
-              VOTRE CONSULTATION
+            <span class="booking-eyebrow booking-eyebrow--red">
+              <span class="booking-lang-fr"> VOTRE CONSULTATION </span>
+
+              <span class="booking-lang-en"> YOUR CONSULTATION </span>
             </span>
 
-            <h2 data-i18n="booking.introTitle">
-              Choisissez le service qui correspond à votre besoin
+            <h2>
+              <span class="booking-lang-fr">
+                Choisissez le service qui correspond à votre besoin
+              </span>
+
+              <span class="booking-lang-en">
+                Choose the service that best fits your needs
+              </span>
             </h2>
           </div>
 
-          <p data-i18n="booking.introText">
-            Sélectionnez votre type de consultation, une date et une heure, puis
-            transmettez vos coordonnées. Votre rendez-vous sera confirmé après
-            validation de la disponibilité.
+          <p>
+            <span class="booking-lang-fr">
+              Sélectionnez votre type de consultation, une date et une heure,
+              puis transmettez vos coordonnées. Votre rendez-vous sera confirmé
+              après validation de la disponibilité.
+            </span>
+
+            <span class="booking-lang-en">
+              Select your consultation type, date and time, then provide your
+              contact information. Your appointment will be confirmed after
+              availability has been validated.
+            </span>
           </p>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- FORMULAIRE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       FORMULAIRE
+       ===================================================== -->
+
       <section class="booking-section booking-section--modern">
         <div class="container">
           <form
@@ -237,35 +356,49 @@
 
             <p style="display: none">
               <label>
-                Ne pas remplir :
+                <span class="booking-lang-fr"> Ne pas remplir : </span>
+
+                <span class="booking-lang-en"> Do not fill in: </span>
+
                 <input name="bot-field" />
               </label>
             </p>
 
-            <!-- ÉTAPE 1 -->
+            <!-- =================================================
+             ÉTAPE 1
+             ================================================= -->
+
             <div class="booking-card booking-card--modern">
               <div class="booking-step">1</div>
 
               <div class="booking-content">
                 <div class="booking-section-title">
-                  <span
-                    class="booking-section-title__kicker"
-                    data-i18n="booking.step1"
-                  >
-                    ÉTAPE 1
+                  <span class="booking-section-title__kicker">
+                    <span class="booking-lang-fr"> ÉTAPE 1 </span>
+
+                    <span class="booking-lang-en"> STEP 1 </span>
                   </span>
 
                   <h2 data-i18n="booking.serviceTitle">
                     Choisissez votre consultation
                   </h2>
 
-                  <p data-i18n="booking.serviceSubtitle">
-                    Sélectionnez le type de service qui correspond le mieux à
-                    votre situation.
+                  <p>
+                    <span class="booking-lang-fr">
+                      Sélectionnez le type de service qui correspond le mieux à
+                      votre situation.
+                    </span>
+
+                    <span class="booking-lang-en">
+                      Select the type of service that best matches your
+                      situation.
+                    </span>
                   </p>
                 </div>
 
                 <div class="consultation-options consultation-options--modern">
+                  <!-- CONSULTATION 60 MIN -->
+
                   <label
                     class="consultation-option consultation-option--modern"
                   >
@@ -298,12 +431,21 @@
 
                       <span class="consultation-option__check">
                         <i class="fa-solid fa-circle-check"></i>
-                        <span data-i18n="booking.selectThisOption"
-                          >Choisir cette option</span
-                        >
+
+                        <span>
+                          <span class="booking-lang-fr">
+                            Choisir cette option
+                          </span>
+
+                          <span class="booking-lang-en">
+                            Select this option
+                          </span>
+                        </span>
                       </span>
                     </div>
                   </label>
+
+                  <!-- ÉVALUATION PRÉLIMINAIRE -->
 
                   <label
                     class="consultation-option consultation-option--modern"
@@ -336,9 +478,16 @@
 
                       <span class="consultation-option__check">
                         <i class="fa-solid fa-circle-check"></i>
-                        <span data-i18n="booking.selectThisOption"
-                          >Choisir cette option</span
-                        >
+
+                        <span>
+                          <span class="booking-lang-fr">
+                            Choisir cette option
+                          </span>
+
+                          <span class="booking-lang-en">
+                            Select this option
+                          </span>
+                        </span>
                       </span>
                     </div>
                   </label>
@@ -346,29 +495,41 @@
               </div>
             </div>
 
-            <!-- ÉTAPE 2 -->
+            <!-- =================================================
+             ÉTAPE 2
+             ================================================= -->
+
             <div class="booking-card booking-card--modern">
               <div class="booking-step">2</div>
 
               <div class="booking-content">
                 <div class="booking-section-title">
-                  <span
-                    class="booking-section-title__kicker"
-                    data-i18n="booking.step2"
-                  >
-                    ÉTAPE 2
+                  <span class="booking-section-title__kicker">
+                    <span class="booking-lang-fr"> ÉTAPE 2 </span>
+
+                    <span class="booking-lang-en"> STEP 2 </span>
                   </span>
 
                   <h2 data-i18n="booking.dateTitle">Choisissez une date</h2>
 
-                  <p data-i18n="booking.dateSubtitle">
-                    Sélectionnez la date souhaitée pour votre consultation.
+                  <p>
+                    <span class="booking-lang-fr">
+                      Sélectionnez la date souhaitée pour votre consultation.
+                    </span>
+
+                    <span class="booking-lang-en">
+                      Select the date you would like for your consultation.
+                    </span>
                   </p>
                 </div>
 
                 <div class="booking-date-wrap">
-                  <label for="consultation_date" data-i18n="booking.dateLabel">
-                    Date de la consultation
+                  <label for="consultation_date">
+                    <span class="booking-lang-fr">
+                      Date de la consultation
+                    </span>
+
+                    <span class="booking-lang-en"> Consultation date </span>
                   </label>
 
                   <div class="booking-input-icon">
@@ -386,24 +547,33 @@
               </div>
             </div>
 
-            <!-- ÉTAPE 3 -->
+            <!-- =================================================
+             ÉTAPE 3
+             ================================================= -->
+
             <div class="booking-card booking-card--modern">
               <div class="booking-step">3</div>
 
               <div class="booking-content">
                 <div class="booking-section-title">
-                  <span
-                    class="booking-section-title__kicker"
-                    data-i18n="booking.step3"
-                  >
-                    ÉTAPE 3
+                  <span class="booking-section-title__kicker">
+                    <span class="booking-lang-fr"> ÉTAPE 3 </span>
+
+                    <span class="booking-lang-en"> STEP 3 </span>
                   </span>
 
                   <h2 data-i18n="booking.timeTitle">Choisissez une heure</h2>
 
-                  <p data-i18n="booking.timeSubtitle">
-                    Choisissez l'heure qui vous convient parmi les plages
-                    disponibles.
+                  <p>
+                    <span class="booking-lang-fr">
+                      Choisissez l'heure qui vous convient parmi les plages
+                      disponibles.
+                    </span>
+
+                    <span class="booking-lang-en">
+                      Choose the time that works best for you from the available
+                      time slots.
+                    </span>
                   </p>
                 </div>
 
@@ -412,40 +582,58 @@
                   id="booking-time-slots"
                 ></div>
 
-                <p class="timezone-info" data-i18n="booking.timezone">
+                <p class="timezone-info">
                   <i class="fa-solid fa-clock"></i>
-                  Les heures sont affichées selon l'heure de Montréal, Québec.
+
+                  <span class="booking-lang-fr">
+                    Les heures sont affichées selon l'heure de Montréal, Québec.
+                  </span>
+
+                  <span class="booking-lang-en">
+                    Times are displayed according to Montreal, Quebec time.
+                  </span>
                 </p>
               </div>
             </div>
 
-            <!-- ÉTAPE 4 -->
+            <!-- =================================================
+             ÉTAPE 4
+             ================================================= -->
+
             <div class="booking-card booking-card--modern">
               <div class="booking-step">4</div>
 
               <div class="booking-content">
                 <div class="booking-section-title">
-                  <span
-                    class="booking-section-title__kicker"
-                    data-i18n="booking.step4"
-                  >
-                    ÉTAPE 4
+                  <span class="booking-section-title__kicker">
+                    <span class="booking-lang-fr"> ÉTAPE 4 </span>
+
+                    <span class="booking-lang-en"> STEP 4 </span>
                   </span>
 
                   <h2 data-i18n="booking.informationTitle">
                     Vos renseignements
                   </h2>
 
-                  <p data-i18n="booking.informationSubtitle">
-                    Indiquez vos coordonnées afin que nous puissions vous
-                    contacter.
+                  <p>
+                    <span class="booking-lang-fr">
+                      Indiquez vos coordonnées afin que nous puissions vous
+                      contacter.
+                    </span>
+
+                    <span class="booking-lang-en">
+                      Provide your contact information so that we can reach you.
+                    </span>
                   </p>
                 </div>
 
                 <div class="booking-grid booking-grid--modern">
+                  <!-- PRÉNOM -->
+
                   <div class="booking-field">
                     <label for="booking_firstname">
-                      <span data-i18n="booking.firstName">Prénom</span>
+                      <span data-i18n="booking.firstName"> Prénom </span>
+
                       <span class="req">*</span>
                     </label>
 
@@ -458,9 +646,12 @@
                     />
                   </div>
 
+                  <!-- NOM -->
+
                   <div class="booking-field">
                     <label for="booking_lastname">
-                      <span data-i18n="booking.lastName">Nom</span>
+                      <span data-i18n="booking.lastName"> Nom </span>
+
                       <span class="req">*</span>
                     </label>
 
@@ -473,9 +664,12 @@
                     />
                   </div>
 
+                  <!-- COURRIEL -->
+
                   <div class="booking-field">
                     <label for="booking_email">
-                      <span data-i18n="booking.email">Courriel</span>
+                      <span data-i18n="booking.email"> Courriel </span>
+
                       <span class="req">*</span>
                     </label>
 
@@ -488,9 +682,12 @@
                     />
                   </div>
 
+                  <!-- TÉLÉPHONE -->
+
                   <div class="booking-field">
                     <label for="booking_phone">
-                      <span data-i18n="booking.phone">Téléphone</span>
+                      <span data-i18n="booking.phone"> Téléphone </span>
+
                       <span class="req">*</span>
                     </label>
 
@@ -504,9 +701,11 @@
                   </div>
                 </div>
 
+                <!-- PAYS -->
+
                 <div class="booking-field booking-field--full">
                   <label for="booking_country">
-                    <span data-i18n="booking.country">Pays de résidence</span>
+                    <span data-i18n="booking.country"> Pays de résidence </span>
                   </label>
 
                   <input
@@ -516,6 +715,8 @@
                     class="booking-input"
                   />
                 </div>
+
+                <!-- SUJET -->
 
                 <div class="booking-field booking-field--full">
                   <label for="booking_subject">
@@ -568,6 +769,8 @@
                   </select>
                 </div>
 
+                <!-- MESSAGE -->
+
                 <div class="booking-field booking-field--full">
                   <label for="booking_message">
                     <span data-i18n="booking.message">
@@ -586,17 +789,19 @@
               </div>
             </div>
 
-            <!-- ÉTAPE 5 -->
+            <!-- =================================================
+             ÉTAPE 5
+             ================================================= -->
+
             <div class="booking-card booking-card--modern booking-card--final">
               <div class="booking-step">5</div>
 
               <div class="booking-content">
                 <div class="booking-section-title">
-                  <span
-                    class="booking-section-title__kicker"
-                    data-i18n="booking.step5"
-                  >
-                    ÉTAPE 5
+                  <span class="booking-section-title__kicker">
+                    <span class="booking-lang-fr"> ÉTAPE 5 </span>
+
+                    <span class="booking-lang-en"> STEP 5 </span>
                   </span>
 
                   <h2 data-i18n="booking.confirmationTitle">Confirmation</h2>
@@ -608,10 +813,18 @@
                   <span>
                     <i class="fa-solid fa-shield-halved"></i>
 
-                    <span data-i18n="booking.consent">
-                      Je confirme que les renseignements fournis sont exacts et
-                      j'accepte d'être contacté par MAD Immigration Canadienne
-                      concernant cette consultation.
+                    <span>
+                      <span class="booking-lang-fr">
+                        Je confirme que les renseignements fournis sont exacts
+                        et j'accepte d'être contacté par MAD Immigration
+                        Canadienne concernant cette consultation.
+                      </span>
+
+                      <span class="booking-lang-en">
+                        I confirm that the information provided is accurate and
+                        I agree to be contacted by MAD Immigration Canadienne
+                        regarding this consultation.
+                      </span>
                     </span>
                   </span>
                 </label>
@@ -619,15 +832,26 @@
                 <button
                   type="submit"
                   class="booking-submit booking-submit--modern"
-                  data-i18n="booking.submit"
                 >
                   <i class="fa-solid fa-calendar-check"></i>
-                  Réserver ma consultation
+
+                  <span class="booking-lang-fr">
+                    Réserver ma consultation
+                  </span>
+
+                  <span class="booking-lang-en"> Book my consultation </span>
                 </button>
 
-                <p class="booking-note" data-i18n="booking.note">
-                  Votre rendez-vous sera confirmé après validation de la
-                  disponibilité.
+                <p class="booking-note">
+                  <span class="booking-lang-fr">
+                    Votre rendez-vous sera confirmé après validation de la
+                    disponibilité.
+                  </span>
+
+                  <span class="booking-lang-en">
+                    Your appointment will be confirmed after availability has
+                    been validated.
+                  </span>
                 </p>
               </div>
             </div>
@@ -635,40 +859,83 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- RASSURANCE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       RASSURANCE
+       ===================================================== -->
+
       <section class="booking-trust">
         <div class="container booking-trust__grid">
+          <!-- CONFIDENTIALITÉ -->
+
           <div class="booking-trust__item">
             <i class="fa-solid fa-lock"></i>
+
             <div>
-              <strong data-i18n="booking.trust1Title">Confidentialité</strong>
-              <span data-i18n="booking.trust1Text"
-                >Vos renseignements sont traités de façon confidentielle.</span
-              >
+              <strong>
+                <span class="booking-lang-fr"> Confidentialité </span>
+
+                <span class="booking-lang-en"> Confidentiality </span>
+              </strong>
+
+              <span>
+                <span class="booking-lang-fr">
+                  Vos renseignements sont traités de façon confidentielle.
+                </span>
+
+                <span class="booking-lang-en">
+                  Your information is handled confidentially.
+                </span>
+              </span>
             </div>
           </div>
+
+          <!-- CONSULTATION PROFESSIONNELLE -->
 
           <div class="booking-trust__item">
             <i class="fa-solid fa-user-tie"></i>
+
             <div>
-              <strong data-i18n="booking.trust2Title"
-                >Consultation professionnelle</strong
-              >
-              <span data-i18n="booking.trust2Text"
-                >Une analyse adaptée à votre situation.</span
-              >
+              <strong>
+                <span class="booking-lang-fr">
+                  Consultation professionnelle
+                </span>
+
+                <span class="booking-lang-en"> Professional consultation </span>
+              </strong>
+
+              <span>
+                <span class="booking-lang-fr">
+                  Une analyse adaptée à votre situation.
+                </span>
+
+                <span class="booking-lang-en">
+                  An assessment tailored to your situation.
+                </span>
+              </span>
             </div>
           </div>
 
+          <!-- CONFIRMATION -->
+
           <div class="booking-trust__item">
             <i class="fa-solid fa-envelope-circle-check"></i>
+
             <div>
-              <strong data-i18n="booking.trust3Title">Confirmation</strong>
-              <span data-i18n="booking.trust3Text"
-                >Vous recevrez une confirmation après validation.</span
-              >
+              <strong>
+                <span class="booking-lang-fr"> Confirmation </span>
+
+                <span class="booking-lang-en"> Confirmation </span>
+              </strong>
+
+              <span>
+                <span class="booking-lang-fr">
+                  Vous recevrez une confirmation après validation.
+                </span>
+
+                <span class="booking-lang-en">
+                  You will receive a confirmation after validation.
+                </span>
+              </span>
             </div>
           </div>
         </div>

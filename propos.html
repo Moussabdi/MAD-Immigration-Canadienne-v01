@@ -34,129 +34,216 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="page-propos" class="about-page-new">
-      <!-- ===================================================== -->
-      <!-- SECTION 1 : HERO / FONDATEUR -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
+
+      <style>
+        .about-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .about-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .about-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .about-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .about-lang-en {
+          display: inline;
+        }
+      </style>
+
+      <!-- =====================================================
+       SECTION 1 : HERO / FONDATEUR
+       ===================================================== -->
+
       <section class="about-hero">
         <div class="container about-hero-grid">
           <div class="about-hero-image">
@@ -170,148 +257,233 @@
               </div>
 
               <div>
-                <strong>Moussa Abdi Diraneh</strong>
+                <strong> Moussa Abdi Diraneh </strong>
 
-                <span data-i18n="about.hero.role">
-                  Fondateur et gestionnaire principal
+                <span>
+                  <span class="about-lang-fr">
+                    Fondateur et gestionnaire principal
+                  </span>
+
+                  <span class="about-lang-en">
+                    Founder and Principal Manager
+                  </span>
                 </span>
               </div>
             </div>
           </div>
 
           <div class="about-hero-content">
-            <span class="section-eyebrow" data-i18n="about.hero.eyebrow">
-              FONDATEUR DE MADIC
+            <span class="section-eyebrow">
+              <span class="about-lang-fr"> FONDATEUR DE MADIC </span>
+
+              <span class="about-lang-en"> FOUNDER OF MADIC </span>
             </span>
 
-            <h1 data-i18n="about.hero.title">
-              Une expertise professionnelle au service de votre projet
-              d’immigration
+            <h1>
+              <span class="about-lang-fr">
+                Une expertise professionnelle au service de votre projet
+                d’immigration
+              </span>
+
+              <span class="about-lang-en">
+                Professional expertise dedicated to your immigration project
+              </span>
             </h1>
 
-            <p class="about-hero-lead" data-i18n="about.hero.intro">
-              Bienvenue chez MAD Immigration Canadienne. Notre mission est
-              d’accompagner les individus et les familles dans leurs démarches
-              d’immigration et de citoyenneté canadiennes avec une approche
-              personnalisée, structurée et transparente.
+            <p class="about-hero-lead">
+              <span class="about-lang-fr">
+                Bienvenue chez MAD Immigration Canadienne. Notre mission est
+                d’accompagner les individus et les familles dans leurs démarches
+                d’immigration et de citoyenneté canadiennes avec une approche
+                personnalisée, structurée et transparente.
+              </span>
+
+              <span class="about-lang-en">
+                Welcome to MAD Immigration Canadienne. Our mission is to assist
+                individuals and families with their Canadian immigration and
+                citizenship matters through a personalized, structured and
+                transparent approach.
+              </span>
             </p>
 
-            <p data-i18n="about.hero.moussa">
-              Fondateur et gestionnaire principal de MAD Immigration Canadienne,
-              Moussa Abdi Diraneh met à profit son expérience en consultation,
-              en gestion de projets et en immigration afin d’accompagner ses
-              clients dans la réalisation de leurs projets.
+            <p>
+              <span class="about-lang-fr">
+                Fondateur et gestionnaire principal de MAD Immigration
+                Canadienne, Moussa Abdi Diraneh met à profit son expérience en
+                consultation, en gestion de projets et en immigration afin
+                d’accompagner ses clients dans la réalisation de leurs projets.
+              </span>
+
+              <span class="about-lang-en">
+                Founder and Principal Manager of MAD Immigration Canadienne,
+                Moussa Abdi Diraneh draws on his experience in consulting,
+                project management and immigration to assist clients in
+                achieving their goals.
+              </span>
             </p>
 
             <div class="about-hero-features">
               <div class="about-feature">
                 <i class="fa-solid fa-circle-check"></i>
 
-                <span data-i18n="about.hero.feature1">
-                  Approche personnalisée
+                <span>
+                  <span class="about-lang-fr"> Approche personnalisée </span>
+
+                  <span class="about-lang-en"> Personalized approach </span>
                 </span>
               </div>
 
               <div class="about-feature">
                 <i class="fa-solid fa-circle-check"></i>
 
-                <span data-i18n="about.hero.feature2">
-                  Communication claire
+                <span>
+                  <span class="about-lang-fr"> Communication claire </span>
+
+                  <span class="about-lang-en"> Clear communication </span>
                 </span>
               </div>
 
               <div class="about-feature">
                 <i class="fa-solid fa-circle-check"></i>
 
-                <span data-i18n="about.hero.feature3"> Confidentialité </span>
+                <span>
+                  <span class="about-lang-fr"> Confidentialité </span>
+
+                  <span class="about-lang-en"> Confidentiality </span>
+                </span>
               </div>
 
               <div class="about-feature">
                 <i class="fa-solid fa-circle-check"></i>
 
-                <span data-i18n="about.hero.feature4">
-                  Accompagnement professionnel
+                <span>
+                  <span class="about-lang-fr">
+                    Accompagnement professionnel
+                  </span>
+
+                  <span class="about-lang-en"> Professional support </span>
                 </span>
               </div>
             </div>
 
             <div class="about-hero-buttons">
-              <a
-                href="rendezvous.html"
-                class="madic-btn madic-btn-red"
-                data-i18n="about.hero.appointment"
-              >
+              <a href="rendezvous.html" class="madic-btn madic-btn-red">
                 <i class="fa-solid fa-calendar-check"></i>
-                Prendre rendez-vous
+
+                <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
               </a>
 
-              <a
-                href="formulaire.html"
-                class="madic-btn madic-btn-dark"
-                data-i18n="about.hero.evaluation"
-              >
+              <a href="formulaire.html" class="madic-btn madic-btn-dark">
                 <i class="fa-solid fa-file-circle-check"></i>
-                Évaluation préliminaire
+
+                <span data-i18n="nav.evaluation">
+                  Évaluation préliminaire
+                </span>
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 2 : QUI SOMMES-NOUS -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 2 : QUI SOMMES-NOUS
+       ===================================================== -->
+
       <section class="about-company">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="about.company.eyebrow">
-              MAD IMMIGRATION CANADIENNE
-            </span>
+            <span class="section-eyebrow"> MAD IMMIGRATION CANADIENNE </span>
 
-            <h2 data-i18n="about.title">Qui sommes-nous ?</h2>
+            <h2>
+              <span class="about-lang-fr"> Qui sommes-nous ? </span>
 
-            <p data-i18n="about.company.subtitle">
-              Une entreprise spécialisée dans l’accompagnement des projets
-              d’immigration et de citoyenneté canadiennes.
+              <span class="about-lang-en"> Who are we? </span>
+            </h2>
+
+            <p>
+              <span class="about-lang-fr">
+                Une entreprise spécialisée dans l’accompagnement des projets
+                d’immigration et de citoyenneté canadiennes.
+              </span>
+
+              <span class="about-lang-en">
+                A company specializing in assistance with Canadian immigration
+                and citizenship projects.
+              </span>
             </p>
           </div>
 
           <div class="about-company-grid">
             <div class="about-company-main">
-              <p data-i18n="about.intro1">
-                Nous sommes une jeune entreprise dynamique œuvrant dans le
-                domaine de l'immigration canadienne. Notre équipe est certifiée
-                par le collège de l'immigration et de la citoyenneté. Nous
-                offrons des services de consultation, coaching spécialisé et un
-                accompagnement personnalisé dans l'immigration économique, le
-                regroupement familial, la résidence temporaire et dans
-                l'humanitaire.
+              <p>
+                <span class="about-lang-fr">
+                  Nous sommes une jeune entreprise dynamique œuvrant dans le
+                  domaine de l'immigration canadienne. Notre équipe est
+                  certifiée par le collège de l'immigration et de la
+                  citoyenneté. Nous offrons des services de consultation,
+                  coaching spécialisé et un accompagnement personnalisé dans
+                  l'immigration économique, le regroupement familial, la
+                  résidence temporaire et dans l'humanitaire.
+                </span>
+
+                <span class="about-lang-en">
+                  We are a young and dynamic company working in the field of
+                  Canadian immigration. Our team is certified by the College of
+                  Immigration and Citizenship Consultants. We offer
+                  consultation, specialized coaching and personalized support in
+                  economic immigration, family reunification, temporary
+                  residence and humanitarian matters.
+                </span>
               </p>
 
-              <p data-i18n="about.intro2">
-                Notre approche simplifie l’ensemble des démarches en immigration
-                et en citoyenneté en utilisant des outils technologiques 4.0.
-                Nous garantissons la confidentialité des dossiers et une
-                accessibilité constante à vos conseillers durant toute la
-                procédure.
+              <p>
+                <span class="about-lang-fr">
+                  Notre approche simplifie l’ensemble des démarches en
+                  immigration et en citoyenneté en utilisant des outils
+                  technologiques 4.0. Nous garantissons la confidentialité des
+                  dossiers et une accessibilité constante à vos conseillers
+                  durant toute la procédure.
+                </span>
+
+                <span class="about-lang-en">
+                  Our approach simplifies immigration and citizenship procedures
+                  through the use of modern technological tools. We ensure the
+                  confidentiality of your files and continued access to your
+                  advisors throughout the process.
+                </span>
               </p>
             </div>
 
             <div class="about-company-points">
+              <!-- ANALYSE -->
+
               <div class="about-point">
                 <div class="about-point-icon red">
                   <i class="fa-solid fa-magnifying-glass-chart"></i>
                 </div>
 
                 <div>
-                  <h3 data-i18n="about.company.analysis.title">Analyse</h3>
+                  <h3>
+                    <span class="about-lang-fr"> Analyse </span>
 
-                  <p data-i18n="about.company.analysis.text">
-                    Comprendre votre situation avant de déterminer les démarches
-                    possibles.
+                    <span class="about-lang-en"> Analysis </span>
+                  </h3>
+
+                  <p>
+                    <span class="about-lang-fr">
+                      Comprendre votre situation avant de déterminer les
+                      démarches possibles.
+                    </span>
+
+                    <span class="about-lang-en">
+                      Understand your situation before determining the available
+                      options.
+                    </span>
                   </p>
                 </div>
               </div>
+
+              <!-- STRATÉGIE -->
 
               <div class="about-point">
                 <div class="about-point-icon dark">
@@ -319,14 +491,27 @@
                 </div>
 
                 <div>
-                  <h3 data-i18n="about.company.strategy.title">Stratégie</h3>
+                  <h3>
+                    <span class="about-lang-fr"> Stratégie </span>
 
-                  <p data-i18n="about.company.strategy.text">
-                    Identifier une démarche adaptée à votre profil et à vos
-                    objectifs.
+                    <span class="about-lang-en"> Strategy </span>
+                  </h3>
+
+                  <p>
+                    <span class="about-lang-fr">
+                      Identifier une démarche adaptée à votre profil et à vos
+                      objectifs.
+                    </span>
+
+                    <span class="about-lang-en">
+                      Identify an approach suited to your profile and
+                      objectives.
+                    </span>
                   </p>
                 </div>
               </div>
+
+              <!-- ACCOMPAGNEMENT -->
 
               <div class="about-point">
                 <div class="about-point-icon red">
@@ -334,13 +519,22 @@
                 </div>
 
                 <div>
-                  <h3 data-i18n="about.company.support.title">
-                    Accompagnement
+                  <h3>
+                    <span class="about-lang-fr"> Accompagnement </span>
+
+                    <span class="about-lang-en"> Support </span>
                   </h3>
 
-                  <p data-i18n="about.company.support.text">
-                    Vous informer et vous accompagner à chacune des étapes de
-                    votre dossier.
+                  <p>
+                    <span class="about-lang-fr">
+                      Vous informer et vous accompagner à chacune des étapes de
+                      votre dossier.
+                    </span>
+
+                    <span class="about-lang-en">
+                      Keep you informed and support you throughout every stage
+                      of your file.
+                    </span>
                   </p>
                 </div>
               </div>
@@ -349,295 +543,503 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 3 : NOS VALEURS -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 3 : NOS VALEURS
+       ===================================================== -->
+
       <section class="about-values">
         <div class="container">
           <div class="section-title section-title-light">
-            <span class="section-eyebrow" data-i18n="about.values.eyebrow">
-              NOS VALEURS
+            <span class="section-eyebrow">
+              <span class="about-lang-fr"> NOS VALEURS </span>
+
+              <span class="about-lang-en"> OUR VALUES </span>
             </span>
 
-            <h2 data-i18n="about.values.title">
-              Les principes qui guident notre accompagnement
+            <h2>
+              <span class="about-lang-fr">
+                Les principes qui guident notre accompagnement
+              </span>
+
+              <span class="about-lang-en">
+                The principles that guide our work
+              </span>
             </h2>
 
-            <p data-i18n="about.values.subtitle">
-              La qualité d’un accompagnement repose autant sur la compétence que
-              sur la confiance établie avec le client.
+            <p>
+              <span class="about-lang-fr">
+                La qualité d’un accompagnement repose autant sur la compétence
+                que sur la confiance établie avec le client.
+              </span>
+
+              <span class="about-lang-en">
+                Quality support depends as much on professional expertise as on
+                the trust established with the client.
+              </span>
             </p>
           </div>
 
           <div class="about-values-grid">
+            <!-- TRANSPARENCE -->
+
             <div class="about-value-card">
               <div class="about-value-icon">
                 <i class="fa-solid fa-eye"></i>
               </div>
 
-              <h3 data-i18n="about.values.transparency.title">Transparence</h3>
+              <h3>
+                <span class="about-lang-fr"> Transparence </span>
 
-              <p data-i18n="about.values.transparency.text">
-                Vous fournir une information claire sur les démarches et les
-                différentes étapes de votre dossier.
+                <span class="about-lang-en"> Transparency </span>
+              </h3>
+
+              <p>
+                <span class="about-lang-fr">
+                  Vous fournir une information claire sur les démarches et les
+                  différentes étapes de votre dossier.
+                </span>
+
+                <span class="about-lang-en">
+                  Provide clear information about the process and the different
+                  stages of your file.
+                </span>
               </p>
             </div>
+
+            <!-- RIGUEUR -->
 
             <div class="about-value-card">
               <div class="about-value-icon">
                 <i class="fa-solid fa-scale-balanced"></i>
               </div>
 
-              <h3 data-i18n="about.values.rigor.title">Rigueur</h3>
+              <h3>
+                <span class="about-lang-fr"> Rigueur </span>
 
-              <p data-i18n="about.values.rigor.text">
-                Accorder une attention particulière à l’analyse et à la
-                préparation de chaque dossier.
+                <span class="about-lang-en"> Rigor </span>
+              </h3>
+
+              <p>
+                <span class="about-lang-fr">
+                  Accorder une attention particulière à l’analyse et à la
+                  préparation de chaque dossier.
+                </span>
+
+                <span class="about-lang-en">
+                  Give careful attention to the analysis and preparation of
+                  every file.
+                </span>
               </p>
             </div>
+
+            <!-- CONFIDENTIALITÉ -->
 
             <div class="about-value-card">
               <div class="about-value-icon">
                 <i class="fa-solid fa-lock"></i>
               </div>
 
-              <h3 data-i18n="about.values.confidentiality.title">
-                Confidentialité
+              <h3>
+                <span class="about-lang-fr"> Confidentialité </span>
+
+                <span class="about-lang-en"> Confidentiality </span>
               </h3>
 
-              <p data-i18n="about.values.confidentiality.text">
-                Traiter les renseignements et documents de nos clients avec
-                discrétion et professionnalisme.
+              <p>
+                <span class="about-lang-fr">
+                  Traiter les renseignements et documents de nos clients avec
+                  discrétion et professionnalisme.
+                </span>
+
+                <span class="about-lang-en">
+                  Handle our clients' information and documents with discretion
+                  and professionalism.
+                </span>
               </p>
             </div>
+
+            <!-- ENGAGEMENT -->
 
             <div class="about-value-card">
               <div class="about-value-icon">
                 <i class="fa-solid fa-handshake"></i>
               </div>
 
-              <h3 data-i18n="about.values.commitment.title">Engagement</h3>
+              <h3>
+                <span class="about-lang-fr"> Engagement </span>
 
-              <p data-i18n="about.values.commitment.text">
-                Prendre à cœur chaque mandat et assurer un accompagnement
-                structuré tout au long de la démarche.
+                <span class="about-lang-en"> Commitment </span>
+              </h3>
+
+              <p>
+                <span class="about-lang-fr">
+                  Prendre à cœur chaque mandat et assurer un accompagnement
+                  structuré tout au long de la démarche.
+                </span>
+
+                <span class="about-lang-en">
+                  Approach every mandate with care and provide structured
+                  support throughout the process.
+                </span>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 4 : NOTRE HISTOIRE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 4 : NOTRE HISTOIRE
+       ===================================================== -->
+
       <section class="about-journey">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="about.history.eyebrow">
-              NOTRE HISTOIRE
+            <span class="section-eyebrow">
+              <span class="about-lang-fr"> NOTRE HISTOIRE </span>
+
+              <span class="about-lang-en"> OUR STORY </span>
             </span>
 
-            <h2 data-i18n="about.history.title">
-              Du rêve d’immigrer à la mission d’accompagner les autres
+            <h2>
+              <span class="about-lang-fr">
+                Du rêve d’immigrer à la mission d’accompagner les autres
+              </span>
+
+              <span class="about-lang-en">
+                From the dream of immigrating to the mission of helping others
+              </span>
             </h2>
 
-            <p data-i18n="about.history.subtitle">
-              Un parcours personnel devenu une source d’engagement envers les
-              personnes qui souhaitent construire leur avenir au Canada.
+            <p>
+              <span class="about-lang-fr">
+                Un parcours personnel devenu une source d’engagement envers les
+                personnes qui souhaitent construire leur avenir au Canada.
+              </span>
+
+              <span class="about-lang-en">
+                A personal journey that became a source of commitment to those
+                seeking to build their future in Canada.
+              </span>
             </p>
           </div>
 
           <div class="about-timeline">
             <!-- 01 -->
+
             <div class="timeline-item">
               <div class="timeline-marker">
                 <i class="fa-solid fa-star"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">01</span>
+                <span class="timeline-number"> 01 </span>
 
-                <h3 data-i18n="about.history.dream.title">
-                  Un rêve qui prend naissance
+                <h3>
+                  <span class="about-lang-fr">
+                    Un rêve qui prend naissance
+                  </span>
+
+                  <span class="about-lang-en"> The beginning of a dream </span>
                 </h3>
 
-                <p data-i18n="about.history.dream.text">
-                  En 1998, en République de Djibouti, je n'étais qu'un jeune
-                  élève avec un rêve : m'établir au Québec. Tout semblait
-                  incertain, mais ce rêve allait devenir le point de départ d’un
-                  voyage extraordinaire.
+                <p>
+                  <span class="about-lang-fr">
+                    En 1998, en République de Djibouti, je n'étais qu'un jeune
+                    élève avec un rêve : m'établir au Québec. Tout semblait
+                    incertain, mais ce rêve allait devenir le point de départ
+                    d’un voyage extraordinaire.
+                  </span>
+
+                  <span class="about-lang-en">
+                    In 1998, in the Republic of Djibouti, I was a young student
+                    with a dream: to settle in Quebec. Everything seemed
+                    uncertain, but that dream would become the starting point of
+                    an extraordinary journey.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 02 -->
+
             <div class="timeline-item">
               <div class="timeline-marker">
                 <i class="fa-solid fa-envelope-open-text"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">02</span>
+                <span class="timeline-number"> 02 </span>
 
-                <h3 data-i18n="about.history.firstStep.title">
-                  Un premier pas décisif
+                <h3>
+                  <span class="about-lang-fr"> Un premier pas décisif </span>
+
+                  <span class="about-lang-en"> A decisive first step </span>
                 </h3>
 
-                <p data-i18n="about.history.firstStep.text">
-                  Ce simple geste de correspondance par courrier postal a ouvert
-                  la voie à des opportunités qui ont profondément transformé ma
-                  vie, éveillant en moi un désir constant de me surpasser.
+                <p>
+                  <span class="about-lang-fr">
+                    Ce simple geste de correspondance par courrier postal a
+                    ouvert la voie à des opportunités qui ont profondément
+                    transformé ma vie, éveillant en moi un désir constant de me
+                    surpasser.
+                  </span>
+
+                  <span class="about-lang-en">
+                    This simple act of corresponding by mail opened the door to
+                    opportunities that profoundly transformed my life and
+                    awakened in me a constant desire to improve and move
+                    forward.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 03 -->
+
             <div class="timeline-item">
               <div class="timeline-marker">
                 <i class="fa-solid fa-earth-americas"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">03</span>
+                <span class="timeline-number"> 03 </span>
 
-                <h3 data-i18n="about.history.world.title">
-                  Découvrir le monde
+                <h3>
+                  <span class="about-lang-fr"> Découvrir le monde </span>
+
+                  <span class="about-lang-en"> Discovering the world </span>
                 </h3>
 
-                <p data-i18n="about.history.world.text">
-                  Avant d’arriver au Canada, j’ai eu la chance de vivre au Maroc
-                  pendant 4 ans, en France pendant 5 ans, et de voyager dans
-                  huit pays européens, deux pays asiatiques et les États-Unis.
-                  Chaque expérience a enrichi ma compréhension de la diversité.
+                <p>
+                  <span class="about-lang-fr">
+                    Avant d’arriver au Canada, j’ai eu la chance de vivre au
+                    Maroc pendant 4 ans, en France pendant 5 ans, et de voyager
+                    dans huit pays européens, deux pays asiatiques et les
+                    États-Unis. Chaque expérience a enrichi ma compréhension de
+                    la diversité.
+                  </span>
+
+                  <span class="about-lang-en">
+                    Before arriving in Canada, I had the opportunity to live in
+                    Morocco for four years, in France for five years, and to
+                    travel through eight European countries, two Asian countries
+                    and the United States. Each experience enriched my
+                    understanding of diversity.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 04 -->
+
             <div class="timeline-item">
               <div class="timeline-marker red">
                 <i class="fa-solid fa-maple-leaf"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">04</span>
+                <span class="timeline-number"> 04 </span>
 
-                <h3 data-i18n="about.history.canada.title">
-                  Un nouveau départ au Canada
+                <h3>
+                  <span class="about-lang-fr">
+                    Un nouveau départ au Canada
+                  </span>
+
+                  <span class="about-lang-en"> A new beginning in Canada </span>
                 </h3>
 
-                <p data-i18n="about.history.canada.text">
-                  En 2012, j’ai posé mes valises au Canada. Ce pays, avec ses
-                  opportunités et ses défis, est devenu le théâtre d’une mission
-                  qui allait redéfinir ma vie.
+                <p>
+                  <span class="about-lang-fr">
+                    En 2012, j’ai posé mes valises au Canada. Ce pays, avec ses
+                    opportunités et ses défis, est devenu le théâtre d’une
+                    mission qui allait redéfinir ma vie.
+                  </span>
+
+                  <span class="about-lang-en">
+                    In 2012, I arrived in Canada. This country, with its
+                    opportunities and challenges, became the setting for a
+                    mission that would redefine my life.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 05 -->
+
             <div class="timeline-item">
               <div class="timeline-marker">
                 <i class="fa-solid fa-mountain"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">05</span>
+                <span class="timeline-number"> 05 </span>
 
-                <h3 data-i18n="about.history.challenges.title">
-                  Les défis de l'immigration
+                <h3>
+                  <span class="about-lang-fr">
+                    Les défis de l'immigration
+                  </span>
+
+                  <span class="about-lang-en">
+                    The challenges of immigration
+                  </span>
                 </h3>
 
-                <p data-i18n="about.history.challenges.text">
-                  Le processus d'immigration n’est pas seulement administratif,
-                  c’est une aventure humaine. J’ai vu les obstacles, ressenti
-                  les doutes, mais aussi découvert une passion pour aider et
-                  transformer des vies.
+                <p>
+                  <span class="about-lang-fr">
+                    Le processus d'immigration n’est pas seulement
+                    administratif, c’est une aventure humaine. J’ai vu les
+                    obstacles, ressenti les doutes, mais aussi découvert une
+                    passion pour aider et transformer des vies.
+                  </span>
+
+                  <span class="about-lang-en">
+                    The immigration process is not only administrative; it is a
+                    human journey. I experienced the obstacles and uncertainty,
+                    but also discovered a passion for helping others and
+                    transforming lives.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 06 -->
+
             <div class="timeline-item">
               <div class="timeline-marker">
                 <i class="fa-solid fa-people-group"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">06</span>
+                <span class="timeline-number"> 06 </span>
 
-                <h3 data-i18n="about.history.entrepreneurship.title">
-                  Entrepreneuriat au service de la communauté
+                <h3>
+                  <span class="about-lang-fr">
+                    Entrepreneuriat au service de la communauté
+                  </span>
+
+                  <span class="about-lang-en">
+                    Entrepreneurship serving the community
+                  </span>
                 </h3>
 
-                <p data-i18n="about.history.entrepreneurship.text">
-                  Inspiré par mon propre parcours, j’ai utilisé
-                  l'entrepreneuriat comme levier pour accompagner les
-                  immigrants, leur offrir des solutions concrètes et contribuer
-                  à leur intégration dans la société canadienne.
+                <p>
+                  <span class="about-lang-fr">
+                    Inspiré par mon propre parcours, j’ai utilisé
+                    l'entrepreneuriat comme levier pour accompagner les
+                    immigrants, leur offrir des solutions concrètes et
+                    contribuer à leur intégration dans la société canadienne.
+                  </span>
+
+                  <span class="about-lang-en">
+                    Inspired by my own journey, I used entrepreneurship as a way
+                    to support immigrants, provide concrete solutions and
+                    contribute to their integration into Canadian society.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 07 -->
+
             <div class="timeline-item">
               <div class="timeline-marker">
                 <i class="fa-solid fa-bullseye"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">07</span>
+                <span class="timeline-number"> 07 </span>
 
-                <h3 data-i18n="about.history.mission.title">
-                  Une mission de transformation
+                <h3>
+                  <span class="about-lang-fr">
+                    Une mission de transformation
+                  </span>
+
+                  <span class="about-lang-en">
+                    A mission of transformation
+                  </span>
                 </h3>
 
-                <p data-i18n="about.history.mission.text">
-                  Mon engagement repose sur deux axes : aider les immigrants à
-                  obtenir leur résidence et citoyenneté, et leur ouvrir les
-                  portes du marché du travail canadien.
+                <p>
+                  <span class="about-lang-fr">
+                    Mon engagement repose sur deux axes : aider les immigrants à
+                    obtenir leur résidence et citoyenneté, et leur ouvrir les
+                    portes du marché du travail canadien.
+                  </span>
+
+                  <span class="about-lang-en">
+                    My commitment is built around two goals: helping immigrants
+                    obtain residence and citizenship, and helping open the doors
+                    of the Canadian labour market to them.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 08 -->
+
             <div class="timeline-item">
               <div class="timeline-marker">
                 <i class="fa-solid fa-arrow-trend-up"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">08</span>
+                <span class="timeline-number"> 08 </span>
 
-                <h3 data-i18n="about.history.change.title">
-                  Un catalyseur de changement
+                <h3>
+                  <span class="about-lang-fr">
+                    Un catalyseur de changement
+                  </span>
+
+                  <span class="about-lang-en"> A catalyst for change </span>
                 </h3>
 
-                <p data-i18n="about.history.change.text">
-                  Je crois fermement que l’intégration passe par le sport, la
-                  culture et les échanges. Mon objectif est de construire des
-                  communautés solides et dynamiques où chacun peut s’épanouir.
+                <p>
+                  <span class="about-lang-fr">
+                    Je crois fermement que l’intégration passe par le sport, la
+                    culture et les échanges. Mon objectif est de construire des
+                    communautés solides et dynamiques où chacun peut s’épanouir.
+                  </span>
+
+                  <span class="about-lang-en">
+                    I strongly believe that integration is fostered through
+                    sports, culture and human connections. My goal is to help
+                    build strong and dynamic communities where everyone can
+                    thrive.
+                  </span>
                 </p>
               </div>
             </div>
 
             <!-- 09 -->
+
             <div class="timeline-item">
               <div class="timeline-marker red">
                 <i class="fa-solid fa-handshake-angle"></i>
               </div>
 
               <div class="timeline-card">
-                <span class="timeline-number">09</span>
+                <span class="timeline-number"> 09 </span>
 
-                <h3 data-i18n="about.history.journey.title">
-                  Un voyage commun
+                <h3>
+                  <span class="about-lang-fr"> Un voyage commun </span>
+
+                  <span class="about-lang-en"> A shared journey </span>
                 </h3>
 
-                <p data-i18n="about.history.journey.text">
-                  Mon histoire est celle de tous ceux qui croient qu’il est
-                  possible de réécrire leur avenir. Ensemble, nous faisons de
-                  l'immigration une aventure partagée, remplie d’audace, de
-                  passion et de détermination.
+                <p>
+                  <span class="about-lang-fr">
+                    Mon histoire est celle de tous ceux qui croient qu’il est
+                    possible de réécrire leur avenir. Ensemble, nous faisons de
+                    l'immigration une aventure partagée, remplie d’audace, de
+                    passion et de détermination.
+                  </span>
+
+                  <span class="about-lang-en">
+                    My story is also the story of everyone who believes that it
+                    is possible to rewrite their future. Together, we make
+                    immigration a shared journey filled with courage, passion
+                    and determination.
+                  </span>
                 </p>
               </div>
             </div>
@@ -645,28 +1047,49 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 5 : IMPACT COMMUNAUTAIRE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 5 : IMPACT COMMUNAUTAIRE
+       ===================================================== -->
+
       <section class="about-impact">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="about.impact.eyebrow">
-              NOTRE ENGAGEMENT COMMUNAUTAIRE
+            <span class="section-eyebrow">
+              <span class="about-lang-fr">
+                NOTRE ENGAGEMENT COMMUNAUTAIRE
+              </span>
+
+              <span class="about-lang-en"> OUR COMMUNITY COMMITMENT </span>
             </span>
 
-            <h2 data-i18n="about.impact.title">
-              Notre impact au sein de la société canadienne
+            <h2>
+              <span class="about-lang-fr">
+                Notre impact au sein de la société canadienne
+              </span>
+
+              <span class="about-lang-en">
+                Our impact within Canadian society
+              </span>
             </h2>
 
-            <p data-i18n="about.impact.subtitle">
-              L’intégration ne se limite pas aux démarches administratives. Elle
-              passe aussi par la culture, le sport, les rencontres et la
-              participation à la vie communautaire.
+            <p>
+              <span class="about-lang-fr">
+                L’intégration ne se limite pas aux démarches administratives.
+                Elle passe aussi par la culture, le sport, les rencontres et la
+                participation à la vie communautaire.
+              </span>
+
+              <span class="about-lang-en">
+                Integration goes beyond administrative procedures. It also
+                involves culture, sports, social connections and participation
+                in community life.
+              </span>
             </p>
           </div>
 
           <div class="about-impact-grid">
+            <!-- CULTURE -->
+
             <article class="impact-card impact-card-large">
               <img src="img/Journee_culturelle.png" alt="Journée culturelle" />
 
@@ -675,14 +1098,27 @@
                   <i class="fa-solid fa-masks-theater"></i>
                 </span>
 
-                <h3 data-i18n="about.impact.culture.title">Impact culturel</h3>
+                <h3>
+                  <span class="about-lang-fr"> Impact culturel </span>
 
-                <p data-i18n="about.impact.culture.text">
-                  Nous avons participé activement à la promotion de la culture
-                  immigrante à travers des événements communautaires.
+                  <span class="about-lang-en"> Cultural impact </span>
+                </h3>
+
+                <p>
+                  <span class="about-lang-fr">
+                    Nous avons participé activement à la promotion de la culture
+                    immigrante à travers des événements communautaires.
+                  </span>
+
+                  <span class="about-lang-en">
+                    We have actively contributed to promoting immigrant culture
+                    through community events.
+                  </span>
                 </p>
               </div>
             </article>
+
+            <!-- SOCCER -->
 
             <article class="impact-card">
               <img src="img/Tournoi_soccer.jpg" alt="Tournoi de soccer" />
@@ -692,11 +1128,15 @@
                   <i class="fa-solid fa-futbol"></i>
                 </span>
 
-                <h3 data-i18n="about.impact.sport.title">
-                  Impact dans le sport
+                <h3>
+                  <span class="about-lang-fr"> Impact dans le sport </span>
+
+                  <span class="about-lang-en"> Impact through sports </span>
                 </h3>
               </div>
             </article>
+
+            <!-- PING-PONG -->
 
             <article class="impact-card">
               <img src="img/Tournoi_PingPong.png" alt="Tournoi de ping-pong" />
@@ -706,11 +1146,15 @@
                   <i class="fa-solid fa-table-tennis-paddle-ball"></i>
                 </span>
 
-                <h3 data-i18n="about.impact.sport.title">
-                  Impact dans le sport
+                <h3>
+                  <span class="about-lang-fr"> Impact dans le sport </span>
+
+                  <span class="about-lang-en"> Impact through sports </span>
                 </h3>
               </div>
             </article>
+
+            <!-- BABY-FOOT -->
 
             <article class="impact-card">
               <img src="img/Tournoi_BabyFoot.jpg" alt="Tournoi de baby-foot" />
@@ -720,11 +1164,15 @@
                   <i class="fa-solid fa-trophy"></i>
                 </span>
 
-                <h3 data-i18n="about.impact.sport.title">
-                  Impact dans le sport
+                <h3>
+                  <span class="about-lang-fr"> Impact dans le sport </span>
+
+                  <span class="about-lang-en"> Impact through sports </span>
                 </h3>
               </div>
             </article>
+
+            <!-- PÉTANQUE -->
 
             <article class="impact-card">
               <img src="img/Tournoi_petanque.png" alt="Tournoi de pétanque" />
@@ -734,11 +1182,15 @@
                   <i class="fa-solid fa-medal"></i>
                 </span>
 
-                <h3 data-i18n="about.impact.sport.title">
-                  Impact dans le sport
+                <h3>
+                  <span class="about-lang-fr"> Impact dans le sport </span>
+
+                  <span class="about-lang-en"> Impact through sports </span>
                 </h3>
               </div>
             </article>
+
+            <!-- GOLF -->
 
             <article class="impact-card">
               <img src="img/Tournoi_golf.jpg" alt="Tournoi de golf" />
@@ -748,8 +1200,12 @@
                   <i class="fa-solid fa-golf-ball-tee"></i>
                 </span>
 
-                <h3 data-i18n="about.impact.professional.title">
-                  Intégration et échanges
+                <h3>
+                  <span class="about-lang-fr"> Intégration et échanges </span>
+
+                  <span class="about-lang-en">
+                    Integration and connections
+                  </span>
                 </h3>
               </div>
             </article>
@@ -757,43 +1213,55 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 6 : CTA FINAL -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 6 : CTA FINAL
+       ===================================================== -->
+
       <section class="about-final-cta">
         <div class="about-final-overlay"></div>
 
         <div class="container about-final-content">
-          <span class="section-eyebrow" data-i18n="about.cta.eyebrow">
-            VOTRE PROJET COMMENCE ICI
+          <span class="section-eyebrow">
+            <span class="about-lang-fr"> VOTRE PROJET COMMENCE ICI </span>
+
+            <span class="about-lang-en"> YOUR PROJECT STARTS HERE </span>
           </span>
 
-          <h2 data-i18n="about.cta.title">
-            Parlons de votre projet d’immigration au Canada
+          <h2>
+            <span class="about-lang-fr">
+              Parlons de votre projet d’immigration au Canada
+            </span>
+
+            <span class="about-lang-en">
+              Let's discuss your Canadian immigration project
+            </span>
           </h2>
 
-          <p data-i18n="about.cta.text">
-            Réservez une consultation avec MAD Immigration Canadienne afin de
-            discuter de votre situation et de vos prochaines étapes.
+          <p>
+            <span class="about-lang-fr">
+              Réservez une consultation avec MAD Immigration Canadienne afin de
+              discuter de votre situation et de vos prochaines étapes.
+            </span>
+
+            <span class="about-lang-en">
+              Book a consultation with MAD Immigration Canadienne to discuss
+              your situation and your next steps.
+            </span>
           </p>
 
           <div class="about-final-buttons">
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="about.cta.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
 
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="about.cta.evaluation"
-            >
+            <a href="formulaire.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-file-circle-check"></i>
-              Faire mon évaluation
+
+              <span class="about-lang-fr"> Faire mon évaluation </span>
+
+              <span class="about-lang-en"> Start my assessment </span>
             </a>
           </div>
         </div>

@@ -33,149 +33,253 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
-
     <main id="page-formulaire" class="form-page">
+      <style>
+        #page-formulaire .form-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] #page-formulaire .form-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] #page-formulaire .form-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] #page-formulaire .form-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] #page-formulaire .form-lang-en {
+          display: inline;
+        }
+      </style>
       <!-- HERO -->
       <section class="form-hero">
         <div class="form-hero__overlay"></div>
+
         <div class="container form-hero__content">
-          <span class="form-eyebrow">ÉVALUATION PRÉLIMINAIRE</span>
-          <h1>Parlez-nous de votre projet d’immigration</h1>
+          <span class="form-eyebrow">
+            <span class="form-lang-fr">ÉVALUATION PRÉLIMINAIRE</span>
+            <span class="form-lang-en">PRELIMINARY ASSESSMENT</span>
+          </span>
+
+          <h1>
+            <span class="form-lang-fr">
+              Parlez-nous de votre projet d’immigration
+            </span>
+            <span class="form-lang-en">
+              Tell us about your immigration project
+            </span>
+          </h1>
+
           <p>
-            Remplissez ce formulaire afin de nous permettre d’effectuer une
-            première analyse de votre profil et de mieux comprendre votre projet
-            au Canada.
+            <span class="form-lang-fr">
+              Remplissez ce formulaire afin de nous permettre d’effectuer une
+              première analyse de votre profil et de mieux comprendre votre
+              projet au Canada.
+            </span>
+            <span class="form-lang-en">
+              Complete this form so that we can conduct an initial assessment of
+              your profile and better understand your plans in Canada.
+            </span>
           </p>
+
           <div class="form-hero__features">
             <div>
-              <i class="fa-solid fa-shield-halved"></i
-              ><span>Informations confidentielles</span>
+              <i class="fa-solid fa-shield-halved"></i>
+              <span class="form-lang-fr">Informations confidentielles</span>
+              <span class="form-lang-en">Confidential information</span>
             </div>
+
             <div>
-              <i class="fa-solid fa-file-circle-check"></i
-              ><span>Évaluation structurée</span>
+              <i class="fa-solid fa-file-circle-check"></i>
+              <span class="form-lang-fr">Évaluation structurée</span>
+              <span class="form-lang-en">Structured assessment</span>
             </div>
+
             <div>
-              <i class="fa-solid fa-user-tie"></i
-              ><span>Analyse professionnelle</span>
+              <i class="fa-solid fa-user-tie"></i>
+              <span class="form-lang-fr">Analyse professionnelle</span>
+              <span class="form-lang-en">Professional assessment</span>
             </div>
           </div>
         </div>
@@ -189,7 +293,10 @@
               <i class="fa-solid fa-triangle-exclamation"></i>
             </div>
             <div class="form-notice__content">
-              <strong>Déclaration importante</strong>
+              <strong>
+                <span class="form-lang-fr">Déclaration importante</span>
+                <span class="form-lang-en">Important declaration</span>
+              </strong>
               <p data-i18n="form.declaration">
                 Je reconnais que toute fausse déclaration de ma part ou
                 dissimulation d’un fait important dans les éléments suivants de
@@ -2454,7 +2561,6 @@
         </div>
       </section>
     </main>
-
     <footer class="footer">
       <div class="container grid--footer">
         <div class="logo-col">

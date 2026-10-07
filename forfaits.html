@@ -33,248 +33,363 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="page-forfaits" class="packages-page-new">
-      <!-- ===================================================== -->
-      <!-- SECTION 1 : HERO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
+
+      <style>
+        .packages-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .packages-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .packages-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .packages-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .packages-lang-en {
+          display: inline;
+        }
+      </style>
+
+      <!-- =====================================================
+       SECTION 1 : HERO
+       ===================================================== -->
+
       <section class="packages-hero">
         <div class="packages-hero-overlay"></div>
 
         <div class="container packages-hero-content">
-          <span class="section-eyebrow" data-i18n="packages.hero.eyebrow">
-            NOS FORFAITS
+          <span class="section-eyebrow">
+            <span class="packages-lang-fr"> NOS FORFAITS </span>
+
+            <span class="packages-lang-en"> OUR PACKAGES </span>
           </span>
 
           <h1 data-i18n="packages.title">Nos forfaits</h1>
 
-          <p class="packages-hero-subtitle" data-i18n="packages.hero.subtitle">
-            Choisissez le niveau d’accompagnement qui correspond à votre
-            situation et à votre projet d’immigration au Canada.
+          <p class="packages-hero-subtitle">
+            <span class="packages-lang-fr">
+              Choisissez le niveau d’accompagnement qui correspond à votre
+              situation et à votre projet d’immigration au Canada.
+            </span>
+
+            <span class="packages-lang-en">
+              Choose the level of support that best fits your situation and your
+              Canadian immigration project.
+            </span>
           </p>
 
           <div class="packages-hero-buttons">
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="packages.hero.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
 
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="packages.hero.evaluation"
-            >
+            <a href="formulaire.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-file-circle-check"></i>
-              Évaluation préliminaire
+
+              <span data-i18n="nav.evaluation"> Évaluation préliminaire </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 2 : INTRODUCTION -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 2 : INTRODUCTION
+       ===================================================== -->
+
       <section class="packages-intro">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="packages.intro.eyebrow">
-              CHOISISSEZ VOTRE ACCOMPAGNEMENT
+            <span class="section-eyebrow">
+              <span class="packages-lang-fr">
+                CHOISISSEZ VOTRE ACCOMPAGNEMENT
+              </span>
+
+              <span class="packages-lang-en">
+                CHOOSE YOUR LEVEL OF SUPPORT
+              </span>
             </span>
 
-            <h2 data-i18n="packages.intro.title">
-              Des forfaits adaptés à différents besoins
-            </h2>
+            <h2 data-i18n="packages.title">Nos forfaits</h2>
 
-            <p data-i18n="packages.intro.text">
-              De la consultation ponctuelle jusqu’à l’accompagnement complet du
-              dossier, MAD Immigration Canadienne vous propose plusieurs niveaux
-              de services.
+            <p>
+              <span class="packages-lang-fr">
+                De la consultation ponctuelle jusqu’à l’accompagnement complet
+                du dossier, MAD Immigration Canadienne vous propose plusieurs
+                niveaux de services.
+              </span>
+
+              <span class="packages-lang-en">
+                From a one-time consultation to complete file representation,
+                MAD Immigration Canadienne offers several levels of service.
+              </span>
             </p>
           </div>
 
           <div class="packages-benefits">
+            <!-- ANALYSE -->
+
             <div class="packages-benefit">
               <div class="packages-benefit-icon">
                 <i class="fa-solid fa-magnifying-glass-chart"></i>
               </div>
 
-              <h3 data-i18n="packages.benefit1.title">Analyse</h3>
+              <h3>
+                <span class="packages-lang-fr">Analyse</span>
+                <span class="packages-lang-en">Analysis</span>
+              </h3>
 
-              <p data-i18n="packages.benefit1.text">
-                Une analyse adaptée à la nature du mandat choisi.
-              </p>
+              <p data-i18n="packages.fileAnalysis">Analyse du dossier</p>
             </div>
+
+            <!-- ACCOMPAGNEMENT -->
 
             <div class="packages-benefit">
               <div class="packages-benefit-icon">
                 <i class="fa-solid fa-list-check"></i>
               </div>
 
-              <h3 data-i18n="packages.benefit2.title">
-                Accompagnement structuré
+              <h3>
+                <span class="packages-lang-fr"> Accompagnement structuré </span>
+
+                <span class="packages-lang-en"> Structured support </span>
               </h3>
 
-              <p data-i18n="packages.benefit2.text">
-                Des services clairement définis selon le forfait retenu.
-              </p>
+              <p data-i18n="packages.followUp">Suivi du dossier</p>
             </div>
+
+            <!-- COMMUNICATION -->
 
             <div class="packages-benefit">
               <div class="packages-benefit-icon">
                 <i class="fa-solid fa-comments"></i>
               </div>
 
-              <h3 data-i18n="packages.benefit3.title">Communication</h3>
+              <h3>
+                <span class="packages-lang-fr"> Communication </span>
 
-              <p data-i18n="packages.benefit3.text">
-                Un suivi adapté au type de service choisi.
+                <span class="packages-lang-en"> Communication </span>
+              </h3>
+
+              <p data-i18n="packages.decisionInformation">
+                Information sur la décision
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 3 : FORFAITS -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 3 : FORFAITS
+       ===================================================== -->
+
       <section class="packages-list">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="packages.list.eyebrow">
-              NOS OPTIONS
+            <span class="section-eyebrow">
+              <span class="packages-lang-fr"> NOS OPTIONS </span>
+
+              <span class="packages-lang-en"> OUR OPTIONS </span>
             </span>
 
-            <h2 data-i18n="packages.list.title">
-              Trouvez le forfait adapté à votre projet
-            </h2>
+            <h2 data-i18n="packages.title">Nos forfaits</h2>
           </div>
 
           <div class="packages-grid">
-            <!-- ================================================= -->
-            <!-- CONSULTATION -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             CONSULTATION
+             ================================================= -->
+
             <article class="package-card">
               <div class="package-card-top dark">
                 <div class="package-icon">
@@ -285,23 +400,22 @@
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div class="package-price" data-i18n="packages.priceHourly">
-                  149$ US
+                  À partir de 149$ US/dossier
                 </div>
 
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
-
                 <div class="package-description">
-                  <p data-i18n="packages.hourlyDescription">
-                    Consultation professionnelle pour discuter de votre
-                    situation et obtenir des orientations sur vos prochaines
-                    étapes.
+                  <p>
+                    <span class="packages-lang-fr">
+                      Consultation professionnelle pour discuter de votre
+                      situation et obtenir des orientations sur vos prochaines
+                      étapes.
+                    </span>
+
+                    <span class="packages-lang-en">
+                      Professional consultation to discuss your situation and
+                      receive guidance regarding your next steps.
+                    </span>
                   </p>
                 </div>
 
@@ -315,9 +429,10 @@
               </div>
             </article>
 
-            <!-- ================================================= -->
-            <!-- ÉVALUATION PRELIMINAIRE -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             ÉVALUATION PRÉLIMINAIRE
+             ================================================= -->
+
             <article class="package-card">
               <div class="package-card-top red">
                 <div class="package-icon">
@@ -330,26 +445,25 @@
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div
                   class="package-price"
                   data-i18n="packages.pricePreliminary"
                 >
-                  599$ US
+                  À partir de 599$ US/dossier
                 </div>
 
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
-
                 <div class="package-description">
-                  <p data-i18n="packages.preliminaryDescription">
-                    Analyse préliminaire de votre profil et de votre situation
-                    afin de mieux comprendre les options qui peuvent être
-                    considérées.
+                  <p>
+                    <span class="packages-lang-fr">
+                      Analyse préliminaire de votre profil et de votre situation
+                      afin de mieux comprendre les options qui peuvent être
+                      considérées.
+                    </span>
+
+                    <span class="packages-lang-en">
+                      Preliminary assessment of your profile and situation to
+                      better understand the options that may be considered.
+                    </span>
                   </p>
                 </div>
 
@@ -363,12 +477,15 @@
               </div>
             </article>
 
-            <!-- ================================================= -->
-            <!-- TRAVAILLEUR QUALIFIÉ -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             TRAVAILLEUR QUALIFIÉ
+             ================================================= -->
+
             <article class="package-card package-card-featured">
-              <div class="package-popular" data-i18n="packages.complete">
-                ACCOMPAGNEMENT COMPLET
+              <div class="package-popular">
+                <span class="packages-lang-fr"> ACCOMPAGNEMENT COMPLET </span>
+
+                <span class="packages-lang-en"> COMPLETE SUPPORT </span>
               </div>
 
               <div class="package-card-top dark">
@@ -380,25 +497,18 @@
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div
                   class="package-price"
                   data-i18n="packages.priceSkilledWorker"
                 >
-                  2999$ US
+                  À partir de 2999$ US/dossier
                 </div>
-
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
 
                 <div class="package-section">
                   <h4>
                     <i class="fa-solid fa-circle-check"></i>
-                    <span data-i18n="packages.included">Inclus</span>
+
+                    <span data-i18n="packages.included"> Inclus </span>
                   </h4>
 
                   <ul class="package-feature-list">
@@ -427,7 +537,8 @@
                 <div class="package-section package-excluded">
                   <h4>
                     <i class="fa-solid fa-circle-xmark"></i>
-                    <span data-i18n="packages.notIncluded">Pas inclus</span>
+
+                    <span data-i18n="packages.notIncluded"> Pas inclus </span>
                   </h4>
 
                   <ul class="package-feature-list">
@@ -451,9 +562,10 @@
               </div>
             </article>
 
-            <!-- ================================================= -->
-            <!-- PARRAINAGE -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             PARRAINAGE
+             ================================================= -->
+
             <article class="package-card">
               <div class="package-card-top red">
                 <div class="package-icon">
@@ -464,25 +576,18 @@
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div
                   class="package-price"
                   data-i18n="packages.priceSponsorship"
                 >
-                  2599$ US
+                  À partir de 2599$ US/dossier
                 </div>
-
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
 
                 <div class="package-section">
                   <h4>
                     <i class="fa-solid fa-circle-check"></i>
-                    <span data-i18n="packages.included">Inclus</span>
+
+                    <span data-i18n="packages.included"> Inclus </span>
                   </h4>
 
                   <ul class="package-feature-list">
@@ -515,6 +620,7 @@
                 <div class="package-section package-excluded">
                   <h4>
                     <i class="fa-solid fa-circle-xmark"></i>
+
                     <span data-i18n="packages.notIncluded"> Pas inclus </span>
                   </h4>
 
@@ -539,9 +645,10 @@
               </div>
             </article>
 
-            <!-- ================================================= -->
-            <!-- VISITEUR ET ÉTUDIANT -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             VISITEUR ET ÉTUDIANT
+             ================================================= -->
+
             <article class="package-card">
               <div class="package-card-top dark">
                 <div class="package-icon">
@@ -549,30 +656,23 @@
                 </div>
 
                 <h3 data-i18n="packages.visitorStudent">
-                  Visiteur et Étudiant
+                  Visiteur et étudiant
                 </h3>
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div
                   class="package-price"
                   data-i18n="packages.priceVisitorStudent"
                 >
-                  1999$ US
+                  À partir de 1999$ US/dossier
                 </div>
-
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
 
                 <div class="package-section">
                   <h4>
                     <i class="fa-solid fa-circle-check"></i>
-                    <span data-i18n="packages.included">Inclus</span>
+
+                    <span data-i18n="packages.included"> Inclus </span>
                   </h4>
 
                   <ul class="package-feature-list">
@@ -601,6 +701,7 @@
                 <div class="package-section package-excluded">
                   <h4>
                     <i class="fa-solid fa-circle-xmark"></i>
+
                     <span data-i18n="packages.notIncluded"> Pas inclus </span>
                   </h4>
 
@@ -625,9 +726,10 @@
               </div>
             </article>
 
-            <!-- ================================================= -->
-            <!-- TRAVAILLEUR TEMPORAIRE -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             TRAVAILLEUR TEMPORAIRE
+             ================================================= -->
+
             <article class="package-card">
               <div class="package-card-top red">
                 <div class="package-icon">
@@ -640,25 +742,18 @@
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div
                   class="package-price"
                   data-i18n="packages.priceTemporaryWorker"
                 >
-                  2999$ US
+                  À partir de 2999$ US/dossier
                 </div>
-
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
 
                 <div class="package-section">
                   <h4>
                     <i class="fa-solid fa-circle-check"></i>
-                    <span data-i18n="packages.included">Inclus</span>
+
+                    <span data-i18n="packages.included"> Inclus </span>
                   </h4>
 
                   <ul class="package-feature-list">
@@ -687,6 +782,7 @@
                 <div class="package-section package-excluded">
                   <h4>
                     <i class="fa-solid fa-circle-xmark"></i>
+
                     <span data-i18n="packages.notIncluded"> Pas inclus </span>
                   </h4>
 
@@ -711,9 +807,10 @@
               </div>
             </article>
 
-            <!-- ================================================= -->
-            <!-- HUMANITAIRE -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             HUMANITAIRE
+             ================================================= -->
+
             <article class="package-card">
               <div class="package-card-top dark">
                 <div class="package-icon">
@@ -724,25 +821,18 @@
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div
                   class="package-price"
                   data-i18n="packages.priceHumanitarian"
                 >
-                  1599$ US
+                  À partir de 1599$ US/dossier
                 </div>
-
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
 
                 <div class="package-section">
                   <h4>
                     <i class="fa-solid fa-circle-check"></i>
-                    <span data-i18n="packages.included">Inclus</span>
+
+                    <span data-i18n="packages.included"> Inclus </span>
                   </h4>
 
                   <ul class="package-feature-list">
@@ -775,6 +865,7 @@
                 <div class="package-section package-excluded">
                   <h4>
                     <i class="fa-solid fa-circle-xmark"></i>
+
                     <span data-i18n="packages.notIncluded"> Pas inclus </span>
                   </h4>
 
@@ -795,9 +886,10 @@
               </div>
             </article>
 
-            <!-- ================================================= -->
-            <!-- RÉFUGIÉ -->
-            <!-- ================================================= -->
+            <!-- =================================================
+             RÉFUGIÉ
+             ================================================= -->
+
             <article class="package-card">
               <div class="package-card-top red">
                 <div class="package-icon">
@@ -808,22 +900,15 @@
               </div>
 
               <div class="package-card-body">
-                <p class="package-from" data-i18n="packages.startingAt">
-                  À partir de
-                </p>
-
                 <div class="package-price" data-i18n="packages.priceRefugee">
-                  2599$ US
+                  À partir de 2599$ US/dossier
                 </div>
-
-                <p class="package-unit" data-i18n="packages.perFile">
-                  / dossier
-                </p>
 
                 <div class="package-section">
                   <h4>
                     <i class="fa-solid fa-circle-check"></i>
-                    <span data-i18n="packages.included">Inclus</span>
+
+                    <span data-i18n="packages.included"> Inclus </span>
                   </h4>
 
                   <ul class="package-feature-list">
@@ -856,6 +941,7 @@
                 <div class="package-section package-excluded">
                   <h4>
                     <i class="fa-solid fa-circle-xmark"></i>
+
                     <span data-i18n="packages.notIncluded"> Pas inclus </span>
                   </h4>
 
@@ -881,9 +967,10 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 4 : INFORMATION TARIFAIRE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 4 : INFORMATION TARIFAIRE
+       ===================================================== -->
+
       <section class="packages-information">
         <div class="container packages-information-grid">
           <div class="packages-information-icon">
@@ -891,60 +978,75 @@
           </div>
 
           <div class="packages-information-content">
-            <span class="section-eyebrow" data-i18n="packages.info.eyebrow">
-              À SAVOIR
+            <span class="section-eyebrow">
+              <span class="packages-lang-fr"> À SAVOIR </span>
+
+              <span class="packages-lang-en"> GOOD TO KNOW </span>
             </span>
 
-            <h2 data-i18n="packages.info.title">
-              Les tarifs indiqués sont des prix de départ
-            </h2>
+            <h2 data-i18n="packages.price">Prix</h2>
 
-            <p data-i18n="packages.info.text">
-              Le coût final peut varier selon la complexité du dossier, le
-              nombre de personnes concernées et les services requis. Les frais
-              gouvernementaux et autres frais externes ne sont pas
-              nécessairement inclus dans les honoraires professionnels.
+            <p>
+              <span class="packages-lang-fr">
+                Le coût final peut varier selon la complexité du dossier, le
+                nombre de personnes concernées et les services requis. Les frais
+                gouvernementaux et autres frais externes ne sont pas
+                nécessairement inclus dans les honoraires professionnels.
+              </span>
+
+              <span class="packages-lang-en">
+                The final cost may vary depending on the complexity of the file,
+                the number of people involved and the services required.
+                Government fees and other external costs are not necessarily
+                included in professional fees.
+              </span>
             </p>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 5 : BESOIN D'AIDE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 5 : BESOIN D'AIDE
+       ===================================================== -->
+
       <section class="packages-help">
         <div class="container packages-help-grid">
           <div class="packages-help-content">
-            <span class="section-eyebrow" data-i18n="packages.help.eyebrow">
-              BESOIN D’AIDE POUR CHOISIR ?
+            <span class="section-eyebrow">
+              <span class="packages-lang-fr">
+                BESOIN D’AIDE POUR CHOISIR ?
+              </span>
+
+              <span class="packages-lang-en"> NEED HELP CHOOSING? </span>
             </span>
 
-            <h2 data-i18n="packages.help.title">
-              Vous ne savez pas quel forfait correspond à votre situation ?
-            </h2>
+            <h2 data-i18n="packages.title">Nos forfaits</h2>
 
-            <p data-i18n="packages.help.text">
-              Réservez une consultation ou remplissez l’évaluation préliminaire
-              afin de nous présenter votre situation.
+            <p>
+              <span class="packages-lang-fr">
+                Réservez une consultation ou remplissez l’évaluation
+                préliminaire afin de nous présenter votre situation.
+              </span>
+
+              <span class="packages-lang-en">
+                Book a consultation or complete the preliminary assessment to
+                tell us about your situation.
+              </span>
             </p>
 
             <div class="packages-help-buttons">
-              <a
-                href="rendezvous.html"
-                class="madic-btn madic-btn-red"
-                data-i18n="packages.help.appointment"
-              >
+              <a href="rendezvous.html" class="madic-btn madic-btn-red">
                 <i class="fa-solid fa-calendar-check"></i>
-                Prendre rendez-vous
+
+                <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
               </a>
 
-              <a
-                href="formulaire.html"
-                class="madic-btn madic-btn-dark"
-                data-i18n="packages.help.evaluation"
-              >
+              <a href="formulaire.html" class="madic-btn madic-btn-dark">
                 <i class="fa-solid fa-file-circle-check"></i>
-                Faire mon évaluation
+
+                <span data-i18n="nav.evaluation">
+                  Évaluation préliminaire
+                </span>
               </a>
             </div>
           </div>
@@ -965,43 +1067,45 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 6 : CTA FINAL -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 6 : CTA FINAL
+       ===================================================== -->
+
       <section class="packages-final-cta">
         <div class="packages-final-overlay"></div>
 
         <div class="container packages-final-content">
-          <span class="section-eyebrow" data-i18n="packages.cta.eyebrow">
-            VOTRE PROJET COMMENCE ICI
+          <span class="section-eyebrow">
+            <span class="packages-lang-fr"> VOTRE PROJET COMMENCE ICI </span>
+
+            <span class="packages-lang-en"> YOUR PROJECT STARTS HERE </span>
           </span>
 
-          <h2 data-i18n="packages.cta.title">
-            Choisissez l’accompagnement adapté à votre projet
-          </h2>
+          <h2 data-i18n="packages.title">Nos forfaits</h2>
 
-          <p data-i18n="packages.cta.text">
-            Discutez avec MAD Immigration Canadienne afin de déterminer le
-            service qui correspond le mieux à votre situation.
+          <p>
+            <span class="packages-lang-fr">
+              Discutez avec MAD Immigration Canadienne afin de déterminer le
+              service qui correspond le mieux à votre situation.
+            </span>
+
+            <span class="packages-lang-en">
+              Speak with MAD Immigration Canadienne to determine which service
+              best fits your situation.
+            </span>
           </p>
 
           <div class="packages-final-buttons">
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="packages.cta.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
 
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="packages.cta.evaluation"
-            >
+            <a href="formulaire.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-file-circle-check"></i>
-              Évaluation préliminaire
+
+              <span data-i18n="nav.evaluation"> Évaluation préliminaire </span>
             </a>
           </div>
         </div>

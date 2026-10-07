@@ -34,206 +34,228 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main>
-      <!-- ===================================================== -->
-      <!-- SECTION 1 : HERO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 1 : HERO
+       ===================================================== -->
+
       <section class="madic-hero">
         <div class="madic-hero-overlay"></div>
 
         <div class="container madic-hero-content">
-          <span class="section-eyebrow" data-i18n="home.hero.eyebrow">
-            VOTRE PROJET AU CANADA
-          </span>
+          <h1 data-i18n="hero.title">Le Canada, un choix de vie gagnant!</h1>
 
-          <h1 data-i18n="home.hero.title">
-            Votre projet d’immigration au Canada commence ici
-          </h1>
-
-          <p class="hero-subtitle" data-i18n="home.hero.subtitle">
-            MAD Immigration Canadienne vous accompagne dans vos démarches
-            d’immigration et de citoyenneté canadiennes avec une approche
-            professionnelle, personnalisée et confidentielle.
+          <p class="hero-subtitle" data-i18n="hero.subtitle">
+            MADIC est une entreprise spécialisée dans l’immigration et la
+            citoyenneté canadiennes, qui se démarque par la qualité de ses
+            services et ses tarifs concurrentiels.
           </p>
 
           <div class="madic-hero-buttons">
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="home.hero.evaluation"
-            >
+            <a href="formulaire.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-file-circle-check"></i>
-              Faire évaluer mon profil
+
+              <span data-i18n="nav.evaluation"> Évaluation préliminaire </span>
             </a>
 
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-dark"
-              data-i18n="home.hero.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-dark">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
-          </div>
-
-          <div class="hero-trust">
-            <div class="hero-trust-item">
-              <i class="fa-solid fa-user-tie"></i>
-              <span data-i18n="home.hero.trust1">
-                Accompagnement professionnel
-              </span>
-            </div>
-
-            <div class="hero-trust-item">
-              <i class="fa-solid fa-lock"></i>
-              <span data-i18n="home.hero.trust2"> Confidentialité </span>
-            </div>
-
-            <div class="hero-trust-item">
-              <i class="fa-solid fa-language"></i>
-              <span data-i18n="home.hero.trust3"> Service bilingue </span>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 2 : MADIC EN ACTION -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 2 : MADIC EN ACTION
+       ===================================================== -->
+
       <section class="madic-gallery-preview">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="home.gallery.eyebrow">
-              MADIC EN ACTION
-            </span>
-
-            <h2 data-i18n="home.gallery.title">
-              Découvrez notre engagement dans la communauté
+            <h2 data-i18n="about.impact.title">
+              Découvrez notre impact au sein de la société canadienne, notamment
+              au Québec
             </h2>
-
-            <p data-i18n="home.gallery.text">
-              Découvrez quelques activités sportives, culturelles et
-              communautaires auxquelles nous avons contribué.
-            </p>
           </div>
 
           <div class="madic-gallery-grid">
@@ -258,370 +280,320 @@
           </div>
 
           <div class="gallery-action">
-            <a
-              href="propos.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="home.gallery.button"
-            >
+            <a href="propos.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-images"></i>
-              Découvrir nos activités
+
+              <span data-i18n="nav.about"> À propos </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 3 : VOTRE DÉMARCHE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 3 : VOTRE DÉMARCHE
+       ===================================================== -->
+
       <section class="madic-process">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="home.process.eyebrow">
-              VOTRE DÉMARCHE
-            </span>
+            <h2 data-i18n="booking.title">Prendre rendez-vous</h2>
 
-            <h2 data-i18n="home.process.title">Comment ça fonctionne ?</h2>
-
-            <p data-i18n="home.process.subtitle">
-              Une démarche simple en quatre étapes pour avancer dans votre
-              projet d’immigration.
+            <p data-i18n="booking.subtitle">
+              Réservez une consultation avec MAD Immigration Canadienne afin
+              d'obtenir une analyse personnalisée de votre situation.
             </p>
           </div>
 
           <div class="madic-process-grid">
+            <!-- ÉTAPE 1 -->
             <div class="madic-process-item">
               <div class="madic-process-icon dark">
-                <i class="fa-solid fa-calendar-days"></i>
-              </div>
-
-              <span class="process-step" data-i18n="home.process.step1.label">
-                ÉTAPE 1
-              </span>
-
-              <h3 data-i18n="home.process.step1.title">
-                Réservez une consultation
-              </h3>
-
-              <p data-i18n="home.process.step1.text">
-                Choisissez votre type de consultation, la date et l’heure qui
-                vous conviennent.
-              </p>
-            </div>
-
-            <div class="madic-process-item">
-              <div class="madic-process-icon red">
                 <i class="fa-solid fa-comments"></i>
               </div>
 
-              <span class="process-step" data-i18n="home.process.step2.label">
-                ÉTAPE 2
-              </span>
-
-              <h3 data-i18n="home.process.step2.title">
-                Discutez avec nous de votre situation
+              <h3 data-i18n="booking.serviceTitle">
+                Choisissez votre consultation
               </h3>
 
-              <p data-i18n="home.process.step2.text">
-                Présentez votre parcours, vos préoccupations et vos objectifs.
+              <p data-i18n="booking.consultation60Description">
+                Consultation personnalisée pour analyser votre situation et
+                répondre à vos questions en immigration canadienne.
               </p>
             </div>
 
-            <div class="madic-process-item">
-              <div class="madic-process-icon dark">
-                <i class="fa-solid fa-lightbulb"></i>
-              </div>
-
-              <span class="process-step" data-i18n="home.process.step3.label">
-                ÉTAPE 3
-              </span>
-
-              <h3 data-i18n="home.process.step3.title">
-                Obtenez une stratégie adaptée
-              </h3>
-
-              <p data-i18n="home.process.step3.text">
-                Nous analysons les options disponibles et vous expliquons les
-                prochaines étapes.
-              </p>
-            </div>
-
+            <!-- ÉTAPE 2 -->
             <div class="madic-process-item">
               <div class="madic-process-icon red">
-                <i class="fa-solid fa-plane-departure"></i>
+                <i class="fa-solid fa-calendar-days"></i>
               </div>
 
-              <span class="process-step" data-i18n="home.process.step4.label">
-                ÉTAPE 4
-              </span>
+              <h3 data-i18n="booking.dateTitle">Choisissez une date</h3>
 
-              <h3 data-i18n="home.process.step4.title">
-                Avancez dans votre projet
-              </h3>
+              <p data-i18n="booking.dateLabel">Date de la consultation</p>
+            </div>
 
-              <p data-i18n="home.process.step4.text">
-                Lorsque vous décidez de poursuivre, nous vous accompagnons dans
-                les différentes étapes de votre dossier.
+            <!-- ÉTAPE 3 -->
+            <div class="madic-process-item">
+              <div class="madic-process-icon dark">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+
+              <h3 data-i18n="booking.timeTitle">Choisissez une heure</h3>
+
+              <p data-i18n="booking.timezone">
+                Les heures sont affichées selon l'heure de Montréal, Québec.
+              </p>
+            </div>
+
+            <!-- ÉTAPE 4 -->
+            <div class="madic-process-item">
+              <div class="madic-process-icon red">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+
+              <h3 data-i18n="booking.confirmationTitle">Confirmation</h3>
+
+              <p data-i18n="booking.note">
+                Votre rendez-vous sera confirmé après validation de la
+                disponibilité.
               </p>
             </div>
           </div>
 
           <div class="process-action">
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="home.process.button"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-calendar-check"></i>
-              Réserver une consultation
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 4 : SERVICES -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 4 : SERVICES
+       ===================================================== -->
+
       <section class="madic-services">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="home.services.eyebrow">
-              NOS SERVICES
-            </span>
-
-            <h2 data-i18n="home.services.title">
-              Des solutions adaptées à votre projet d’immigration
-            </h2>
-
-            <p data-i18n="home.services.subtitle">
-              Découvrez nos principaux domaines d’intervention en immigration
-              canadienne.
-            </p>
+            <h2 data-i18n="services.title">Nos services</h2>
           </div>
 
           <div class="madic-services-grid">
+            <!-- IMMIGRATION ÉCONOMIQUE -->
             <a href="servicesDetailsEco.html" class="madic-service-item">
               <div class="madic-service-icon red">
                 <i class="fa-solid fa-briefcase"></i>
               </div>
 
-              <h3 data-i18n="home.services.economic">Immigration économique</h3>
+              <h3 data-i18n="services.economic.title">
+                Immigration économique
+              </h3>
 
-              <p data-i18n="home.services.economicText">
-                Travailleurs qualifiés, programmes fédéraux et provinciaux et
-                autres possibilités d’immigration économique.
+              <p data-i18n="services.economic.text">
+                Les programmes d’immigration économique sont environ une
+                centaine répartis aux niveaux fédéral et provincial.
               </p>
 
               <span class="service-link">
-                <span data-i18n="home.services.learnMore">
-                  En savoir plus
-                </span>
+                <span data-i18n="services.learnMore"> En savoir plus </span>
+
                 <i class="fa-solid fa-arrow-right"></i>
               </span>
             </a>
 
+            <!-- PARRAINAGE -->
             <a href="servicesDetailsPar.html" class="madic-service-item">
               <div class="madic-service-icon dark">
                 <i class="fa-solid fa-people-roof"></i>
               </div>
 
-              <h3 data-i18n="home.services.sponsorship">Parrainage familial</h3>
+              <h3 data-i18n="services.sponsorship.title">Parrainage</h3>
 
-              <p data-i18n="home.services.sponsorshipText">
-                Accompagnement dans les démarches visant à réunir les familles
-                au Canada.
+              <p data-i18n="services.sponsorship.text">
+                Le programme d’immigration au titre de la catégorie du
+                regroupement familial vise à réunir les familles.
               </p>
 
               <span class="service-link">
-                <span data-i18n="home.services.learnMore">
-                  En savoir plus
-                </span>
+                <span data-i18n="services.learnMore"> En savoir plus </span>
+
                 <i class="fa-solid fa-arrow-right"></i>
               </span>
             </a>
 
+            <!-- RÉSIDENCE TEMPORAIRE -->
             <a href="servicesDetailsRT.html" class="madic-service-item">
               <div class="madic-service-icon red">
                 <i class="fa-solid fa-plane-arrival"></i>
               </div>
 
-              <h3 data-i18n="home.services.temporary">Résidence temporaire</h3>
+              <h3 data-i18n="services.temporary.title">Résidence temporaire</h3>
 
-              <p data-i18n="home.services.temporaryText">
-                Visiteur, étudiant, travailleur temporaire et autres statuts de
-                résidence temporaire.
+              <p data-i18n="services.temporary.text">
+                Chaque année, plus de 35 millions de personnes visitent le
+                Canada afin de profiter de ses nombreuses possibilités.
               </p>
 
               <span class="service-link">
-                <span data-i18n="home.services.learnMore">
-                  En savoir plus
-                </span>
+                <span data-i18n="services.learnMore"> En savoir plus </span>
+
                 <i class="fa-solid fa-arrow-right"></i>
               </span>
             </a>
 
+            <!-- HUMANITAIRE -->
             <a href="services.html" class="madic-service-item">
               <div class="madic-service-icon dark">
-                <i class="fa-solid fa-graduation-cap"></i>
-              </div>
-
-              <h3 data-i18n="home.services.study">Études au Canada</h3>
-
-              <p data-i18n="home.services.studyText">
-                Accompagnement dans les démarches liées aux permis d’études et
-                au parcours des étudiants internationaux.
-              </p>
-
-              <span class="service-link">
-                <span data-i18n="home.services.learnMore">
-                  En savoir plus
-                </span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </span>
-            </a>
-
-            <a href="services.html" class="madic-service-item">
-              <div class="madic-service-icon red">
                 <i class="fa-solid fa-hand-holding-heart"></i>
               </div>
 
-              <h3 data-i18n="home.services.humanitarian">Humanitaire</h3>
+              <h3 data-i18n="services.humanitarian.title">Humanitaire</h3>
 
-              <p data-i18n="home.services.humanitarianText">
-                Analyse et accompagnement pour les dossiers comportant des
-                considérations d’ordre humanitaire.
+              <p data-i18n="services.humanitarian.text">
+                Une demande de résidence permanente depuis le Canada pour
+                considérations d’ordre humanitaire peut être présentée dans
+                certaines circonstances.
               </p>
 
               <span class="service-link">
-                <span data-i18n="home.services.learnMore">
-                  En savoir plus
-                </span>
+                <span data-i18n="services.learnMore"> En savoir plus </span>
+
                 <i class="fa-solid fa-arrow-right"></i>
               </span>
             </a>
 
+            <!-- RÉFUGIÉ -->
             <a href="services.html" class="madic-service-item">
-              <div class="madic-service-icon dark">
+              <div class="madic-service-icon red">
                 <i class="fa-solid fa-shield-halved"></i>
               </div>
 
-              <h3 data-i18n="home.services.refugee">
-                Réfugié et demande d’asile
-              </h3>
+              <h3 data-i18n="services.refugee.title">Réfugié</h3>
 
-              <p data-i18n="home.services.refugeeText">
-                Accompagnement dans les démarches de protection et les
-                procédures applicables aux demandes d’asile.
+              <p data-i18n="services.refugee.text">
+                Le Canada offre l’asile à certaines personnes se trouvant sur
+                son territoire qui craignent la persécution.
               </p>
 
               <span class="service-link">
-                <span data-i18n="home.services.learnMore">
-                  En savoir plus
-                </span>
+                <span data-i18n="services.learnMore"> En savoir plus </span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <!-- GENS D'AFFAIRES -->
+            <a href="services.html" class="madic-service-item">
+              <div class="madic-service-icon dark">
+                <i class="fa-solid fa-building"></i>
+              </div>
+
+              <h3 data-i18n="services.business.title">Gens d'affaires</h3>
+
+              <p data-i18n="services.business.text">
+                Le Canada accueille les gens d’affaires qui réussissent et
+                cherchent des débouchés et des défis nouveaux.
+              </p>
+
+              <span class="service-link">
+                <span data-i18n="services.learnMore"> En savoir plus </span>
+
                 <i class="fa-solid fa-arrow-right"></i>
               </span>
             </a>
           </div>
 
           <div class="services-action">
-            <a
-              href="services.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="home.services.all"
-            >
-              Voir tous nos services
+            <a href="services.html" class="madic-btn madic-btn-red">
+              <span data-i18n="nav.services"> Nos services </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 5 : POURQUOI MADIC -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 5 : POURQUOI MADIC
+       ===================================================== -->
+
       <section class="why-madic">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="home.why.eyebrow">
-              NOTRE ENGAGEMENT
-            </span>
-
-            <h2 data-i18n="home.why.title">
-              Pourquoi choisir MAD Immigration Canadienne ?
+            <h2 data-i18n="about.history.title">
+              Découvrez notre histoire, nos valeurs et nos engagements
             </h2>
-
-            <p data-i18n="home.why.subtitle">
-              Une approche professionnelle, personnalisée et centrée sur vos
-              besoins.
-            </p>
           </div>
 
           <div class="why-grid">
+            <!-- SPORT -->
             <div class="why-card">
               <div class="why-icon">
-                <i class="fa-solid fa-user-check"></i>
+                <i class="fa-solid fa-futbol"></i>
               </div>
 
-              <h3 data-i18n="home.why.personalized.title">
-                Approche personnalisée
-              </h3>
+              <h3 data-i18n="about.impact.sport.title">Impact dans le sport</h3>
 
-              <p data-i18n="home.why.personalized.text">
-                Chaque situation est examinée individuellement selon votre
-                profil, vos objectifs et vos besoins.
+              <p data-i18n="about.impact.sport.text">
+                Nous avons soutenu des initiatives sportives pour intégrer les
+                communautés immigrantes dans la société canadienne.
               </p>
             </div>
 
+            <!-- CULTURE -->
             <div class="why-card">
               <div class="why-icon">
-                <i class="fa-solid fa-scale-balanced"></i>
+                <i class="fa-solid fa-people-group"></i>
               </div>
 
-              <h3 data-i18n="home.why.professional.title">
-                Rigueur professionnelle
-              </h3>
+              <h3 data-i18n="about.impact.culture.title">Impact culturel</h3>
 
-              <p data-i18n="home.why.professional.text">
-                Nous accordons une grande importance à l’analyse, à la
-                préparation et à la qualité du travail effectué sur chaque
-                dossier.
+              <p data-i18n="about.impact.culture.text">
+                Nous avons participé activement à la promotion de la culture
+                immigrante à travers des événements communautaires.
               </p>
             </div>
 
+            <!-- INTÉGRATION -->
             <div class="why-card">
               <div class="why-icon">
-                <i class="fa-solid fa-lock"></i>
+                <i class="fa-solid fa-briefcase"></i>
               </div>
 
-              <h3 data-i18n="home.why.confidentiality.title">
-                Confidentialité
+              <h3 data-i18n="about.impact.professional.title">
+                Intégration professionnelle
               </h3>
 
-              <p data-i18n="home.why.confidentiality.text">
-                Vos renseignements et documents sont traités avec discrétion et
-                professionnalisme.
+              <p data-i18n="about.impact.professional.text">
+                Aider les immigrants à trouver leur place dans le monde
+                professionnel au Canada est au cœur de notre mission.
               </p>
             </div>
 
+            <!-- MISSION -->
             <div class="why-card">
               <div class="why-icon">
-                <i class="fa-solid fa-comments"></i>
+                <i class="fa-solid fa-heart"></i>
               </div>
 
-              <h3 data-i18n="home.why.communication.title">
-                Communication et suivi
+              <h3 data-i18n="about.history.mission.title">
+                Une mission de transformation
               </h3>
 
-              <p data-i18n="home.why.communication.text">
-                Nous privilégions une communication claire et un suivi tout au
-                long de votre démarche.
+              <p data-i18n="about.history.mission.text">
+                Mon engagement repose sur deux axes : aider les immigrants à
+                obtenir leur résidence et citoyenneté, et leur ouvrir les portes
+                du marché du travail canadien.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 6 : À PROPOS DE MADIC -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 6 : À PROPOS DE MADIC
+       ===================================================== -->
+
       <section class="madic-about-home">
         <div class="container madic-about-grid">
           <div class="madic-about-image">
@@ -635,96 +607,53 @@
 
               <div>
                 <strong>Moussa Abdi Diraneh</strong>
-
-                <span data-i18n="home.about.role"> Fondateur de MADIC </span>
               </div>
             </div>
           </div>
 
           <div class="madic-about-content">
             <div class="section-title section-title-left">
-              <span class="section-eyebrow" data-i18n="home.about.eyebrow">
-                À PROPOS DE MADIC
-              </span>
-
-              <h2 data-i18n="home.about.title">
-                Une expertise au service de votre projet
-              </h2>
-
-              <p data-i18n="home.about.subtitle">
-                Découvrez notre approche, notre mission et notre engagement
-                envers nos clients.
-              </p>
+              <h2 data-i18n="about.title">À propos de nous</h2>
             </div>
 
-            <p data-i18n="home.about.text1">
-              MAD Immigration Canadienne accompagne ses clients dans différents
-              projets d’immigration et de citoyenneté canadiennes.
+            <p data-i18n="about.intro1">
+              Nous sommes une jeune entreprise dynamique œuvrant dans le domaine
+              de l'immigration canadienne.
             </p>
 
-            <p data-i18n="home.about.text2">
-              Notre mission est de rendre les démarches plus compréhensibles,
-              structurées et accessibles tout en offrant un suivi personnalisé.
+            <p data-i18n="about.intro2">
+              Notre approche simplifie l’ensemble des démarches en immigration
+              et en citoyenneté en utilisant des outils technologiques 4.0.
             </p>
 
-            <ul class="founder-features">
-              <li>
-                <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="home.about.feature1">
-                  Analyse personnalisée
-                </span>
-              </li>
+            <p data-i18n="about.moussa1">
+              Fondateur et gestionnaire principal de MAD Immigration Canadienne,
+              Moussa est un expert en immigration et en génie.
+            </p>
 
-              <li>
-                <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="home.about.feature2">
-                  Accompagnement structuré
-                </span>
-              </li>
+            <a href="propos.html" class="madic-btn madic-btn-red">
+              <i class="fa-solid fa-user-tie"></i>
 
-              <li>
-                <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="home.about.feature3">
-                  Communication claire
-                </span>
-              </li>
-
-              <li>
-                <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="home.about.feature4">
-                  Confidentialité des dossiers
-                </span>
-              </li>
-            </ul>
-
-            <a
-              href="propos.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="home.about.button"
-            >
-              Découvrir notre histoire
+              <span data-i18n="nav.about"> À propos </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 7 : VIDEO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 7 : VIDÉO
+       ===================================================== -->
+
       <section class="home-video-section">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="home.video.eyebrow">
-              DÉCOUVREZ-NOUS
-            </span>
-
-            <h2 data-i18n="home.video.title">
-              MAD Immigration Canadienne en quelques images
+            <h2 data-i18n="about.history.change.title">
+              Un catalyseur de changement
             </h2>
 
-            <p data-i18n="home.video.subtitle">
-              Découvrez notre approche et notre engagement dans l’accompagnement
-              de nos clients.
+            <p data-i18n="about.history.change.text">
+              Je crois fermement que l’intégration passe par le sport, la
+              culture et les échanges.
             </p>
           </div>
 
@@ -738,45 +667,34 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 8 : CTA FINAL -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 8 : CTA FINAL
+       ===================================================== -->
+
       <section class="madic-final-cta">
         <div class="madic-final-overlay"></div>
 
         <div class="container madic-final-content">
           <div class="section-title section-title-light">
-            <span class="section-eyebrow" data-i18n="home.cta.eyebrow">
-              PASSEZ À L’ACTION
-            </span>
+            <h2 data-i18n="booking.title">Prendre rendez-vous</h2>
 
-            <h2 data-i18n="home.cta.title">
-              Entamez la première étape vers votre projet au Canada
-            </h2>
-
-            <p data-i18n="home.cta.text">
-              Réservez une consultation ou commencez par une évaluation
-              préliminaire de votre situation.
+            <p data-i18n="booking.subtitle">
+              Réservez une consultation avec MAD Immigration Canadienne afin
+              d'obtenir une analyse personnalisée de votre situation.
             </p>
           </div>
 
           <div class="madic-hero-buttons">
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="home.cta.evaluation"
-            >
+            <a href="formulaire.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-file-circle-check"></i>
-              Faire mon évaluation
+
+              <span data-i18n="nav.evaluation"> Évaluation préliminaire </span>
             </a>
 
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="home.cta.appointment"
-            >
+            <a href="rendezvous.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
           </div>
         </div>
@@ -927,6 +845,7 @@
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
+
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"

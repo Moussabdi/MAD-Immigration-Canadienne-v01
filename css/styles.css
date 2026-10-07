@@ -163,128 +163,6 @@ nav li {
 
 /* ================================================ */
 
-/* NAVIGATION */
-
-/* ================================================ */
-
-.navbar {
-  font-size: 1.2rem;
-
-  position: sticky;
-
-  top: 0;
-
-  z-index: 999;
-}
-
-.navbar__container {
-  display: flex;
-
-  justify-content: space-between;
-
-  align-items: center;
-
-  height: 10rem;
-
-  z-index: 1;
-
-  width: 100%;
-
-  max-width: 130rem;
-
-  margin: 0 auto;
-}
-
-.navbar__menu {
-  display: flex;
-
-  list-style: none;
-}
-
-.navbar__item {
-  height: 20rem;
-
-  padding: 0 1rem 0 1rem;
-}
-
-.navbar__links:link,
-.navbar__links:visited {
-  display: flex;
-
-  align-items: center;
-
-  height: 100%;
-
-  width: max-content;
-
-  transition: all 0.3s ease;
-
-  text-decoration: none;
-
-  color: #fff;
-
-  font-weight: 500;
-
-  font-size: 1.7rem;
-
-  padding: 0 1rem;
-}
-
-.navbar__links:hover,
-.navbar__links:active {
-  transition: all 0.3s ease;
-
-  text-decoration: none;
-
-  color: #202020;
-}
-
-.navbar__btn {
-  display: flex;
-
-  align-items: center;
-
-  font-size: 1.7rem;
-
-  padding: 0 3rem;
-
-  width: 100%;
-}
-
-.navbar__logo {
-  cursor: auto;
-}
-
-.button:link,
-.button:visited {
-  text-decoration: none;
-
-  padding: 1.2rem 2.4rem;
-
-  border: none;
-
-  outline: none;
-
-  border-radius: 9px;
-
-  background: #b9141b;
-
-  color: #fff;
-
-  transition: all 0.3s ease;
-}
-
-.button:hover,
-.button:active {
-  transition: all 0.3s ease;
-
-  text-decoration: none;
-
-  background: #202020;
-}
-
-/* ================================================ */
-
 /* Index */
 
 /* ================================================ */
@@ -9937,4 +9815,734 @@ section.history-section h2,
 #nl-card,
 .nl-card {
   display: none !important;
+}
+
+/* =========================================================
+   NAVBAR MADIC - 2 LIGNES
+   ========================================================= */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+
+  background: rgba(255, 255, 255, 0.97);
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+
+  box-shadow: 0 7px 25px rgba(0, 0, 0, 0.055);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.navbar__container {
+  width: min(1480px, calc(100% - 44px));
+
+  min-height: 96px;
+
+  margin-inline: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    190px
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: 28px;
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+
+  text-decoration: none;
+}
+
+.logo {
+  display: block;
+
+  width: auto;
+
+  max-width: 180px;
+  max-height: 72px;
+
+  object-fit: contain;
+
+  transition: transform 0.25s ease;
+}
+
+.navbar__logo:hover .logo {
+  transform: scale(1.025);
+}
+
+/* =========================================================
+   CONTENU DROITE
+   ========================================================= */
+
+.navbar__content {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 22px;
+}
+
+/* =========================================================
+   BLOC NAVIGATION 2 LIGNES
+   ========================================================= */
+
+.navbar__navblock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 4px;
+
+  min-width: 0;
+}
+
+.navbar__menu {
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+/* LIGNE PRINCIPALE */
+
+.navbar__menu--main {
+  gap: 4px;
+}
+
+/* LIGNE SECONDAIRE */
+
+.navbar__menu--secondary {
+  gap: 4px;
+
+  padding-left: 0;
+}
+
+/* =========================================================
+   LIENS
+   ========================================================= */
+
+.navbar__item {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__links {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 34px;
+
+  padding: 0 10px;
+
+  color: #2d2d2d;
+
+  font-size: 14px;
+  font-weight: 650;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  border-radius: 8px;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.navbar__links:hover {
+  color: #d71920;
+
+  background: rgba(215, 25, 32, 0.05);
+}
+
+/* SOUS-LIGNE */
+
+.navbar__links--secondary {
+  min-height: 25px;
+
+  padding: 0 10px;
+
+  color: #727272;
+
+  font-size: 11.5px;
+  font-weight: 650;
+}
+
+.navbar__links--secondary::before {
+  content: "";
+
+  width: 4px;
+  height: 4px;
+
+  margin-right: 6px;
+
+  border-radius: 50%;
+
+  background: #d71920;
+}
+
+.navbar__links--secondary:hover {
+  color: #d71920;
+
+  background: transparent;
+}
+
+/* =========================================================
+   ACTIONS DROITE
+   ========================================================= */
+
+.navbar__actions {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding-left: 18px;
+
+  border-left: 1px solid #ececec;
+}
+
+/* =========================================================
+   BOUTONS ACTION
+   ========================================================= */
+
+.nav-action {
+  min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 13px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.nav-action:hover {
+  transform: translateY(-2px);
+}
+
+.nav-action--outline {
+  border: 1px solid #d71920;
+
+  background: #ffffff;
+  color: #d71920;
+}
+
+.nav-action--outline:hover {
+  background: #fff4f4;
+
+  box-shadow: 0 6px 16px rgba(215, 25, 32, 0.13);
+}
+
+.nav-action--primary {
+  border: 1px solid #d71920;
+
+  background: #d71920;
+  color: #ffffff;
+
+  box-shadow: 0 7px 18px rgba(215, 25, 32, 0.2);
+}
+
+.nav-action--primary:hover {
+  background: #ba141a;
+
+  border-color: #ba141a;
+}
+
+/* =========================================================
+   LANGUES
+   ========================================================= */
+
+.language-switcher {
+  display: flex;
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 4px;
+
+  border: 1px solid #e6e6e6;
+
+  border-radius: 11px;
+
+  background: #f7f7f7;
+}
+
+.lang-btn {
+  min-width: 53px;
+  height: 36px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  padding: 0 7px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  color: #555;
+
+  cursor: pointer;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 800;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.lang-btn:hover {
+  background: #ffffff;
+
+  transform: translateY(-1px);
+}
+
+.lang-btn.active {
+  background: #ffffff;
+
+  color: #202020;
+
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+}
+
+.lang-flag {
+  width: 23px;
+  height: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 3px;
+
+  overflow: hidden;
+
+  font-size: 10px;
+}
+
+.lang-flag--qc {
+  background: #1261a8;
+  color: white;
+}
+
+.lang-flag--ca {
+  background: white;
+  color: #d71920;
+
+  border-left: 5px solid #d71920;
+  border-right: 5px solid #d71920;
+}
+
+/* =========================================================
+   MODE NUIT
+   ========================================================= */
+
+.theme-toggle-btn {
+  width: 38px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 auto;
+
+  padding: 0;
+
+  border: 1px solid #e2e2e2;
+  border-radius: 50%;
+
+  background: #ffffff;
+  color: #333;
+
+  cursor: pointer;
+
+  font-size: 14px;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  transform: translateY(-2px);
+
+  background: #202020;
+  color: #ffffff;
+}
+
+/* ORDINATEUR */
+
+.navbar__toggle {
+  display: none;
+}
+
+/* =========================================================
+   TABLETTE
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+  .navbar__container {
+    grid-template-columns:
+      155px
+      minmax(0, 1fr);
+
+    min-height: 80px;
+  }
+
+  .logo {
+    max-width: 145px;
+  }
+
+  .navbar__toggle {
+    display: flex;
+
+    width: 44px;
+    height: 44px;
+
+    padding: 0;
+    margin: 0;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+
+    background: #ffffff;
+
+    cursor: pointer;
+  }
+
+  .navbar__content {
+    position: absolute;
+
+    top: 100%;
+    left: 0;
+
+    width: 100%;
+
+    display: none;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eee;
+
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.11);
+  }
+
+  .navbar__content.active {
+    display: block;
+  }
+
+  .navbar__navblock {
+    display: block;
+  }
+
+  .navbar__menu--main,
+  .navbar__menu--secondary {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 3px;
+  }
+
+  .navbar__item {
+    width: 100%;
+  }
+
+  .navbar__links,
+  .navbar__links--secondary {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 0 12px;
+
+    font-size: 14px;
+  }
+
+  .navbar__links--secondary::before {
+    display: none;
+  }
+
+  .navbar__actions {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 10px;
+
+    margin-top: 16px;
+
+    padding: 16px 0 0;
+
+    border-left: 0;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-action {
+    width: 100%;
+  }
+
+  .language-switcher {
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+  .navbar__container {
+    width: calc(100% - 24px);
+
+    grid-template-columns: 1fr auto;
+
+    min-height: 72px;
+  }
+
+  .logo {
+    max-width: 132px;
+  }
+
+  .navbar__content {
+    padding: 14px;
+  }
+
+  .navbar__actions {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-action {
+    justify-content: flex-start;
+  }
+
+  .language-switcher {
+    width: 100%;
+  }
+
+  .theme-toggle-btn {
+    justify-self: center;
+  }
+}
+
+/* =========================================================
+   CORRECTION FINALE HAMBURGER MADIC
+   À METTRE TOUT À LA FIN DE styles.css
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+  .navbar__toggle {
+    display: flex !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    padding: 0 !important;
+
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    gap: 5px !important;
+
+    border: 0 !important;
+    border-radius: 10px !important;
+
+    background: #f5f5f5 !important;
+
+    cursor: pointer;
+  }
+
+  .navbar__toggle .bar {
+    display: block !important;
+
+    width: 25px !important;
+    height: 3px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background-color: #202020 !important;
+
+    border-radius: 10px !important;
+
+    transform-origin: center !important;
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease !important;
+  }
+
+  /* X parfaitement centré */
+
+  .navbar__toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg) !important;
+  }
+
+  .navbar__toggle.active .bar:nth-child(2) {
+    opacity: 0 !important;
+  }
+
+  .navbar__toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg) !important;
+  }
+}
+
+/* =========================================================
+   ESPACEMENT MENU MOBILE MADIC
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+  /* Les deux groupes de navigation */
+  .navbar__menu--main,
+  .navbar__menu--secondary {
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 2px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 100% !important;
+  }
+
+  /* Afficher correctement le deuxième groupe */
+  .navbar__menu--secondary {
+    margin-top: 2px !important;
+  }
+
+  /* Chaque ligne */
+  .navbar__item {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 100% !important;
+  }
+
+  /* Accueil, Services, Forfaits,
+     À propos, Carrière, Nous joindre */
+  .navbar__links,
+  .navbar__links--secondary {
+    display: flex !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    min-height: 36px !important;
+
+    margin: 0 !important;
+    padding: 6px 10px !important;
+
+    line-height: 1.2 !important;
+  }
+
+  /* Pas de gros espace entre les deux groupes */
+  .navbar__navblock {
+    display: flex !important;
+    flex-direction: column !important;
+
+    gap: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
+/* =========================================================
+   MENU MOBILE - LIENS PLUS COMPACTS
+   ========================================================= */
+
+@media screen and (max-width: 1100px) {
+  .navbar__menu--all {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .navbar__menu--all .navbar__item {
+    min-height: 0 !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .navbar__menu--all .navbar__links,
+  .navbar__menu--all .navbar__links--secondary {
+    display: flex !important;
+    align-items: center !important;
+
+    width: 100% !important;
+
+    min-height: 39px !important;
+    height: 39px !important;
+
+    margin: 0 !important;
+    padding: 0 9px !important;
+
+    line-height: 1.2 !important;
+  }
 }

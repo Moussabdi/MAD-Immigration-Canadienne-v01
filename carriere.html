@@ -33,164 +33,271 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="page-carriere" class="career-page">
-      <!-- ===================================================== -->
-      <!-- HERO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
+
+      <style>
+        .career-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .career-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .career-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .career-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .career-lang-en {
+          display: inline;
+        }
+      </style>
+
+      <!-- =====================================================
+       HERO
+       ===================================================== -->
+
       <section class="career-hero-new">
         <div class="career-hero-new__overlay"></div>
 
         <div class="container career-hero-new__inner">
           <div class="career-hero-new__content">
-            <span class="career-eyebrow" data-i18n="career.hero.eyebrow">
-              CARRIÈRES CHEZ MADIC
+            <span class="career-eyebrow">
+              <span class="career-lang-fr"> CARRIÈRES CHEZ MADIC </span>
+
+              <span class="career-lang-en"> CAREERS AT MADIC </span>
             </span>
 
-            <h1 data-i18n="career.hero.title">
-              Faites grandir votre carrière avec MAD Immigration Canadienne
+            <h1>
+              <span class="career-lang-fr">
+                Faites grandir votre carrière avec MAD Immigration Canadienne
+              </span>
+
+              <span class="career-lang-en">
+                Grow your career with MAD Immigration Canadienne
+              </span>
             </h1>
 
-            <p data-i18n="career.hero.subtitle">
-              Rejoignez une entreprise entrepreneuriale, dynamique et en
-              croissance, où vos idées, votre créativité et vos compétences
-              peuvent contribuer concrètement à notre développement.
+            <p>
+              <span class="career-lang-fr">
+                Rejoignez une entreprise entrepreneuriale, dynamique et en
+                croissance, où vos idées, votre créativité et vos compétences
+                peuvent contribuer concrètement à notre développement.
+              </span>
+
+              <span class="career-lang-en">
+                Join an entrepreneurial, dynamic and growing company where your
+                ideas, creativity and skills can make a real contribution to our
+                development.
+              </span>
             </p>
 
             <div class="career-hero-new__buttons">
-              <a
-                href="carriereprofiles.html"
-                class="madic-btn madic-btn-red"
-                data-i18n="career.hero.jobs"
-              >
+              <a href="carriereprofiles.html" class="madic-btn madic-btn-red">
                 <i class="fa-solid fa-briefcase"></i>
-                Voir les profils recherchés
+
+                <span class="career-lang-fr">
+                  Voir les profils recherchés
+                </span>
+
+                <span class="career-lang-en"> View open profiles </span>
               </a>
 
-              <a
-                href="#career-culture"
-                class="career-link-light"
-                data-i18n="career.hero.discover"
-              >
-                Découvrir notre environnement
+              <a href="#career-culture" class="career-link-light">
+                <span class="career-lang-fr">
+                  Découvrir notre environnement
+                </span>
+
+                <span class="career-lang-en">
+                  Discover our work environment
+                </span>
+
                 <i class="fa-solid fa-arrow-down"></i>
               </a>
             </div>
@@ -201,35 +308,58 @@
               <i class="fa-solid fa-users"></i>
             </div>
 
-            <strong data-i18n="career.hero.cardTitle">
-              Grandissez avec nous
+            <strong>
+              <span class="career-lang-fr"> Grandissez avec nous </span>
+
+              <span class="career-lang-en"> Grow with us </span>
             </strong>
 
-            <p data-i18n="career.hero.cardText">
-              Créativité • Collaboration • Apprentissage • Développement
+            <p>
+              <span class="career-lang-fr">
+                Créativité • Collaboration • Apprentissage • Développement
+              </span>
+
+              <span class="career-lang-en">
+                Creativity • Collaboration • Learning • Development
+              </span>
             </p>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- VALEURS -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       VALEURS
+       ===================================================== -->
+
       <section class="career-values">
         <div class="container career-values__grid">
+          <!-- CRÉATIVITÉ -->
+
           <div class="career-value">
             <div class="career-value__icon">
               <i class="fa-solid fa-lightbulb"></i>
             </div>
 
             <div>
-              <h3 data-i18n="career.values.creativity">Créativité</h3>
+              <h3>
+                <span class="career-lang-fr"> Créativité </span>
 
-              <p data-i18n="career.values.creativityText">
-                Vos idées peuvent contribuer directement à nos projets.
+                <span class="career-lang-en"> Creativity </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Vos idées peuvent contribuer directement à nos projets.
+                </span>
+
+                <span class="career-lang-en">
+                  Your ideas can directly contribute to our projects.
+                </span>
               </p>
             </div>
           </div>
+
+          <!-- CROISSANCE -->
 
           <div class="career-value">
             <div class="career-value__icon">
@@ -237,13 +367,25 @@
             </div>
 
             <div>
-              <h3 data-i18n="career.values.growth">Croissance</h3>
+              <h3>
+                <span class="career-lang-fr"> Croissance </span>
 
-              <p data-i18n="career.values.growthText">
-                Développez vos compétences avec une entreprise en évolution.
+                <span class="career-lang-en"> Growth </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Développez vos compétences avec une entreprise en évolution.
+                </span>
+
+                <span class="career-lang-en">
+                  Develop your skills with a growing company.
+                </span>
               </p>
             </div>
           </div>
+
+          <!-- COLLABORATION -->
 
           <div class="career-value">
             <div class="career-value__icon">
@@ -251,14 +393,26 @@
             </div>
 
             <div>
-              <h3 data-i18n="career.values.team">Collaboration</h3>
+              <h3>
+                <span class="career-lang-fr"> Collaboration </span>
 
-              <p data-i18n="career.values.teamText">
-                Travaillez avec une équipe qui favorise le partage des
-                connaissances.
+                <span class="career-lang-en"> Collaboration </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Travaillez avec une équipe qui favorise le partage des
+                  connaissances.
+                </span>
+
+                <span class="career-lang-en">
+                  Work with a team that encourages knowledge sharing.
+                </span>
               </p>
             </div>
           </div>
+
+          <!-- APPRENTISSAGE -->
 
           <div class="career-value">
             <div class="career-value__icon">
@@ -266,21 +420,34 @@
             </div>
 
             <div>
-              <h3 data-i18n="career.values.learning">Apprentissage</h3>
+              <h3>
+                <span class="career-lang-fr"> Apprentissage </span>
 
-              <p data-i18n="career.values.learningText">
-                Acquérez une expérience pratique sur des projets concrets.
+                <span class="career-lang-en"> Learning </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Acquérez une expérience pratique sur des projets concrets.
+                </span>
+
+                <span class="career-lang-en">
+                  Gain practical experience through real projects.
+                </span>
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- CULTURE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       CULTURE
+       ===================================================== -->
+
       <section id="career-culture" class="career-culture-new">
         <div class="container career-culture-new__grid">
+          <!-- VISUEL -->
+
           <div class="career-culture-new__visual">
             <div class="career-culture-new__main-image">
               <img
@@ -296,56 +463,103 @@
             <div class="career-culture-new__badge">
               <i class="fa-solid fa-arrow-trend-up"></i>
 
-              <span data-i18n="career.culture.badge">
-                Une entreprise en croissance
+              <span>
+                <span class="career-lang-fr">
+                  Une entreprise en croissance
+                </span>
+
+                <span class="career-lang-en"> A growing company </span>
               </span>
             </div>
           </div>
 
+          <!-- CONTENU -->
+
           <div class="career-culture-new__content">
-            <span class="career-eyebrow" data-i18n="career.culture.eyebrow">
-              NOTRE CULTURE
+            <span class="career-eyebrow">
+              <span class="career-lang-fr"> NOTRE CULTURE </span>
+
+              <span class="career-lang-en"> OUR CULTURE </span>
             </span>
 
-            <h2 data-i18n="career.culture.title">
-              Un environnement où chacun peut contribuer
+            <h2>
+              <span class="career-lang-fr">
+                Un environnement où chacun peut contribuer
+              </span>
+
+              <span class="career-lang-en">
+                An environment where everyone can contribute
+              </span>
             </h2>
 
-            <p data-i18n="career.culture.text1">
-              Chez MAD Immigration Canadienne, nous croyons que chaque membre de
-              l’équipe peut contribuer à notre développement, proposer des idées
-              et participer à l’amélioration de nos services et outils.
+            <p>
+              <span class="career-lang-fr">
+                Chez MAD Immigration Canadienne, nous croyons que chaque membre
+                de l’équipe peut contribuer à notre développement, proposer des
+                idées et participer à l’amélioration de nos services et outils.
+              </span>
+
+              <span class="career-lang-en">
+                At MAD Immigration Canadienne, we believe that every team member
+                can contribute to our growth, share ideas and help improve our
+                services and tools.
+              </span>
             </p>
 
-            <p data-i18n="career.culture.text2">
-              Nous recherchons des personnes curieuses, professionnelles,
-              autonomes et motivées par l’apprentissage.
+            <p>
+              <span class="career-lang-fr">
+                Nous recherchons des personnes curieuses, professionnelles,
+                autonomes et motivées par l’apprentissage.
+              </span>
+
+              <span class="career-lang-en">
+                We are looking for curious, professional and independent
+                individuals who are motivated to learn.
+              </span>
             </p>
 
             <div class="career-culture-new__features">
               <div>
                 <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="career.culture.item1">
-                  Responsabilités concrètes
+
+                <span>
+                  <span class="career-lang-fr">
+                    Responsabilités concrètes
+                  </span>
+
+                  <span class="career-lang-en"> Real responsibilities </span>
                 </span>
               </div>
 
               <div>
                 <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="career.culture.item2">
-                  Développement des compétences
+
+                <span>
+                  <span class="career-lang-fr">
+                    Développement des compétences
+                  </span>
+
+                  <span class="career-lang-en"> Skills development </span>
                 </span>
               </div>
 
               <div>
                 <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="career.culture.item3"> Projets variés </span>
+
+                <span>
+                  <span class="career-lang-fr"> Projets variés </span>
+
+                  <span class="career-lang-en"> Diverse projects </span>
+                </span>
               </div>
 
               <div>
                 <i class="fa-solid fa-circle-check"></i>
-                <span data-i18n="career.culture.item4">
-                  Collaboration directe
+
+                <span>
+                  <span class="career-lang-fr"> Collaboration directe </span>
+
+                  <span class="career-lang-en"> Direct collaboration </span>
                 </span>
               </div>
             </div>
@@ -353,9 +567,10 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- MOT DU FONDATEUR -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       MOT DU FONDATEUR
+       ===================================================== -->
+
       <section class="career-founder-new">
         <div class="container career-founder-new__grid">
           <div class="career-founder-new__photo">
@@ -363,50 +578,82 @@
           </div>
 
           <div class="career-founder-new__content">
-            <span class="career-eyebrow" data-i18n="career.founder.eyebrow">
-              MOT DU FONDATEUR
+            <span class="career-eyebrow">
+              <span class="career-lang-fr"> MOT DU FONDATEUR </span>
+
+              <span class="career-lang-en"> A WORD FROM THE FOUNDER </span>
             </span>
 
             <div class="career-founder-new__quote-mark">“</div>
 
-            <blockquote data-i18n="career.founder.quote">
-              MAD Immigration Canadienne est un environnement entrepreneurial,
-              dynamique et stimulant où chacun peut partager sa créativité tout
-              en contribuant directement à notre croissance. Nous évoluons
-              rapidement et recherchons des personnes talentueuses qui
-              souhaitent grandir avec nous.
+            <blockquote>
+              <span class="career-lang-fr">
+                MAD Immigration Canadienne est un environnement entrepreneurial,
+                dynamique et stimulant où chacun peut partager sa créativité
+                tout en contribuant directement à notre croissance. Nous
+                évoluons rapidement et recherchons des personnes talentueuses
+                qui souhaitent grandir avec nous.
+              </span>
+
+              <span class="career-lang-en">
+                MAD Immigration Canadienne is an entrepreneurial, dynamic and
+                stimulating environment where everyone can share their
+                creativity while directly contributing to our growth. We are
+                growing quickly and are looking for talented individuals who
+                want to grow with us.
+              </span>
             </blockquote>
 
             <div class="career-founder-new__signature">
               <strong> Moussa Abdi Diraneh </strong>
 
-              <span data-i18n="career.founder.role">
-                Fondateur, MAD Immigration Canadienne
+              <span>
+                <span class="career-lang-fr">
+                  Fondateur, MAD Immigration Canadienne
+                </span>
+
+                <span class="career-lang-en">
+                  Founder, MAD Immigration Canadienne
+                </span>
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- ENVIRONNEMENT -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       ENVIRONNEMENT
+       ===================================================== -->
+
       <section class="career-workplace">
         <div class="container">
           <div class="career-section-heading">
             <div>
-              <span class="career-eyebrow" data-i18n="career.offices.eyebrow">
-                NOTRE ENVIRONNEMENT
+              <span class="career-eyebrow">
+                <span class="career-lang-fr"> NOTRE ENVIRONNEMENT </span>
+
+                <span class="career-lang-en"> OUR WORK ENVIRONMENT </span>
               </span>
 
-              <h2 data-i18n="career.offices.title">
-                Découvrez nos espaces de travail
+              <h2>
+                <span class="career-lang-fr">
+                  Découvrez nos espaces de travail
+                </span>
+
+                <span class="career-lang-en"> Discover our workspaces </span>
               </h2>
             </div>
 
-            <p data-i18n="career.offices.subtitle">
-              Des espaces professionnels conçus pour favoriser la concentration,
-              la collaboration et l’apprentissage.
+            <p>
+              <span class="career-lang-fr">
+                Des espaces professionnels conçus pour favoriser la
+                concentration, la collaboration et l’apprentissage.
+              </span>
+
+              <span class="career-lang-en">
+                Professional workspaces designed to promote concentration,
+                collaboration and learning.
+              </span>
             </p>
           </div>
 
@@ -429,104 +676,177 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- EXPÉRIENCE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       EXPÉRIENCE
+       ===================================================== -->
+
       <section class="career-experience">
         <div class="container">
           <div class="career-experience__heading">
-            <span
-              class="career-eyebrow career-eyebrow--light"
-              data-i18n="career.benefits.eyebrow"
-            >
-              VOTRE EXPÉRIENCE CHEZ MADIC
+            <span class="career-eyebrow career-eyebrow--light">
+              <span class="career-lang-fr"> VOTRE EXPÉRIENCE CHEZ MADIC </span>
+
+              <span class="career-lang-en"> YOUR EXPERIENCE AT MADIC </span>
             </span>
 
-            <h2 data-i18n="career.benefits.title">
-              Plus qu’un stage : une expérience professionnelle
+            <h2>
+              <span class="career-lang-fr">
+                Plus qu’un stage : une expérience professionnelle
+              </span>
+
+              <span class="career-lang-en">
+                More than an internship: a professional experience
+              </span>
             </h2>
           </div>
 
           <div class="career-experience__grid">
+            <!-- 01 -->
+
             <article class="career-experience__card">
               <span>01</span>
 
               <i class="fa-solid fa-graduation-cap"></i>
 
-              <h3 data-i18n="career.benefits.learning">Apprentissage</h3>
+              <h3>
+                <span class="career-lang-fr"> Apprentissage </span>
 
-              <p data-i18n="career.benefits.learningText">
-                Développez vos compétences en travaillant sur des projets
-                concrets.
+                <span class="career-lang-en"> Learning </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Développez vos compétences en travaillant sur des projets
+                  concrets.
+                </span>
+
+                <span class="career-lang-en">
+                  Develop your skills by working on real projects.
+                </span>
               </p>
             </article>
+
+            <!-- 02 -->
 
             <article class="career-experience__card">
               <span>02</span>
 
               <i class="fa-solid fa-lightbulb"></i>
 
-              <h3 data-i18n="career.benefits.innovation">Créativité</h3>
+              <h3>
+                <span class="career-lang-fr"> Créativité </span>
 
-              <p data-i18n="career.benefits.innovationText">
-                Proposez vos idées et contribuez à l’amélioration de nos
-                solutions.
+                <span class="career-lang-en"> Creativity </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Proposez vos idées et contribuez à l’amélioration de nos
+                  solutions.
+                </span>
+
+                <span class="career-lang-en">
+                  Share your ideas and contribute to improving our solutions.
+                </span>
               </p>
             </article>
+
+            <!-- 03 -->
 
             <article class="career-experience__card">
               <span>03</span>
 
               <i class="fa-solid fa-users"></i>
 
-              <h3 data-i18n="career.benefits.teamwork">Collaboration</h3>
+              <h3>
+                <span class="career-lang-fr"> Collaboration </span>
 
-              <p data-i18n="career.benefits.teamworkText">
-                Travaillez directement avec les membres de notre équipe.
+                <span class="career-lang-en"> Collaboration </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Travaillez directement avec les membres de notre équipe.
+                </span>
+
+                <span class="career-lang-en">
+                  Work directly with members of our team.
+                </span>
               </p>
             </article>
+
+            <!-- 04 -->
 
             <article class="career-experience__card">
               <span>04</span>
 
               <i class="fa-solid fa-chart-line"></i>
 
-              <h3 data-i18n="career.benefits.development">Développement</h3>
+              <h3>
+                <span class="career-lang-fr"> Développement </span>
 
-              <p data-i18n="career.benefits.developmentText">
-                Construisez une expérience utile pour la suite de votre
-                parcours.
+                <span class="career-lang-en"> Development </span>
+              </h3>
+
+              <p>
+                <span class="career-lang-fr">
+                  Construisez une expérience utile pour la suite de votre
+                  parcours.
+                </span>
+
+                <span class="career-lang-en">
+                  Build valuable experience for the next stage of your career.
+                </span>
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- PROFILS RECHERCHÉS -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       PROFILS RECHERCHÉS
+       ===================================================== -->
+
       <section class="career-jobs">
         <div class="container">
           <div class="career-section-heading">
             <div>
-              <span class="career-eyebrow" data-i18n="career.profiles.eyebrow">
-                OPPORTUNITÉS CHEZ MADIC
+              <span class="career-eyebrow">
+                <span class="career-lang-fr"> OPPORTUNITÉS CHEZ MADIC </span>
+
+                <span class="career-lang-en"> OPPORTUNITIES AT MADIC </span>
               </span>
 
-              <h2 data-i18n="career.profiles.title">
-                Découvrez les profils recherchés
+              <h2>
+                <span class="career-lang-fr">
+                  Découvrez les profils recherchés
+                </span>
+
+                <span class="career-lang-en">
+                  Discover the profiles we are looking for
+                </span>
               </h2>
             </div>
 
-            <p data-i18n="career.profiles.subtitle">
-              Nous recherchons actuellement des stagiaires dans deux domaines
-              complémentaires : le développement technologique et la
-              consultation.
+            <p>
+              <span class="career-lang-fr">
+                Nous recherchons actuellement des stagiaires dans deux domaines
+                complémentaires : le développement technologique et la
+                consultation.
+              </span>
+
+              <span class="career-lang-en">
+                We are currently looking for interns in two complementary areas:
+                technology development and consulting.
+              </span>
             </p>
           </div>
 
           <div class="career-jobs__grid">
-            <!-- FULL STACK -->
+            <!-- =================================================
+             FULL STACK
+             ================================================= -->
+
             <a
               href="carriereprofiles.html#profile-fullstack"
               class="career-job-card-new"
@@ -541,13 +861,26 @@
 
               <span class="career-job-card-new__type"> STAGE / COOP </span>
 
-              <h3 data-i18n="career.profiles.fullstack.title">
-                Stagiaire Développeur Full Stack
+              <h3>
+                <span class="career-lang-fr">
+                  Stagiaire Développeur Full Stack
+                </span>
+
+                <span class="career-lang-en">
+                  Full Stack Developer Intern
+                </span>
               </h3>
 
-              <p data-i18n="career.profiles.fullstack.text">
-                Développement front-end et back-end, applications web, bases de
-                données et outils numériques.
+              <p>
+                <span class="career-lang-fr">
+                  Développement front-end et back-end, applications web, bases
+                  de données et outils numériques.
+                </span>
+
+                <span class="career-lang-en">
+                  Front-end and back-end development, web applications,
+                  databases and digital tools.
+                </span>
               </p>
 
               <div class="career-job-card-new__tags">
@@ -558,15 +891,20 @@
               </div>
 
               <div class="career-job-card-new__footer">
-                <span data-i18n="career.profiles.view">
-                  Voir le profil complet
+                <span>
+                  <span class="career-lang-fr"> Voir le profil complet </span>
+
+                  <span class="career-lang-en"> View full profile </span>
                 </span>
 
                 <i class="fa-solid fa-arrow-right"></i>
               </div>
             </a>
 
-            <!-- CONSULTANT -->
+            <!-- =================================================
+             CONSULTANT
+             ================================================= -->
+
             <a
               href="carriereprofiles.html#profile-consultant"
               class="career-job-card-new career-job-card-new--dark"
@@ -581,32 +919,49 @@
 
               <span class="career-job-card-new__type"> STAGE </span>
 
-              <h3 data-i18n="career.profiles.consultant.title">
-                Stagiaire Consultant
+              <h3>
+                <span class="career-lang-fr"> Stagiaire Consultant </span>
+
+                <span class="career-lang-en"> Consultant Intern </span>
               </h3>
 
-              <p data-i18n="career.profiles.consultant.text">
-                Analyse, recherche, communication, service à la clientèle et
-                soutien aux activités de consultation.
+              <p>
+                <span class="career-lang-fr">
+                  Analyse, recherche, communication, service à la clientèle et
+                  soutien aux activités de consultation.
+                </span>
+
+                <span class="career-lang-en">
+                  Analysis, research, communication, client service and support
+                  for consulting activities.
+                </span>
               </p>
 
               <div class="career-job-card-new__tags">
-                <span data-i18n="career.profiles.consultant.skill1">
-                  Analyse
+                <span>
+                  <span class="career-lang-fr"> Analyse </span>
+
+                  <span class="career-lang-en"> Analysis </span>
                 </span>
 
-                <span data-i18n="career.profiles.consultant.skill2">
-                  Recherche
+                <span>
+                  <span class="career-lang-fr"> Recherche </span>
+
+                  <span class="career-lang-en"> Research </span>
                 </span>
 
-                <span data-i18n="career.profiles.consultant.skill3">
-                  Communication
+                <span>
+                  <span class="career-lang-fr"> Communication </span>
+
+                  <span class="career-lang-en"> Communication </span>
                 </span>
               </div>
 
               <div class="career-job-card-new__footer">
-                <span data-i18n="career.profiles.view">
-                  Voir le profil complet
+                <span>
+                  <span class="career-lang-fr"> Voir le profil complet </span>
+
+                  <span class="career-lang-en"> View full profile </span>
                 </span>
 
                 <i class="fa-solid fa-arrow-right"></i>
@@ -615,58 +970,68 @@
           </div>
 
           <div class="career-jobs__button">
-            <a
-              href="carriereprofiles.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="career.profiles.button"
-            >
+            <a href="carriereprofiles.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-briefcase"></i>
-              Voir tous les profils recherchés
+
+              <span class="career-lang-fr">
+                Voir tous les profils recherchés
+              </span>
+
+              <span class="career-lang-en"> View all open profiles </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- CTA FINAL -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       CTA FINAL
+       ===================================================== -->
+
       <section class="career-final-new">
         <div class="career-final-new__overlay"></div>
 
         <div class="container career-final-new__content">
-          <span
-            class="career-eyebrow career-eyebrow--light"
-            data-i18n="career.cta.eyebrow"
-          >
-            REJOIGNEZ MADIC
+          <span class="career-eyebrow career-eyebrow--light">
+            <span class="career-lang-fr"> REJOIGNEZ MADIC </span>
+
+            <span class="career-lang-en"> JOIN MADIC </span>
           </span>
 
-          <h2 data-i18n="career.cta.title">
-            Votre prochaine expérience professionnelle pourrait commencer ici
+          <h2>
+            <span class="career-lang-fr">
+              Votre prochaine expérience professionnelle pourrait commencer ici
+            </span>
+
+            <span class="career-lang-en">
+              Your next professional experience could start here
+            </span>
           </h2>
 
-          <p data-i18n="career.cta.text">
-            Découvrez nos profils recherchés et voyez comment vos compétences
-            pourraient contribuer à nos projets.
+          <p>
+            <span class="career-lang-fr">
+              Découvrez nos profils recherchés et voyez comment vos compétences
+              pourraient contribuer à nos projets.
+            </span>
+
+            <span class="career-lang-en">
+              Discover our open profiles and see how your skills could
+              contribute to our projects.
+            </span>
           </p>
 
           <div class="career-final-new__buttons">
-            <a
-              href="carriereprofiles.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="career.cta.button"
-            >
+            <a href="carriereprofiles.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-briefcase"></i>
-              Voir les profils recherchés
+
+              <span class="career-lang-fr"> Voir les profils recherchés </span>
+
+              <span class="career-lang-en"> View open profiles </span>
             </a>
 
-            <a
-              href="joindre.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="career.cta.contact"
-            >
+            <a href="joindre.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-envelope"></i>
-              Nous joindre
+
+              <span data-i18n="nav.contact"> Nous joindre </span>
             </a>
           </div>
         </div>

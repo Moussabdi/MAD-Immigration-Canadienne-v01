@@ -33,213 +33,355 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
+          <!-- ===================================================
+         LOGO
+         =================================================== -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
-              alt="MadImmigrationCanadienne-logo"
+              alt="MAD Immigration Canadienne"
               class="logo"
             />
           </a>
 
-          <div>
-            <div class="navbar__toggle" id="mobile-menu">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
+          <!-- ===================================================
+         BOUTON MOBILE
+         =================================================== -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+
+          <!-- ===================================================
+         CONTENU
+         =================================================== -->
+          <div class="navbar__content" id="navbar-content">
+            <!-- =================================================
+           NAVIGATION 2 LIGNES
+           ================================================= -->
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
             </div>
 
-            <ul class="navbar__menu">
-              <li class="navbar__item">
-                <a
-                  href="index.html"
-                  class="navbar__links"
-                  id="index"
-                  data-i18n="nav.home"
-                >
-                  Accueil
-                </a>
-              </li>
+            <!-- =================================================
+           ACTIONS
+           ================================================= -->
+            <div class="navbar__actions">
+              <!-- ÉVALUATION -->
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="propos.html"
-                  class="navbar__links"
-                  id="about-page"
-                  data-i18n="nav.about"
-                >
-                  À propos
-                </a>
-              </li>
+                <span> Évaluation préliminaire </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="services.html"
-                  class="navbar__links"
-                  id="services-page"
-                  data-i18n="nav.services"
-                >
-                  Nos services
-                </a>
-              </li>
+              <!-- RENDEZ-VOUS -->
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
 
-              <li class="navbar__item">
-                <a
-                  href="forfaits.html"
-                  class="navbar__links"
-                  data-i18n="nav.packages"
-                >
-                  Nos forfaits
-                </a>
-              </li>
+                <span> Prendre rendez-vous </span>
+              </a>
 
-              <li class="navbar__item">
-                <a
-                  href="joindre.html"
-                  class="navbar__links"
-                  data-i18n="nav.contact"
+              <!-- =================================================
+             LANGUES
+             Conserver exactement lang-btn + data-lang
+             ================================================= -->
+              <div class="language-switcher">
+                <button
+                  type="button"
+                  class="lang-btn active"
+                  data-lang="fr"
+                  aria-label="Français"
+                  title="Français"
                 >
-                  Nous joindre
-                </a>
-              </li>
+                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
 
-              <li class="navbar__item">
-                <a
-                  href="carriere.html"
-                  class="navbar__links"
-                  id="career-page"
-                  data-i18n="nav.career"
-                >
-                  Carrière
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="formulaire.html"
-                  class="button"
-                  id="signup"
-                  data-i18n="nav.evaluation"
-                >
-                  Évaluation préliminaire
-                </a>
-              </li>
-
-              <li class="navbar__btn">
-                <a
-                  href="rendezvous.html"
-                  class="button button-rendezvous"
-                  id="appointment"
-                  data-i18n="nav.appointment"
-                >
-                  Prendre rendez-vous
-                </a>
-              </li>
-
-              <li class="navbar__item language-switcher">
-                <button type="button" class="lang-btn active" data-lang="fr">
-                  FR
+                  <span> FR </span>
                 </button>
 
-                <span>|</span>
+                <button
+                  type="button"
+                  class="lang-btn"
+                  data-lang="en"
+                  aria-label="English"
+                  title="English"
+                >
+                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
 
-                <button type="button" class="lang-btn" data-lang="en">
-                  EN
+                  <span> EN </span>
                 </button>
-              </li>
-            </ul>
+              </div>
+
+              <!-- =================================================
+             MODE NUIT
+             ================================================= -->
+              <button
+                type="button"
+                id="theme-toggle"
+                class="theme-toggle-btn"
+                aria-label="Activer le mode nuit"
+                title="Mode nuit"
+              >
+                <i class="fa-solid fa-moon"></i>
+              </button>
+            </div>
           </div>
         </div>
       </nav>
     </header>
 
     <main id="page-contact" class="contact-page-new">
-      <!-- ===================================================== -->
-      <!-- SECTION 1 : HERO -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       BILINGUE LOCAL AU MAIN
+       AUCUNE MODIFICATION DE script.js
+       ===================================================== -->
+
+      <style>
+        .contact-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] .contact-lang-fr {
+          display: inline;
+        }
+
+        html[lang="fr"] .contact-lang-en {
+          display: none;
+        }
+
+        html[lang="en"] .contact-lang-fr {
+          display: none;
+        }
+
+        html[lang="en"] .contact-lang-en {
+          display: inline;
+        }
+
+        p.contact-lang-fr,
+        p.contact-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] p.contact-lang-fr {
+          display: block;
+        }
+
+        html[lang="en"] p.contact-lang-en {
+          display: block;
+        }
+
+        h2.contact-lang-fr,
+        h2.contact-lang-en,
+        h3.contact-lang-fr,
+        h3.contact-lang-en {
+          display: none;
+        }
+
+        html[lang="fr"] h2.contact-lang-fr,
+        html[lang="fr"] h3.contact-lang-fr {
+          display: block;
+        }
+
+        html[lang="en"] h2.contact-lang-en,
+        html[lang="en"] h3.contact-lang-en {
+          display: block;
+        }
+      </style>
+
+      <!-- =====================================================
+       SECTION 1 : HERO
+       ===================================================== -->
+
       <section class="contact-hero">
         <div class="contact-hero-overlay"></div>
 
         <div class="container contact-hero-content">
-          <span class="section-eyebrow" data-i18n="contact.hero.eyebrow">
-            NOUS JOINDRE
+          <span class="section-eyebrow">
+            <span class="contact-lang-fr"> NOUS JOINDRE </span>
+
+            <span class="contact-lang-en"> CONTACT US </span>
           </span>
 
           <h1 data-i18n="contact.title">Nous joindre</h1>
 
-          <p class="contact-hero-subtitle" data-i18n="contact.hero.subtitle">
+          <p class="contact-hero-subtitle contact-lang-fr">
             Une question sur votre situation ou votre projet d’immigration ?
             Communiquez avec MAD Immigration Canadienne ou planifiez directement
             une consultation.
           </p>
 
+          <p class="contact-hero-subtitle contact-lang-en">
+            Do you have a question about your situation or your immigration
+            project? Contact MAD Immigration Canadienne or schedule a
+            consultation directly.
+          </p>
+
           <div class="contact-hero-buttons">
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="contact.hero.appointment"
-            >
+            <!-- RENDEZ-VOUS -->
+
+            <a href="rendezvous.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
 
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="contact.hero.evaluation"
-            >
+            <!-- ÉVALUATION -->
+
+            <a href="formulaire.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-file-circle-check"></i>
-              Évaluation préliminaire
+
+              <span data-i18n="nav.evaluation"> Évaluation préliminaire </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 2 : COORDONNÉES -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 2 : COORDONNÉES
+       ===================================================== -->
+
       <section class="contact-info-section">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="contact.info.eyebrow">
-              RESTONS EN CONTACT
+            <span class="section-eyebrow">
+              <span class="contact-lang-fr"> RESTONS EN CONTACT </span>
+
+              <span class="contact-lang-en"> LET'S STAY IN TOUCH </span>
             </span>
 
-            <h2 data-i18n="contact.info.title">Comment nous joindre</h2>
+            <h2 class="contact-lang-fr">Comment nous joindre</h2>
 
-            <p data-i18n="contact.info.subtitle">
+            <h2 class="contact-lang-en">How to contact us</h2>
+
+            <p class="contact-lang-fr">
               Choisissez le moyen de communication qui vous convient le mieux.
+            </p>
+
+            <p class="contact-lang-en">
+              Choose the communication method that works best for you.
             </p>
           </div>
 
           <div class="contact-info-grid">
-            <!-- TÉLÉPHONE -->
+            <!-- =================================================
+             TÉLÉPHONE
+             ================================================= -->
+
             <article class="contact-info-card">
               <div class="contact-info-icon red">
                 <i class="fa-solid fa-phone"></i>
               </div>
 
-              <h3 data-i18n="contact.phone">Par téléphone</h3>
+              <h3 data-i18n="contact.phone">Par téléphone :</h3>
 
-              <p data-i18n="contact.phoneText">
+              <p class="contact-lang-fr">
                 Communiquez directement avec notre bureau.
               </p>
+
+              <p class="contact-lang-en">Contact our office directly.</p>
 
               <a href="tel:514-442-3076" class="contact-info-link">
                 514-442-3076
               </a>
             </article>
 
-            <!-- COURRIEL -->
+            <!-- =================================================
+             COURRIEL
+             ================================================= -->
+
             <article class="contact-info-card">
               <div class="contact-info-icon dark">
                 <i class="fa-solid fa-envelope"></i>
               </div>
 
-              <h3 data-i18n="contact.email">Par courriel</h3>
+              <h3 data-i18n="contact.email">Par courriel :</h3>
 
-              <p data-i18n="contact.emailText">
+              <p class="contact-lang-fr">
                 Envoyez-nous votre demande par courriel.
               </p>
+
+              <p class="contact-lang-en">Send us your request by email.</p>
 
               <a
                 href="mailto:madimmigrationcanadienne@gmail.com"
@@ -249,127 +391,165 @@
               </a>
             </article>
 
-            <!-- RENDEZ-VOUS -->
+            <!-- =================================================
+             RENDEZ-VOUS
+             ================================================= -->
+
             <article class="contact-info-card">
               <div class="contact-info-icon red">
                 <i class="fa-solid fa-calendar-days"></i>
               </div>
 
-              <h3 data-i18n="contact.appointment.title">Consultation</h3>
+              <h3 class="contact-lang-fr">Consultation</h3>
 
-              <p data-i18n="contact.appointment.text">
+              <h3 class="contact-lang-en">Consultation</h3>
+
+              <p class="contact-lang-fr">
                 Planifiez une consultation selon vos disponibilités.
               </p>
 
-              <a
-                href="rendezvous.html"
-                class="contact-info-link"
-                data-i18n="contact.appointment.link"
-              >
-                Réserver maintenant
+              <p class="contact-lang-en">
+                Schedule a consultation according to your availability.
+              </p>
+
+              <a href="rendezvous.html" class="contact-info-link">
+                <span class="contact-lang-fr"> Réserver maintenant </span>
+
+                <span class="contact-lang-en"> Book now </span>
               </a>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 3 : BESOIN D'AIDE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 3 : BESOIN D'AIDE
+       ===================================================== -->
+
       <section class="contact-choice-section">
         <div class="container contact-choice-grid">
-          <!-- ÉVALUATION -->
+          <!-- ===================================================
+           ÉVALUATION
+           =================================================== -->
+
           <div class="contact-choice-card">
             <div class="contact-choice-icon">
               <i class="fa-solid fa-file-circle-check"></i>
             </div>
 
-            <span
-              class="section-eyebrow"
-              data-i18n="contact.choice.evaluation.eyebrow"
-            >
-              PREMIÈRE ÉTAPE
+            <span class="section-eyebrow">
+              <span class="contact-lang-fr"> PREMIÈRE ÉTAPE </span>
+
+              <span class="contact-lang-en"> FIRST STEP </span>
             </span>
 
-            <h2 data-i18n="contact.choice.evaluation.title">
+            <h2 class="contact-lang-fr">
               Vous souhaitez nous présenter votre situation ?
             </h2>
 
-            <p data-i18n="contact.choice.evaluation.text">
+            <h2 class="contact-lang-en">
+              Would you like to tell us about your situation?
+            </h2>
+
+            <p class="contact-lang-fr">
               Remplissez notre évaluation préliminaire afin de nous transmettre
               les principales informations concernant votre profil et votre
               projet.
             </p>
 
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="contact.choice.evaluation.button"
-            >
-              Commencer mon évaluation
+            <p class="contact-lang-en">
+              Complete our preliminary assessment to provide us with the main
+              information about your profile and your immigration project.
+            </p>
+
+            <a href="formulaire.html" class="madic-btn madic-btn-red">
+              <span class="contact-lang-fr"> Commencer mon évaluation </span>
+
+              <span class="contact-lang-en"> Start my assessment </span>
             </a>
           </div>
 
-          <!-- CONSULTATION -->
+          <!-- ===================================================
+           CONSULTATION
+           =================================================== -->
+
           <div class="contact-choice-card contact-choice-card-dark">
             <div class="contact-choice-icon">
               <i class="fa-solid fa-comments"></i>
             </div>
 
-            <span
-              class="section-eyebrow"
-              data-i18n="contact.choice.consultation.eyebrow"
-            >
-              PARLONS DE VOTRE PROJET
+            <span class="section-eyebrow">
+              <span class="contact-lang-fr"> PARLONS DE VOTRE PROJET </span>
+
+              <span class="contact-lang-en"> LET'S DISCUSS YOUR PROJECT </span>
             </span>
 
-            <h2 data-i18n="contact.choice.consultation.title">
+            <h2 class="contact-lang-fr">
               Vous préférez discuter directement avec nous ?
             </h2>
 
-            <p data-i18n="contact.choice.consultation.text">
+            <h2 class="contact-lang-en">
+              Would you prefer to speak with us directly?
+            </h2>
+
+            <p class="contact-lang-fr">
               Réservez une consultation pour présenter votre situation, poser
               vos questions et discuter des prochaines étapes.
             </p>
 
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="contact.choice.consultation.button"
-            >
-              Prendre rendez-vous
+            <p class="contact-lang-en">
+              Book a consultation to discuss your situation, ask your questions
+              and review the next steps.
+            </p>
+
+            <a href="rendezvous.html" class="madic-btn madic-btn-light">
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
           </div>
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 4 : ADRESSE ET CARTE -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 4 : ADRESSE ET CARTE
+       ===================================================== -->
+
       <section class="contact-location">
         <div class="container">
           <div class="section-title">
-            <span class="section-eyebrow" data-i18n="contact.location.eyebrow">
-              NOTRE BUREAU
+            <span class="section-eyebrow">
+              <span class="contact-lang-fr"> NOTRE BUREAU </span>
+
+              <span class="contact-lang-en"> OUR OFFICE </span>
             </span>
 
-            <h2 data-i18n="contact.location.title">
+            <h2 class="contact-lang-fr">
               Localisez MAD Immigration Canadienne
             </h2>
 
-            <p data-i18n="contact.location.subtitle">
+            <h2 class="contact-lang-en">Find MAD Immigration Canadienne</h2>
+
+            <p class="contact-lang-fr">
               Consultez notre emplacement et nos coordonnées.
+            </p>
+
+            <p class="contact-lang-en">
+              View our location and contact information.
             </p>
           </div>
 
           <div class="contact-location-grid">
-            <!-- INFOS ADRESSE -->
+            <!-- =================================================
+             INFOS ADRESSE
+             ================================================= -->
+
             <div class="contact-address-card">
               <div class="contact-address-icon">
                 <i class="fa-solid fa-location-dot"></i>
               </div>
 
-              <h3 data-i18n="contact.location.addressTitle">Adresse</h3>
+              <h3 class="contact-lang-fr">Adresse</h3>
+
+              <h3 class="contact-lang-en">Address</h3>
 
               <address>
                 <p>
@@ -380,21 +560,25 @@
 
               <div class="contact-address-divider"></div>
 
+              <!-- TÉLÉPHONE -->
+
               <div class="contact-address-row">
                 <i class="fa-solid fa-phone"></i>
 
                 <div>
-                  <strong data-i18n="contact.phone"> Téléphone </strong>
+                  <strong data-i18n="contact.phone"> Par téléphone : </strong>
 
                   <a href="tel:514-442-3076"> 514-442-3076 </a>
                 </div>
               </div>
 
+              <!-- COURRIEL -->
+
               <div class="contact-address-row">
                 <i class="fa-solid fa-envelope"></i>
 
                 <div>
-                  <strong data-i18n="contact.email"> Courriel </strong>
+                  <strong data-i18n="contact.email"> Par courriel : </strong>
 
                   <a href="mailto:madimmigrationcanadienne@gmail.com">
                     madimmigrationcanadienne@gmail.com
@@ -403,7 +587,10 @@
               </div>
             </div>
 
-            <!-- GOOGLE MAP -->
+            <!-- =================================================
+             GOOGLE MAP
+             ================================================= -->
+
             <div class="contact-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.4766866878763!2d-73.70073528444064!3d45.52061217910156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc918769b1b576b%3A0xc1c8d3829d0db404!2s1940%20Rue%20Patricia%2C%20Saint-Laurent%2C%20QC%20H4L%202X7!5e0!3m2!1sen!2sca!4v1684541297697!5m2!1sen!2sca"
@@ -417,43 +604,55 @@
         </div>
       </section>
 
-      <!-- ===================================================== -->
-      <!-- SECTION 5 : CTA FINAL -->
-      <!-- ===================================================== -->
+      <!-- =====================================================
+       SECTION 5 : CTA FINAL
+       ===================================================== -->
+
       <section class="contact-final-cta">
         <div class="contact-final-overlay"></div>
 
         <div class="container contact-final-content">
-          <span class="section-eyebrow" data-i18n="contact.cta.eyebrow">
-            VOTRE PROJET COMMENCE ICI
+          <span class="section-eyebrow">
+            <span class="contact-lang-fr"> VOTRE PROJET COMMENCE ICI </span>
+
+            <span class="contact-lang-en"> YOUR PROJECT STARTS HERE </span>
           </span>
 
-          <h2 data-i18n="contact.cta.title">
+          <h2 class="contact-lang-fr">
             Prêt à discuter de votre projet d’immigration ?
           </h2>
 
-          <p data-i18n="contact.cta.text">
+          <h2 class="contact-lang-en">
+            Ready to discuss your immigration project?
+          </h2>
+
+          <p class="contact-lang-fr">
             Choisissez entre une évaluation préliminaire ou une consultation
             avec MAD Immigration Canadienne.
           </p>
 
+          <p class="contact-lang-en">
+            Choose between a preliminary assessment or a consultation with MAD
+            Immigration Canadienne.
+          </p>
+
           <div class="contact-final-buttons">
-            <a
-              href="rendezvous.html"
-              class="madic-btn madic-btn-red"
-              data-i18n="contact.cta.appointment"
-            >
+            <!-- RENDEZ-VOUS -->
+
+            <a href="rendezvous.html" class="madic-btn madic-btn-red">
               <i class="fa-solid fa-calendar-check"></i>
-              Prendre rendez-vous
+
+              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
             </a>
 
-            <a
-              href="formulaire.html"
-              class="madic-btn madic-btn-light"
-              data-i18n="contact.cta.evaluation"
-            >
+            <!-- ÉVALUATION -->
+
+            <a href="formulaire.html" class="madic-btn madic-btn-light">
               <i class="fa-solid fa-file-circle-check"></i>
-              Faire mon évaluation
+
+              <span class="contact-lang-fr"> Faire mon évaluation </span>
+
+              <span class="contact-lang-en"> Start my assessment </span>
             </a>
           </div>
         </div>
