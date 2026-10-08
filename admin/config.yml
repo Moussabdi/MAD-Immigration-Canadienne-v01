@@ -1,0 +1,35 @@
+# Depot GitHub MADIC configure.
+# GitHub exige une solution OAuth (voir GUIDE_INSTALLATION.md).
+backend:
+  name: github
+  repo: Moussabdi/MAD-Immigration-Canadienne-v01
+  branch: main
+
+locale: fr
+media_folder: "img/blogue"
+public_folder: "img/blogue"
+publish: true
+
+collections:
+  - name: "articles"
+    label: "Articles du blogue"
+    label_singular: "Article"
+    folder: "contenu/articles"
+    create: true
+    delete: true
+    extension: "json"
+    format: "json"
+    identifier_field: "title"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{date}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - {label: "Titre", name: "title", widget: "string"}
+      - {label: "Date de publication", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false}
+      - {label: "Auteur", name: "author", widget: "string", default: "Équipe MADIC"}
+      - {label: "Photo de l'auteur", name: "author_image", widget: "image", required: false}
+      - {label: "Catégorie", name: "category", widget: "select", options: ["Actualités", "Immigration familiale", "Résidence temporaire", "Résidence permanente", "Études", "Travail", "Citoyenneté", "Autre"]}
+      - {label: "Image principale", name: "image", widget: "image"}
+      - {label: "Résumé", name: "summary", widget: "text", hint: "Affiché sur la page principale du blogue"}
+      - {label: "Contenu de l'article", name: "body", widget: "markdown"}
+      - {label: "Publier", name: "published", widget: "boolean", default: false}

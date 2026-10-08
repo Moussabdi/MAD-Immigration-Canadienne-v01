@@ -1,0 +1,1036 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <title>MAD Immigration Canada</title>
+    <meta
+      name="description"
+      content="MAD Immigration Canadienne inc. est une entreprise Canadienne spécialisée dans l’immigration canadienne, Forte de l’ingéniosité de son équipe d’expérience."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="icon" href="img/favicon.png" />
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <link rel="icon" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+
+    <script defer src="js/script.js"></script>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="navbar__container">
+          <!-- LOGO -->
+          <a href="index.html" class="navbar__logo">
+            <img
+              src="img/logo_fr_transparent.png"
+              alt="MAD Immigration Canadienne"
+              class="logo"
+            />
+          </a>
+
+          <!-- MENU : 8 LIENS + 2 ACTIONS -->
+          <div class="navbar__content" id="navbar-content">
+            <div class="navbar__navblock">
+              <ul class="navbar__menu navbar__menu--all">
+                <li class="navbar__item">
+                  <a
+                    href="index.html"
+                    class="navbar__links"
+                    id="index"
+                    data-i18n="nav.home"
+                  >
+                    Accueil
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="services.html"
+                    class="navbar__links"
+                    id="services-page"
+                    data-i18n="nav.services"
+                  >
+                    Nos services
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="forfaits.html"
+                    class="navbar__links"
+                    data-i18n="nav.packages"
+                  >
+                    Nos forfaits
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="propos.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="about-page"
+                    data-i18n="nav.about"
+                  >
+                    À propos
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="carriere.html"
+                    class="navbar__links navbar__links--secondary"
+                    id="career-page"
+                    data-i18n="nav.career"
+                  >
+                    Carrière
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="evenements.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.events"
+                  >
+                    Événements
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="blogue.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.blog"
+                  >
+                    Blogue
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="joindre.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.contact"
+                  >
+                    Nous joindre
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <!-- ACTIONS DU MENU -->
+            <div class="navbar__actions">
+              <a
+                href="formulaire.html"
+                class="nav-action nav-action--outline"
+                id="signup"
+                data-i18n="nav.evaluation"
+              >
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Évaluation préliminaire</span>
+              </a>
+
+              <a
+                href="rendezvous.html"
+                class="nav-action nav-action--primary"
+                id="appointment"
+                data-i18n="nav.appointment"
+              >
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Prendre rendez-vous</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- LANGUES + MODE NUIT : TOUJOURS VISIBLES -->
+          <div class="navbar__utilities">
+            <div class="language-switcher">
+              <button
+                type="button"
+                class="lang-btn active"
+                data-lang="fr"
+                aria-label="Français"
+                title="Français"
+              >
+                <img
+                  src="img/flag-quebec.svg"
+                  width="24"
+                  height="16"
+                  alt="Drapeau du Québec"
+                  class="lang-flag"
+                />
+                <span>FR</span>
+              </button>
+
+              <button
+                type="button"
+                class="lang-btn"
+                data-lang="en"
+                aria-label="English"
+                title="English"
+              >
+                <img
+                  src="img/flag-canada.svg"
+                  width="24"
+                  height="16"
+                  alt="Canadian flag"
+                  class="lang-flag"
+                />
+                <span>EN</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              id="theme-toggle"
+              class="theme-toggle-btn"
+              aria-label="Activer le mode nuit"
+              title="Mode nuit"
+            >
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+
+          <!-- HAMBURGER -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="page-evenements" class="events-page">
+      <!-- =====================================================
+       SECTION 1 : HERO
+       ===================================================== -->
+
+      <section class="events-hero">
+        <div class="events-hero-overlay"></div>
+
+        <div class="container events-hero-content">
+          <div class="events-lang events-lang-fr">
+            <h1>Nos événements et notre engagement communautaire</h1>
+
+            <p class="events-hero-subtitle">
+              Découvrez quelques moments marquants de MAD Immigration Canadienne
+              à travers nos rencontres, présentations, activités communautaires
+              et événements favorisant les échanges, l’intégration et le
+              développement professionnel.
+            </p>
+
+            <div class="madic-hero-buttons">
+              <a href="#talent-without-borders" class="madic-btn madic-btn-red">
+                <i class="fa-solid fa-images"></i>
+                <span>Voir les événements</span>
+              </a>
+
+              <a href="joindre.html" class="madic-btn madic-btn-dark">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Nous joindre</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="events-lang events-lang-en">
+            <h1>Our events and community involvement</h1>
+
+            <p class="events-hero-subtitle">
+              Discover some memorable moments from MAD Immigration Canada
+              through our meetings, presentations, community activities and
+              events promoting networking, integration and professional
+              development.
+            </p>
+
+            <div class="madic-hero-buttons">
+              <a href="#talent-without-borders" class="madic-btn madic-btn-red">
+                <i class="fa-solid fa-images"></i>
+                <span>View events</span>
+              </a>
+
+              <a href="joindre.html" class="madic-btn madic-btn-dark">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Contact us</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 2 : INTRODUCTION
+       ===================================================== -->
+
+      <section class="events-intro">
+        <div class="container events-intro-grid">
+          <div class="events-intro-content">
+            <div class="events-lang events-lang-fr">
+              <div class="section-title section-title-left">
+                <h2>Plus que des services d’immigration</h2>
+              </div>
+
+              <p>
+                MAD Immigration Canadienne croit que l’intégration ne s’arrête
+                pas à l’obtention d’un statut au Canada. Elle passe également
+                par les rencontres, le partage d’expérience, le développement
+                d’un réseau et la participation active à la société canadienne.
+              </p>
+            </div>
+
+            <div class="events-lang events-lang-en">
+              <div class="section-title section-title-left">
+                <h2>More than immigration services</h2>
+              </div>
+
+              <p>
+                MAD Immigration Canada believes that integration does not end
+                with obtaining immigration status in Canada. It also involves
+                meeting people, sharing experiences, building a network and
+                actively participating in Canadian society.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-intro-image">
+            <img
+              src="img/Web_Event/Event_Talent_without_boders_8.jpg"
+              alt="Événement communautaire MAD Immigration Canadienne"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 3 : TALENT WITHOUT BORDERS
+       ===================================================== -->
+
+      <section
+        id="talent-without-borders"
+        class="events-section events-section--light"
+      >
+        <div class="container">
+          <div class="events-lang events-lang-fr">
+            <div class="section-title">
+              <h2>Talent Without Borders</h2>
+
+              <p>
+                Une activité axée sur l’information, les échanges communautaires
+                et le partage d’expérience autour de l’immigration et de
+                l’intégration au Canada.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-lang events-lang-en">
+            <div class="section-title">
+              <h2>Talent Without Borders</h2>
+
+              <p>
+                An event focused on information, community exchanges and
+                experience-sharing related to immigration and integration in
+                Canada.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-gallery">
+            <figure class="events-gallery-large">
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_5.jpg"
+                alt="Présentation MAD Immigration Canadienne"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_1.jpg"
+                alt="Participants à l'événement"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_2.jpg"
+                alt="Présentation lors de l'événement"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_3.jpg"
+                alt="Conférence MADIC"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_4.jpg"
+                alt="Photo avec une participante"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_6.jpg"
+                alt="Présentation et kiosque MADIC"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_7.jpg"
+                alt="Photo de groupe à l'événement"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_8.jpg"
+                alt="MAD Immigration Canadienne"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Event_Talent_without_boders_9.jpg"
+                alt="Présentation publique MADIC"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 4 : DIASPORA - 31 MARS 2025
+       ===================================================== -->
+
+      <!-- =====================================================
+     SECTION 4 : MOIS DE L'HISTOIRE DES NOIRS - 28 FÉVRIER 2025
+     ===================================================== -->
+
+      <section class="events-section">
+        <div class="container">
+          <div class="events-lang events-lang-fr">
+            <div class="section-title">
+              <h2>
+                Célébration du Mois de l’histoire des Noirs — 28 février 2025
+              </h2>
+
+              <p>
+                MAD Immigration Canadienne (MADIC) a participé à cette activité
+                communautaire organisée dans le cadre du Mois de l’histoire des
+                Noirs au Canada. Cette rencontre sportive a réuni plusieurs
+                participants autour du sport, du partage et du rapprochement
+                communautaire.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-lang events-lang-en">
+            <div class="section-title">
+              <h2>Black History Month Celebration — February 28, 2025</h2>
+
+              <p>
+                MAD Immigration Canada (MADIC) participated in this community
+                activity held as part of Black History Month in Canada. This
+                sporting event brought participants together through sport,
+                community engagement and shared experiences.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-gallery">
+            <figure class="events-gallery-large">
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-02-28_1.jpg"
+                alt="Célébration du Mois de l'histoire des Noirs au Canada"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-02-28_2.jpg"
+                alt="Participants à la célébration du Mois de l'histoire des Noirs"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-02-28_3.jpg"
+                alt="Activité sportive et communautaire"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-02-28_4.jpg"
+                alt="Photo de groupe de l'activité communautaire"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+     SECTION 5 : TOURNOI D'ÉTÉ DIASPORA UNIS - 21 JUIN 2025
+     ===================================================== -->
+
+      <section class="events-section events-section--light">
+        <div class="container">
+          <div class="events-lang events-lang-fr">
+            <div class="section-title">
+              <h2>Tournoi d’été 2025 — Diaspora Unis</h2>
+
+              <p>
+                MAD Immigration Canadienne (MADIC) est fière d’avoir commandité
+                le tournoi d’été 2025 de Diaspora Unis. Cette activité sportive
+                et communautaire a réuni plusieurs équipes dans un esprit de
+                compétition, de fair-play, de rassemblement et de fraternité.
+                MADIC a également contribué à la remise des trophées
+                récompensant les équipes participantes.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-lang events-lang-en">
+            <div class="section-title">
+              <h2>Summer 2025 Tournament — Diaspora Unis</h2>
+
+              <p>
+                MAD Immigration Canada (MADIC) was proud to sponsor the Diaspora
+                Unis Summer 2025 Tournament. This sports and community event
+                brought several teams together in a spirit of competition, fair
+                play, community and fellowship. MADIC also contributed to the
+                presentation of trophies recognizing the participating teams.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-gallery">
+            <!-- Photo principale demandée : _9 -->
+            <figure class="events-gallery-large">
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_9.jpg"
+                alt="Tournoi d'été 2025 de Diaspora Unis commandité par MADIC"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_1.jpg"
+                alt="Équipe participant au tournoi d'été Diaspora Unis"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_2.jpg"
+                alt="Équipe du tournoi Diaspora Unis"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_3.jpg"
+                alt="Équipe participant au tournoi"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_4.jpg"
+                alt="Équipe de football du tournoi d'été"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_5.jpg"
+                alt="Participants au tournoi d'été 2025"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_6.jpg"
+                alt="Équipe portant les chandails MAD Immigration Canadienne"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_7.jpg"
+                alt="Équipe participante Diaspora Unis"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_8.jpg"
+                alt="Trophées du tournoi Diaspora Unis Summer 2025"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_10.jpg"
+                alt="Trophées offerts pour le tournoi Diaspora Unis"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_11.jpg"
+                alt="Trophées et drapeaux du tournoi d'été 2025"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_12.jpg"
+                alt="Trophées Diaspora Unis Summer 2025"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-06-21_13.jpg"
+                alt="Installation MADIC au tournoi Diaspora Unis"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 5 : DIASPORA - 27 JUILLET 2025
+       ===================================================== -->
+
+      <section class="events-section events-section--light">
+        <div class="container">
+          <div class="events-lang events-lang-fr">
+            <div class="section-title">
+              <h2>Diaspora — 27 juillet 2025</h2>
+
+              <p>
+                Une autre rencontre réunissant plusieurs membres de la
+                communauté dans une ambiance conviviale, propice aux échanges et
+                au réseautage.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-lang events-lang-en">
+            <div class="section-title">
+              <h2>Diaspora — July 27, 2025</h2>
+
+              <p>
+                Another gathering bringing together members of the community in
+                a friendly environment that encouraged conversation and
+                networking.
+              </p>
+            </div>
+          </div>
+
+          <div class="events-gallery">
+            <figure class="events-gallery-large">
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-07-27_6.jpg"
+                alt="Photo de groupe de la diaspora"
+                loading="lazy"
+              />
+            </figure>
+
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-07-27_1.jpg"
+                alt="Rencontre diaspora"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-07-27_2.jpg"
+                alt="Rencontre communautaire"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-07-27_3.jpg"
+                alt="Participants"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-07-27_4.jpg"
+                alt="Repas communautaire"
+                loading="lazy"
+              />
+            </figure>
+            <figure>
+              <img
+                src="img/Web_Event/Diaspora_Event-2025-07-27_5.jpg"
+                alt="Rencontre et réseautage"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 6 : IMPACT
+       ===================================================== -->
+
+      <section class="events-impact">
+        <div class="container">
+          <div class="events-lang events-lang-fr">
+            <div class="section-title section-title-light">
+              <h2>Créer des liens au-delà de l’immigration</h2>
+            </div>
+
+            <div class="events-impact-grid">
+              <div class="events-impact-card">
+                <div class="events-impact-icon dark">
+                  <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <h3>Communauté</h3>
+
+                <p>
+                  Favoriser les rencontres et créer des liens entre les nouveaux
+                  arrivants et leur communauté.
+                </p>
+              </div>
+
+              <div class="events-impact-card">
+                <div class="events-impact-icon red">
+                  <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <h3>Réseautage</h3>
+
+                <p>
+                  Créer des occasions d’échange, de collaboration et de
+                  développement de réseaux professionnels.
+                </p>
+              </div>
+
+              <div class="events-impact-card">
+                <div class="events-impact-icon dark">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <h3>Intégration</h3>
+
+                <p>
+                  Soutenir une intégration sociale et professionnelle durable au
+                  sein de la société canadienne.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="events-lang events-lang-en">
+            <div class="section-title section-title-light">
+              <h2>Building connections beyond immigration</h2>
+            </div>
+
+            <div class="events-impact-grid">
+              <div class="events-impact-card">
+                <div class="events-impact-icon dark">
+                  <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <h3>Community</h3>
+
+                <p>
+                  Encouraging meetings and building connections between
+                  newcomers and their community.
+                </p>
+              </div>
+
+              <div class="events-impact-card">
+                <div class="events-impact-icon red">
+                  <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <h3>Networking</h3>
+
+                <p>
+                  Creating opportunities for exchange, collaboration and
+                  professional networking.
+                </p>
+              </div>
+
+              <div class="events-impact-card">
+                <div class="events-impact-icon dark">
+                  <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <h3>Integration</h3>
+
+                <p>
+                  Supporting sustainable social and professional integration
+                  within Canadian society.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================
+       SECTION 7 : CTA FINAL
+       ===================================================== -->
+
+      <section class="events-final-cta">
+        <div class="events-final-overlay"></div>
+
+        <div class="container events-final-content">
+          <div class="events-lang events-lang-fr">
+            <div class="section-title section-title-light">
+              <h2>Vous avez un projet d’immigration au Canada ?</h2>
+
+              <p>
+                MAD Immigration Canadienne peut vous accompagner dans l’analyse
+                de votre situation et dans vos démarches d’immigration
+                canadienne.
+              </p>
+            </div>
+
+            <div class="madic-hero-buttons">
+              <a href="formulaire.html" class="madic-btn madic-btn-red">
+                <i class="fa-solid fa-file-circle-check"></i>
+                <span>Évaluation préliminaire</span>
+              </a>
+
+              <a href="rendezvous.html" class="madic-btn madic-btn-light">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Prendre rendez-vous</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="events-lang events-lang-en">
+            <div class="section-title section-title-light">
+              <h2>Do you have an immigration project in Canada?</h2>
+
+              <p>
+                MAD Immigration Canada can assist you in assessing your
+                situation and navigating your Canadian immigration process.
+              </p>
+            </div>
+
+            <div class="madic-hero-buttons">
+              <a href="formulaire.html" class="madic-btn madic-btn-red">
+                <i class="fa-solid fa-file-circle-check"></i>
+                <span>Preliminary Assessment</span>
+              </a>
+
+              <a href="rendezvous.html" class="madic-btn madic-btn-light">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Book an Appointment</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container grid--footer">
+        <div class="logo-col">
+          <a href="#" class="footer-logo">
+            <img
+              src="img/logo_fr_transparent.png"
+              alt="omnifood-logo"
+              class="logo"
+            />
+          </a>
+
+          <ul class="social-links">
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a class="footer-link" href="#"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            Copyright &copy;
+            <span class="year"></span>
+            Design MADMECA Inc.
+            <span data-i18n="footer.copyright">
+              Tous les droits réservés.
+            </span>
+          </p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading" data-i18n="footer.contact">
+            Contactez-nous
+          </p>
+          <address class="contacts">
+            <p class="address">
+              1622 Rue Barré, Bureau 202, Saint-Laurent, QC, CA
+            </p>
+            <p>
+              <a class="footer-link" href="tel:415-201-6370">514-442-3076</a
+              ><br />
+              <a class="footer-link" href="mailto:hello@omnifood.com"
+                >madimmigrationcanadienne@gmail.com</a
+              >
+            </p>
+          </address>
+        </div>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.account">Compte</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.createAccount">
+                Créer un compte
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.register">
+                S'inscrire
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#">iOS</a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.android">
+                Android
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.company">Compagnie</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.about">
+                À propos de MADIC
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.business">
+                Affaires
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.partners">
+                Partenaires
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.career">
+                Carrière
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="nav-col">
+          <p class="footer-heading" data-i18n="footer.resources">Ressources</p>
+
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.directory">
+                Répertoire Immigration
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.help">
+                Centre d'aide
+              </a>
+            </li>
+
+            <li>
+              <a class="footer-link" href="#" data-i18n="footer.privacy">
+                Confidentialité et conditions
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

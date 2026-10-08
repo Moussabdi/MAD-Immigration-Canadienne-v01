@@ -34,9 +34,7 @@
     <header class="header">
       <nav class="navbar">
         <div class="navbar__container">
-          <!-- ===================================================
-         LOGO
-         =================================================== -->
+          <!-- LOGO -->
           <a href="index.html" class="navbar__logo">
             <img
               src="img/logo_fr_transparent.png"
@@ -45,29 +43,8 @@
             />
           </a>
 
-          <!-- ===================================================
-         BOUTON MOBILE
-         =================================================== -->
-          <button
-            type="button"
-            class="navbar__toggle"
-            id="mobile-menu"
-            aria-label="Ouvrir le menu"
-            aria-expanded="false"
-            aria-controls="navbar-content"
-          >
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </button>
-
-          <!-- ===================================================
-         CONTENU
-         =================================================== -->
+          <!-- MENU : 8 LIENS + 2 ACTIONS -->
           <div class="navbar__content" id="navbar-content">
-            <!-- =================================================
-           NAVIGATION 2 LIGNES
-           ================================================= -->
             <div class="navbar__navblock">
               <ul class="navbar__menu navbar__menu--all">
                 <li class="navbar__item">
@@ -126,6 +103,26 @@
 
                 <li class="navbar__item">
                   <a
+                    href="evenements.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.events"
+                  >
+                    Événements
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
+                    href="blogue.html"
+                    class="navbar__links navbar__links--secondary"
+                    data-i18n="nav.blog"
+                  >
+                    Blogue
+                  </a>
+                </li>
+
+                <li class="navbar__item">
+                  <a
                     href="joindre.html"
                     class="navbar__links navbar__links--secondary"
                     data-i18n="nav.contact"
@@ -136,11 +133,8 @@
               </ul>
             </div>
 
-            <!-- =================================================
-           ACTIONS
-           ================================================= -->
+            <!-- ACTIONS DU MENU -->
             <div class="navbar__actions">
-              <!-- ÉVALUATION -->
               <a
                 href="formulaire.html"
                 class="nav-action nav-action--outline"
@@ -148,11 +142,9 @@
                 data-i18n="nav.evaluation"
               >
                 <i class="fa-solid fa-clipboard-check"></i>
-
-                <span> Évaluation préliminaire </span>
+                <span>Évaluation préliminaire</span>
               </a>
 
-              <!-- RENDEZ-VOUS -->
               <a
                 href="rendezvous.html"
                 class="nav-action nav-action--primary"
@@ -160,54 +152,73 @@
                 data-i18n="nav.appointment"
               >
                 <i class="fa-solid fa-calendar-check"></i>
-
-                <span> Prendre rendez-vous </span>
+                <span>Prendre rendez-vous</span>
               </a>
-
-              <!-- =================================================
-             LANGUES
-             Conserver exactement lang-btn + data-lang
-             ================================================= -->
-              <div class="language-switcher">
-                <button
-                  type="button"
-                  class="lang-btn active"
-                  data-lang="fr"
-                  aria-label="Français"
-                  title="Français"
-                >
-                  <span class="lang-flag lang-flag--qc"> ⚜ </span>
-
-                  <span> FR </span>
-                </button>
-
-                <button
-                  type="button"
-                  class="lang-btn"
-                  data-lang="en"
-                  aria-label="English"
-                  title="English"
-                >
-                  <span class="lang-flag lang-flag--ca"> 🍁 </span>
-
-                  <span> EN </span>
-                </button>
-              </div>
-
-              <!-- =================================================
-             MODE NUIT
-             ================================================= -->
-              <button
-                type="button"
-                id="theme-toggle"
-                class="theme-toggle-btn"
-                aria-label="Activer le mode nuit"
-                title="Mode nuit"
-              >
-                <i class="fa-solid fa-moon"></i>
-              </button>
             </div>
           </div>
+
+          <!-- LANGUES + MODE NUIT : TOUJOURS VISIBLES -->
+          <div class="navbar__utilities">
+            <div class="language-switcher">
+              <button
+                type="button"
+                class="lang-btn active"
+                data-lang="fr"
+                aria-label="Français"
+                title="Français"
+              >
+                <img
+                  src="img/flag-quebec.svg"
+                  width="24"
+                  height="16"
+                  alt="Drapeau du Québec"
+                  class="lang-flag"
+                />
+                <span>FR</span>
+              </button>
+
+              <button
+                type="button"
+                class="lang-btn"
+                data-lang="en"
+                aria-label="English"
+                title="English"
+              >
+                <img
+                  src="img/flag-canada.svg"
+                  width="24"
+                  height="16"
+                  alt="Canadian flag"
+                  class="lang-flag"
+                />
+                <span>EN</span>
+              </button>
+            </div>
+
+            <button
+              type="button"
+              id="theme-toggle"
+              class="theme-toggle-btn"
+              aria-label="Activer le mode nuit"
+              title="Mode nuit"
+            >
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+
+          <!-- HAMBURGER -->
+          <button
+            type="button"
+            class="navbar__toggle"
+            id="mobile-menu"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+            aria-controls="navbar-content"
+          >
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </button>
         </div>
       </nav>
     </header>

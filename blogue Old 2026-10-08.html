@@ -1,744 +1,607 @@
 <!doctype html>
-
 <html lang="fr">
-
   <head>
-
     <meta charset="utf-8" />
-
     <title>MAD Immigration Canada</title>
-
     <meta
-
       name="description"
-
       content="MAD Immigration Canadienne inc. est une entreprise Canadienne spécialisée dans l’immigration canadienne, Forte de l’ingéniosité de son équipe d’expérience."
-
     />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
-
     <link rel="icon" href="img/favicon.png" />
-
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-
     <link rel="manifest" href="manifest.webmanifest" />
-
     <link rel="stylesheet" href="css/normalize.css" />
-
     <link rel="stylesheet" href="css/styles.css" />
-
     <link rel="stylesheet" href="css/queries.css" />
-
     <link rel="icon" href="favicon.png" />
-
     <link
-
       rel="stylesheet"
-
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-
     />
-
     <link
-
       rel="stylesheet"
-
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-
       crossorigin="anonymous"
-
     />
-
     <script defer src="js/script.js"></script>
-
-    <link rel="stylesheet" href="css/blogue-cms.css" />
-</head>
-
-
+  </head>
 
   <body>
-
     <header class="header">
-
       <nav class="navbar">
-
         <div class="navbar__container">
-
           <!-- LOGO -->
-
           <a href="index.html" class="navbar__logo">
-
             <img
-
               src="img/logo_fr_transparent.png"
-
               alt="MAD Immigration Canadienne"
-
               class="logo"
-
             />
-
           </a>
-
-
 
           <!-- MENU : 8 LIENS + 2 ACTIONS -->
-
           <div class="navbar__content" id="navbar-content">
-
             <div class="navbar__navblock">
-
               <ul class="navbar__menu navbar__menu--all">
-
                 <li class="navbar__item">
-
                   <a
-
                     href="index.html"
-
                     class="navbar__links"
-
                     id="index"
-
                     data-i18n="nav.home"
-
                   >
-
                     Accueil
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="services.html"
-
                     class="navbar__links"
-
                     id="services-page"
-
                     data-i18n="nav.services"
-
                   >
-
                     Nos services
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="forfaits.html"
-
                     class="navbar__links"
-
                     data-i18n="nav.packages"
-
                   >
-
                     Nos forfaits
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="propos.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     id="about-page"
-
                     data-i18n="nav.about"
-
                   >
-
                     À propos
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="carriere.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     id="career-page"
-
                     data-i18n="nav.career"
-
                   >
-
                     Carrière
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="evenements.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     data-i18n="nav.events"
-
                   >
-
                     Événements
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="blogue.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     data-i18n="nav.blog"
-
                   >
-
                     Blogue
-
                   </a>
-
                 </li>
-
-
 
                 <li class="navbar__item">
-
                   <a
-
                     href="joindre.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     data-i18n="nav.contact"
-
                   >
-
                     Nous joindre
-
                   </a>
-
                 </li>
-
               </ul>
-
             </div>
-
-
 
             <!-- ACTIONS DU MENU -->
-
             <div class="navbar__actions">
-
               <a
-
                 href="formulaire.html"
-
                 class="nav-action nav-action--outline"
-
                 id="signup"
-
                 data-i18n="nav.evaluation"
-
               >
-
                 <i class="fa-solid fa-clipboard-check"></i>
-
                 <span>Évaluation préliminaire</span>
-
               </a>
-
-
 
               <a
-
                 href="rendezvous.html"
-
                 class="nav-action nav-action--primary"
-
                 id="appointment"
-
                 data-i18n="nav.appointment"
-
               >
-
                 <i class="fa-solid fa-calendar-check"></i>
-
                 <span>Prendre rendez-vous</span>
-
               </a>
-
             </div>
-
           </div>
-
-
 
           <!-- LANGUES + MODE NUIT : TOUJOURS VISIBLES -->
-
           <div class="navbar__utilities">
-
             <div class="language-switcher">
-
               <button
-
                 type="button"
-
                 class="lang-btn active"
-
                 data-lang="fr"
-
                 aria-label="Français"
-
                 title="Français"
-
               >
-
                 <img
-
                   src="img/flag-quebec.svg"
-
                   width="24"
-
                   height="16"
-
                   alt="Drapeau du Québec"
-
                   class="lang-flag"
-
                 />
-
                 <span>FR</span>
-
               </button>
-
-
 
               <button
-
                 type="button"
-
                 class="lang-btn"
-
                 data-lang="en"
-
                 aria-label="English"
-
                 title="English"
-
               >
-
                 <img
-
                   src="img/flag-canada.svg"
-
                   width="24"
-
                   height="16"
-
                   alt="Canadian flag"
-
                   class="lang-flag"
-
                 />
-
                 <span>EN</span>
-
               </button>
-
             </div>
 
-
-
             <button
-
               type="button"
-
               id="theme-toggle"
-
               class="theme-toggle-btn"
-
               aria-label="Activer le mode nuit"
-
               title="Mode nuit"
-
             >
-
               <i class="fa-solid fa-moon"></i>
-
             </button>
-
           </div>
 
-
-
           <!-- HAMBURGER -->
-
           <button
-
             type="button"
-
             class="navbar__toggle"
-
             id="mobile-menu"
-
             aria-label="Ouvrir le menu"
-
             aria-expanded="false"
-
             aria-controls="navbar-content"
-
           >
-
             <span class="bar"></span>
-
             <span class="bar"></span>
-
             <span class="bar"></span>
-
           </button>
-
         </div>
-
       </nav>
-
     </header>
 
-
-
     <main class="madic-blog">
-  <section class="blog-hero"><h1 data-i18n="blog.title">Blogue</h1><p>Actualités et informations sur l'immigration canadienne</p></section>
-  <div class="blog-layout">
-    <section class="blog-articles" id="madic-articles" aria-label="Articles du blogue"><p>Chargement des articles…</p></section>
-    <aside class="blog-sidebar" aria-label="Navigation du blogue">
-      <section class="blog-widget"><h3>Publications récentes</h3><div id="madic-recent"></div></section>
-      <section class="blog-widget blog-archives"><h3>Archives</h3><ul id="madic-archives"></ul></section>
-    </aside>
-  </div>
-</main>
+      <section class="blog-hero">
+        <h1 data-i18n="blog.title">Blogue</h1>
+        <p>Actualités et informations sur l'immigration canadienne</p>
+      </section>
 
+      <div class="blog-layout">
+        <!-- COLONNE PRINCIPALE -->
+        <section class="blog-articles" aria-label="Articles du blogue">
+          <!-- ARTICLE 1 -->
+          <article class="blog-post" id="article-regroupement">
+            <!-- AUTEUR À GAUCHE -->
+            <aside class="blog-post-author">
+              <img
+                src="img/moussa-abdi-diraneh.jpg"
+                alt="Moussa Abdi Diraneh"
+                class="blog-author-avatar"
+                onerror="this.style.display = 'none'"
+              />
 
+              <span class="blog-author-name"> Par Moussa Abdi Diraneh </span>
+
+              <time
+                datetime="2020-07-07"
+                data-i18n="blog.article1.date"
+                class="blog-author-date"
+              >
+                07 juillet 2020
+              </time>
+            </aside>
+
+            <!-- CONTENU À DROITE DE L'AUTEUR -->
+            <div class="blog-post-content">
+              <div class="blog-post-image">
+                <img
+                  src="img/parrainage_5.png"
+                  alt="Regroupement familial au Canada"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="blog-post-category">Immigration familiale</div>
+
+              <h2 data-i18n="blog.article1.title">Regroupement familial</h2>
+
+              <div class="blog-post-excerpt">
+                <p data-i18n="blog.article1.paragraph1">
+                  Regroupement familial: attendre longtemps ou agir vite! Le
+                  Conseil constitutionnel a posé comme principe que le droit
+                  pour les étrangers de mener une vie familiale normale «
+                  comporte en particulier la faculté pour ces étrangers de faire
+                  venir auprès d’eux leurs conjoints et leurs enfants mineurs
+                  sous réserve de restrictions tenant à la sauvegarde de l’ordre
+                  public et à la protection de la santé publique, lesquelles
+                  revêtent le caractère d’objectifs de valeur constitutionnelle
+                  » [1]. En pratique, pour se faire rejoindre par sa famille
+                  quand on est étranger, il faut savoir être patient. Mais pas
+                  trop tout de même... A juste titre, la Halde (Haute Autorité
+                  de lutte contre les discriminations et pour l’égalité)
+                  contestait le caractère particulièrement restrictif des
+                  conditions de regroupement familial telles qu’elles résultent
+                  de la législation française, et tout particulièrement de celle
+                  tenant aux ressources stables et suffisantes [2].
+                </p>
+
+                <p data-i18n="blog.article1.paragraph2">
+                  Depuis 2004, le regroupement familial est devenu le motif le
+                  moins courant d’immigration familiale. Ceci s’explique par le
+                  fait que, depuis 2003, le nombre d’étrangers non
+                  communautaires admis au séjour dans le cadre du regroupement
+                  familial a considérablement chuté. Un des ressorts de
+                  dissuasion du respect de la procédure de regroupement familial
+                  est la durée d’instruction des demandes qui atteint
+                  généralement une ou plusieurs années. Pourtant la procédure de
+                  regroupement familial est encadrée par la loi et le délai
+                  imparti à l’administration pour instruire les demandes faites
+                  à l’OFII (Office Français de l’Immigration et de
+                  l’Intégration) est de 6 mois.
+                </p>
+              </div>
+
+              <div class="blog-post-footer">
+                <div class="blog-share">
+                  <a href="https://www.facebook.com/" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </div>
+
+                <a href="#article-regroupement" class="blog-readmore">
+                  Lire la suite
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ARTICLE 2 -->
+          <article class="blog-post" id="article-temporaire">
+            <!-- AUTEUR À GAUCHE -->
+            <aside class="blog-post-author">
+              <img
+                src="img/moussa-abdi-diraneh.jpg"
+                alt="Moussa Abdi Diraneh"
+                class="blog-author-avatar"
+                onerror="this.style.display = 'none'"
+              />
+
+              <span class="blog-author-name"> Par Moussa Abdi Diraneh </span>
+
+              <time
+                datetime="2020-09-12"
+                data-i18n="blog.article2.date"
+                class="blog-author-date"
+              >
+                12 septembre 2020
+              </time>
+            </aside>
+
+            <div class="blog-post-content">
+              <div class="blog-post-image">
+                <img
+                  src="img/ImmigrationTemporaire_2.png"
+                  alt="Résidence temporaire au Canada"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="blog-post-category">Immigration</div>
+
+              <h2 data-i18n="blog.article2.title">Résidence temporaire</h2>
+
+              <div class="blog-post-excerpt">
+                <p data-i18n="blog.article2.paragraph1">
+                  Qu'est-ce qu'un visa de résident temporaire? Un visa de
+                  résident temporaire est un document délivré par un bureau
+                  canadien des visas situé à l’extérieur du Canada. Ce document
+                  démontre que le détenteur a satisfait aux exigences
+                  d’admission au Canada à titre de visiteur. Un visa de résident
+                  temporaire vous permet de vous rendre au Canada, mais pas
+                  nécessairement d’y entrer. C’est l’agent des services
+                  frontaliers du point d’entrée (aéroport, frontière) qui
+                  détermine, à votre arrivée au Canada, si vous remplissez
+                  toujours toutes les exigences pour entrer au Canada. Une fois
+                  que l’on vous permet d’entrer au Canada, vous recevez le
+                  statut de résident temporaire.
+                </p>
+
+                <p data-i18n="blog.article2.paragraph2">
+                  Qu'est-ce que le statut de résident temporaire? Si vous entrez
+                  au Canada en tant que visiteur, étudiant ou travailleur
+                  temporaire, vous recevez le statut de résident temporaire pour
+                  une période de temps limitée. Le statut de résident temporaire
+                  n’est pas la même chose qu’un visa de résident temporaire.
+                  Seules les personnes qui proviennent d’un des pays et
+                  territoires dont les citoyens ont besoin d’un visa de résident
+                  temporaire pour entrer au Canada comme visiteurs doivent
+                  obtenir un visa de résident temporaire avant de se rendre au
+                  Canada. Une fois que l’on vous permet d’entrer au Canada, que
+                  ce soit avec un visa de résident temporaire ou non, vous
+                  recevez le statut de résident temporaire.
+                </p>
+              </div>
+
+              <div class="blog-post-footer">
+                <div class="blog-share">
+                  <a href="https://www.facebook.com/" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </div>
+
+                <a href="#article-temporaire" class="blog-readmore">
+                  Lire la suite
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- COLONNE DE DROITE -->
+        <aside class="blog-sidebar">
+          <!-- ARTICLES RÉCENTS -->
+          <div class="blog-widget">
+            <h3>Publications récentes</h3>
+
+            <div class="blog-recent-post">
+              <a href="#article-temporaire">
+                <img
+                  src="img/ImmigrationTemporaire_2.png"
+                  alt="Résidence temporaire"
+                  loading="lazy"
+                />
+              </a>
+              <div>
+                <time datetime="2020-09-12">12 septembre 2020</time>
+                <h4>
+                  <a href="#article-temporaire"> Résidence temporaire </a>
+                </h4>
+              </div>
+            </div>
+
+            <div class="blog-recent-post">
+              <a href="#article-regroupement">
+                <img
+                  src="img/parrainage_5.png"
+                  alt="Regroupement familial"
+                  loading="lazy"
+                />
+              </a>
+              <div>
+                <time datetime="2020-07-07">07 juillet 2020</time>
+                <h4>
+                  <a href="#article-regroupement"> Regroupement familial </a>
+                </h4>
+              </div>
+            </div>
+          </div>
+
+          <!-- ARCHIVES -->
+          <div class="blog-widget blog-archives">
+            <h3>Archives</h3>
+            <ul>
+              <li>
+                <a href="#article-temporaire">Septembre 2020</a>
+                <span>(1)</span>
+              </li>
+              <li>
+                <a href="#article-regroupement">Juillet 2020</a>
+                <span>(1)</span>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </main>
 
     <footer class="footer">
-
       <div class="container grid--footer">
-
         <div class="logo-col">
-
           <a href="#" class="footer-logo">
-
             <img
-
               src="img/logo_fr_transparent.png"
-
               alt="omnifood-logo"
-
               class="logo"
-
             />
-
           </a>
 
-
-
           <ul class="social-links">
-
             <li>
-
               <a class="footer-link" href="#"
-
                 ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
-
               ></a>
-
             </li>
-
             <li>
-
               <a class="footer-link" href="#"
-
                 ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
-
               ></a>
-
             </li>
-
             <li>
-
               <a class="footer-link" href="#"
-
                 ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
-
               ></a>
-
             </li>
-
           </ul>
-
           <p class="copyright">
-
             Copyright &copy;
-
             <span class="year"></span>
-
             Design MADMECA Inc.
-
             <span data-i18n="footer.copyright">
-
               Tous les droits réservés.
-
             </span>
-
           </p>
-
         </div>
-
-
 
         <div class="address-col">
-
           <p class="footer-heading" data-i18n="footer.contact">
-
             Contactez-nous
-
           </p>
-
           <address class="contacts">
-
             <p class="address">
-
               1622 Rue Barré, Bureau 202, Saint-Laurent, QC, CA
-
             </p>
-
             <p>
-
               <a class="footer-link" href="tel:415-201-6370">514-442-3076</a
-
               ><br />
-
               <a class="footer-link" href="mailto:hello@omnifood.com"
-
                 >madimmigrationcanadienne@gmail.com</a
-
               >
-
             </p>
-
           </address>
-
         </div>
 
-
-
         <nav class="nav-col">
-
           <p class="footer-heading" data-i18n="footer.account">Compte</p>
 
-
-
           <ul class="footer-nav">
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.createAccount">
-
                 Créer un compte
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.register">
-
                 S'inscrire
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#">iOS</a>
-
             </li>
-
-
 
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.android">
-
                 Android
-
               </a>
-
             </li>
-
           </ul>
-
         </nav>
 
-
-
         <nav class="nav-col">
-
           <p class="footer-heading" data-i18n="footer.company">Compagnie</p>
 
-
-
           <ul class="footer-nav">
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.about">
-
                 À propos de MADIC
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.business">
-
                 Affaires
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.partners">
-
                 Partenaires
-
               </a>
-
             </li>
-
-
 
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.career">
-
                 Carrière
-
               </a>
-
             </li>
-
           </ul>
-
         </nav>
-
-
 
         <nav class="nav-col">
-
           <p class="footer-heading" data-i18n="footer.resources">Ressources</p>
 
-
-
           <ul class="footer-nav">
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.directory">
-
                 Répertoire Immigration
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.help">
-
                 Centre d'aide
-
               </a>
-
             </li>
-
-
 
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.privacy">
-
                 Confidentialité et conditions
-
               </a>
-
             </li>
-
           </ul>
-
         </nav>
-
       </div>
-
     </footer>
-
-    <script src="js/blogue-cms.js" defer></script>
-</body>
-
+  </body>
 </html>
