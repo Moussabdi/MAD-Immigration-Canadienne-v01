@@ -6,7 +6,7 @@ from datetime import date
 root=Path(__file__).resolve().parent
 entries=[]
 for path in sorted((root/'contenu/articles').glob('*.json')):
-    obj=json.loads(path.read_text(encoding='utf-8'))
+    obj=json.loads(path.read_text(encoding='utf-8-sig'))
     if obj.get('published') is not True: continue
     slug=path.stem
     if not re.fullmatch(r'[a-zA-Z0-9_-]+',slug): raise ValueError(f'Slug invalide: {slug}')
