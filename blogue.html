@@ -1,523 +1,402 @@
 <!doctype html>
 
 <html lang="fr">
-
   <head>
-
     <meta charset="utf-8" />
-
     <title>MAD Immigration Canada</title>
-
     <meta
-
       name="description"
-
       content="MAD Immigration Canadienne inc. est une entreprise Canadienne spécialisée dans l’immigration canadienne, Forte de l’ingéniosité de son équipe d’expérience."
-
     />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-
-
     <link rel="icon" href="img/favicon.png" />
-
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
-
     <link rel="manifest" href="manifest.webmanifest" />
-
     <link rel="stylesheet" href="css/normalize.css" />
-
     <link rel="stylesheet" href="css/styles.css" />
-
+    <link rel="stylesheet" href="css/evaluation.css" />
+    <link rel="stylesheet" href="css/quebec.css" />
+    <link rel="stylesheet" href="css/madix-menu.css" />
+    <link rel="stylesheet" href="css/saskatchewan.css" />
     <link rel="stylesheet" href="css/queries.css" />
-
     <link rel="icon" href="favicon.png" />
-
     <link
-
       rel="stylesheet"
-
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-
     />
-
     <link
-
       rel="stylesheet"
-
       href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-
       crossorigin="anonymous"
-
     />
-
     <script defer src="js/script.js"></script>
-
-    <link rel="stylesheet" href="css/blogue-cms.css" />
-</head>
-
-
+    <script defer src="js/evaluation.js"></script>
+    <script defer src="js/quebec.js"></script>
+    <script defer src="js/madix-menu.js"></script>
+    <script defer src="js/saskatchewan.js"></script>
+  </head>
 
   <body>
-
     <header class="header">
-
       <nav class="navbar">
-
         <div class="navbar__container">
-
           <!-- LOGO -->
-
           <a href="index.html" class="navbar__logo">
-
             <img
-
               src="img/logo_fr_transparent.png"
-
               alt="MAD Immigration Canadienne"
-
               class="logo"
-
             />
-
           </a>
-
-
 
           <!-- MENU : 8 LIENS + 2 ACTIONS -->
-
           <div class="navbar__content" id="navbar-content">
-
             <div class="navbar__navblock">
-
               <ul class="navbar__menu navbar__menu--all">
-
                 <li class="navbar__item">
-
                   <a
-
                     href="index.html"
-
                     class="navbar__links"
-
                     id="index"
-
                     data-i18n="nav.home"
-
                   >
-
                     Accueil
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="services.html"
-
                     class="navbar__links"
-
                     id="services-page"
-
                     data-i18n="nav.services"
-
                   >
-
                     Nos services
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="forfaits.html"
-
                     class="navbar__links"
-
                     data-i18n="nav.packages"
-
                   >
-
                     Nos forfaits
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="propos.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     id="about-page"
-
                     data-i18n="nav.about"
-
                   >
-
                     À propos
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="carriere.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     id="career-page"
-
                     data-i18n="nav.career"
-
                   >
-
                     Carrière
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="evenements.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     data-i18n="nav.events"
-
                   >
-
                     Événements
-
                   </a>
-
                 </li>
 
-
-
                 <li class="navbar__item">
-
                   <a
-
                     href="blogue.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     data-i18n="nav.blog"
-
                   >
-
                     Blogue
-
                   </a>
-
                 </li>
-
-
 
                 <li class="navbar__item">
-
                   <a
-
                     href="joindre.html"
-
                     class="navbar__links navbar__links--secondary"
-
                     data-i18n="nav.contact"
-
                   >
-
                     Nous joindre
-
                   </a>
-
                 </li>
-
               </ul>
-
             </div>
-
-
 
             <!-- ACTIONS DU MENU -->
-
             <div class="navbar__actions">
+              <!-- MADIX : menu des outils, sans page intermediaire -->
+              <div class="madix-nav" id="madix-nav">
+                <button
+                  type="button"
+                  class="nav-action nav-action--outline madix-trigger"
+                  id="madix-trigger"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="madix-panel"
+                >
+                  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                  <span>MADIX</span>
+                  <i
+                    class="fa-solid fa-chevron-down madix-chevron"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <div class="madix-panel" id="madix-panel" hidden>
+                  <div class="madix-panel-head">
+                    <span
+                      class="madix-kicker"
+                      data-madix-fr="PLATEFORME D'OUTILS"
+                      data-madix-en="IMMIGRATION TOOLKIT"
+                      >PLATEFORME D'OUTILS</span
+                    >
+                    <strong>MADI<span class="madix-x">X</span></strong>
+                    <p
+                      data-madix-fr="Explorez nos outils d'immigration"
+                      data-madix-en="Explore our immigration tools"
+                    >
+                      Explorez nos outils d'immigration
+                    </p>
+                  </div>
+                  <div class="madix-links">
+                    <a href="quebec.html" class="madix-tool">
+                      <i
+                        class="fa-solid fa-map-location-dot"
+                        aria-hidden="true"
+                      ></i>
+                      <span
+                        ><strong data-madix-fr="Québec" data-madix-en="Quebec"
+                          >Québec</strong
+                        ><small
+                          data-madix-fr="Programmes québécois"
+                          data-madix-en="Quebec immigration programs"
+                          >Programmes québécois</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                    <a href="saskatchewan.html" class="madix-tool">
+                      <i class="fa-solid fa-map" aria-hidden="true"></i>
+                      <span
+                        ><strong>Saskatchewan</strong
+                        ><small
+                          data-madix-fr="Programme SINP"
+                          data-madix-en="SINP program"
+                          >Programme SINP</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                    <a href="evaluations.html" class="madix-tool">
+                      <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                      <span
+                        ><strong
+                          data-madix-fr="Évaluations"
+                          data-madix-en="Calculators"
+                          >Évaluations</strong
+                        ><small
+                          data-madix-fr="Simulateurs et calculateurs"
+                          data-madix-en="Assessment calculators"
+                          >Simulateurs et calculateurs</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                    <a href="formulaire.html" class="madix-tool">
+                      <i
+                        class="fa-solid fa-clipboard-check"
+                        aria-hidden="true"
+                      ></i>
+                      <span
+                        ><strong
+                          data-madix-fr="Évaluation préliminaire"
+                          data-madix-en="Preliminary assessment"
+                          >Évaluation préliminaire</strong
+                        ><small
+                          data-madix-fr="Analyse initiale de votre profil"
+                          data-madix-en="Initial profile review"
+                          >Analyse initiale de votre profil</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </div>
+                  <p
+                    class="madix-panel-foot"
+                    data-madix-fr="De nouveaux outils seront ajoutés prochainement."
+                    data-madix-en="More tools coming soon."
+                  >
+                    De nouveaux outils seront ajoutés prochainement.
+                  </p>
+                </div>
+              </div>
 
               <a
-
-                href="formulaire.html"
-
-                class="nav-action nav-action--outline"
-
-                id="signup"
-
-                data-i18n="nav.evaluation"
-
-              >
-
-                <i class="fa-solid fa-clipboard-check"></i>
-
-                <span>Évaluation préliminaire</span>
-
-              </a>
-
-
-
-              <a
-
                 href="rendezvous.html"
-
                 class="nav-action nav-action--primary"
-
                 id="appointment"
-
                 data-i18n="nav.appointment"
-
               >
-
                 <i class="fa-solid fa-calendar-check"></i>
-
                 <span>Prendre rendez-vous</span>
-
               </a>
-
             </div>
-
           </div>
-
-
 
           <!-- LANGUES + MODE NUIT : TOUJOURS VISIBLES -->
-
           <div class="navbar__utilities">
-
             <div class="language-switcher">
-
               <button
-
                 type="button"
-
                 class="lang-btn active"
-
                 data-lang="fr"
-
                 aria-label="Français"
-
                 title="Français"
-
               >
-
                 <img
-
                   src="img/flag-quebec.svg"
-
                   width="24"
-
                   height="16"
-
                   alt="Drapeau du Québec"
-
                   class="lang-flag"
-
                 />
-
                 <span>FR</span>
-
               </button>
-
-
 
               <button
-
                 type="button"
-
                 class="lang-btn"
-
                 data-lang="en"
-
                 aria-label="English"
-
                 title="English"
-
               >
-
                 <img
-
                   src="img/flag-canada.svg"
-
                   width="24"
-
                   height="16"
-
                   alt="Canadian flag"
-
                   class="lang-flag"
-
                 />
-
                 <span>EN</span>
-
               </button>
-
             </div>
 
-
-
             <button
-
               type="button"
-
               id="theme-toggle"
-
               class="theme-toggle-btn"
-
               aria-label="Activer le mode nuit"
-
               title="Mode nuit"
-
             >
-
               <i class="fa-solid fa-moon"></i>
-
             </button>
-
           </div>
 
-
-
           <!-- HAMBURGER -->
-
           <button
-
             type="button"
-
             class="navbar__toggle"
-
             id="mobile-menu"
-
             aria-label="Ouvrir le menu"
-
             aria-expanded="false"
-
             aria-controls="navbar-content"
-
           >
-
             <span class="bar"></span>
-
             <span class="bar"></span>
-
             <span class="bar"></span>
-
           </button>
-
         </div>
-
       </nav>
-
     </header>
 
-
-
     <main class="madic-blog">
-  <section class="blog-hero"><h1 data-i18n="blog.title">Blogue</h1><p>Actualités et informations sur l'immigration canadienne</p></section>
-  <div class="blog-layout">
-    <section class="blog-articles" id="madic-articles" aria-label="Articles du blogue"><p>Chargement des articles…</p></section>
-    <aside class="blog-sidebar" aria-label="Navigation du blogue">
-      <section class="blog-widget"><h3>Publications récentes</h3><div id="madic-recent"></div></section>
-      <section class="blog-widget blog-archives"><h3>Archives</h3><ul id="madic-archives"></ul></section>
-    </aside>
-  </div>
-</main>
-
-
+      <section class="blog-hero">
+        <h1 data-i18n="blog.title">Blogue</h1>
+        <p>Actualités et informations sur l'immigration canadienne</p>
+      </section>
+      <div class="blog-layout">
+        <section
+          class="blog-articles"
+          id="madic-articles"
+          aria-label="Articles du blogue"
+        >
+          <p>Chargement des articles…</p>
+        </section>
+        <aside class="blog-sidebar" aria-label="Navigation du blogue">
+          <section class="blog-widget">
+            <h3>Publications récentes</h3>
+            <div id="madic-recent"></div>
+          </section>
+          <section class="blog-widget blog-archives">
+            <h3>Archives</h3>
+            <ul id="madic-archives"></ul>
+          </section>
+        </aside>
+      </div>
+    </main>
 
     <footer class="footer">
-
       <div class="container grid--footer">
-
         <div class="logo-col">
-
           <a href="#" class="footer-logo">
-
             <img
-
               src="img/logo_fr_transparent.png"
-
               alt="omnifood-logo"
-
               class="logo"
-
             />
-
           </a>
 
-
-
           <ul class="social-links">
-
             <li>
-
               <a class="footer-link" href="#"
-
                 ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
-
               ></a>
-
             </li>
 
             <li>
-
               <a class="footer-link" href="#"
-
                 ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
-
               ></a>
-
             </li>
 
             <li>
-
               <a class="footer-link" href="#"
-
                 ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
-
               ></a>
-
             </li>
-
           </ul>
 
           <p class="copyright">
-
             Copyright &copy;
 
             <span class="year"></span>
@@ -525,220 +404,116 @@
             Design MADMECA Inc.
 
             <span data-i18n="footer.copyright">
-
               Tous les droits réservés.
-
             </span>
-
           </p>
-
         </div>
 
-
-
         <div class="address-col">
-
           <p class="footer-heading" data-i18n="footer.contact">
-
             Contactez-nous
-
           </p>
 
           <address class="contacts">
-
             <p class="address">
-
               1622 Rue Barré, Bureau 202, Saint-Laurent, QC, CA
-
             </p>
 
             <p>
-
               <a class="footer-link" href="tel:415-201-6370">514-442-3076</a
-
               ><br />
 
               <a class="footer-link" href="mailto:hello@omnifood.com"
-
                 >madimmigrationcanadienne@gmail.com</a
-
               >
-
             </p>
-
           </address>
-
         </div>
 
-
-
         <nav class="nav-col">
-
           <p class="footer-heading" data-i18n="footer.account">Compte</p>
 
-
-
           <ul class="footer-nav">
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.createAccount">
-
                 Créer un compte
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.register">
-
                 S'inscrire
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#">iOS</a>
-
             </li>
-
-
 
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.android">
-
                 Android
-
               </a>
-
             </li>
-
           </ul>
-
         </nav>
 
-
-
         <nav class="nav-col">
-
           <p class="footer-heading" data-i18n="footer.company">Compagnie</p>
 
-
-
           <ul class="footer-nav">
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.about">
-
                 À propos de MADIC
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.business">
-
                 Affaires
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.partners">
-
                 Partenaires
-
               </a>
-
             </li>
-
-
 
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.career">
-
                 Carrière
-
               </a>
-
             </li>
-
           </ul>
-
         </nav>
-
-
 
         <nav class="nav-col">
-
           <p class="footer-heading" data-i18n="footer.resources">Ressources</p>
 
-
-
           <ul class="footer-nav">
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.directory">
-
                 Répertoire Immigration
-
               </a>
-
             </li>
 
-
-
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.help">
-
                 Centre d'aide
-
               </a>
-
             </li>
-
-
 
             <li>
-
               <a class="footer-link" href="#" data-i18n="footer.privacy">
-
                 Confidentialité et conditions
-
               </a>
-
             </li>
-
           </ul>
-
         </nav>
-
       </div>
-
     </footer>
 
     <script src="js/blogue-cms.js" defer></script>
-</body>
-
+  </body>
 </html>

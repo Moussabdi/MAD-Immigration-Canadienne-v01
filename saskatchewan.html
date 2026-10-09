@@ -337,455 +337,390 @@
         </div>
       </nav>
     </header>
-
-    <main id="page-contact" class="contact-page-new">
-      <!-- =====================================================
-       BILINGUE LOCAL AU MAIN
-       AUCUNE MODIFICATION DE script.js
-       ===================================================== -->
-
-      <style>
-        .contact-lang-en {
-          display: none;
-        }
-
-        html[lang="fr"] .contact-lang-fr {
-          display: inline;
-        }
-
-        html[lang="fr"] .contact-lang-en {
-          display: none;
-        }
-
-        html[lang="en"] .contact-lang-fr {
-          display: none;
-        }
-
-        html[lang="en"] .contact-lang-en {
-          display: inline;
-        }
-
-        p.contact-lang-fr,
-        p.contact-lang-en {
-          display: none;
-        }
-
-        html[lang="fr"] p.contact-lang-fr {
-          display: block;
-        }
-
-        html[lang="en"] p.contact-lang-en {
-          display: block;
-        }
-
-        h2.contact-lang-fr,
-        h2.contact-lang-en,
-        h3.contact-lang-fr,
-        h3.contact-lang-en {
-          display: none;
-        }
-
-        html[lang="fr"] h2.contact-lang-fr,
-        html[lang="fr"] h3.contact-lang-fr {
-          display: block;
-        }
-
-        html[lang="en"] h2.contact-lang-en,
-        html[lang="en"] h3.contact-lang-en {
-          display: block;
-        }
-      </style>
-
-      <!-- =====================================================
-       SECTION 1 : HERO
-       ===================================================== -->
-
-      <section class="contact-hero">
-        <div class="contact-hero-overlay"></div>
-
-        <div class="container contact-hero-content">
-          <span class="section-eyebrow">
-            <span class="contact-lang-fr"> NOUS JOINDRE </span>
-
-            <span class="contact-lang-en"> CONTACT US </span>
-          </span>
-
-          <h1 data-i18n="contact.title">Nous joindre</h1>
-
-          <p class="contact-hero-subtitle contact-lang-fr">
-            Une question sur votre situation ou votre projet d’immigration ?
-            Communiquez avec MAD Immigration Canadienne ou planifiez directement
-            une consultation.
-          </p>
-
-          <p class="contact-hero-subtitle contact-lang-en">
-            Do you have a question about your situation or your immigration
-            project? Contact MAD Immigration Canadienne or schedule a
-            consultation directly.
-          </p>
-
-          <div class="contact-hero-buttons">
-            <!-- RENDEZ-VOUS -->
-
-            <a href="rendezvous.html" class="madic-btn madic-btn-red">
-              <i class="fa-solid fa-calendar-check"></i>
-
-              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
-            </a>
-
-            <!-- ÉVALUATION -->
-
-            <a href="formulaire.html" class="madic-btn madic-btn-light">
-              <i class="fa-solid fa-file-circle-check"></i>
-
-              <span data-i18n="nav.evaluation"> Évaluation préliminaire </span>
-            </a>
+    <main class="sinp" id="sinp">
+      <header class="hero">
+        <div class="brand">MAD IMMIGRATION CANADIENNE <span>• MADIC</span></div>
+        <div class="headrow">
+          <div>
+            <p class="eyebrow">SASKATCHEWAN IMMIGRANT NOMINEE PROGRAM · 2026</p>
+            <h1>Évaluation préliminaire SINP</h1>
+            <p>
+              Découvrez les volets à examiner et estimez vos points sur la
+              grille des travailleurs qualifiés internationaux.
+            </p>
           </div>
         </div>
-      </section>
-
-      <!-- =====================================================
-       SECTION 2 : COORDONNÉES
-       ===================================================== -->
-
-      <section class="contact-info-section">
-        <div class="container">
-          <div class="section-title">
-            <span class="section-eyebrow">
-              <span class="contact-lang-fr"> RESTONS EN CONTACT </span>
-
-              <span class="contact-lang-en"> LET'S STAY IN TOUCH </span>
-            </span>
-
-            <h2 class="contact-lang-fr">Comment nous joindre</h2>
-
-            <h2 class="contact-lang-en">How to contact us</h2>
-
-            <p class="contact-lang-fr">
-              Choisissez le moyen de communication qui vous convient le mieux.
-            </p>
-
-            <p class="contact-lang-en">
-              Choose the communication method that works best for you.
-            </p>
-          </div>
-
-          <div class="contact-info-grid">
-            <!-- =================================================
-             TÉLÉPHONE
-             ================================================= -->
-
-            <article class="contact-info-card">
-              <div class="contact-info-icon red">
-                <i class="fa-solid fa-phone"></i>
-              </div>
-
-              <h3 data-i18n="contact.phone">Par téléphone :</h3>
-
-              <p class="contact-lang-fr">
-                Communiquez directement avec notre bureau.
-              </p>
-
-              <p class="contact-lang-en">Contact our office directly.</p>
-
-              <a href="tel:514-442-3076" class="contact-info-link">
-                514-442-3076
-              </a>
-            </article>
-
-            <!-- =================================================
-             COURRIEL
-             ================================================= -->
-
-            <article class="contact-info-card">
-              <div class="contact-info-icon dark">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-
-              <h3 data-i18n="contact.email">Par courriel :</h3>
-
-              <p class="contact-lang-fr">
-                Envoyez-nous votre demande par courriel.
-              </p>
-
-              <p class="contact-lang-en">Send us your request by email.</p>
-
-              <a
-                href="mailto:madimmigrationcanadienne@gmail.com"
-                class="contact-info-link contact-email-link"
+      </header>
+      <div class="notice">
+        <strong>Important :</strong> Cet outil indépendant n'est ni un service
+        gouvernemental ni une décision d'admissibilité. Le sélecteur officiel de
+        programmes a été archivé le 2 janvier 2026. Les critères, quotas et
+        périodes de réception peuvent changer. Les réponses et pièces
+        justificatives doivent être vérifiées avant toute demande.
+      </div>
+      <form id="form">
+        <section class="panel">
+          <h2>1. Votre situation</h2>
+          <div class="fields">
+            <label
+              >Âge
+              <input
+                name="age"
+                type="number"
+                min="0"
+                max="110"
+                required
+                placeholder="Ex. 32" /></label
+            ><label
+              >Lieu de résidence<select name="location" required>
+                <option value="">Sélectionner...</option>
+                <option value="sk">En Saskatchewan</option>
+                <option value="canada">Ailleurs au Canada</option>
+                <option value="abroad">À l'extérieur du Canada</option>
+              </select></label
+            ><label
+              >Statut actuel au Canada<select name="permit">
+                <option value="">Sélectionner...</option>
+                <option value="outside">À l'extérieur du Canada</option>
+                <option value="pgwp">
+                  Permis de travail postdiplôme (PTPD)
+                </option>
+                <option value="study">Permis d'études</option>
+                <option value="lmia">Permis lié à une EIMT</option>
+                <option value="franco">Permis Mobilité francophone</option>
+                <option value="cuaet">Permis CUAET</option>
+                <option value="otherwork">Autre permis de travail</option>
+                <option value="spousal">
+                  Permis de travail ouvert pour conjoint
+                </option>
+                <option value="other">Autre statut légal</option>
+                <option value="none">Sans statut légal / à vérifier</option>
+              </select></label
+            ><label
+              >Situation relative à une demande d'asile<select
+                name="refugee"
+                required
               >
-                madimmigrationcanadienne@gmail.com
-              </a>
-            </article>
-
-            <!-- =================================================
-             RENDEZ-VOUS
-             ================================================= -->
-
-            <article class="contact-info-card">
-              <div class="contact-info-icon red">
-                <i class="fa-solid fa-calendar-days"></i>
-              </div>
-
-              <h3 class="contact-lang-fr">Consultation</h3>
-
-              <h3 class="contact-lang-en">Consultation</h3>
-
-              <p class="contact-lang-fr">
-                Planifiez une consultation selon vos disponibilités.
-              </p>
-
-              <p class="contact-lang-en">
-                Schedule a consultation according to your availability.
-              </p>
-
-              <a href="rendezvous.html" class="contact-info-link">
-                <span class="contact-lang-fr"> Réserver maintenant </span>
-
-                <span class="contact-lang-en"> Book now </span>
-              </a>
-            </article>
+                <option value="">Sélectionner...</option>
+                <option value="no">Aucune demande d'asile en cours</option>
+                <option value="pending">
+                  Demande d'asile en cours au Canada
+                </option>
+                <option value="refused">
+                  Demande refusée et dossier entièrement réglé
+                </option>
+                <option value="unclear">Situation à vérifier</option>
+              </select></label
+            ><label
+              >Intention réelle de vivre et travailler en Saskatchewan<select
+                name="intent"
+                required
+              >
+                <option value="">Sélectionner...</option>
+                <option value="yes">Oui</option>
+                <option value="no">Non</option>
+                <option value="unsure">À déterminer</option>
+              </select></label
+            >
           </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
-       SECTION 3 : BESOIN D'AIDE
-       ===================================================== -->
-
-      <section class="contact-choice-section">
-        <div class="container contact-choice-grid">
-          <!-- ===================================================
-           ÉVALUATION
-           =================================================== -->
-
-          <div class="contact-choice-card">
-            <div class="contact-choice-icon">
-              <i class="fa-solid fa-file-circle-check"></i>
-            </div>
-
-            <span class="section-eyebrow">
-              <span class="contact-lang-fr"> PREMIÈRE ÉTAPE </span>
-
-              <span class="contact-lang-en"> FIRST STEP </span>
-            </span>
-
-            <h2 class="contact-lang-fr">
-              Vous souhaitez nous présenter votre situation ?
-            </h2>
-
-            <h2 class="contact-lang-en">
-              Would you like to tell us about your situation?
-            </h2>
-
-            <p class="contact-lang-fr">
-              Remplissez notre évaluation préliminaire afin de nous transmettre
-              les principales informations concernant votre profil et votre
-              projet.
-            </p>
-
-            <p class="contact-lang-en">
-              Complete our preliminary assessment to provide us with the main
-              information about your profile and your immigration project.
-            </p>
-
-            <a href="formulaire.html" class="madic-btn madic-btn-red">
-              <span class="contact-lang-fr"> Commencer mon évaluation </span>
-
-              <span class="contact-lang-en"> Start my assessment </span>
-            </a>
+          <label class="check"
+            ><input type="checkbox" name="departure" /> Si ma demande d'asile a
+            été refusée : tous les membres accompagnants et moi avons quitté le
+            Canada et je possède les documents requis (IMM 0056B ou ARC, selon
+            le cas).</label
+          >
+        </section>
+        <section class="panel">
+          <h2>2. Offre d'emploi et profession</h2>
+          <div class="fields">
+            <label
+              >Offre d'emploi permanente à temps plein d'un employeur en
+              Saskatchewan<select name="offer" required>
+                <option value="">Sélectionner...</option>
+                <option value="yes">Oui</option>
+                <option value="no">Non</option>
+              </select></label
+            ><label
+              >Employer Position Assessment (EPA) valide / approuvée<select
+                name="epa"
+              >
+                <option value="unknown">À confirmer</option>
+                <option value="yes">Oui</option>
+                <option value="no">Non</option>
+              </select></label
+            ><label
+              >Secteur de l'employeur<select name="sector" required>
+                <option value="">Sélectionner...</option>
+                <option value="health">Santé</option>
+                <option value="agri">Agriculture / agroalimentaire</option>
+                <option value="tech">Technologie / innovation</option>
+                <option value="trades">Métiers spécialisés</option>
+                <option value="energy">Énergie</option>
+                <option value="mining">Mines et minéraux</option>
+                <option value="manufacturing">Fabrication</option>
+                <option value="food">Hébergement / restauration</option>
+                <option value="trucking">Transport routier</option>
+                <option value="retail">Commerce de détail</option>
+                <option value="other">Autre</option>
+              </select></label
+            ><label
+              >Code CNP 2021 (5 chiffres)<input
+                name="noc"
+                inputmode="numeric"
+                pattern="[0-9]{5}"
+                maxlength="5"
+                placeholder="Ex. 21232" /></label
+            ><label
+              >Catégorie FEER / TEER<select name="teer" required>
+                <option value="">Sélectionner...</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select></label
+            ><label
+              >Profession réglementée / permis professionnel requis<select
+                name="regulated"
+              >
+                <option value="unknown">À vérifier</option>
+                <option value="yes">Oui</option>
+                <option value="no">Non</option>
+              </select></label
+            >
           </div>
-
-          <!-- ===================================================
-           CONSULTATION
-           =================================================== -->
-
-          <div class="contact-choice-card contact-choice-card-dark">
-            <div class="contact-choice-icon">
-              <i class="fa-solid fa-comments"></i>
-            </div>
-
-            <span class="section-eyebrow">
-              <span class="contact-lang-fr"> PARLONS DE VOTRE PROJET </span>
-
-              <span class="contact-lang-en"> LET'S DISCUSS YOUR PROJECT </span>
-            </span>
-
-            <h2 class="contact-lang-fr">
-              Vous préférez discuter directement avec nous ?
-            </h2>
-
-            <h2 class="contact-lang-en">
-              Would you prefer to speak with us directly?
-            </h2>
-
-            <p class="contact-lang-fr">
-              Réservez une consultation pour présenter votre situation, poser
-              vos questions et discuter des prochaines étapes.
-            </p>
-
-            <p class="contact-lang-en">
-              Book a consultation to discuss your situation, ask your questions
-              and review the next steps.
-            </p>
-
-            <a href="rendezvous.html" class="madic-btn madic-btn-light">
-              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
-            </a>
+        </section>
+        <section class="panel">
+          <h2>3. Formation et expérience</h2>
+          <div class="fields">
+            <label
+              >Plus haut diplôme reconnu / équivalence canadienne<select
+                name="education"
+                required
+              >
+                <option value="">Sélectionner...</option>
+                <option value="23">Maîtrise ou doctorat - 23 points</option>
+                <option value="20">
+                  Baccalauréat ou programme ≥ 3 ans - 20 points
+                </option>
+                <option value="20">
+                  Certificat de métier équivalent compagnon - 20 points
+                </option>
+                <option value="15">
+                  Diplôme postsecondaire de 2 ans - 15 points
+                </option>
+                <option value="12">
+                  Certificat postsecondaire ≥ 2 semestres et &lt; 2 ans - 12
+                  points
+                </option>
+                <option value="0">
+                  Secondaire ou sans diplôme reconnu - 0 point
+                </option>
+              </select></label
+            ><label
+              >Diplôme d'un établissement de la Saskatchewan<select
+                name="skgrad"
+              >
+                <option value="no">Non</option>
+                <option value="yes">Oui</option>
+              </select></label
+            ><label
+              >Études liées à l'emploi envisagé<select name="relatededu">
+                <option value="unknown">À vérifier</option>
+                <option value="yes">Oui</option>
+                <option value="no">Non</option>
+              </select></label
+            ><label
+              >Années de travail qualifié lié à la profession au cours des 5
+              dernières années<select name="exp5" required>
+                <option value="">Sélectionner...</option>
+                <option value="0">Moins d'un an</option>
+                <option value="1">1 an</option>
+                <option value="2">2 ans</option>
+                <option value="3">3 ans</option>
+                <option value="4">4 ans</option>
+                <option value="5">5 ans</option>
+              </select></label
+            ><label
+              >Années de travail qualifié lié à la profession durant les années
+              6 à 10 précédentes<select name="exp10" required>
+                <option value="">Sélectionner...</option>
+                <option value="0">Moins d'un an</option>
+                <option value="1">1 an</option>
+                <option value="2">2 ans</option>
+                <option value="3">3 ans</option>
+                <option value="4">4 ans</option>
+                <option value="5">5 ans</option>
+              </select></label
+            ><label
+              >Travail chez l'employeur offrant le poste en Saskatchewan (heures
+              admissibles)<input
+                name="employerhours"
+                type="number"
+                min="0"
+                step="1"
+                value="0" /></label
+            ><label
+              >Expérience récente (années) dans la profession offerte<input
+                name="recentyears"
+                type="number"
+                min="0"
+                max="50"
+                step="0.5"
+                value="0" /></label
+            ><label
+              >Expérience de travail admissible en Saskatchewan (12 mois dans
+              les 5 dernières années)<select name="skwork">
+                <option value="no">Non</option>
+                <option value="yes">Oui</option>
+              </select></label
+            ><label
+              >Études antérieures en Saskatchewan (une année à temps
+              plein)<select name="skstudy">
+                <option value="no">Non</option>
+                <option value="yes">Oui</option>
+              </select></label
+            >
           </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
-       SECTION 4 : ADRESSE ET CARTE
-       ===================================================== -->
-
-      <section class="contact-location">
-        <div class="container">
-          <div class="section-title">
-            <span class="section-eyebrow">
-              <span class="contact-lang-fr"> NOTRE BUREAU </span>
-
-              <span class="contact-lang-en"> OUR OFFICE </span>
-            </span>
-
-            <h2 class="contact-lang-fr">
-              Localisez MAD Immigration Canadienne
-            </h2>
-
-            <h2 class="contact-lang-en">Find MAD Immigration Canadienne</h2>
-
-            <p class="contact-lang-fr">
-              Consultez notre emplacement et nos coordonnées.
-            </p>
-
-            <p class="contact-lang-en">
-              View our location and contact information.
-            </p>
-          </div>
-
-          <div class="contact-location-grid">
-            <!-- =================================================
-             INFOS ADRESSE
-             ================================================= -->
-
-            <div class="contact-address-card">
-              <div class="contact-address-icon">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-
-              <h3 class="contact-lang-fr">Adresse</h3>
-
-              <h3 class="contact-lang-en">Address</h3>
-
-              <address>
-                <p>
-                  1622 Rue Barré, Bureau 202<br />
-                  Saint-Laurent, QC, Canada
-                </p>
-              </address>
-
-              <div class="contact-address-divider"></div>
-
-              <!-- TÉLÉPHONE -->
-
-              <div class="contact-address-row">
-                <i class="fa-solid fa-phone"></i>
-
-                <div>
-                  <strong data-i18n="contact.phone"> Par téléphone : </strong>
-
-                  <a href="tel:514-442-3076"> 514-442-3076 </a>
-                </div>
-              </div>
-
-              <!-- COURRIEL -->
-
-              <div class="contact-address-row">
-                <i class="fa-solid fa-envelope"></i>
-
-                <div>
-                  <strong data-i18n="contact.email"> Par courriel : </strong>
-
-                  <a href="mailto:madimmigrationcanadienne@gmail.com">
-                    madimmigrationcanadienne@gmail.com
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- =================================================
-             GOOGLE MAP
-             ================================================= -->
-
-            <div class="contact-map">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.4766866878763!2d-73.70073528444064!3d45.52061217910156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc918769b1b576b%3A0xc1c8d3829d0db404!2s1940%20Rue%20Patricia%2C%20Saint-Laurent%2C%20QC%20H4L%202X7!5e0!3m2!1sen!2sca!4v1684541297697!5m2!1sen!2sca"
-                loading="lazy"
-                allowfullscreen=""
-                referrerpolicy="no-referrer-when-downgrade"
-                title="MAD Immigration Canadienne - Localisation"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
-       SECTION 5 : CTA FINAL
-       ===================================================== -->
-
-      <section class="contact-final-cta">
-        <div class="contact-final-overlay"></div>
-
-        <div class="container contact-final-content">
-          <span class="section-eyebrow">
-            <span class="contact-lang-fr"> VOTRE PROJET COMMENCE ICI </span>
-
-            <span class="contact-lang-en"> YOUR PROJECT STARTS HERE </span>
-          </span>
-
-          <h2 class="contact-lang-fr">
-            Prêt à discuter de votre projet d’immigration ?
-          </h2>
-
-          <h2 class="contact-lang-en">
-            Ready to discuss your immigration project?
-          </h2>
-
-          <p class="contact-lang-fr">
-            Choisissez entre une évaluation préliminaire ou une consultation
-            avec MAD Immigration Canadienne.
+        </section>
+        <section class="panel">
+          <h2>4. Langues officielles</h2>
+          <p class="hint">
+            Indiquez le niveau le plus faible parmi les quatre compétences d'un
+            test reconnu. Le niveau doit provenir d'un test valide, et non d'une
+            autoévaluation.
+            <a
+              href="https://www.canada.ca/fr/immigration-refugies-citoyennete/services/immigrer-canada/entree-express/documents/examen-linguistique.html"
+              target="_blank"
+              rel="noopener"
+              >Tableaux officiels de conversion IRCC</a
+            >.
           </p>
-
-          <p class="contact-lang-en">
-            Choose between a preliminary assessment or a consultation with MAD
-            Immigration Canadienne.
-          </p>
-
-          <div class="contact-final-buttons">
-            <!-- RENDEZ-VOUS -->
-
-            <a href="rendezvous.html" class="madic-btn madic-btn-red">
-              <i class="fa-solid fa-calendar-check"></i>
-
-              <span data-i18n="nav.appointment"> Prendre rendez-vous </span>
-            </a>
-
-            <!-- ÉVALUATION -->
-
-            <a href="formulaire.html" class="madic-btn madic-btn-light">
-              <i class="fa-solid fa-file-circle-check"></i>
-
-              <span class="contact-lang-fr"> Faire mon évaluation </span>
-
-              <span class="contact-lang-en"> Start my assessment </span>
-            </a>
+          <div class="fields">
+            <label
+              >Première langue - test<select name="test1" required>
+                <option value="">Sélectionner...</option>
+                <option value="ielts">IELTS General Training</option>
+                <option value="celpip">CELPIP-G</option>
+                <option value="pte">PTE Core</option>
+                <option value="tef">TEF Canada</option>
+                <option value="tcf">TCF Canada</option>
+                <option value="none">Aucun test valide</option>
+              </select></label
+            ><label
+              >Plus faible CLB/NCLC des 4 compétences - première langue<select
+                name="clb1"
+                required
+              >
+                <option value="">Sélectionner...</option>
+                <option value="0">Aucun / moins de 4</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 ou plus</option>
+              </select></label
+            ><label
+              >Deuxième langue - test<select name="test2">
+                <option value="none">Sans objet</option>
+                <option value="ielts">IELTS General Training</option>
+                <option value="celpip">CELPIP-G</option>
+                <option value="pte">PTE Core</option>
+                <option value="tef">TEF Canada</option>
+                <option value="tcf">TCF Canada</option>
+              </select></label
+            ><label
+              >Plus faible CLB/NCLC - deuxième langue<select name="clb2">
+                <option value="0">Sans objet / moins de 4</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10 ou plus</option>
+              </select></label
+            >
           </div>
+        </section>
+        <section class="panel">
+          <h2>5. Liens avec la Saskatchewan et autres critères</h2>
+          <div class="fields">
+            <label
+              >Parent proche admissible résidant en Saskatchewan<select
+                name="relative"
+              >
+                <option value="no">Non</option>
+                <option value="yes">
+                  Oui, et les conditions de soutien sont satisfaites
+                </option>
+                <option value="unknown">À vérifier</option>
+              </select></label
+            ><label
+              >Profil Entrée express et code de validation de recherche d'emploi
+              valides<select name="ee">
+                <option value="no">Non</option>
+                <option value="yes">Oui</option>
+                <option value="unknown">À vérifier</option>
+              </select></label
+            ><label
+              >Profession sur la liste des professions exclues (sans
+              offre)<select name="excluded">
+                <option value="unknown">À vérifier</option>
+                <option value="no">Non</option>
+                <option value="yes">Oui</option>
+              </select></label
+            ><label
+              >Fonds d'établissement et plan d'établissement (volets sans
+              offre)<select name="funds">
+                <option value="unknown">À vérifier</option>
+                <option value="yes">Oui</option>
+                <option value="no">Non</option>
+              </select></label
+            >
+          </div>
+        </section>
+        <div class="actions">
+          <button type="submit">Évaluer mon profil SINP</button
+          ><button type="reset" class="secondary">Réinitialiser</button>
         </div>
-      </section>
+      </form>
+      <section
+        id="results"
+        class="panel results"
+        hidden
+        aria-live="polite"
+      ></section>
+      <footer>
+        <p>
+          <strong>Sources officielles :</strong>
+          <a
+            href="https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/by-immigrating/saskatchewan-immigrant-nominee-program/assess-your-eligibility"
+            target="_blank"
+            rel="noopener"
+            >Grille et évaluation SINP</a
+          >
+          ·
+          <a
+            href="https://www.saskatchewan.ca/residents/moving-to-saskatchewan/live-in-saskatchewan/by-immigrating/saskatchewan-immigrant-nominee-program/sinp-processing-statistics"
+            target="_blank"
+            rel="noopener"
+            >Quotas et périodes de réception 2026</a
+          >
+          ·
+          <a href="https://noc.esdc.gc.ca/" target="_blank" rel="noopener"
+            >CNP 2021</a
+          >.
+        </p>
+        <p>
+          © MAD Immigration Canadienne - outil d'orientation indépendant. Aucune
+          information n'est envoyée à un serveur par ce formulaire.
+        </p>
+      </footer>
     </main>
-
     <footer class="footer">
       <div class="container grid--footer">
         <div class="logo-col">

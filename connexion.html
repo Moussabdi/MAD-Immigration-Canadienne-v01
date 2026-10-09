@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Connexion | MADIC</title>
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body data-page="login">
+    <header>
+      <a href="connexion.html" class="brand"
+        >MADI<span>C</span> <small>PORTAIL</small></a
+      >
+      <nav class="toplinks">
+        <a href="connexion.html">Connexion</a
+        ><a href="inscription.html">Inscription</a
+        ><a href="dashboard.html">Mon espace</a>
+      </nav>
+    </header>
+    <main>
+      <section class="auth panel">
+        <div class="eyebrow">Espace client MADIC</div>
+        <h1>Connexion</h1>
+        <p class="muted">Accédez à vos dossiers et à vos documents.</p>
+        <form id="login">
+          <label for="email">Courriel</label
+          ><input
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+          /><label for="password">Mot de passe</label
+          ><input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+          <div class="actions">
+            <button type="submit">Se connecter</button
+            ><button type="button" id="forgot" class="secondary">
+              Mot de passe oublié ?
+            </button>
+          </div>
+        </form>
+        <p id="message" class="notice" role="status"></p>
+        <p class="muted">
+          Nouveau client ? <a href="inscription.html">Créer un compte</a>
+        </p>
+      </section>
+    </main>
+    <footer>© MAD Immigration Canadienne · Portail client sécurisé</footer>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="assets/config.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

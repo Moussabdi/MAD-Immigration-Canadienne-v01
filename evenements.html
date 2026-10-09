@@ -14,6 +14,10 @@
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/evaluation.css" />
+    <link rel="stylesheet" href="css/quebec.css" />
+    <link rel="stylesheet" href="css/madix-menu.css" />
+    <link rel="stylesheet" href="css/saskatchewan.css" />
     <link rel="stylesheet" href="css/queries.css" />
     <link rel="icon" href="favicon.png" />
     <link
@@ -26,8 +30,11 @@
       integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
       crossorigin="anonymous"
     />
-
     <script defer src="js/script.js"></script>
+    <script defer src="js/evaluation.js"></script>
+    <script defer src="js/quebec.js"></script>
+    <script defer src="js/madix-menu.js"></script>
+    <script defer src="js/saskatchewan.js"></script>
   </head>
 
   <body>
@@ -135,15 +142,123 @@
 
             <!-- ACTIONS DU MENU -->
             <div class="navbar__actions">
-              <a
-                href="formulaire.html"
-                class="nav-action nav-action--outline"
-                id="signup"
-                data-i18n="nav.evaluation"
-              >
-                <i class="fa-solid fa-clipboard-check"></i>
-                <span>Évaluation préliminaire</span>
-              </a>
+              <!-- MADIX : menu des outils, sans page intermediaire -->
+              <div class="madix-nav" id="madix-nav">
+                <button
+                  type="button"
+                  class="nav-action nav-action--outline madix-trigger"
+                  id="madix-trigger"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                  aria-controls="madix-panel"
+                >
+                  <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+                  <span>MADIX</span>
+                  <i
+                    class="fa-solid fa-chevron-down madix-chevron"
+                    aria-hidden="true"
+                  ></i>
+                </button>
+                <div class="madix-panel" id="madix-panel" hidden>
+                  <div class="madix-panel-head">
+                    <span
+                      class="madix-kicker"
+                      data-madix-fr="PLATEFORME D'OUTILS"
+                      data-madix-en="IMMIGRATION TOOLKIT"
+                      >PLATEFORME D'OUTILS</span
+                    >
+                    <strong>MADI<span class="madix-x">X</span></strong>
+                    <p
+                      data-madix-fr="Explorez nos outils d'immigration"
+                      data-madix-en="Explore our immigration tools"
+                    >
+                      Explorez nos outils d'immigration
+                    </p>
+                  </div>
+                  <div class="madix-links">
+                    <a href="quebec.html" class="madix-tool">
+                      <i
+                        class="fa-solid fa-map-location-dot"
+                        aria-hidden="true"
+                      ></i>
+                      <span
+                        ><strong data-madix-fr="Québec" data-madix-en="Quebec"
+                          >Québec</strong
+                        ><small
+                          data-madix-fr="Programmes québécois"
+                          data-madix-en="Quebec immigration programs"
+                          >Programmes québécois</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                    <a href="saskatchewan.html" class="madix-tool">
+                      <i class="fa-solid fa-map" aria-hidden="true"></i>
+                      <span
+                        ><strong>Saskatchewan</strong
+                        ><small
+                          data-madix-fr="Programme SINP"
+                          data-madix-en="SINP program"
+                          >Programme SINP</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                    <a href="evaluations.html" class="madix-tool">
+                      <i class="fa-solid fa-calculator" aria-hidden="true"></i>
+                      <span
+                        ><strong
+                          data-madix-fr="Évaluations"
+                          data-madix-en="Calculators"
+                          >Évaluations</strong
+                        ><small
+                          data-madix-fr="Simulateurs et calculateurs"
+                          data-madix-en="Assessment calculators"
+                          >Simulateurs et calculateurs</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                    <a href="formulaire.html" class="madix-tool">
+                      <i
+                        class="fa-solid fa-clipboard-check"
+                        aria-hidden="true"
+                      ></i>
+                      <span
+                        ><strong
+                          data-madix-fr="Évaluation préliminaire"
+                          data-madix-en="Preliminary assessment"
+                          >Évaluation préliminaire</strong
+                        ><small
+                          data-madix-fr="Analyse initiale de votre profil"
+                          data-madix-en="Initial profile review"
+                          >Analyse initiale de votre profil</small
+                        ></span
+                      >
+                      <i
+                        class="fa-solid fa-arrow-up-right-from-square madix-arrow"
+                        aria-hidden="true"
+                      ></i>
+                    </a>
+                  </div>
+                  <p
+                    class="madix-panel-foot"
+                    data-madix-fr="De nouveaux outils seront ajoutés prochainement."
+                    data-madix-en="More tools coming soon."
+                  >
+                    De nouveaux outils seront ajoutés prochainement.
+                  </p>
+                </div>
+              </div>
 
               <a
                 href="rendezvous.html"
