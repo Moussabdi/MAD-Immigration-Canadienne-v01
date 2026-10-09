@@ -70,6 +70,36 @@
           </p>
         </section>
       </div>
+      <section class="panel" aria-labelledby="receivedDocsTitle">
+        <div class="actions" style="justify-content: space-between">
+          <h2 id="receivedDocsTitle">Documents reçus</h2>
+          <button id="refreshAdminDocs" class="secondary" type="button">
+            Actualiser
+          </button>
+        </div>
+        <p class="muted">
+          Documents transmis par les clients dans leurs dossiers.
+        </p>
+        <div style="overflow-x: auto">
+          <table>
+            <thead>
+              <tr>
+                <th>Client</th>
+                <th>Dossier</th>
+                <th>Fichier</th>
+                <th>Statut</th>
+                <th>Réception</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminDocuments">
+              <tr>
+                <td colspan="6">Chargement des documents…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </main>
     <footer>© MAD Immigration Canadienne · Portail client sécurisé</footer>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
