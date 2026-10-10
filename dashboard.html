@@ -1,1 +1,348 @@
-<!doctype html><html lang="fr-CA"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Mon espace | MADIC</title><link rel="stylesheet" href="assets/style.css"></head><body data-page="dashboard"><header><a href="connexion.html" class="brand">MADI<span>C</span> <small>PORTAIL</small></a><nav class="toplinks"><a href="connexion.html">Connexion</a><a href="inscription.html">Inscription</a><a href="dashboard.html">Mon espace</a></nav></header><main><div class="actions" style="justify-content:space-between"><div><div class="eyebrow">Mon espace</div><h1 id="welcome">Chargement...</h1></div><div><a id="adminLink" class="btn secondary hidden" href="administration.html">Administration</a> <button id="logout" class="secondary">Déconnexion</button></div></div><p id="message" class="notice" role="status"></p><div class="grid"><section class="panel"><h2>Mon profil</h2><form id="profile"><label>Prénom</label><input id="first" name="first" required><label>Nom</label><input id="last" name="last" required><label>Courriel</label><input id="email" readonly><label>Téléphone</label><input id="phone" name="phone" autocomplete="tel"><label>Pays de résidence</label><input id="country" name="country"><div class="actions"><button>Enregistrer</button></div></form></section><section class="panel"><h2>Mes dossiers</h2><table><thead><tr><th>Référence</th><th>Catégorie</th><th>Statut</th></tr></thead><tbody id="dossiers"></tbody></table><p class="muted">Seul MADIC peut activer un dossier.</p></section></div><section class="panel" style="margin-top:18px"><h2>Transmettre un document</h2><p class="muted">PDF, JPG, PNG — 10 Mo maximum. N'envoyez aucun document réel avant la mise en production officielle du portail.</p><form id="upload"><label>Dossier actif</label><select id="dossier" name="dossier"></select><label>Document</label><input name="file" type="file" accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png" required><div class="actions"><button id="uploadButton" disabled>Transmettre</button></div></form></section><section class="panel" style="margin-top:18px"><h2>Mes documents</h2><table><thead><tr><th>Fichier</th><th>Statut</th><th>Action</th></tr></thead><tbody id="documents"></tbody></table></section></main><footer>© MAD Immigration Canadienne · Portail client sécurisé</footer><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script src="assets/config.js"></script><script src="assets/app.js"></script></body></html>
+<!doctype html>
+<html lang="fr-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Mon espace | MADIC</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      .madic-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+        width: 100%;
+      }
+      .madic-stack > .panel {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .madic-section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .madic-section-head h2 {
+        margin: 0;
+      }
+      .madic-section-head button {
+        white-space: nowrap;
+      }
+      .madic-fields-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem 1rem;
+        margin-top: 1rem;
+      }
+      .madic-fields-grid > div {
+        min-width: 0;
+      }
+      .madic-fields-grid label {
+        display: block;
+        margin-bottom: 0.25rem;
+      }
+      .madic-fields-grid input,
+      .madic-fields-grid select {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .madic-full {
+        grid-column: 1 / -1;
+      }
+      .madic-table-wrap {
+        overflow-x: auto;
+      }
+      .madic-table-wrap table {
+        width: 100%;
+      }
+      .madic-collapsed-note {
+        margin: 0.65rem 0 0;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      @media (max-width: 650px) {
+        .madic-fields-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="dashboard">
+    <header>
+      <a href="connexion.html" class="brand"
+        >MADI<span>C</span> <small>PORTAIL</small></a
+      >
+      <nav class="toplinks">
+        <a href="connexion.html">Connexion</a
+        ><a href="inscription.html">Inscription</a
+        ><a href="dashboard.html">Mon espace</a>
+      </nav>
+    </header>
+    <main>
+      <p>
+        <a href="mes-contrats.html"
+          >Mes contrats de consultation et signatures électroniques →</a
+        >
+      </p>
+      <div
+        class="actions"
+        style="justify-content: space-between; align-items: center"
+      >
+        <div>
+          <div class="eyebrow">MON ESPACE</div>
+          <h1 id="welcome">Chargement...</h1>
+        </div>
+        <button type="button" id="logout" class="secondary">Déconnexion</button>
+      </div>
+      <p id="message" class="notice" role="status" aria-live="polite"></p>
+      <p>
+        <a id="adminLink" class="hidden" href="administration.html"
+          >Administration MADIC →</a
+        >
+      </p>
+      <div class="madic-stack">
+        <section class="panel" aria-labelledby="profile-heading">
+          <div class="madic-section-head">
+            <h2 id="profile-heading">Mon profil</h2>
+            <button
+              type="button"
+              class="secondary"
+              id="toggleProfile"
+              aria-expanded="false"
+              aria-controls="profileContent"
+            >
+              Modifier
+            </button>
+          </div>
+          <p id="profileHint" class="muted madic-collapsed-note">
+            Consultez et modifiez vos renseignements personnels.
+          </p>
+          <div id="profileContent" hidden>
+            <form id="profile">
+              <div class="madic-fields-grid">
+                <div>
+                  <label for="first">Prénom *</label
+                  ><input
+                    id="first"
+                    name="first"
+                    required
+                    autocomplete="given-name"
+                    maxlength="120"
+                  />
+                </div>
+                <div>
+                  <label for="last">Nom *</label
+                  ><input
+                    id="last"
+                    name="last"
+                    required
+                    autocomplete="family-name"
+                    maxlength="120"
+                  />
+                </div>
+                <div>
+                  <label for="email">Courriel (non modifiable ici)</label
+                  ><input
+                    id="email"
+                    type="email"
+                    name="email"
+                    readonly
+                    autocomplete="email"
+                  />
+                </div>
+                <div>
+                  <label for="phone">Téléphone</label
+                  ><input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    autocomplete="tel"
+                    maxlength="30"
+                  />
+                </div>
+                <div>
+                  <label for="gender">Genre</label
+                  ><select id="gender" name="gender">
+                    <option value="">Sélectionner</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="date_of_birth">Date de naissance</label
+                  ><input
+                    id="date_of_birth"
+                    name="date_of_birth"
+                    type="date"
+                    autocomplete="bday"
+                  />
+                </div>
+                <div>
+                  <label for="address_number">Numéro</label
+                  ><input
+                    id="address_number"
+                    name="address_number"
+                    maxlength="30"
+                  />
+                </div>
+                <div>
+                  <label for="address_street">Rue</label
+                  ><input
+                    id="address_street"
+                    name="address_street"
+                    maxlength="180"
+                  />
+                </div>
+                <div>
+                  <label for="address_apartment">Appartement (facultatif)</label
+                  ><input
+                    id="address_apartment"
+                    name="address_apartment"
+                    maxlength="50"
+                  />
+                </div>
+                <div>
+                  <label for="address_city">Ville</label
+                  ><input
+                    id="address_city"
+                    name="address_city"
+                    maxlength="120"
+                  />
+                </div>
+                <div>
+                  <label for="address_region">Province ou district</label
+                  ><input
+                    id="address_region"
+                    name="address_region"
+                    maxlength="120"
+                  />
+                </div>
+                <div>
+                  <label for="address_postal_code">Code postal</label
+                  ><input
+                    id="address_postal_code"
+                    name="address_postal_code"
+                    maxlength="30"
+                  />
+                </div>
+                <div class="madic-full">
+                  <label for="country"
+                    >Pays de résidence (recherchez dans la liste)</label
+                  ><input
+                    id="country"
+                    name="country"
+                    list="madic-country-options"
+                    autocomplete="country-name"
+                    maxlength="120"
+                    placeholder="Rechercher un pays..."
+                  /><datalist id="madic-country-options"></datalist>
+                </div>
+              </div>
+              <div class="actions">
+                <button type="submit">Enregistrer</button>
+              </div>
+            </form>
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="dossiers-heading">
+          <div class="madic-section-head">
+            <h2 id="dossiers-heading">Mes dossiers</h2>
+            <button
+              type="button"
+              class="secondary"
+              id="toggleDossiers"
+              aria-expanded="false"
+              aria-controls="dossiersContent"
+            >
+              Consulter
+            </button>
+          </div>
+          <p id="dossiersHint" class="muted madic-collapsed-note">
+            Consultez vos dossiers et leur état d'avancement.
+          </p>
+          <div id="dossiersContent" hidden>
+            <div class="madic-table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Référence</th>
+                    <th>Catégorie</th>
+                    <th>Statut</th>
+                  </tr>
+                </thead>
+                <tbody id="dossiers"></tbody>
+              </table>
+            </div>
+            <p class="muted">Seul MADIC peut créer ou activer un dossier.</p>
+          </div>
+        </section>
+        <section class="panel" aria-labelledby="upload-heading">
+          <h2 id="upload-heading">Transmettre un document</h2>
+          <p class="muted">
+            PDF, JPG, PNG - 10 Mo maximum. N'envoyez aucun document réel avant
+            la mise en production officielle du portail.
+          </p>
+          <form id="upload">
+            <label for="dossier">Dossier actif</label
+            ><select id="dossier" name="dossier" required>
+              <option value="">Aucun dossier actif</option>
+            </select>
+            <label for="file">Document</label
+            ><input
+              id="file"
+              name="file"
+              type="file"
+              accept=".pdf,.jpg,.jpeg,.png,application/pdf,image/jpeg,image/png"
+              required
+            />
+            <div class="actions">
+              <button type="submit" id="uploadButton" disabled>
+                Transmettre
+              </button>
+            </div>
+          </form>
+        </section>
+        <section class="panel" aria-labelledby="documents-heading">
+          <h2 id="documents-heading">Mes documents</h2>
+          <div class="madic-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Fichier</th>
+                  <th>Statut</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="documents"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer>© MAD Immigration Canadienne · Portail client sécurisé</footer>
+    <script>
+      for (const [buttonId, contentId, hintId, openText] of [
+        ["toggleProfile", "profileContent", "profileHint", "Modifier"],
+        ["toggleDossiers", "dossiersContent", "dossiersHint", "Consulter"],
+      ]) {
+        const button = document.getElementById(buttonId),
+          content = document.getElementById(contentId),
+          hint = document.getElementById(hintId);
+        button.addEventListener("click", () => {
+          const opening = content.hidden;
+          content.hidden = !opening;
+          hint.hidden = opening;
+          button.setAttribute("aria-expanded", String(opening));
+          button.textContent = opening ? "Fermer" : openText;
+        });
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="assets/config.js"></script>
+    <script src="assets/countries.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

@@ -145,7 +145,7 @@ function render() {
         ...lang(7, 5),
       ];
       out += card(
-        "PSTQ — Volet 1 : Haute qualification et compétences spécialisées",
+        "PSTQ - Volet 1 : Haute qualification et compétences spécialisées",
         verdict(a),
         a,
       );
@@ -164,7 +164,7 @@ function render() {
         ...lang(5, null),
       ];
       out += card(
-        "PSTQ — Volet 2 : Compétences intermédiaires et manuelles",
+        "PSTQ - Volet 2 : Compétences intermédiaires et manuelles",
         verdict(a),
         a,
       );
@@ -178,13 +178,13 @@ function render() {
         ...lang(teer <= 2 ? 7 : 5, teer <= 2 ? 5 : null),
         "À vérifier : inscription de l’emploi précis dans la liste MIFI des professions réglementées.",
       ];
-      out += card("PSTQ — Volet 3 : Professions réglementées", verdict(a), a);
+      out += card("PSTQ - Volet 3 : Professions réglementées", verdict(a), a);
     } else
-      out += card("PSTQ — Volet à confirmer", "Vérification nécessaire", [
+      out += card("PSTQ - Volet à confirmer", "Vérification nécessaire", [
         "À vérifier : statut réglementé de l’emploi précis; les professions partiellement réglementées nécessitent une vérification particulière.",
       ]);
     out += card(
-      "PSTQ — Volet 4 : Talents d’exception",
+      "PSTQ - Volet 4 : Talents d’exception",
       verdict([
         check(
           n("work") >= 36,
@@ -255,7 +255,7 @@ function render() {
       ),
       ...lang(7, 5),
     ];
-    out += card("PEQ — Diplômés du Québec", verdict(a), a);
+    out += card("PEQ - Diplômés du Québec", verdict(a), a);
   }
   if (["worker", "both"].includes(v("peqtype"))) {
     const a = [
@@ -272,7 +272,7 @@ function render() {
       ),
       "À vérifier : conditions spécifiques complètes du volet Travailleurs étrangers temporaires, statut, emploi et français à la date du dépôt.",
     ];
-    out += card("PEQ — Travailleurs étrangers temporaires", verdict(a), a);
+    out += card("PEQ - Travailleurs étrangers temporaires", verdict(a), a);
   }
   const pilots = [
     "Transformation alimentaire",
@@ -280,7 +280,7 @@ function render() {
     "IA / TI / effets visuels",
   ];
   out += card(
-    "Programmes pilotes — fermés aux nouvelles demandes",
+    "Programmes pilotes - fermés aux nouvelles demandes",
     "Vérification nécessaire",
     [
       `Les trois programmes pilotes (${pilots.join(", ")}) ont pris fin le 1er janvier 2026.`,
@@ -415,7 +415,7 @@ function pstqSummary() {
     );
   const message =
     "Le barème officiel complet et les tables de conversion n’étant pas intégrés ni vérifiés ici, aucun total de points PSTQ n’est attribué. Une déclaration d’intérêt et un pointage ne garantissent pas une invitation.";
-  return `<article class="result-card"><h3>PSTQ — Analyse complémentaire du profil</h3><p>${message}</p>${rows.length ? `<ul>${rows.join("")}</ul>` : "<p>Complétez les critères complémentaires pour affiner votre profil.</p>"}${checks.length ? `<p class="bad"><strong>Incohérences ou renseignements manquants :</strong></p><ul>${checks.map((x) => `<li>${escapeQc(x)}</li>`).join("")}</ul>` : ""}<p class="hint">Le diagnostic de main-d’œuvre, la profession réglementée, les liens régionaux et l’OEV nécessitent une validation documentaire.</p></article>`;
+  return `<article class="result-card"><h3>PSTQ - Analyse complémentaire du profil</h3><p>${message}</p>${rows.length ? `<ul>${rows.join("")}</ul>` : "<p>Complétez les critères complémentaires pour affiner votre profil.</p>"}${checks.length ? `<p class="bad"><strong>Incohérences ou renseignements manquants :</strong></p><ul>${checks.map((x) => `<li>${escapeQc(x)}</li>`).join("")}</ul>` : ""}<p class="hint">Le diagnostic de main-d’œuvre, la profession réglementée, les liens régionaux et l’OEV nécessitent une validation documentaire.</p></article>`;
 }
 const renderBase = render;
 render = function () {

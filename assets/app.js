@@ -58,15 +58,62 @@ if (page === "signup") {
   $("#signup")?.addEventListener("submit", async (e) => {
     e.preventDefault();
     if (!db) return;
-    const f = e.currentTarget;
-    const first = f.elements.namedItem("first").value.trim(),
-      last = f.elements.namedItem("last").value.trim();
-    if (!first || !last) return status("Nom et prénom obligatoires.", true);
+    const f = e.currentTarget,
+      get = (n) => f.elements.namedItem(n)?.value?.trim() || "";
+    const first = get("first"),
+      last = get("last"),
+      dob = get("date_of_birth"),
+      gender = get("gender"),
+      phone = get("phone");
+    const address = {
+      address_number: get("address_number"),
+      address_street: get("address_street"),
+      address_apartment: get("address_apartment"),
+      address_city: get("address_city"),
+      address_region: get("address_region"),
+      address_postal_code: get("address_postal_code"),
+      country: get("country"),
+    };
+    if (
+      !first ||
+      !last ||
+      !phone ||
+      !dob ||
+      !["Homme", "Femme"].includes(gender) ||
+      !address.address_number ||
+      !address.address_street ||
+      !address.address_city ||
+      !address.address_region ||
+      !address.country
+    )
+      return status(
+        "Veuillez compléter les renseignements obligatoires.",
+        true,
+      );
+    if (
+      window.MADIC_COUNTRIES &&
+      !window.MADIC_COUNTRIES.isValid(address.country)
+    )
+      return status("Veuillez sélectionner un pays dans la liste.", true);
+    if (!window.MADIC_COUNTRIES)
+      return status(
+        "La liste des pays n’est pas chargée. Actualisez la page.",
+        true,
+      );
+    if (dob > new Date().toISOString().slice(0, 10))
+      return status("La date de naissance ne peut pas être future.", true);
     const { error } = await db.auth.signUp({
-      email: f.elements.namedItem("email").value.trim(),
+      email: get("email"),
       password: f.elements.namedItem("password").value,
       options: {
-        data: { first_name: first, last_name: last },
+        data: {
+          first_name: first,
+          last_name: last,
+          phone,
+          date_of_birth: dob,
+          gender,
+          ...address,
+        },
         emailRedirectTo: new URL("connexion.html", location.href).href,
       },
     });
@@ -127,7 +174,9 @@ if (page === "dashboard") {
     if (!u) return;
     const { data: p, error: pe } = await db
       .from("profiles")
-      .select("first_name,last_name,email,phone,country,role")
+      .select(
+        "first_name,last_name,email,phone,country,date_of_birth,residential_address,gender,address_number,address_street,address_apartment,address_city,address_region,address_postal_code,role",
+      )
       .eq("id", u.id)
       .single();
     if (pe) return status(pe.message, true);
@@ -137,16 +186,49 @@ if (page === "dashboard") {
     $("#email").value = p.email;
     $("#phone").value = p.phone;
     $("#country").value = p.country;
+    if ($("#date_of_birth")) $("#date_of_birth").value = p.date_of_birth || "";
+    for (const k of [
+      "gender",
+      "address_number",
+      "address_street",
+      "address_apartment",
+      "address_city",
+      "address_region",
+      "address_postal_code",
+    ]) {
+      const el = document.getElementById(k);
+      if (el) el.value = p[k] || "";
+    }
+    if ($("#residential_address"))
+      $("#residential_address").value = p.residential_address || "";
     if (p.role === "admin") $("#adminLink").classList.remove("hidden");
     $("#profile")?.addEventListener("submit", async (e) => {
       e.preventDefault();
       const f = e.currentTarget;
+      if (
+        window.MADIC_COUNTRIES &&
+        !window.MADIC_COUNTRIES.isValid(f.elements.namedItem("country").value)
+      )
+        return status("Veuillez sélectionner un pays dans la liste.", true);
       const { error } = await db
         .from("profiles")
         .update({
           first_name: f.elements.namedItem("first").value.trim(),
           last_name: f.elements.namedItem("last").value.trim(),
           phone: f.elements.namedItem("phone").value.trim(),
+          country: f.elements.namedItem("country").value.trim(),
+          date_of_birth: f.elements.namedItem("date_of_birth").value || null,
+          gender: f.elements.namedItem("gender").value,
+          address_number: f.elements.namedItem("address_number").value.trim(),
+          address_street: f.elements.namedItem("address_street").value.trim(),
+          address_apartment: f.elements
+            .namedItem("address_apartment")
+            .value.trim(),
+          address_city: f.elements.namedItem("address_city").value.trim(),
+          address_region: f.elements.namedItem("address_region").value.trim(),
+          address_postal_code: f.elements
+            .namedItem("address_postal_code")
+            .value.trim(),
           country: f.elements.namedItem("country").value.trim(),
         })
         .eq("id", u.id);
@@ -171,7 +253,7 @@ if (page === "dashboard") {
       ? active
           .map(
             (d) =>
-              `<option value="${safe(d.id)}">${safe(d.reference)} — ${safe(d.category)}</option>`,
+              `<option value="${safe(d.id)}">${safe(d.reference)} - ${safe(d.category)}</option>`,
           )
           .join("")
       : '<option value="">Aucun dossier actif</option>';
@@ -226,16 +308,14 @@ if (page === "dashboard") {
         $("#uploadButton").disabled = false;
         return status(upErr.message, true);
       }
-      const { error: dbErr } = await db
-        .from("documents")
-        .insert({
-          dossier_id: dossierId,
-          client_id: u.id,
-          original_name: file.name.slice(0, 240),
-          storage_path: path,
-          mime_type: file.type,
-          size_bytes: file.size,
-        });
+      const { error: dbErr } = await db.from("documents").insert({
+        dossier_id: dossierId,
+        client_id: u.id,
+        original_name: file.name.slice(0, 240),
+        storage_path: path,
+        mime_type: file.type,
+        size_bytes: file.size,
+      });
       $("#uploadButton").disabled = false;
       if (dbErr)
         return status(
@@ -253,127 +333,106 @@ if (page === "admin") {
   (async () => {
     const u = await protect();
     if (!u) return;
-    const { data: p } = await db
+    const { data: p, error: pe } = await db
       .from("profiles")
       .select("role")
       .eq("id", u.id)
       .single();
-    if (p?.role !== "admin") {
+    if (pe || p?.role !== "admin") {
       location.replace("dashboard.html");
       return;
     }
-    const { data: clients, error } = await db
-      .from("profiles")
-      .select("id,first_name,last_name,email,created_at")
-      .eq("role", "client")
-      .order("created_at", { ascending: false });
-    if (error) return status(error.message, true);
-    $("#clients").innerHTML = clients
-      .map(
-        (c) =>
-          `<tr><td>${safe(c.first_name)} ${safe(c.last_name)}</td><td>${safe(c.email)}</td><td>${safe(new Date(c.created_at).toLocaleDateString("fr-CA"))}</td></tr>`,
-      )
-      .join("");
-    $("#client").innerHTML = clients
-      .map(
-        (c) =>
-          `<option value="${safe(c.id)}">${safe(c.first_name)} ${safe(c.last_name)} — ${safe(c.email)}</option>`,
-      )
-      .join("");
-    const clientNames = new Map(
-      clients.map((c) => [
-        c.id,
-        `${c.first_name || ""} ${c.last_name || ""}`.trim() || c.email,
-      ]),
-    );
-    const documentPaths = new Map();
-    async function loadAdminDocuments() {
-      const tbody = $("#adminDocuments");
-      tbody.innerHTML =
-        '<tr><td colspan="6">Chargement des documents…</td></tr>';
-      const { data: docs, error: docsError } = await db
-        .from("documents")
-        .select(
-          "id,client_id,dossier_id,original_name,storage_path,status,created_at",
-        )
+    let clients = [];
+    const names = new Map();
+    const loadClients = async () => {
+      const { data, error } = await db
+        .from("profiles")
+        .select("id,first_name,last_name,email,created_at")
+        .eq("role", "client")
         .order("created_at", { ascending: false });
-      if (docsError) {
-        tbody.innerHTML =
-          '<tr><td colspan="6">Impossible de charger les documents.</td></tr>';
-        return status("Documents : " + docsError.message, true);
+      if (error) return status(error.message, true);
+      clients = data || [];
+      names.clear();
+      clients.forEach((c) =>
+        names.set(
+          c.id,
+          [c.first_name, c.last_name].filter(Boolean).join(" ") ||
+            c.email ||
+            "Client",
+        ),
+      );
+      $("#clients").innerHTML =
+        clients
+          .map(
+            (c) =>
+              `<tr><td>${safe(names.get(c.id))}</td><td>${safe(c.email)}</td><td>${safe(c.created_at ? new Date(c.created_at).toLocaleDateString("fr-CA") : "")}</td></tr>`,
+          )
+          .join("") || '<tr><td colspan="3">Aucun client inscrit</td></tr>';
+      $("#client").innerHTML = clients
+        .map(
+          (c) =>
+            `<option value="${safe(c.id)}">${safe(names.get(c.id))} - ${safe(c.email)}</option>`,
+        )
+        .join("");
+      if ($("#adminClientCount"))
+        $("#adminClientCount").textContent = String(clients.length);
+    };
+    const loadDossiers = async () => {
+      const body = $("#adminDossiers");
+      if (!body) return;
+      const { data, error } = await db
+        .from("dossiers")
+        .select("id,client_id,reference,category,status,created_at")
+        .order("created_at", { ascending: false });
+      if (error) {
+        body.innerHTML = '<tr><td colspan="5">Erreur de chargement</td></tr>';
+        return status(error.message, true);
       }
-      const dossierIds = [
-        ...new Set((docs || []).map((d) => d.dossier_id).filter(Boolean)),
-      ];
-      const references = new Map();
-      if (dossierIds.length) {
-        const { data: dossiers, error: dossiersError } = await db
-          .from("dossiers")
-          .select("id,reference")
-          .in("id", dossierIds);
-        if (dossiersError) {
-          tbody.innerHTML =
-            '<tr><td colspan="6">Impossible de charger les références des dossiers.</td></tr>';
-          return status("Dossiers : " + dossiersError.message, true);
-        }
-        (dossiers || []).forEach((d) => references.set(d.id, d.reference));
-      }
-      documentPaths.clear();
-      tbody.replaceChildren();
-      if (!docs?.length) {
-        const tr = tbody.insertRow();
-        const td = tr.insertCell();
-        td.colSpan = 6;
-        td.textContent = "Aucun document reçu.";
-        return;
-      }
-      docs.forEach((d) => {
-        documentPaths.set(String(d.id), d.storage_path);
-        const tr = tbody.insertRow();
-        [
-          clientNames.get(d.client_id) || "Client inconnu",
-          references.get(d.dossier_id) || "Dossier inconnu",
-          d.original_name,
-          d.status,
-          new Date(d.created_at).toLocaleString("fr-CA"),
-        ].forEach((value) => {
-          const td = tr.insertCell();
-          td.textContent = value ?? "";
-        });
-        const td = tr.insertCell();
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "secondary";
-        button.textContent = "Consulter";
-        button.dataset.documentId = String(d.id);
-        td.append(button);
-      });
-    }
-    $("#refreshAdminDocs")?.addEventListener("click", loadAdminDocuments);
-    $("#adminDocuments")?.addEventListener("click", async (e) => {
-      const button = e.target.closest("button[data-document-id]");
-      if (!button) return;
-      const path = documentPaths.get(button.dataset.documentId);
-      if (!path) return status("Document introuvable.", true);
-      button.disabled = true;
-      try {
-        const { data, error } = await db.storage
-          .from("madic-documents")
-          .createSignedUrl(path, 60);
-        if (error)
-          return status("Consultation impossible : " + error.message, true);
-        const link = document.createElement("a");
-        link.href = data.signedUrl;
-        link.target = "_blank";
-        link.rel = "noopener noreferrer";
-        document.body.append(link);
-        link.click();
-        link.remove();
-      } finally {
-        button.disabled = false;
-      }
+      const labels = {
+        en_attente: "En attente",
+        actif: "Actif",
+        ferme: "Fermé",
+      };
+      body.innerHTML =
+        (data || [])
+          .map(
+            (d) =>
+              `<tr><td>${safe(d.reference)}</td><td>${safe(names.get(d.client_id) || "Client non répertorié")}</td><td>${safe(d.category)}</td><td><select aria-label="Statut ${safe(d.reference)}" data-id="${safe(d.id)}" data-original="${safe(d.status)}">${Object.entries(
+                labels,
+              )
+                .map(
+                  ([v, l]) =>
+                    `<option value="${v}" ${v === d.status ? "selected" : ""}>${l}</option>`,
+                )
+                .join(
+                  "",
+                )}</select></td><td><button type="button" class="secondary" data-save="${safe(d.id)}">Enregistrer</button></td></tr>`,
+          )
+          .join("") || '<tr><td colspan="5">Aucun dossier créé</td></tr>';
+    };
+    await loadClients();
+    await loadDossiers();
+    $("#refreshDossiers")?.addEventListener("click", loadDossiers);
+    $("#adminDossiers")?.addEventListener("click", async (e) => {
+      const b = e.target.closest("button[data-save]");
+      if (!b) return;
+      const s = b.closest("tr").querySelector("select[data-id]");
+      if (s.value === s.dataset.original) return status("Statut inchangé.");
+      b.disabled = true;
+      const { data, error } = await db
+        .from("dossiers")
+        .update({ status: s.value })
+        .eq("id", b.dataset.save)
+        .select("id,status");
+      b.disabled = false;
+      if (error || !data?.length)
+        return status(
+          error?.message || "Mise à jour non autorisée par Supabase.",
+          true,
+        );
+      status("Statut enregistré.");
+      await loadDossiers();
     });
-    await loadAdminDocuments();
     $("#createDossier")?.addEventListener("submit", async (e) => {
       e.preventDefault();
       const f = e.currentTarget;
@@ -385,13 +444,10 @@ if (page === "admin") {
           category: f.elements.namedItem("category").value.trim(),
           status: f.elements.namedItem("status").value,
         });
-      status(
-        error
-          ? error.message
-          : "Dossier créé. Le client peut maintenant le consulter.",
-        !!error,
-      );
-      if (!error) f.reset();
+      if (error) return status(error.message, true);
+      f.reset();
+      status("Dossier créé.");
+      await loadDossiers();
     });
   })();
 }

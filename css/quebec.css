@@ -223,7 +223,7 @@ footer {
     border: 0;
   }
 }
-/* Questionnaire unifié Québec — styles limités au contenu d'évaluation */
+/* Questionnaire unifié Québec - styles limités au contenu d'évaluation */
 #assessment [hidden],
 #spouse-details[hidden],
 #assessment label[hidden] {

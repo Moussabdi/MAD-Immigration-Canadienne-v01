@@ -6,6 +6,7 @@
     <meta name="robots" content="noindex,nofollow" />
     <title>Inscription | MADIC</title>
     <link rel="stylesheet" href="assets/style.css" />
+    <style>.madic-fields{border:1px solid #d1d5db;border-radius:8px;margin:18px 0;padding:16px}.madic-fields legend{font-weight:700;padding:0 6px}.madic-fields label{display:block;margin-top:10px}.madic-fields input,.madic-fields select{width:100%;box-sizing:border-box}</style>
   </head>
   <body data-page="signup">
     <header>
@@ -52,6 +53,34 @@
             required
             autocomplete="new-password"
           />
+
+          <fieldset class="madic-fields">
+            <legend>Renseignements personnels</legend>
+            <label for="gender">Genre *</label>
+            <select id="gender" name="gender" required>
+              <option value="">Sélectionnez</option><option value="Homme">Homme</option><option value="Femme">Femme</option>
+            </select>
+            <label for="date_of_birth">Date de naissance *</label>
+            <input id="date_of_birth" name="date_of_birth" type="date" required autocomplete="bday" />
+          </fieldset>
+          <fieldset class="madic-fields">
+            <legend>Adresse de résidence</legend>
+            <label for="address_number">Numéro *</label>
+            <input id="address_number" name="address_number" maxlength="30" autocomplete="address-line1" required />
+            <label for="address_street">Rue *</label>
+            <input id="address_street" name="address_street" maxlength="180" required />
+            <label for="address_apartment">Appartement (facultatif)</label>
+            <input id="address_apartment" name="address_apartment" maxlength="50" autocomplete="address-line2" />
+            <label for="address_city">Ville *</label>
+            <input id="address_city" name="address_city" maxlength="120" autocomplete="address-level2" required />
+            <label for="address_region">Province ou district *</label>
+            <input id="address_region" name="address_region" maxlength="120" autocomplete="address-level1" required />
+            <label for="address_postal_code">Code postal</label>
+            <input id="address_postal_code" name="address_postal_code" maxlength="30" autocomplete="postal-code" />
+            <label for="country">Pays de résidence * (saisissez pour rechercher)</label>
+            <input id="country" name="country" list="madic-country-options" maxlength="120" autocomplete="country-name" required placeholder="Rechercher un pays..." />
+            <datalist id="madic-country-options"></datalist>
+          </fieldset>
           <div class="actions">
             <button type="submit">Créer mon compte</button>
           </div>
@@ -65,6 +94,7 @@
     <footer>© MAD Immigration Canadienne · Portail client sécurisé</footer>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
     <script src="assets/config.js"></script>
+    <script src="assets/countries.js"></script>
     <script src="assets/app.js"></script>
   </body>
 </html>

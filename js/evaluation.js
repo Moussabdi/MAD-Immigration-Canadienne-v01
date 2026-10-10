@@ -1,5 +1,5 @@
 "use strict";
-/* MADIC CRS estimator — point tables: IRCC CRS criteria, consulted 2026-10-08.
+/* MADIC CRS estimator - point tables: IRCC CRS criteria, consulted 2026-10-08.
    No network requests or personal-data storage. */
 (() => {
   const $ = (s, root = document) => root.querySelector(s),
